@@ -47,5 +47,6 @@ arguments that explain why a conjecture holds or fails.
   prior-art search and reproduction commands. Credit prior work and state the role of AI.
 - Check each diff and its author and committer metadata before pushing. Exclude
   credentials, private files, personal contact details, machine paths, and raw logs.
-- Rank discoveries by significance in the README. Link each proof and pull request
-  and label partial results. Add infrastructure only when research or verification requires it.
+- Update the README catalogue when a result is added or revised. Rank discoveries
+  by significance, link each proof and pull request, and label partial results.
+  Add infrastructure only when research or verification requires it.
