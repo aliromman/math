@@ -30,7 +30,7 @@ The right side is a product of consecutive integers and is nonnegative. For $d=\
 
 ## Prior work and verification
 
-The authors' early draft states the density and assumes the binary extremal form. Their journal article explicitly leaves the upper bound for general alphabets open. Searches for the pattern and its reversal and complement found no later proof of this word bound. Barton treats classical subsequence patterns. Freij and Mansour give a different density for integer compositions, where the sum of the letters determines size. [Early draft, Proposition 4.7](https://citeseerx.ist.psu.edu/document?doi=5f392d5108197f3b3fe013bb083985c9c350e79b&repid=rep1&type=pdf) · [Journal article](https://doi.org/10.37236/1692) · [Barton](https://doi.org/10.37236/1833) · [Freij and Mansour, Proposition 5.5](https://intlpress.com/api/bgcloud-front/resource/pdf/volume/1805864981797220354-1805864981797220354-431550d94a03c68a3edb5247d2ca1027.pdf)
+In their 2003 conference proceedings, Burstein and Mansour asserted the binary extremal form at every length. Their argument evaluated the construction and assumed its optimality. In the subsequent journal article with Hästö, the authors explicitly left the upper bound for larger alphabets open. Searches for the pattern and its reversal and complement found no later proof of this word bound. Barton treats classical subsequence patterns. Freij and Mansour give a different density for integer compositions, where the sum of the letters determines size. [Burstein and Mansour, conference proceedings, Proposition 4.7](https://citeseerx.ist.psu.edu/document?doi=5f392d5108197f3b3fe013bb083985c9c350e79b&repid=rep1&type=pdf) · [Journal article](https://doi.org/10.37236/1692) · [Barton](https://doi.org/10.37236/1833) · [Freij and Mansour, Proposition 5.5](https://intlpress.com/api/bgcloud-front/resource/pdf/volume/1805864981797220354-1805864981797220354-431550d94a03c68a3edb5247d2ca1027.pdf)
 
 `Statement.lean` defines the occurrences, the finite maximum, and both iterated limits. `Proof.lean` verifies the finite formula and the conjecture. From the repository root, run
 
@@ -40,4 +40,4 @@ lake build conjectures.WordPacking121.Proof
 lake env leanchecker conjectures.WordPacking121.Proof
 ```
 
-OpenAI Codex derived the run bound and wrote the Lean proof. Burstein, Hästö and Mansour supplied the pattern, the conjectured density, and the binary construction.
+Burstein and Mansour proposed the binary construction and the finite optimum. Burstein, Hästö and Mansour stated the density conjecture in the journal article. OpenAI Codex proved the upper bound for every alphabet and wrote the Lean formalization.
