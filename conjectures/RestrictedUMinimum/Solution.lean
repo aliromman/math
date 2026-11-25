@@ -49,10 +49,7 @@ theorem witness_noniso : ¬ leftTree.iso rightTree := by
   have hright : adjacentSixFour rightTree.graph := by decide +kernel
   exact hleft (adjacentSixFour_map f.symm hright)
 
-
-end RestrictedUMinimum
-
-namespace RestrictedUMinimum
+section
 
 variable {K A : Type*} [CommRing K] [CommRing A] [Algebra K A]
 
@@ -64,49 +61,40 @@ theorem plant_apply (L : A →ₗ[K] K) (z : A) (t : K) (v : A) :
     plant L z t v = z * v + algebraMap K A (t * L v) := by
   simp [plant, Algebra.smul_def]
 
-/-- The determinant is quadratic in the difference between the two branch types. -/
-private theorem determinant_shift (f : A →ₗ[K] A) (u v D : A) (d : K) (h : u - v = d • D) :
-    f (u ^ 2) * f (v ^ 2) - f (u * v) ^ 2 =
-      algebraMap K A (d ^ 2) * (f (D ^ 2) * f (v ^ 2) - f (D * v) ^ 2) := by
-  have hu : u = v + d • D := by rw [← h]; ring
-  have hs : (v + d • D) ^ 2 = v ^ 2 + (2 * d) • (D * v) + d ^ 2 • D ^ 2 := by
-    simp only [Algebra.smul_def, map_mul, map_ofNat, map_pow]
-    ring
-  have hm : (v + d • D) * v = v ^ 2 + d • (D * v) := by
-    simp only [Algebra.smul_def]
-    ring
-  rw [hu, hs, hm]
-  simp only [map_add, map_smul]
-  simp only [Algebra.smul_def, map_mul, map_ofNat, map_pow]
+/-- Linearity supplies one factor from each exchanged pair of branches. -/
+private theorem determinant_shift {B : Type*} [CommRing B] [Algebra K B] (L : A →ₗ[K] B)
+    (a b c e E F : A) (d f : K) (ha : a - b = d • E) (hc : c - e = f • F) :
+    L (a * c) * L (b * e) - L (a * e) * L (b * c) =
+      (d * f) • (L (E * F) * L (b * e) - L (E * e) * L (b * F)) := by
+  have h₁ : a = b + d • E := by rw [← ha]; ring
+  have h₂ : c = e + f • F := by rw [← hc]; ring
+  rw [h₁, h₂]
+  simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, map_add, map_smul]
+  simp only [Algebra.smul_def, map_mul]
   ring
 
-/-- Interchanging the two branch types forces two branch differences and one hub cut. -/
+/-- Keeping both attachments cancels, so their exchange supplies an extra cut factor. -/
+theorem planted_exchange (L : A →ₗ[K] K) (z : A) (t d f : K) (a b c e E F : A)
+    (ha : a - b = d • E) (hc : c - e = f • F) :
+    ∃ w, plant L z t (a*c) * plant L z t (b*e) - plant L z t (a*e) * plant L z t (b*c) =
+      (d * f * t) • w := by
+  let C (x : A) := algebraMap K A (L x)
+  refine ⟨z * (E * F * C (b * e) + b * e * C (E * F) -
+    E * e * C (b * F) - b * F * C (E * e)) +
+    algebraMap K A t * (C (E * F) * C (b * e) - C (E * e) * C (b * F)), ?_⟩
+  rw [determinant_shift _ a b c e E F d f ha hc]
+  simp only [plant_apply, Algebra.smul_def, map_mul, C]
+  ring
+
 theorem planted_determinant (L : A →ₗ[K] K) (z : A) (t d : K) (u v D : A)
     (h : u - v = d • D) :
     algebraMap K A (t * d ^ 2) ∣
       plant L z t (u ^ 2) * plant L z t (v ^ 2) - plant L z t (u * v) ^ 2 := by
-  let e (a : A) := algebraMap K A (L a)
-  refine ⟨z * (D ^ 2 * e (v ^ 2) + v ^ 2 * e (D ^ 2) - 2 * (D * v) * e (D * v)) +
-    algebraMap K A t * (e (D ^ 2) * e (v ^ 2) - e (D * v) ^ 2), ?_⟩
-  rw [determinant_shift _ u v D d h]
-  simp only [plant_apply, map_mul, map_pow, e]
-  ring
+  obtain ⟨w, hw⟩ := planted_exchange L z t d d u v u v D D h h
+  refine ⟨w, ?_⟩
+  simpa only [pow_two, mul_comm v u, mul_comm t (d * d), Algebra.smul_def] using hw
 
-/-- A determinant with different branch pairs has one factor from each pair. -/
-theorem mixed_determinant (L : A →ₗ[K] K) (a b c e E F : A) (d f : K)
-    (ha : a - b = d • E) (hc : c - e = f • F) :
-    d * f ∣ L (a * c) * L (b * e) - L (a * e) * L (b * c) := by
-  have h₁ : a = b + d • E := by rw [← ha]; ring
-  have h₂ : c = e + f • F := by rw [← hc]; ring
-  refine ⟨L (E * F) * L (b * e) - L (E * e) * L (b * F), ?_⟩
-  rw [h₁, h₂]
-  simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, map_add, map_smul,
-    smul_eq_mul]
-  ring
-
-end RestrictedUMinimum
-
-namespace RestrictedUMinimum
+end
 
 noncomputable section
 
@@ -177,20 +165,35 @@ theorem cut_link (u v : Tree) :
   change _ + (t * v.cutPolynomial) * u.cutPolynomial = _
   ring
 
-theorem witness_equal : SameRestrictedU 5 leftTree rightTree := by
-  obtain ⟨⟨e, he⟩, ⟨f, hf⟩⟩ := branch_differences
-  obtain ⟨q, hq⟩ := mixed_determinant closeRoot a.rootedU b.rootedU c.rootedU d.rootedU
-    e f (t ^ 2) (t ^ 3) he hf
-  have h : t ^ 6 ∣ leftTree.cutPolynomial - rightTree.cutPolynomial := by
-    refine ⟨q, ?_⟩
-    rw [leftTree, rightTree, cut_link, cut_link]
-    simp only [Tree.cutPolynomial, Tree.rootedU.eq_3]
-    rw [show a.rootedU * c.rootedU * (b.rootedU * d.rootedU) =
-       a.rootedU * d.rootedU * (b.rootedU * c.rootedU) by ring]
-    linear_combination t * hq
-  intro j hj
+def joined (p q : (Tree × Tree)) : (Tree × Tree) :=
+  ((p.1.merge q.1).link (p.2.merge q.2), (p.1.merge q.2).link (p.2.merge q.1))
+
+def RootMatch (i : ℕ) (p : (Tree × Tree)) : Prop :=
+  ∃ e : RootRing, p.1.rootedU - p.2.rootedU = t ^ i • e
+
+theorem joined_equal {i j : ℕ} {p q : Tree × Tree} (hp : RootMatch i p)
+    (hq : RootMatch j q) : SameRestrictedU (i + j) (joined p q).1 (joined p q).2 := by
+  obtain ⟨e, he⟩ := hp
+  obtain ⟨f, hf⟩ := hq
+  have hw := determinant_shift closeRoot p.1.rootedU p.2.rootedU q.1.rootedU q.2.rootedU
+    e f (t ^ i) (t ^ j) he hf
+  have hd : t ^ (i + j + 1) ∣ (joined p q).1.cutPolynomial - (joined p q).2.cutPolynomial := by
+    refine ⟨closeRoot (e * f) * closeRoot (p.2.rootedU * q.2.rootedU) -
+      closeRoot (e * q.2.rootedU) * closeRoot (p.2.rootedU * f), ?_⟩
+    change ((p.1.merge q.1).link (p.2.merge q.2)).cutPolynomial -
+      ((p.1.merge q.2).link (p.2.merge q.1)).cutPolynomial = _
+    rw [cut_link, cut_link]
+    simp only [Tree.cutPolynomial, Tree.rootedU.eq_3, pow_succ, pow_add]
+    rw [show p.1.rootedU * q.1.rootedU * (p.2.rootedU * q.2.rootedU) =
+      p.1.rootedU * q.2.rootedU * (p.2.rootedU * q.1.rootedU) by ring]
+    rw [smul_eq_mul] at hw
+    linear_combination t * hw
+  intro k hk
   exact sub_eq_zero.mp <| by
-    simpa only [Polynomial.coeff_sub] using (Polynomial.X_pow_dvd_iff.mp h j (by omega))
+    simpa only [Polynomial.coeff_sub] using Polynomial.X_pow_dvd_iff.mp hd k (by omega)
+
+theorem witness_equal : SameRestrictedU 5 leftTree rightTree :=
+  joined_equal (p := (a,b)) (q := (c,d)) (i := 2) (j := 3) branch_differences.1 branch_differences.2
 
 /-- These two trees on 32 vertices disprove the proposed minimum of 34. -/
 theorem counterexample : ¬ Conjecture := by

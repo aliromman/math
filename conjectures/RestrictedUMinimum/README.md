@@ -1,10 +1,10 @@
 # Two 32-vertex trees have the same five-cut polynomial
 
-Aliste-Prieto, de Mier, and Zamora predicted that the smallest such pair has 34 vertices. The two trees below have 32. For each way to delete up to five edges, record the sizes of the resulting components in any order. Every list of sizes occurs equally often in both trees. The form of the trees also gives a quadratic upper bound at every cut depth.
+Aliste-Prieto, de Mier, and Zamora predicted that the smallest such pair has 34 vertices. The two trees below have 32. For each way to delete up to five edges, record the sizes of the resulting components in any order. Every list of sizes occurs equally often in both trees. More generally, the proposed formula overestimates the minimum at **every cut depth $m\ge5$**, and the minimum has a quadratic upper bound.
 
 ![Two trees on 32 vertices. Only the right tree has an edge joining vertices of degrees six and four.](trees.svg)
 
-The trees are nonisomorphic. In the right tree, the degree-six vertex has two neighbors of degree four. In the left tree it has none. The two trees separate at six cuts. For example, the component orders $(16,4,3,3,2,2,2)$ occur three times on the left and once on the right.
+The trees are nonisomorphic. In the right tree, the degree-six vertex has two neighbors of degree four. In the left tree it has none. A direct enumeration separates the trees at six cuts. The component orders $(16,4,3,3,2,2,2)$ occur three times on the left and once on the right.
 
 ## The conjecture
 
@@ -76,18 +76,30 @@ $$
 
 This bound replaces the conjectured exponential growth with a quadratic upper bound. Whether $\Phi(m)$ tends to infinity remains open. [Relation to Stanley's question, Proposition 16](https://arxiv.org/pdf/2002.08186#page=11)
 
+## Where the proposed formula fails
+
+| Maximum cuts $m$ | 5 | 6 | 7 | 8 | 9 |
+|:--|--:|--:|--:|--:|--:|
+| Proposed minimum | 34 | 46 | 70 | 94 | 142 |
+| Order of a verified pair | 32 | 42 | 54 | 66 | 78 |
+
+The construction also permits two different pairs of branches. If their first possible differences have degrees $i$ and $j$, exchanging the branches across a joining edge gives agreement through $i+j$ cuts. Planting both sides at a common root gives a new rooted pair whose first possible difference has degree $i+j+1$. Starting from degrees 1, 2, and 3 above gives rooted pairs of degrees at least 4 and 5 on 17 and 23 vertices. Joining pairs of degrees $(3,3),(3,4),(4,4),(4,5)$ gives the last four columns. A two-spin sum distinguishes each pair as unrooted graphs.
+
+The third iterate of the quadratic construction has 171 vertices and agrees through 14 cuts, so it also beats the proposed values for $10\le m\le13$. For $m\ge14$, $3(m+1)^2$ is already strictly smaller than the proposed value. This follows at $m=14,15$ by substitution and then by induction in steps of two.
+
 ## Verification and provenance
 
 From this branch, run the following commands with Elan. The project pins Lean 4.36.0 and Mathlib 4.36.0, commit `fc4f59e577feb1a4956671bc04ac18aaaf8cd842`.
 
 ```sh
 lake build
-lake env leanchecker conjectures.RestrictedUMinimum.Solution
-lake env leanchecker conjectures.RestrictedUMinimum.Growth
+lake env leanchecker --verbose conjectures.RestrictedUMinimum
 ```
 
 The statement quantifies over finite tree presentations. Any finite tree admits one by choosing a root and assembling its child subtrees. Isomorphism uses the underlying unrooted simple graph. The cut expansion sums over actual edge choices and records the component sizes. The formal proof of the quadratic bound distinguishes the two unrooted graphs by an independent integer-valued two-spin sum.
 
-OpenAI Codex agents developed the construction and the formal proofs. The rooted polynomial product rules and the original extremal family are due to Aliste-Prieto, de Mier, and Zamora. A separate check rebuilt the two pictured trees and enumerated all 206,368 deletions of zero through five edges in each. The 372 nonzero partition counts agree. A search of the original paper's forward citations and of the literature for five-cut examples and polynomial upper bounds found no earlier refutation.
+The main theorems are `counterexample`, `quadratic_bound`, and `pointwise_counterexample` in the `RestrictedUMinimum` namespace. The build checks their transitive axiom lists. Each uses only `propext`, `Classical.choice`, and `Quot.sound`.
 
-The initial counting approach used the authors' 2017 connection to equal sums of powers. It produced much larger candidate trees. Tracking how the first unequal cut term changes under root identification led to the smaller witness and the quadratic bound. Neither the 32-vertex construction nor the quadratic estimate asserts an optimal size. [Aliste-Prieto, de Mier and Zamora (2017)](https://arxiv.org/abs/1509.09210)
+OpenAI Codex agents developed the construction and the formal proofs. The rooted polynomial product rules and the original extremal family are due to Aliste-Prieto, de Mier, and Zamora. An independent agent rebuilt the two pictured trees and enumerated all 206,368 deletions of zero through five edges in each. The 372 nonzero partition counts agree. Extending that check through six cuts took 15.21 CPU seconds. A search of the original paper's forward citations and of the literature for five-cut examples and polynomial upper bounds found no earlier refutation.
+
+The initial approach combined the authors' 2017 construction with the classical counting argument for equal sums of powers. For $N$ of order $m^2\log(m+2)$, there are more subsets of $\{1,\ldots,N\}$ than vectors of power sums of degrees $0$ through $m-1$. Two subsets with the same vector give trees of order $O(N^2)$ by their Theorem 3.5. This yields the weaker bound $O(m^4\log^2(m+2))$ from prior methods. The smaller examples and the quadratic construction came from tracking the first unequal cut coefficient under root identification. [Aliste-Prieto, de Mier and Zamora (2017)](https://arxiv.org/abs/1509.09210) · [Borwein and Mossinghoff, classical counting bound](https://www.cecm.sfu.ca/~pborwein/PAPERS/P153.pdf)
