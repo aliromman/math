@@ -8,7 +8,8 @@ P(q)=\frac{(1-q^{25})(1-q^{36})(1-q^{40})(1-q^{42})}
 $$
 
 has coefficient $-1$ at $q^{25}$. Each numerator exponent is a
-denominator exponent plus $22$. This disproves Conjecture 4 of
+denominator exponent plus $22$. This gives a four-factor family of
+counterexamples to the previously disproved Conjecture 4 of
 Mona Gatzweiler and Christian Krattenthaler. They proposed that, for
 positive integers $m\ge n$ and nonnegative integers $a_1,\ldots,a_n$,
 every polynomial of the following form has nonnegative coefficients.
@@ -53,10 +54,14 @@ Gatzweiler, Levicán-Santibáñez and Yoshida later proved positivity
 when $2n\lfloor n/2\rfloor-2<m$. Their bound permits the counterexamples
 above. The exponent sequences here are asymmetric. The authors' symmetric
 conjecture and their conjecture for quotients of two Gaussian binomial
-coefficients remain separate questions. Searches of the original paper,
-subsequent publications, and the cited fake Gaussian sequence literature
-found no previous counterexample within the hypotheses of Conjecture 4.
+coefficients remain separate questions.
 [Subsequent paper, Conjecture 1.3 and Corollary 3.11](https://arxiv.org/html/2603.22226v1).
+
+CoPEER published an earlier counterexample with $m=22$, $n=21$, and
+coefficient $-1$ at degree $43$. A subsequent construction used five
+factors. Both precede this four-factor family. We withdraw the original
+priority claim and exclude this conjecture from the research tally.
+[Earlier counterexample](https://github.com/qqliu/CoPEER/blob/105523fdaf018b62eaf2883347724dfe79935611/mathematics/discoveries/entries/number-theory/fake-gaussian-positivity-counterexample.md) · [Five-factor construction](https://github.com/1337isnot1337/solved-conjectures/issues/78).
 
 AI agents found the four exponents, derived the infinite family, and
 wrote the mathematical and Lean proofs. From the repository root, run
