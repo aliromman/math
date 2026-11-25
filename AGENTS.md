@@ -5,13 +5,17 @@ Prefer short arguments that explain why a conjecture holds or fails.
 
 ## Research
 
-- Give research time to three tiers. Aim for about 10% on obscure published
-  conjectures, 60% on established questions with research attention or
-  mathematical consequences, and 30% on well-known, difficult problems.
-  Apply these proportions to effort across investigations.
-- Prefer one significant, original result with a clear argument. Consider
-  any field. Give graph theory, combinatorics, and polynomial inequalities
-  priority when their structure makes a serious result plausible.
+- Spend about 75% of research effort on well-known, difficult conjectures
+  (Tier 3) and 25% on established conjectures with meaningful research
+  attention or consequences (Tier 2). Apply this split across investigations.
+  Exclude obscure targets.
+- Favor longstanding questions whose statement and resolution matter beyond
+  their specialty. Prioritize Erdős problems, integer equations, number theory,
+  fundamental graph properties, and prominent combinatorial conjectures.
+- Prefer an unsuccessful attack on a substantial question to a minor result.
+  Explore new constructions and proof ideas. Spend almost all effort on new
+  mathematics. Revisit earlier pull requests or infrastructure only when the
+  task or verification requires it.
 - Select an identifiable academic source. Read its definitions, scope, and
   hypotheses. Check for earlier solutions. Keep screening short. Spend most of the
   budget deriving proofs, searching for witnesses, and testing the argument.
