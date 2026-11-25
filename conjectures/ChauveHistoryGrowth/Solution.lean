@@ -1,7 +1,6 @@
 module
 
-public import conjectures.ChauveHistoryGrowth.Extrema
-public import conjectures.ChauveHistoryGrowth.Growth
+public import conjectures.ChauveHistoryGrowth.Slope
 
 public section
 noncomputable section
@@ -47,11 +46,14 @@ private theorem cat_growth (C : ℝ) : ∃ K : ℕ, ∀ t : Tree, t.Caterpillar 
 /-- The extremal shapes are unique from size two onward. Their exponential
 factors are limits of the roots of the actual finite history counts. -/
 theorem resolution : Conjecture := by
-  refine ⟨fun k _ => ⟨2,fun n hn t eq => ?_⟩,growth_limit,cat_growth,1,64,one_pos,?_⟩
+  refine ⟨fun k _ => ⟨2,fun n hn t eq => ?_⟩,growth_limit,cat_growth,slope,slope_positive,?_⟩
   · rw [← eq]
     exact structural hn t
-  · intro t h
-    simpa using And.intro (size_le_growth t) (balanced_growth h)
+  · intro ε hε
+    obtain ⟨K,hK⟩:=Metric.tendsto_atTop.mp balanced_slope.2 ε hε
+    refine ⟨K,fun t h large => ?_⟩
+    rw [factor_of_balanced h]
+    exact (Real.dist_eq ..) ▸ hK t.leaves large
 
 /-- info: 'ChauveHistoryGrowth.resolution' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in

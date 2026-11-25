@@ -85,7 +85,7 @@ def Conjecture : Prop :=
     (t.Balanced ↔ ∀ u : Tree, u.leaves = k → count t n ≤ count u n)) ∧
   (∀ t : Tree, Tendsto (nthRoot t) atTop (𝓝 (growth t))) ∧
   (∀ C : ℝ, ∃ K, ∀ t : Tree, t.Caterpillar → K ≤ t.leaves → C * t.leaves ≤ growth t) ∧
-  (∃ c C : ℝ, 0 < c ∧ ∀ t : Tree, t.Balanced →
-    c * t.leaves ≤ growth t ∧ growth t ≤ C * t.leaves)
+  (∃ c : ℝ, 0 < c ∧ ∀ ε : ℝ, 0 < ε → ∃ K : ℕ, ∀ t : Tree, t.Balanced →
+    K ≤ t.leaves → |growth t / t.leaves - c| < ε)
 
 end ChauveHistoryGrowth
