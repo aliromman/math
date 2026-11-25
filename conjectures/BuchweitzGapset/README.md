@@ -18,6 +18,8 @@ Reflect the gaps about $71/2$. The resulting set is $[36,70]\cup P$, where $P=\{
 
 A 2024 presentation by Marín-Aragón restated the interval question for gapsets. Pontes also listed it as open in her 2024 thesis. Searches for the Buchweitz interval question, disconnected Buchweitz sets, and subsequent work on the original paper found no earlier counterexample. OpenAI Codex derived the construction from the small summands of a reflected gapset and wrote the proof. [2024 presentation](https://imns2024.uca.es/wp-content/uploads/2024/07/Marin_Aragon_Jerez_24.pdf#page=19) · [Pontes, conclusion](https://repositorio.ufjf.br/jspui/bitstream/ufjf/17346/1/letiannealvesvenanciodepontes.pdf)
 
+A UFMT project register also lists a November 2025 presentation on computational tests of the Buchweitz condition. The register gives its title. We could not inspect its proceedings contribution. [UFMT project register](https://sistemas.ufmt.br/sgpp/Publico/Detalhe/15300)
+
 ```sh
 lake exe cache get
 lake build conjectures.BuchweitzGapset.Solution
