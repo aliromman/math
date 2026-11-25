@@ -10,7 +10,7 @@ p+q\mid n, & n\text{ odd},\\
 \end{cases}
 $$
 
-For example, $-1$ occurs precisely at multiples of four. At order eight, two
+For example, $-1$ occurs precisely at multiples of four. George’s Table 4.1 already lists this root at order eight. Two
 disjoint edges and four isolated vertices give $D(x)=4+4x$.
 
 Ian C. George asked which rational roots occur at each order and predicted
@@ -43,7 +43,7 @@ for $x\ne0$ and $n\ge1$.
 George’s thesis already gives the complement identity and the existence of the
 odd-order roots. Searches by author, the divisibility prediction, and graph
 order found no previous classification. Brown and George’s subsequent paper
-studies root moduli and arguments. [Brown and George, *On the Roots of Degree
+lists the determination of rational degree roots as future work on p. 181. [Brown and George, *On the Roots of Degree
 Polynomials* (2025)](https://ajc.maths.uq.edu.au/pdf/92/ajc_v92_p164.pdf)
 
 Run from the repository root.
