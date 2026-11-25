@@ -11,6 +11,7 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Sobolewski’s binary-pattern progressions][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
+| [Bajnok’s restricted triple sums][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
 | [Roots of edge-cover polynomials][note-20] | A finite simple graph of minimum degree $d$ has at least $d$ distinct complex roots in its edge-cover polynomial. | [Lean][proof-20] · [#20][pr-20] |
 | [Independence roots of even-order trees][note-25] | For a tree on $2k$ vertices with $k\ge3$, every root of the independence polynomial has modulus at most $2^{k-2}+k+1$. | [Lean][proof-25] · [#25][pr-25] |
 | [Defant’s Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
@@ -47,6 +48,9 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/README.md
 [proof-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/Solution.lean
 [pr-27]: https://github.com/aliromman/math/pull/27
+[note-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/README.md
+[proof-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/Solution.lean
+[pr-28]: https://github.com/aliromman/math/pull/28
 [note-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/README.md
 [proof-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/Solution.lean
 [pr-20]: https://github.com/aliromman/math/pull/20
