@@ -7,7 +7,7 @@ $$
 \qquad\text{for every real } k\le 4.
 $$
 
-The theorem below proves the conjecture. At $k=2$ the sum gives Walker's inequality through Liu's identity (7.1). Liu also proved the case $k=1$ in Corollary 11. [J. Liu, *AIMS Mathematics* 5 (2020), 6657–6672, Conjecture 1, equation (7.3), p. 6671](https://www.aimspress.com/fileOther/PDF/Math/math-05-06-428.pdf#page=15)
+The theorem below proves the conjecture. At $k=2$ the sum gives Walker's inequality through Liu's identity (7.1). Liu proved $k=1$ in Corollary 11 and $k=0$ in Corollary 12. [J. Liu, *AIMS Mathematics* 5 (2020), 6657–6672, Conjecture 1, equation (7.3), p. 6671](https://www.aimspress.com/fileOther/PDF/Math/math-05-06-428.pdf#page=15)
 
 ## Proof
 
@@ -41,11 +41,12 @@ The formal statement follows equation (7.3) and uses three positive real side le
 Run these commands from the repository root with the pinned Lean and Mathlib versions.
 
 ```sh
+lake exe cache get Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Tactic.Linarith Mathlib.Tactic.Ring
 lake build
-lake env lean conjectures/LiuWalkerOne/Solution.lean
+lake env leanchecker -v conjectures.LiuWalkerOne
 ```
 
-The second command checks the axiom report for `LiuWalkerOne.result`. Its transitive axioms are `propext`, `Classical.choice`, and `Quot.sound`.
+The build checks the axiom report for `LiuWalkerOne.result`. Its transitive axioms are `propext`, `Classical.choice`, and `Quot.sound`. The final command replays both project modules in the Lean kernel.
 
 ## Prior work and attribution
 
