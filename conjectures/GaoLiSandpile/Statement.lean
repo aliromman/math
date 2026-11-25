@@ -33,9 +33,10 @@ def CompleteMaximalIdentity : Prop := ∀ s, RecurrentIdentity G s (maximal G s)
 
 def Biconnected : Prop := G.Connected ∧ ∀ x : V, (G.induce {v | v≠x}).Connected
 
-/-- Gao and Li, Question 3.5. Fin n labels an arbitrary finite graph of order n. -/
-def Conjecture : Prop := ∀ (n : ℕ) (H : SimpleGraph (Fin n)) [DecidableRel H.Adj],
-  Odd n → Biconnected H → CompleteMaximalIdentity H →
-  Nonempty (H ≃g cycleGraph n) ∨ H=⊤
+/-- Gao and Li, Question 3.5. Every finite graph can use arbitrary vertex labels. -/
+def Conjecture : Prop := ∀ (V : Type) [Fintype V] [DecidableEq V]
+  (H : SimpleGraph V) [DecidableRel H.Adj],
+  Odd (Fintype.card V) → Biconnected H → CompleteMaximalIdentity H →
+  Nonempty (H ≃g cycleGraph (Fintype.card V)) ∨ H=⊤
 
 end GaoLiSandpile

@@ -1,34 +1,32 @@
-# Three almost-complete graphs refute the odd sandpile conjecture
+# Three cliques with one edge removed refute the odd sandpile conjecture
 
-Take three disjoint copies of $K_5$. Delete one edge $u_i v_i$ in each copy and join $v_i$ to $u_{i+1}$, with indices modulo three. The resulting 15-vertex graph has the maximal stable sandpile as its group identity for every choice of sink.
+Take three copies of $K_5$. Delete one edge $u_i v_i$ in each copy and join $v_i$ to $u_{i+1}$, with indices modulo three. The resulting 15-vertex graph has the maximal stable sandpile as its group identity for every sink.
 
-Rupert Li conjectured that the only biconnected graphs of odd order with this property are cycles and complete graphs. Yibo Gao and Li restated the conjecture as Question 3.5. Their exhaustive search through 11 vertices found no counterexample. They also gave rings of copies of $K_4$ minus one edge, all of even order. [Li, slide 16](https://math.mit.edu/research/highschool/primes/materials/2019/conf/5-1-Li.pdf) · [Gao and Li, Example 3.1 and Question 3.5](https://arxiv.org/pdf/2008.10079).
+The same construction works with $K_d$ for every $d\ge3$. For odd $d\ge5$ it gives a biconnected counterexample of order $3d$ to Rupert Li's conjecture that only odd cycles and complete graphs have this property among biconnected graphs of odd order. Yibo Gao and Li restated the conjecture as Question 3.5. Their exhaustive search through 11 vertices found no counterexample. Their rings of copies of $K_4$ minus an edge have even order. [Li, slide 16](https://math.mit.edu/research/highschool/primes/materials/2019/conf/5-1-Li.pdf) · [Gao and Li, Example 3.1 and Question 3.5](https://arxiv.org/pdf/2008.10079).
 
 ## Proof
 
-A cycle visits all 15 vertices. Within each block it runs from $u_i$ through the three interior vertices to $v_i$. It then crosses the new edge to the next block. Removing any vertex leaves a spanning path. The graph has degree four at every vertex, and $u_i$ and $v_i$ are nonadjacent.
+Put $h=d-2$. Each block has $h$ interior vertices and two terminals $u_i,v_i$. Every vertex has degree $h+1$. A cycle visits all vertices by going from $u_i$ through the interiors of each block to $v_i$, then crossing to the next block. Removing any vertex leaves a spanning path. For $d\ge5$ the graph has degree at least four, and $u_i$ and $v_i$ are nonadjacent.
 
-For a sink $s$, the maximal stable configuration puts three chips at every other vertex. This configuration is recurrent. From any stable configuration, add the missing chips at each vertex. The result is already stable.
-
-It remains to show that this configuration represents zero in the sandpile group. Write $L$ for the graph Laplacian. It suffices to find an integer function $f$ on the vertices with $f(s)=0$ and
+Fix a vertex as sink. The maximal stable configuration puts $h$ chips at each nonsink. From any stable configuration, add the missing chips at each vertex to obtain this configuration. Thus it is recurrent. To see that it represents zero in the sandpile group, it suffices to find an integer function $f$ with $f(s)=0$ and
 
 $$
-(Lf)(x)=4f(x)-\sum_{y\sim x}f(y)=3\qquad (x\ne s).
+(h+1)f(w)-\sum_{z\sim w}f(z)=h\qquad(w\ne s).
 $$
 
-Rotation of the three blocks, reflection of the ring, and permutation of the three interiors within each block give two types of sink. The table lists $f$ in the order $u_i$, three interior vertices, $v_i$. In each column the sink is the entry zero.
+The graph has two types of sink up to symmetry. Rotate the sink's block to block zero. If the sink is a terminal, reflect the ring if necessary to put it at $u_0$. The table gives the values of $f$ at $(u_i,\text{interior},v_i)$ in each block. In the interior-sink column, give the sink itself value zero. All other interiors in its block have the stated value. Write $x=h(d+4)$.
 
 | Block | Terminal sink | Interior sink |
 | --- | --- | --- |
-| 0 | $(0,8,8,8,13)$ | $(12,0,9,9,12)$ |
-| 1 | $(25,28,28,28,28)$ | $(27,31,31,31,32)$ |
-| 2 | $(25,23,23,23,18)$ | $(32,31,31,31,27)$ |
+| 0 | $(0,2d-2,3d-2)$ | $(4h,3h,4h)$ |
+| 1 | $(d^2,d^2+d-2,d^2+d-2)$ | $(x,x+d-1,x+d)$ |
+| 2 | $(d^2,d^2-2,d^2-d-2)$ | $(x+d,x+d-1,x)$ |
 
-For example, in the terminal-sink column an interior vertex of block zero has neighbors with values $0,8,8,13$, giving $4\cdot8-(0+8+8+13)=3$. Applying the same formula at each nonsink proves the assertion.
+These entries satisfy the equation by substitution. For example, when $d=5$ and $s=u_0$, an interior vertex of block zero has value $8$ and neighbors with values $0,8,8,13$. Its Laplacian is $4\cdot8-(0+8+8+13)=3$. In general each terminal sees all $h$ interiors of its block and its matched outside terminal. Each interior sees both terminals and the other $h-1$ interiors. These two neighbor sums account for every row of the reduced Laplacian.
 
 ## Verification and prior work
 
-`Statement.lean` defines legal firings, recurrence, the reduced Laplacian condition, and the original conjecture. `Solution.lean` verifies the integer equations at every nonsink for each of the 15 sinks, proves connectivity after each vertex deletion, and checks the theorem's axioms. From the repository root run
+`Statement.lean` defines recurrence using legal firings and defines the identity using the integer reduced Laplacian. `Solution.lean` proves the formula for every block size and sink, verifies biconnectivity and order, and checks the axioms of both the general result and the refutation. From the repository root run
 
 ```sh
 lake exe cache get
@@ -36,4 +34,4 @@ lake build
 lake env leanchecker conjectures.GaoLiSandpile.Solution
 ```
 
-Searches for work citing Gao and Li, the named property, the conjecture, and rings of complete graphs with one missing edge found no previous odd-order counterexample. The construction extends the authors' diamond-ring idea. Codex found the example, derived the certificates, and wrote the Lean formalization. An independent agent checked the definitions and replayed the sandpile operation directly. For every sink, stabilizing two copies of the maximal stable configuration returned one copy.
+Searches for the named property, the conjecture, work citing Gao and Li, and rings of cliques with one missing edge found no prior odd-order counterexample. The construction extends the authors' diamond rings. Codex found the example, derived the general potentials, and wrote the Lean formalization. An independent agent checked the source definitions, both polynomial tables, and the formal statement. Direct legal stabilization of twice the maximal configuration also returned one copy for every sink at block sizes 5, 7, 9 and 11.
