@@ -3,6 +3,7 @@ module
 public import conjectures.BroschPugesTreeProfile.Statement
 import Mathlib.Analysis.SpecialFunctions.Choose
 import Mathlib.Topology.Order.IntermediateValue
+import Mathlib.Tactic.IntervalCases
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -140,12 +141,15 @@ private theorem join_limits {L R : ℕ → Tree} {f g : Tree → ℝ}
 private noncomputable def inner := join (branch 47) (branch 47)
 private noncomputable def witness := join (branch 106) inner
 
-private theorem witness_profile (A B : Tree) : InProfile A B (witness A) (witness B) := by
-  let T (n : ℕ) := fork (cat (106*n)) (fork (cat (47*n)) (cat (47*n)))
-  have size n : (T n).leaves = 200*n+3 := by simp [T, leaves]; omega
-  have h := join_limits (branch_limits 106 (by decide))
-    (join_limits (branch_limits 47 (by decide)) (branch_limits 47 (by decide)))
-  have hD (S : Tree) : Tendsto (fun n => S.density (T n)) atTop (𝓝 (witness S)) := by
+private noncomputable def triple (a b : ℕ) := join (branch a) (join (branch b) (branch b))
+
+private theorem triple_profile (a b : ℕ) (ha : 0 < a) (hb : 0 < b) (hsize : a+b+b = 200)
+    (A B : Tree) : InProfile A B (triple a b A) (triple a b B) := by
+  let T (n : ℕ) := fork (cat (a*n)) (fork (cat (b*n)) (cat (b*n)))
+  have size n : (T n).leaves = 200*n+3 := by simp [T, leaves]; rw [← hsize]; ring
+  have h := join_limits (branch_limits a ha)
+    (join_limits (branch_limits b hb) (branch_limits b hb))
+  have hD (S : Tree) : Tendsto (fun n => S.density (T n)) atTop (𝓝 (triple a b S)) := by
     have hden := choose_limit 200 3 S.leaves (by decide)
     norm_num at hden
     have H := (h S).div hden (by norm_num)
@@ -290,13 +294,49 @@ theorem fails_from_fourteen (k : ℕ) (hk : 14 ≤ k) :
   have h01 : p ∈ Set.Icc (0:ℝ) 1 := ⟨le_trans (by norm_num) hp.1,hp.2⟩
   refine ⟨p,h01,witness evenSix,?_,(double_le p h01).trans_lt ?_⟩
   · rw [E, show n+14-1 = n+13 by omega]
-    exact witness_profile _ _
+    exact triple_profile 106 47 (by decide) (by decide) (by decide) _ _
   · rw [witness_even]; norm_num
+
+private noncomputable abbrev small : ℝ := 1/50
+private noncomputable abbrev endpoint : ℝ := small + small^5/4
+
+/-- Two caterpillar densities bracket the density of the tree with branch masses 196, 2, 2. -/
+private theorem bracket (k : ℕ) (hk : 7 ≤ k) (hK : k ≤ 13) :
+    triple 196 2 (cat (k-1)) ∈ Set.Icc (doubleCat k endpoint) (doubleCat k small) := by
+  interval_cases k <;>
+    norm_num [triple, join, branch, isCat, cat, leaves, same, Nat.choose,
+      doubleCat, small, endpoint, Set.mem_Icc]
+
+/-- Every caterpillar size from seven upwards has a double caterpillar below the upper boundary. -/
+theorem fails_from_seven (k : ℕ) (hk : 7 ≤ k) :
+    ∃ p ∈ Set.Icc (0:ℝ) 1, ∃ y, InProfile (cat (k-1)) evenSix (doubleCat k p) y ∧
+      doubleEven p < y := by
+  by_cases hK : 14 ≤ k
+  · exact fails_from_fourteen k hK
+  have hab : small ≤ endpoint := by norm_num [small, endpoint]
+  obtain ⟨p,hp,E⟩ := intermediate_value_Icc' hab
+    (show ContinuousOn (doubleCat k) _ by unfold doubleCat; fun_prop) (bracket k hk (by omega))
+  have h01 : p ∈ Set.Icc (0:ℝ) 1 := ⟨le_trans (by norm_num [small]) hp.1,
+    hp.2.trans (by norm_num [endpoint, small])⟩
+  refine ⟨p,h01,triple 196 2 evenSix,?_,?_⟩
+  · rw [E]
+    exact triple_profile 196 2 (by decide) (by decide) (by decide) _ _
+  · have hprod : p*(1-p) ≤ endpoint*(1-endpoint) := by
+      have h₂ : 0 ≤ 1-endpoint-p := by
+        exact sub_nonneg.mpr (hp.2.trans (by norm_num [endpoint, small]))
+      nlinarith [mul_nonneg (sub_nonneg.mpr hp.2) h₂]
+    calc
+      _ = 20*(p*(1-p))^3 := by unfold doubleEven; ring
+      _ ≤ 20*(endpoint*(1-endpoint))^3 := by
+        gcongr
+        exact mul_nonneg h01.1 (sub_nonneg.mpr h01.2)
+      _ < _ := by norm_num [endpoint, small, triple, join, branch, evenSix, cat, leaves,
+        same, isCat, Nat.choose]
 
 theorem not_conjecture : ¬ Conjecture := by
   intro H
-  obtain ⟨p,hp,y,hy,hlt⟩ := fails_from_fourteen 14 le_rfl
-  exact hlt.not_ge ((H 14 (by decide) p hp).2 hy)
+  obtain ⟨p,hp,y,hy,hlt⟩ := fails_from_seven 7 le_rfl
+  exact hlt.not_ge ((H 7 (by decide) p hp).2 hy)
 
 /-- info: 'BroschPugesTreeProfile.not_conjecture' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
