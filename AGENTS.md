@@ -5,19 +5,24 @@ Prefer short arguments that explain why a conjecture holds or fails.
 
 ## Research
 
-- Select a conjecture from an identifiable academic source. Read its definitions,
-  scope, and hypotheses. Check the literature for earlier solutions.
-- Consider any field. Give priority to tractable problems in graph theory,
-  combinatorics, and polynomial inequalities. Look for overlooked structure
-  and questions with little computational exploration.
-- Keep screening brief. Spend most of the research budget on solving.
-  Combine exact computation and mathematical arguments. Use parallel
-  researchers when they can make independent progress.
-- Start with one conjecture. Change targets when further work has poor prospects.
-  Seek additional discoveries within the available budget.
-- Prefer simple counterexamples. Reduce a witness when possible. Record
-  useful failed approaches and their limits in the draft or in local notes.
-  Keep large search outputs in the ignored scratch directory.
+- Give research time to three tiers. Aim for about 10% on obscure published
+  conjectures, 60% on established questions with research attention or
+  mathematical consequences, and 30% on well-known, difficult problems.
+  Apply these proportions to effort across investigations.
+- Prefer one significant, original result with a clear argument. Consider
+  any field. Give graph theory, combinatorics, and polynomial inequalities
+  priority when their structure makes a serious result plausible.
+- Read the original hypotheses and check for earlier solutions. Keep
+  screening short. Spend most of the budget deriving proofs, searching for
+  witnesses, and testing the mathematical argument.
+- Pursue one main target at a time. Persist while an approach gives new
+  constraints, examples, or lemmas. Change course when a specific obstacle
+  defeats the approach. Use other agents for distinct mathematical tasks.
+- Reduce counterexamples when possible. Keep a short note for each serious
+  attempt with the source, tier, approach, outcome, and any reusable insight.
+  Give exact search bounds and elapsed time or compute use when available.
+  Use these notes to select future problems and methods. Keep large outputs
+  in the ignored scratch directory.
 
 ## Verification
 
@@ -44,6 +49,11 @@ Prefer short arguments that explain why a conjecture holds or fails.
 - Keep the source, statement, argument, and formal proof in a single directory
   under `conjectures/`. Document the result's significance, prior-art search,
   reproduction commands, and the role of AI.
+- Lead each pull request with the discovery or the open mathematical obstacle.
+  State the original question, what the result changes, and why the proof
+  works in terms a reader can follow without Lean. Use a displayed equation,
+  a small example, or a diagram when it clarifies the argument. Give exact
+  verification commands and identify the contribution of prior work and AI.
 - Treat commits, draft pull requests, and their history as public. Review each
   diff and its author metadata before pushing. Exclude credentials, personal
   details, private files, machine paths, and raw logs.
