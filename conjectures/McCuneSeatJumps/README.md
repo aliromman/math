@@ -1,47 +1,43 @@
-# The seat increases that permit the Alabama paradox are determined by divisibility
+# The exact probability of a three-state Alabama paradox
 
-With three states and $H$ seats, increasing the house by $k\ge1$ gives a positive probability of a state losing a seat exactly when
-
-$$
-k<H \quad\text{and}\quad H-k\nmid H.
-$$
-
-In particular, the largest possible jump is $H$ minus the least positive integer that does not divide $H$, for every $H\ge3$. David McCune found the maximum for odd houses and asked for the even case. The same criterion disproves his Conjecture 1 about monotonicity. The population vector in his model is uniform on the three-state simplex. [Original source, Proposition 1 and Conjecture 1](https://arxiv.org/html/2610.40682v1#S7)
-
-For $H=9$, increasing to 15 seats gives a loss with probability zero, because $9-6=3$ divides 9. Increasing to 16 can cause a loss. Population shares $(12,12,1)/25$ give the allocation $(4,4,1)$ at 9 seats and $(8,8,0)$ at 16. Both allocations persist under small changes in the shares. Even houses can also have an increase late in the sequence. At $H=16$, jumps of 12 and 13 give zero and positive probability, respectively.
-
-## The integer trapped between $k$ and $H$
-
-Put $M=H+k$. Let $a_i,b_i$ be state $i$'s allocations before and after the increase. Hamilton's rule assigns the lower quotas and then fills the remaining seats in order of fractional remainder. Away from ties, the three rounding errors $Hp_i-a_i$ lie in an interval of width less than one. The same holds for $Mp_i-b_i$.
-
-Consider the integers $D_i=Hb_i-Ma_i$. They sum to zero. Their range is less than $H+M$, since $D_i=M(Hp_i-a_i)-H(Mp_i-b_i)$. A state that loses a seat has $D_i\le-H-k$. Each of the other two integers is then less than $H$. Since their sum is at least $H+k$, each is greater than $k$.
-
-This forces $k<H$. If $r=H-k$ divides $H$, it also divides $M=2H-r$ and every $D_i$. There is no multiple of $r$ strictly between $H-r$ and $H$. The boundary cases have probability zero because a tie lies on one of finitely many lines at each house size.
-
-## Constructing a loss whenever the divisor test permits one
-
-Suppose $r=H-k>0$ does not divide $H$ and put $j=\lfloor H/r\rfloor$. Try the allocations
+When a legislature adds seats under Hamilton’s largest-remainder rule, a state can lose a seat. With three states and uniformly distributed population shares, the probability of a loss after an increase of $k$ seats from a house of size $H$ is
 
 $$
-a=(H-j-1,j,1),\qquad b=(M-2j,2j,0).
+p_k(H)=\frac{g^3}{3H^2(H+k)^2}\sum_{\ell=1}^H (t_\ell^3-t_\ell),
+\qquad g=\gcd(H,k),\qquad
+t_\ell=\frac{\max(0,H+2k-3k\ell)}{g}.
 $$
 
-For the second state, $D_2=rj=H-(H\bmod r)$ lies strictly between $k$ and $H$. The first state's integer is $M-D_2$, in the same interval. For each of these two states choose $s_i$ with
+The formula holds for all positive integers $H,k$. A loss has positive probability precisely when **$k<H$ and $H-k$ does not divide $H$**. For $H\ge3$, the largest such jump is $H$ minus its least positive nondivisor.
+
+David McCune derived the one-seat probability, determined the maximum jump for odd houses and conjectured how the probabilities decrease for each parity. They can rise even between two positive terms. For an odd house, $p_9(27)=1/648<544/332667=p_{10}(27)$. For an even house, $p_{10}(30)=1/720<38/25215=p_{11}(30)$. [Original paper, Theorem 1, Proposition 1 and Conjecture 1](https://arxiv.org/html/2610.40682v1)
+
+## Where the formula comes from
+
+Let $M=H+k$. An allocation $a$ to a population vector $p$ is a strict Hamilton allocation if its entries sum to $H$ and the rounding errors $Hp_i-a_i$ differ pairwise by less than one. Their sum is zero. With three states, every error is strictly between $-2/3$ and $2/3$. The same applies to the new allocation $b$. Ties lie on lines and have area zero.
+
+These bounds imply that a losing state drops just one seat and is the only loser. Suppose it falls from $\ell$ to $\ell-1$. For each of the other states, write $A,B$ for its old and new allocations. Its population share minus the loser’s share lies in the interval
 
 $$
-\frac{b_i-1}{M}<s_i<\frac{a_i}{H}.
+\frac{B-\ell}{M}<s<\frac{A-\ell+1}{H}.
 $$
 
-The inequalities on $D_i$ make these intervals nonempty. They also give $a_i-1<Hs_i<a_i$ and $b_i-1<Ms_i<b_i$. Set $p_3=(1-s_1-s_2)/3$ and $p_i=p_3+s_i$ for $i=1,2$. All shares are positive and sum to one. The rounding error for state 3 is the lowest at $H$ and highest at $M$. In each allocation its distance from each other error is less than one. These are strict Hamilton allocations throughout an open set of shares, so the loss has positive probability.
+The two differences describe a rectangle. Its side lengths have denominator $HM$. Their integer numerators sum to $W=H+2k-3k\ell$. When both are positive, each is less than $H$. The two interval bounds then imply all rounding inequalities in both houses. The population shares are positive, so the whole rectangle represents an actual loss. Different old allocations or different losers give disjoint rectangles.
 
-## Source and verification
+For fixed $\ell$ and $A$, the first width numerator is the residue of $k(A+1-\ell)$ modulo $H$. Only residues $0<r<W$ contribute, and the second width numerator is $W-r$. There is exactly one new allocation for each contributing residue and old allocation. Extending $A=0,\ldots,H-\ell$ to a full residue system adds only zero terms. Each multiple of $g$ occurs $g$ times. Thus the sum of the width products is $g^3\sum_{j=0}^{t_\ell}j(t_\ell-j)=g^3(t_\ell^3-t_\ell)/6$.
 
-McCune proposed the monotonicity conjecture and proved the sharp odd-house upper bound. Searches for the even-house maximum, loss probabilities for larger jumps, and a divisibility criterion found no earlier general solution. OpenAI Codex derived the criterion and formalized the proof.
+The change from two shares to two share differences has determinant three. The probability density on the unit population triangle is two, and there are three choices of loser. These factors give the displayed formula. Its first summand is positive exactly when $H-k\ge2g$. Since $g=\gcd(H,H-k)$ for $k<H$, this gives the divisibility criterion.
 
-The Lean statement uses the area of the loss event under the actual largest-remainder rule. The proof handles ties, proves the full divisibility criterion, and derives the maximum jump and the counterexamples. From the repository root, run
+For example, a jump from 9 to 15 seats has zero probability of a loss. A jump from 9 to 16 can take a seat away. Shares $(12,12,1)/25$ give $(4,4,1)$ at 9 seats and $(8,8,0)$ at 16.
+
+## Verification and attribution
+
+The Lean statement uses the uniform area of the loss event under the largest-remainder rule, including ties. The proof establishes the formula, its support and maximum, the failure of the original conjecture, and the four positive probabilities above. From the repository root, run
 
 ```sh
 lake exe cache get
 lake build conjectures.McCuneSeatJumps.Solution
 lake env leanchecker conjectures.McCuneSeatJumps.Solution
 ```
+
+McCune supplied the model, the conjecture and the one-seat calculation. Searches for prior work on larger jumps found no earlier general formula. OpenAI Codex agents derived and formalized it. An independent agent checked the proof against the original model and compared it with exact polygon intersections for 71 pairs of house sizes and jumps.
