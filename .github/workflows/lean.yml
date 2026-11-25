@@ -14,6 +14,11 @@ jobs:
       - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1
         with:
           auto-config: 'false'
-          build: 'true'
           use-mathlib-cache: 'false'
           use-github-cache: 'false'
+      - name: Fetch imported Mathlib modules
+        run: |
+          find conjectures -name '*.lean' | lean --deps-json --stdin |
+            jq -r '[.imports[].result.imports[].module | select(. == "Mathlib" or startswith("Mathlib."))] | unique[]' |
+            xargs -r lake exe cache get
+      - run: lake build
