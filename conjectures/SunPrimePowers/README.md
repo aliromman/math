@@ -26,6 +26,8 @@ $$
 P\left(\frac{125}{46}\right)^9>23^9.
 $$
 
+Panaitopol had already found that the geometric mean of the first nine primes exceeds $23/e$. Applied to Sun’s later conjecture, this gives a disproof for sufficiently small positive exponents. The derivative at zero of $P^{\alpha/9}-23^\alpha/(1+\alpha)$ is positive. The integer certificate above gives an explicit exponent. [Panaitopol (1999), p. 54](https://nntdm.net/papers/nntdm-05/NNTDM-05-2-52-54.pdf#page=3)
+
 Searches by conjecture number, the prime-power bound, and extensions of Mandl’s inequality found no earlier counterexample to this real-exponent statement. Work on the classical inequality includes [Axler (2019)](https://doi.org/10.5802/jtnb.1081) and [Alzer and Hassani (2024)](https://doi.org/10.13137/2464-8728/36463).
 
 ## Verification
