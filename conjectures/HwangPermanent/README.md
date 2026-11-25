@@ -6,7 +6,7 @@ $$
 (1,8),\quad(2,6),\quad(2,7),\quad(3,7)
 $$
 
-allow 589. Coordinates start at one. A permutation is allowed if each of its eight occupied cells is allowed.
+allow 589. The same change in the middle eight rows and columns defeats the proposed construction in every even order $n=2d\ge 8$. Coordinates start at one. A permutation is allowed if all its occupied cells are allowed.
 
 ## Original conjecture
 
@@ -23,9 +23,21 @@ Group the allowed permutations by how many of their entries lie above the diagon
 
 To reproduce a column of this table, choose the indicated number of added cells with distinct rows and columns. Delete their rows and columns. Fill the remaining rows in increasing order, using only columns on or below the diagonal. In each row, multiply by the number of eligible surviving columns minus the number of rows already filled. The eligible sets are nested, so this count is independent of the earlier choices. Sum over the selections of added cells. Hwang's Equation (1) gives the same product for a Ferrers matrix.
 
+## Why the counterexample persists
+
+Let $r_k(B)$ count placements of $k$ rooks on allowed cells of $B$, with at most one rook in each row and column. Write $A$ for the eight-by-eight antidiagonal board and $B$ for the counterexample. Their differences, in order from $k=0$ to $8$, are
+
+$$
+r_k(B)-r_k(A)=(0,0,2,44,314,875,909,269,5).
+$$
+
+These nine numbers can be checked one row at a time. For each row, either leave it empty or place a rook in one of its allowed columns that is still unused.
+
+For $n=2d$, leave the $d-4$ outer antidiagonal cells in place. Replace the pattern in the central eight-by-eight block. All eight central rows have the same allowed columns outside the block. All eight central columns also have the same allowed rows outside it. Fix the rooks placed wholly outside. If $t$ outside rows and $t$ outside columns remain, any central placement of $8-t$ rooks has exactly $(t!)^2$ completions whenever all the required connections are allowed. Otherwise it has none. Thus each central rook number has a nonnegative weight. The outside identity placement gives positive weight to $r_8$, so the total increases strictly.
+
 ## Verification and attribution
 
-`Statement.lean` defines Hwang's conjecture with Mathlib's matrix permanent. `Solution.lean` proves Ryser's inclusion-exclusion formula from the permutation sum and evaluates both permanents in the Lean kernel. From the repository root, run
+`Statement.lean` defines Hwang's conjecture with Mathlib's matrix permanent. The formal proof counts the eight-by-eight boards by inclusion-exclusion. To extend them, it uses the polynomial $P_A(x)=\operatorname{per}(A+xJ)$, where $J$ is the all-ones matrix. Its coefficient of $x^{8-k}$ on the initial board is $(8-k)!r_k(A)$. Adding two outer indices acts on this polynomial by differentiation, addition, and multiplication by polynomials with nonnegative coefficients. The proof verifies every coefficient of the initial difference and its positive constant term at every later order. From the repository root, run
 
 ```sh
 lake build conjectures.HwangPermanent.Solution
