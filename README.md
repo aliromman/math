@@ -10,13 +10,14 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | --- | --- | --- |
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
+| [Sobolewski’s binary-pattern progressions][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
 | [Roots of edge-cover polynomials][note-20] | A finite simple graph of minimum degree $d$ has at least $d$ distinct complex roots in its edge-cover polynomial. | [Lean][proof-20] · [#20][pr-20] |
 | [Independence roots of even-order trees][note-25] | For a tree on $2k$ vertices with $k\ge3$, every root of the independence polynomial has modulus at most $2^{k-2}+k+1$. | [Lean][proof-25] · [#25][pr-25] |
 | [Defant’s Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Packing the word pattern 12–1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
 | [Rational roots of graph degree polynomials][note-12] | For coprime positive integers $p,q$, some simple graph on $n\ge1$ vertices has root $-p/q$ exactly when $p+q$ divides odd $n$ or $2(p+q)$ divides even $n$. | [Lean][proof-12] · [#12][pr-12] |
 | [Exceptional shifts of triangular products][note-23] | For every integer $k\ge0$, adding $2\cdot7^{6k+2}$ to a product of two positive triangular numbers gives a nonsquare. | [Lean][proof-23] · [#23][pr-23] |
-| [Buchweitz obstruction orders][note-24] | A numerical semigroup has obstruction set $\{2,4\}$. Its excess counts at orders two, three, and four also disprove the proposed unimodality. | [Lean][proof-24] · [#24][pr-24] |
+| [Buchweitz obstruction orders][note-24] | A numerical semigroup has obstructions precisely at orders 2 and 4. Its excess counts at orders 2, 3, and 4 also disprove the proposed unimodality. | [Lean][proof-24] · [#24][pr-24] |
 | [Packing layered word patterns][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] |
 | [Degree roots of trees][note-10] | Every nonreal root of a finite tree’s degree polynomial has modulus greater than one. | [Lean][proof-10] · [#10][pr-10] |
 | [Cyclic differences in abelian groups][note-18] | Remove any two elements from an abelian group of odd order $N\ge5$. Every circular ordering of the rest repeats a directed difference between neighbors. | [Lean][proof-18] · [#18][pr-18] |
@@ -43,6 +44,9 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-21]: https://github.com/aliromman/math/blob/d8dffa5c5f845e3926754e15475ad6554fbd29ab/conjectures/KolblSimplexRoots/README.md
 [proof-21]: https://github.com/aliromman/math/blob/d8dffa5c5f845e3926754e15475ad6554fbd29ab/conjectures/KolblSimplexRoots/Solution.lean
 [pr-21]: https://github.com/aliromman/math/pull/21
+[note-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/README.md
+[proof-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/Solution.lean
+[pr-27]: https://github.com/aliromman/math/pull/27
 [note-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/README.md
 [proof-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/Solution.lean
 [pr-20]: https://github.com/aliromman/math/pull/20
