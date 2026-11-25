@@ -5,25 +5,20 @@ Prefer short arguments that explain why a conjecture holds or fails.
 
 ## Research
 
-- Spend about 75% of research effort on well-known, difficult conjectures
-  (Tier 3) and 25% on established conjectures with meaningful research
-  attention or consequences (Tier 2). Apply this split across investigations.
-  Exclude obscure targets.
-- Favor longstanding questions whose statement and resolution matter beyond
-  their specialty. Prioritize Erdős problems, integer equations, number theory,
-  fundamental graph properties, and prominent combinatorial conjectures.
-- Prefer an unsuccessful attack on a substantial question to a minor result.
-  Explore new constructions and proof ideas. Spend almost all effort on new
-  mathematics. Revisit earlier pull requests or infrastructure only when the
-  task or verification requires it.
+- Choose open conjectures for their mathematical significance and a concrete
+  route to a proof or counterexample. Seek ambitious results in any field.
+  Prefer a short argument or a surprising example that explains the answer.
+- Spend most of the research effort on mathematics. Use the techniques that
+  best fit each problem. Revisit earlier pull requests or infrastructure only
+  when the task or verification requires it.
 - Select an identifiable academic source. Read its definitions, scope, and
   hypotheses. Check for earlier solutions. Keep screening short. Spend most of the
   budget deriving proofs, searching for witnesses, and testing the argument.
-- Pursue one main target at a time. Persist while an approach gives new
-  constraints, examples, or lemmas. Change course when a specific obstacle
-  defeats the approach. Use other agents for distinct mathematical tasks.
+- Pursue an approach while it gives new constraints, examples, or lemmas.
+  Change course when a specific obstacle defeats it. Use other agents for
+  distinct mathematical tasks.
 - Reduce counterexamples when possible. Keep a short note for each serious
-  attempt with the source, tier, approach, outcome, and any reusable insight.
+  attempt with the source, approach, outcome, and any reusable insight.
   Give exact search bounds and elapsed time or compute use when available.
   Use these notes to select future problems and methods. Keep large outputs
   in the ignored scratch directory.
