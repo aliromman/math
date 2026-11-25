@@ -12,7 +12,7 @@ $$
 P(x)+B(x)=(1+x)^m,\qquad \deg B\le m-d.
 $$
 
-Indeed, a set counted by $B$ omits all the edges at some vertex. The full edge set is a cover and the empty set is not. Thus $P$ has degree $m$ and $B$ is nonzero.
+Akbari and Oboudi give this identity and degree bound in their proof of Theorem 19. A set counted by $B$ omits all the edges at some vertex. The full edge set is a cover and the empty set is not. Thus $P$ has degree $m$ and $B$ is nonzero.
 
 Differentiate the identity and form
 
@@ -38,4 +38,4 @@ lake build conjectures.EdgeCoverRootCount.Solution
 lake env leanchecker conjectures.EdgeCoverRootCount.Solution
 ```
 
-Searches for the authors, the conjecture, and lower bounds on the number of distinct edge-cover roots found no earlier proof. Akbari and Oboudi studied graphs with few roots. Bencs, Csikvári and Regts bounded the locations of all edge-cover roots. OpenAI Codex derived the derivative argument and wrote the Lean proof. [Bencs, Csikvári and Regts](https://doi.org/10.37236/10185)
+Searches for the authors, the conjecture, and lower bounds on the number of distinct edge-cover roots found no earlier proof. Akbari and Oboudi used the degree bound to study real roots with multiplicity. The derivative combination above counts distinct complex roots. [Akbari and Oboudi, proof of Theorem 19](https://janos.cs.technion.ac.il/COURSES/236603-11/oboudi.pdf#page=17) Bencs, Csikvári and Regts bounded the locations of all edge-cover roots. OpenAI Codex derived the derivative argument and wrote the Lean proof. [Bencs, Csikvári and Regts](https://doi.org/10.37236/10185)
