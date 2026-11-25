@@ -374,20 +374,45 @@ private theorem advance {c : Vertex → Vertex → α} (sym : ∀ a b, c a b = c
     (Finset.Subset.refl _) (List.all_eq_true.mp test _ hs)
   exact ⟨q.trans p,t,ht,hmq⟩
 
-set_option maxHeartbeats 0 in
+private theorem stage_cons {n : ℕ} {R : List Row} {H : Hints} {s : Row} {rest : List Row}
+    (h : checkTree R H (n-1) s (colorSet s)) (tail : stage n rest R H) :
+    stage n (s :: rest) R H := by
+  change (_ && _) = true
+  simp only [Bool.and_eq_true]
+  exact ⟨h,tail⟩
+
+section
+set_option maxHeartbeats 0
+set_option Elab.async false
+
 private theorem stage3 : stage 3 rows2 rows3 hints3 := by decide +kernel
 
-set_option maxHeartbeats 0 in
-private theorem stage4 : stage 4 rows3 rows4 hints4 := by decide +kernel
+private theorem stage4 : stage 4 rows3 rows4 hints4 := by
+  iterate 3
+    apply stage_cons
+    · decide +kernel
+  rfl
 
-set_option maxHeartbeats 0 in
-private theorem stage5 : stage 5 rows4 rows5 hints5 := by decide +kernel
+-- Check each predecessor row in a separate kernel declaration.
+private theorem stage5 : stage 5 rows4 rows5 hints5 := by
+  iterate 24
+    apply stage_cons
+    · decide +kernel
+  rfl
 
-set_option maxHeartbeats 0 in
-private theorem stage6 : stage 6 rows5 rows6 hints6 := by decide +kernel
+private theorem stage6 : stage 6 rows5 rows6 hints6 := by
+  iterate 32
+    apply stage_cons
+    · decide +kernel
+  rfl
 
-set_option maxHeartbeats 0 in
-private theorem stage7 : stage 7 rows6 patterns hints7 := by decide +kernel
+private theorem stage7 : stage 7 rows6 patterns hints7 := by
+  iterate 31
+    apply stage_cons
+    · decide +kernel
+  rfl
+
+end
 
 /-- Every admissible seven-vertex edge coloring has one of the six listed equality patterns. -/
 theorem classify_seven (c : Vertex → Vertex → α) (sym : ∀ a b, c a b = c b a)

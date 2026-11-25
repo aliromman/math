@@ -28,7 +28,7 @@ Finally, suppose there were eight points with at most four shapes. Deleting any 
 
 ## Verification and prior work
 
-The Lean proof covers all finite subsets of the Euclidean plane, represented by complex numbers. The search verifies each discarded pattern or relabeling inside the kernel. It requires no numerical coordinates. Reproduce the proof with the pinned Lean and Mathlib versions from the repository root.
+The Lean bound covers arbitrary subsets of the Euclidean plane, represented by complex numbers. An infinite set contains an eight-point subset. The search verifies each discarded pattern or relabeling inside the kernel, one predecessor row at a time. It requires no numerical coordinates. Reproduce the proof with the pinned Lean and Mathlib versions from the repository root.
 
 ```sh
 lake build conjectures.PalssonYuTriangles.Solution

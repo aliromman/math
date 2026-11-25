@@ -32,6 +32,30 @@ private theorem seven {S : Finset ℂ} (order : S.card=7)
   exact mem_types.mpr ⟨_,(e i).property,_,(e j).property,_,(e k).property,
     inj.ne ij,inj.ne jk,inj.ne ik.symm,rfl⟩
 
+private theorem all_bound {A : Set ℂ} (four : (allTypes A).encard=4) : A.encard≤7 := by
+  classical
+  have ft : (allTypes A).Finite := Set.finite_of_encard_le_coe (k:=4) four.le
+  have bound (P : Finset ℂ) (sub : (P : Set ℂ) ⊆ A) : P.card≤7 := by
+    apply upper_of_seven
+    intro U hU size
+    apply seven size
+    have inc : triangleTypes U ⊆ ft.toFinset := by
+      intro m hm
+      obtain ⟨a,ha,b,hb,c,hc,h⟩ := mem_types.mp hm
+      exact ft.mem_toFinset.mpr ⟨a,sub (hU ha),b,sub (hU hb),c,sub (hU hc),h⟩
+    have tc : ft.toFinset.card=4 := by
+      have e := Set.encard_coe_eq_coe_finsetCard ft.toFinset
+      rw [ft.coe_toFinset,four] at e
+      exact_mod_cast e.symm
+    exact (card_le_card inc).trans tc.le
+  have finite : A.Finite := by
+    by_contra inf
+    obtain ⟨P,sub,size⟩ := Set.Infinite.exists_subset_card_eq inf 8
+    have := bound P sub
+    omega
+  rw [←finite.coe_toFinset,Set.encard_coe_eq_coe_finsetCard]
+  exact_mod_cast bound finite.toFinset (by simp)
+
 public theorem resolution : Conjecture := by
   classical
   let r := Complex.exp (2*Real.pi*Complex.I/7)
@@ -40,10 +64,7 @@ public theorem resolution : Conjecture := by
   have regular : RegularHeptagon S := ⟨0,1,r,one_ne_zero,root,rfl⟩
   refine ⟨⟨S,regular_size_types regular⟩,?_,fun T => ⟨fun h => seven h.1 h.2.le,
     regular_size_types⟩⟩
-  intro T types
-  apply upper_of_seven
-  intro U sub size
-  exact seven size ((card_le_card (types_mono sub)).trans types.le)
+  exact fun _ => all_bound
 
 /-- info: 'PalssonYu.resolution' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
