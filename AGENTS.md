@@ -12,9 +12,9 @@ Prefer short arguments that explain why a conjecture holds or fails.
 - Prefer one significant, original result with a clear argument. Consider
   any field. Give graph theory, combinatorics, and polynomial inequalities
   priority when their structure makes a serious result plausible.
-- Read the original hypotheses and check for earlier solutions. Keep
-  screening short. Spend most of the budget deriving proofs, searching for
-  witnesses, and testing the mathematical argument.
+- Select an identifiable academic source. Read its definitions, scope, and
+  hypotheses. Check for earlier solutions. Keep screening short. Spend most of the
+  budget deriving proofs, searching for witnesses, and testing the argument.
 - Pursue one main target at a time. Persist while an approach gives new
   constraints, examples, or lemmas. Change course when a specific obstacle
   defeats the approach. Use other agents for distinct mathematical tasks.
