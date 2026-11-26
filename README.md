@@ -37,7 +37,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Karlovsky’s Conjecture 2 on the sum bound for distinct positive factors][note-77] | For $n=k+2\ge4$ distinct positive factors whose product is $F$ times their sum, the sum is at most $(F+1)(F+1+k!k(k+1)/2)/k!$. | [Lean][proof-77] · [#77][pr-77] (open draft) |
 | [Proof of Karlovsky’s Conjecture 3 on attainment of the distinct-factor sum bound][note-78] | For $k=n-2\ge2$, equality occurs precisely at $F=k!y-1$ with $y>k$. The maximizing tuple is then unique up to order. | [Lean][proof-78] · [#78][pr-78] (open draft) |
 | [Disproof of the Lucas-sequence assertion in Sun’s Conjecture 3.1 on successive root ratios][note-11] | For the Lucas sequence with parameters $(A,B)=(3,-26)$, the ratio $u_{n+1}^{1/(n+1)}/u_n^{1/n}$ increases from $n=5$ to $n=6$. | [Lean][proof-11] · [#11][pr-11] |
-| [Proof of Mabilat’s conjecture on irreducible golden-ratio quiddities][note-38] | The irreducible quiddities over $\mathbb Z\lambda$ are classified for $\lambda=2\cos(\pi/q)$ and every integer $q\ge4$, including the conjectured golden-ratio case. | [Lean][proof-38] · [#38][pr-38] (open draft) |
+| [Proof of Mabilat’s conjecture on irreducible golden-ratio quiddities][note-38] | The irreducible quiddities over $\mathbb Z\lambda$ are classified for $\lambda=2\cos(\pi/q)$ and every integer $q\ge4$, including the conjectured golden-ratio case. | [Lean][proof-38] · [#38][pr-38] |
 | [Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on zig-zag walks and prime polyomino ideals][note-64] | A thirteen-cell polyomino has no zigzag walk in the source’s sense, and its coordinate ring has zero divisors over every field. | [Lean][proof-64] · [#64][pr-64] (open draft) |
 | [Proof of Somu and Tran’s Conjecture 14 on sums of a practical number and two polygonal numbers][note-73] | For each order 4, 5, 6, 7, 8, and 10, every positive integer is a practical number plus two polygonal numbers of that order. | [Lean][proof-73] · [#73][pr-73] (open draft) |
 | [Disproof of Sun’s Conjecture 2.1 on a real-power extension of Mandl’s inequality using Panaitopol’s nine-prime example][note-16] | The first nine primes at exponent $1/2000$ violate the proposed real-power extension of Mandl’s inequality. | [Lean][proof-16] · [#16][pr-16] |
@@ -388,9 +388,6 @@ and cites the original source.
 [note-39]: https://github.com/aliromman/math/blob/4cc7514b5cd125dd7512b43082e1d5f15a689db7/conjectures/GaoLiSandpile/README.md
 [proof-39]: https://github.com/aliromman/math/blob/4cc7514b5cd125dd7512b43082e1d5f15a689db7/conjectures/GaoLiSandpile/Solution.lean
 [pr-39]: https://github.com/aliromman/math/pull/39
-[note-38]: https://github.com/aliromman/math/blob/e75e562e14d5431cfde9631a6fc34727671aed1b/conjectures/MabilatGoldenQuiddities/README.md
-[proof-38]: https://github.com/aliromman/math/blob/e75e562e14d5431cfde9631a6fc34727671aed1b/conjectures/MabilatGoldenQuiddities/Solution.lean
-[pr-38]: https://github.com/aliromman/math/pull/38
 [note-37]: https://github.com/aliromman/math/blob/ecf6ea58b957a303058b44ab974fe2b297e8ea34/conjectures/McCuneSeatJumps/README.md
 [proof-37]: https://github.com/aliromman/math/blob/ecf6ea58b957a303058b44ab974fe2b297e8ea34/conjectures/McCuneSeatJumps/Solution.lean
 [pr-37]: https://github.com/aliromman/math/pull/37
@@ -494,3 +491,6 @@ and cites the original source.
 [note-6]: conjectures/StanleyTreeCSF/README.md
 [proof-6]: conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
+[note-38]: conjectures/MabilatGoldenQuiddities/README.md
+[proof-38]: conjectures/MabilatGoldenQuiddities/Solution.lean
+[pr-38]: https://github.com/aliromman/math/pull/38
