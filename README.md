@@ -105,9 +105,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-10]: https://github.com/aliromman/math/blob/d8125823f3d4f0fee6eab50268fcfe85b946b2d6/conjectures/GeorgeTreeDegreeRoots/README.md
 [proof-10]: https://github.com/aliromman/math/blob/d8125823f3d4f0fee6eab50268fcfe85b946b2d6/conjectures/GeorgeTreeDegreeRoots/Solution.lean
 [pr-10]: https://github.com/aliromman/math/pull/10
-[note-18]: https://github.com/aliromman/math/blob/d06e00ea8bcc75041df81a07c50f1e8ef2547ff8/conjectures/SunCircularDifferences/README.md
-[proof-18]: https://github.com/aliromman/math/blob/d06e00ea8bcc75041df81a07c50f1e8ef2547ff8/conjectures/SunCircularDifferences/Solution.lean
-[pr-18]: https://github.com/aliromman/math/pull/18
 [note-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/README.md
 [proof-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/Solution.lean
 [pr-19]: https://github.com/aliromman/math/pull/19
@@ -147,3 +144,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-9]: conjectures/ErdosSzekeres/README.md
 [proof-9]: conjectures/ErdosSzekeres/replay.py
 [pr-9]: https://github.com/aliromman/math/pull/9
+[note-18]: conjectures/SunCircularDifferences/README.md
+[proof-18]: conjectures/SunCircularDifferences/Solution.lean
+[pr-18]: https://github.com/aliromman/math/pull/18
