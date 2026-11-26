@@ -101,9 +101,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
 [proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
-[note-10]: https://github.com/aliromman/math/blob/d8125823f3d4f0fee6eab50268fcfe85b946b2d6/conjectures/GeorgeTreeDegreeRoots/README.md
-[proof-10]: https://github.com/aliromman/math/blob/d8125823f3d4f0fee6eab50268fcfe85b946b2d6/conjectures/GeorgeTreeDegreeRoots/Solution.lean
-[pr-10]: https://github.com/aliromman/math/pull/10
 [note-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/README.md
 [proof-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/Solution.lean
 [pr-19]: https://github.com/aliromman/math/pull/19
@@ -155,3 +152,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-36]: conjectures/GatzweilerKrattenthalerShift/Solution.lean
 [note-36]: conjectures/GatzweilerKrattenthalerShift/README.md
 [pr-36]: https://github.com/aliromman/math/pull/36
+[note-10]: conjectures/GeorgeTreeDegreeRoots/README.md
+[proof-10]: conjectures/GeorgeTreeDegreeRoots/Solution.lean
+[pr-10]: https://github.com/aliromman/math/pull/10
