@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Hur–Kim moves on fair dice][note-32] | Three fair eight-sided dice stay fixed under both Hur–Kim moves, and their word cannot start with the proposed six-letter palindrome. | [Lean][proof-32] · [#32][pr-32] |
 | [Most frequent subsequences][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
 | [Shifted fake Gaussian coefficients][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
 | [Counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
@@ -162,3 +163,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-20]: conjectures/EdgeCoverRootCount/README.md
 [proof-20]: conjectures/EdgeCoverRootCount/Solution.lean
 [pr-20]: https://github.com/aliromman/math/pull/20
+[proof-32]: conjectures/HurKimFairDice/Solution.lean
+[note-32]: conjectures/HurKimFairDice/README.md
+[pr-32]: https://github.com/aliromman/math/pull/32
