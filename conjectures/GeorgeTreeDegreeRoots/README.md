@@ -43,8 +43,8 @@ tree conjecture. [Brown and George, *On the Roots of Degree Polynomials*
 Run from the repository root.
 
 ```sh
-lake build
-lake env leanchecker conjectures.GeorgeTreeDegreeRoots.Solution
+lake exe cache get
+python3 scripts/verify.py
 ```
 
 The statement defines the degree polynomial for a finite graph. The proof uses
