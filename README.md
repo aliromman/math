@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Solution to Beideman, Bowen and Müyesser’s Question 3 for finite-depth impartial games][note-50] | For any impartial game of finite depth $d$, a selective compound with a Nim heap of size $k$ has Grundy value $k+d$ when $k\ge\lfloor d^2/4\rfloor$. The cutoff is sharp at every depth. | [Lean][proof-50] · [#50][pr-50] |
 | [Solution to Haslegrave’s Question 1 on difference and sum indices of bipartite graphs][note-53] | For every positive integer $d$, a finite connected bipartite graph has difference index $d$ and sum index $d+1$. | [Lean][proof-53] · [#53][pr-53] |
 | [Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
 | [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
@@ -199,3 +200,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-53]: conjectures/HaslegraveBipartite/Solution.lean
 [note-53]: conjectures/HaslegraveBipartite/README.md
 [pr-53]: https://github.com/aliromman/math/pull/53
+[proof-50]: conjectures/SelectiveCompound/Solution.lean
+[note-50]: conjectures/SelectiveCompound/README.md
+[pr-50]: https://github.com/aliromman/math/pull/50
