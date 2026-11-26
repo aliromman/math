@@ -38,6 +38,17 @@ def main():
             return run.stdout
 
         check("valid proof", valid, "controlResult\n")
+        check("guarded diagnostics", valid
+              + "/-- info: 'controlResult' does not depend on any axioms -/\n"
+              + "#guard_msgs in\n#print axioms controlResult\n"
+              + "#guard_msgs (drop error) in\n#check unknownDiagnosticName\n",
+              "controlResult\n")
+        check("guarded theorem with visible errors",
+              valid + "#guard_msgs (warning) in\ntheorem guardedResult : True := True.intro\n",
+              "controlResult\nguardedResult\n")
+        check("guarded invalid declaration",
+              valid + "#guard_msgs (drop all) in\ntheorem discarded : MissingType := True.intro\n",
+              "controlResult\n", "Pass errors from guarded declarations")
         check("safe recursion", valid + "def lengthOf : List Nat → Nat\n"
               + "  | [] => 0\n  | _ :: xs => lengthOf xs + 1\n", "controlResult\n")
         check("partial definition", valid + "partial def loop (n : Nat) : Nat := loop n\n",
@@ -61,10 +72,16 @@ def main():
         check("wrong exact list", valid, "controlResult propext\n", "expected [propext]")
         check("missing result", valid, "otherResult\n", "missing local declaration")
         check("suppressed placeholder warning",
-              "set_option warningAsError false\n" + valid + "private theorem gap : False := by sorry\n",
+              "set_option warningAsError false\n" + valid + "private theorem gap : False := sorryAx False false\n",
               "controlResult\n", "forbidden axiom")
         check("discarded anonymous example", valid + "set_option warn.sorry false\n"
               + "example : False := by sorry\n", "controlResult\n", "Give the example a theorem name")
+        check("discarded proof inside a message guard",
+              valid + "#guard_msgs (drop all) in\nexample : False := by sorry\n",
+              "controlResult\n", "Give the example a theorem name")
+        check("placeholder inside a diagnostic term",
+              valid + "#guard_msgs (drop all) in\n#check (by admit : False)\n",
+              "controlResult\n", "Replace the proof placeholder")
         check("early exit", valid + "set_option warningAsError false\n#exit\n",
               "controlResult\n", "complete research module")
         check("missing contract entries", valid, "", "empty axiom contract")
