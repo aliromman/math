@@ -25,8 +25,8 @@ For a fixed old edge sum, one digit is fixed at two and each of the other $s-1$ 
 From the repository root, run
 
 ```sh
-lake build conjectures.ExclusiveSumBound.Solution
-lake env leanchecker conjectures.ExclusiveSumBound.Solution
+# Run at the merge commit for PR #56.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the two parameters and the original boundedness question. `Ternary.lean` checks that the lower digits add without a carry and retain their individual values. `Solution.lean` constructs the labels for every finite simple graph and checks both implications in the adjacency rule.
