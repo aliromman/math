@@ -1,4 +1,4 @@
-# The standard reflexive simplex bounds the heights of Ehrhart roots
+# Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators
 
 Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest height of a root on the line $\operatorname{Re}z=-1/2$, in every positive dimension. Max Kölbl proved the bound through dimension nine and asked whether unimodality suffices in higher dimensions. [Kölbl, *Properties of Ehrhart Polynomials Whose Roots Lie on the Canonical Line*, Proposition 4 and Conjecture 3 (2025)](https://math.colgate.edu/~integers/z68/z68.pdf#page=10)
 
@@ -33,8 +33,8 @@ Kölbl gives the canonical-line formulation, the binomial expansion for the stan
 From the repository root, run
 
 ```sh
-lake build
-lake env leanchecker conjectures.KolblSimplexRoots.Solution
+# Run at the merge commit for PR #21.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement defines reflexivity by the polar lattice polytope, the Ehrhart numerator by the lattice counts of all dilations, and the canonical span by the real convex hull of the roots on the indicated line. The comparison simplex uses its explicit polynomial from the source. OpenAI Codex derived the summation-by-parts proof and wrote the Lean formalization.
