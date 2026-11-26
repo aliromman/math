@@ -22,9 +22,8 @@ For sharpness, request the singleton $\{M\}$. If $2n\le M$, every left player mu
 `Statement.lean` defines the graph, the scores, and the original conjecture. `Allocation.lean` proves the cyclic allocation works. `Solution.lean` proves the existence theorem and the sharp bound. The project pins Lean 4.36.0 and Mathlib revision `fc4f59e577feb1a4956671bc04ac18aaaf8cd842`. Run these commands from the repository root.
 
 ```sh
-lake exe cache get
-lake build conjectures.BipartiteScoreSets.Solution
-lake env leanchecker conjectures.BipartiteScoreSets.Solution
+# Run at the merge commit for PR #60.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The priority search covered the original authors, their multipartite extension, later work on score sets, and public proof catalogues. We found no earlier general resolution. The established theorem on tournament outdegrees uses a different scoring rule. AI agents developed the construction, wrote the Lean proof, and independently checked it. [Original preprint](https://arxiv.org/abs/math/0609135) · [Multipartite extension](https://doi.org/10.1080/09728600.2006.12088811)
