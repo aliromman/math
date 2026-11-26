@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Tree-profile boundaries][note-34] | For every $k\ge7$, joining three caterpillars beats the proposed two-caterpillar boundary. The cases $k=4,5,6$ remain open. | [Lean][proof-34] · [#34][pr-34] |
 | [Exclusive sum labellings][note-56] | A finite graph with sum index $s$ has exclusive sum number at most $s3^{s-1}$. | [Lean][proof-56] · [#56][pr-56] |
 | [Hur–Kim moves on fair dice][note-32] | Three fair eight-sided dice stay fixed under both Hur–Kim moves, and their word cannot start with the proposed six-letter palindrome. | [Lean][proof-32] · [#32][pr-32] |
 | [Most frequent subsequences][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
@@ -170,3 +171,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-14]: conjectures/LiuWeightedRadicals/README.md
 [proof-14]: conjectures/LiuWeightedRadicals/Solution.lean
 [pr-14]: https://github.com/aliromman/math/pull/14
+[proof-34]: conjectures/BroschPugesTreeProfile/Solution.lean
+[note-34]: conjectures/BroschPugesTreeProfile/README.md
+[pr-34]: https://github.com/aliromman/math/pull/34
