@@ -21,8 +21,8 @@ Sun cites a sequence about circular orders of $N-1$ elements. Searches by conjec
 From the repository root run
 
 ```sh
-lake build
-lake env leanchecker conjectures.SunCircularDifferences.Solution
+lake exe cache get
+python3 scripts/verify.py
 ```
 
 The formal proof establishes the obstruction for every odd-order abelian group and applies it modulo $5$. OpenAI Codex found the counterexample and wrote the argument and Lean proof.

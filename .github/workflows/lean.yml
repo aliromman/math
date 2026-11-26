@@ -8,17 +8,29 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    env:
+      LEAN_NUM_THREADS: "2"
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          auto-config: 'false'
-          use-mathlib-cache: 'false'
-          use-github-cache: 'false'
+          persist-credentials: false
+      - name: Install Elan
+        working-directory: ${{ runner.temp }}
+        run: |
+          curl -fsSLo elan.tar.gz https://github.com/leanprover/elan/releases/download/v4.4.0/elan-x86_64-unknown-linux-gnu.tar.gz
+          echo '0e8250aa2be86c7af929ade68db617af9edc8b9ccf6eaf5ece228250d0d032e2  elan.tar.gz' | sha256sum --check
+          tar -xzf elan.tar.gz elan-init
+          ./elan-init -y --default-toolchain none --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Fetch imported Mathlib modules
+        if: hashFiles('conjectures/**/*.lean') != ''
+        shell: bash
         run: |
           find conjectures -name '*.lean' | lean --deps-json --stdin |
             jq -r '[.imports[].result.imports[].module | select(. == "Mathlib" or startswith("Mathlib."))] | unique[]' |
             xargs -r lake exe cache get
-      - run: lake build
+      - name: Build and replay every research module
+        run: python3 scripts/verify.py
+      - name: Test the verification gates
+        run: python3 scripts/test_verify.py
