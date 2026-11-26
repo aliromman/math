@@ -130,9 +130,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-9]: https://github.com/aliromman/math/blob/af6070cb27d25a2a18b247fdc663c5051f64aaf6/conjectures/ErdosSzekeres/README.md
 [proof-9]: https://github.com/aliromman/math/blob/af6070cb27d25a2a18b247fdc663c5051f64aaf6/conjectures/ErdosSzekeres/replay.py
 [pr-9]: https://github.com/aliromman/math/pull/9
-[note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
-[proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
-[pr-6]: https://github.com/aliromman/math/pull/6
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
 [note-1]: conjectures/EngbersErey/README.md
@@ -147,3 +144,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-4]: conjectures/LiuWalkerThree/README.md
 [proof-4]: conjectures/LiuWalkerThree/Solution.lean
 [pr-4]: https://github.com/aliromman/math/pull/4
+[note-6]: conjectures/StanleyTreeCSF/README.md
+[proof-6]: conjectures/StanleyTreeCSF/replay.py
+[pr-6]: https://github.com/aliromman/math/pull/6
