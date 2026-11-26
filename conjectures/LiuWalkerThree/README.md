@@ -53,6 +53,7 @@ Run these commands from the repository root.
 ```sh
 lake exe cache get Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Tactic.Linarith Mathlib.Tactic.Ring
 lake build
+python3 scripts/verify.py
 lake env leanchecker -v conjectures.LiuWalkerThree
 ```
 
