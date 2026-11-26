@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Proof of Tengely and Ulas’s Conjecture 4.6 on equal values of restricted partition functions][note-97] | For all $3\le a<b$, the numbers of partitions using parts $1,2,a$ and $1,2,b$ agree at infinitely many pairs of positive arguments. | [Lean][proof-97] · [#97][pr-97] |
 | [Solution to Beideman, Bowen and Müyesser’s Question 3 for finite-depth impartial games][note-50] | For any impartial game of finite depth $d$, a selective compound with a Nim heap of size $k$ has Grundy value $k+d$ when $k\ge\lfloor d^2/4\rfloor$. The cutoff is sharp at every depth. | [Lean][proof-50] · [#50][pr-50] |
 | [Solution to Haslegrave’s Question 1 on difference and sum indices of bipartite graphs][note-53] | For every positive integer $d$, a finite connected bipartite graph has difference index $d$ and sum index $d+1$. | [Lean][proof-53] · [#53][pr-53] |
 | [Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
@@ -203,3 +204,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-15]: conjectures/LiuMedianRatio/README.md
 [proof-15]: conjectures/LiuMedianRatio/Solution.lean
 [pr-15]: https://github.com/aliromman/math/pull/15
+[note-97]: conjectures/TengelyPartition/README.md
+[proof-97]: conjectures/TengelyPartition/Solution.lean
+[pr-97]: https://github.com/aliromman/math/pull/97
