@@ -31,7 +31,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Bagchi and Zhou-Zheng’s Conjecture 12 on sporadic shifts without triangular Diophantine pairs][note-23] | For every integer $k\ge0$, adding $2\cdot7^{6k+2}$ to a product of two positive triangular numbers gives a nonsquare. | [Lean][proof-23] · [#23][pr-23] |
 | [Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials][note-88] | At odd index $1{,}122{,}987$, the 63rd cyclotomic polynomial divides the Fekete polynomial, although the relevant residue counts differ by one. | [Lean][proof-88] · [#88][pr-88] (open draft) |
-| [Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials][note-85] | In every Markov numerator, every coefficient strictly inside the critical triangle is divisible by four. The proof establishes divisibility throughout the surrounding lower rectangle. | [Lean][proof-85] · [#85][pr-85] (open draft) |
+| [Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials][note-85] | In every Markov numerator, every coefficient strictly inside the critical triangle is divisible by four. The proof establishes divisibility throughout the surrounding lower rectangle. | [Lean][proof-85] · [#85][pr-85] |
 | [Proof of the Evans–Veselov–Winn Location of 4 conjecture for Markov polynomials][note-86] | For every reduced slope $1<a<b$, the unique monomial on $bi+aj=ab+1$ has coefficient exactly $4$. | [Lean][proof-86] · [#86][pr-86] (open draft) |
 | [Four-factor counterexamples to Gatzweiler and Krattenthaler’s Conjecture 4][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
 | [Proof of Karlovsky’s Conjecture 2 on the sum bound for distinct positive factors][note-77] | For $n=k+2\ge4$ distinct positive factors whose product is $F$ times their sum, the sum is at most $(F+1)(F+1+k!k(k+1)/2)/k!$. | [Lean][proof-77] · [#77][pr-77] |
@@ -246,9 +246,6 @@ and cites the original source.
 [note-86]: https://github.com/aliromman/math/blob/54acfb91031d031ea48364c45fa570d74ad190bb/conjectures/MarkovNearestFour/README.md
 [proof-86]: https://github.com/aliromman/math/blob/54acfb91031d031ea48364c45fa570d74ad190bb/conjectures/MarkovNearestFour/Solution.lean
 [pr-86]: https://github.com/aliromman/math/pull/86
-[note-85]: https://github.com/aliromman/math/blob/1e90ed1766e4787559e1bcce155f8ab61b360298/conjectures/MarkovFactorFour/README.md
-[proof-85]: https://github.com/aliromman/math/blob/1e90ed1766e4787559e1bcce155f8ab61b360298/conjectures/MarkovFactorFour/Solution.lean
-[pr-85]: https://github.com/aliromman/math/pull/85
 [note-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/README.md
 [proof-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/Solution.lean
 [pr-84]: https://github.com/aliromman/math/pull/84
@@ -494,3 +491,6 @@ and cites the original source.
 [note-39]: conjectures/GaoLiSandpile/README.md
 [proof-39]: conjectures/GaoLiSandpile/Solution.lean
 [pr-39]: https://github.com/aliromman/math/pull/39
+[note-85]: conjectures/MarkovFactorFour/README.md
+[proof-85]: conjectures/MarkovFactorFour/Solution.lean
+[pr-85]: https://github.com/aliromman/math/pull/85
