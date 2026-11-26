@@ -1,4 +1,4 @@
-# Any two three-part partition functions with parts 1 and 2 share infinitely many values
+# Proof of Tengely and Ulas’s Conjecture 4.6 on equal values of restricted partition functions
 
 Write $P_a(n)$ for the number of ways to make $n$ using parts $1,2,a$. For **every** $3\le a<b$, the equation $P_a(x)=P_b(y)$ has solutions with both $x$ and $y$ arbitrarily large. This proves Conjecture 4.6 of Tengely and Ulas. Their Theorem 4.5 established a subfamily in which both third parts are multiples of four. [*Equal values of certain partition functions via Diophantine equations*, Research in Number Theory 7 (2021), §4](https://link.springer.com/article/10.1007/s40993-021-00293-7)
 
@@ -35,9 +35,8 @@ $$
 ## Verification and attribution
 
 ```sh
-lake exe cache get
-lake build conjectures.TengelyPartition.Solution
-lake env leanchecker conjectures.TengelyPartition.Solution
+# Run at the merge commit for PR #97.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement counts the possible part multiplicities directly. Lean proves the quadratic formula by finite summation, constructs unbounded Pell solutions from Mathlib’s existence theorem, and covers square products by an explicit residue choice. Searches by conjecture number, authors, part sets and later work on equal values of restricted partition functions found the authors’ partial result and no earlier proof for all pairs. OpenAI Codex developed the constructions and the Lean proof.
