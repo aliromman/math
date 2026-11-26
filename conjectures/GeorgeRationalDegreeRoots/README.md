@@ -49,8 +49,8 @@ Polynomials* (2025)](https://ajc.maths.uq.edu.au/pdf/92/ajc_v92_p164.pdf)
 Run from the repository root.
 
 ```sh
-lake build
-lake env leanchecker conjectures.GeorgeRationalDegreeRoots.Solution
+# Run at the merge commit for PR #12.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The Lean proof constructs the matching and its complement. The declaration
