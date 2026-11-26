@@ -100,9 +100,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
 [proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
-[note-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/README.md
-[proof-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/Solution.lean
-[pr-15]: https://github.com/aliromman/math/pull/15
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
 [note-1]: conjectures/EngbersErey/README.md
@@ -203,3 +200,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-50]: conjectures/SelectiveCompound/Solution.lean
 [note-50]: conjectures/SelectiveCompound/README.md
 [pr-50]: https://github.com/aliromman/math/pull/50
+[note-15]: conjectures/LiuMedianRatio/README.md
+[proof-15]: conjectures/LiuMedianRatio/Solution.lean
+[pr-15]: https://github.com/aliromman/math/pull/15
