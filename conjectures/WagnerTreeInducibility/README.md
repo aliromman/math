@@ -1,4 +1,4 @@
-# A root rotation improves every proposed extremizer for the five-leaf tree
+# Disproof of Dossou-Olory and Wagner’s conjecture on four-branch extremizers for the inducibility of the five-leaf tree A₅
 
 Dossou-Olory and Wagner proposed a sequence of binary trees that would contain the greatest possible limiting proportion of the five-leaf tree $A_5$. A single rotation at the root improves every sequence in their proposed family.
 
@@ -30,7 +30,8 @@ The original authors proved a lower bound of about $0.2470715$. Brosch and Puges
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.WagnerTreeInducibility.Solution
-lake env leanchecker conjectures.WagnerTreeInducibility.Solution
+# Run at the merge commit for PR #31.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Audace A. V. Dossou-Olory and Stephan Wagner, “On the inducibility of small trees,” Discrete Mathematics & Theoretical Computer Science 21(4), unnumbered conjecture on p. 5, construction in §4 and Figure 6, DOI 10.23638/DMTCS-21-4-13. [Publication](https://arxiv.org/pdf/1811.12010v3#page=5)
