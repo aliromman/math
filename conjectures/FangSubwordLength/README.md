@@ -32,8 +32,7 @@ An empty pattern occurs once. A nonempty pattern occurs zero times in an empty i
 
 ```sh
 lake exe cache get
-lake build conjectures.FangSubwordLength.Solution
-lake env leanchecker conjectures.FangSubwordLength.Solution
+python3 scripts/verify.py
 ```
 
 Fang proposed the length cutoff. Bukh and Saatashvili later studied the growth of the smallest possible maximum frequency. A search by conjecture number, title, witness and subsequence terminology found no earlier resolution of the length conjecture. AI researchers derived the construction, found the binary example, and wrote the Lean proof. [Bukh and Saatashvili, *Most frequent subsequences in a word*](https://arxiv.org/abs/2509.22619)
