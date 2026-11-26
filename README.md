@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Disproof of Dossou-Olory and Wagner’s conjecture on four-branch extremizers for the inducibility of the five-leaf tree A₅][note-31] | A root rotation increases the limiting density of the five-leaf tree in every proposed four-branch sequence. Its exact inducibility remains open. | [Lean][proof-31] · [#31][pr-31] |
 | [Proof of Pirzada, Naikoo and Chishti’s Conjecture 2.1 on bipartite score sets][note-60] | Every nonempty finite set of positive integers is the full set of scores of an oriented bipartite graph. | [Lean][proof-60] · [#60][pr-60] |
 | [Disproof of the Brosch–Puges double-caterpillar conjecture on tree profiles (Conjecture 1)][note-34] | For every $k\ge7$, joining three caterpillars beats the proposed two-caterpillar boundary. The cases $k=4,5,6$ remain open. | [Lean][proof-34] · [#34][pr-34] |
 | [Solution to Haslegrave’s Question 3 on exclusive sum numbers and bounded sum index][note-56] | A finite graph with sum index $s$ has exclusive sum number at most $s3^{s-1}$. | [Lean][proof-56] · [#56][pr-56] |
@@ -178,3 +179,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-60]: conjectures/BipartiteScoreSets/Solution.lean
 [note-60]: conjectures/BipartiteScoreSets/README.md
 [pr-60]: https://github.com/aliromman/math/pull/60
+[proof-31]: conjectures/WagnerTreeInducibility/Solution.lean
+[note-31]: conjectures/WagnerTreeInducibility/README.md
+[pr-31]: https://github.com/aliromman/math/pull/31
