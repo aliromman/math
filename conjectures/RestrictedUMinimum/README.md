@@ -92,14 +92,14 @@ The third iterate of the quadratic construction has 171 vertices and agrees thro
 From this branch, run the following commands with Elan. The project pins Lean 4.36.0 and Mathlib 4.36.0, commit `fc4f59e577feb1a4956671bc04ac18aaaf8cd842`.
 
 ```sh
-lake build
-lake env leanchecker --verbose conjectures.RestrictedUMinimum
+lake exe cache get
+python3 scripts/verify.py
 ```
 
 The statement quantifies over finite tree presentations. Any finite tree admits one by choosing a root and assembling its child subtrees. Isomorphism uses the underlying unrooted simple graph. The cut expansion sums over actual edge choices and records the component sizes. The formal proof of the quadratic bound distinguishes the two unrooted graphs by an independent integer-valued two-spin sum.
 
 The main theorems are `counterexample`, `quadratic_bound`, and `pointwise_counterexample` in the `RestrictedUMinimum` namespace. The build checks their transitive axiom lists. Each uses only `propext`, `Classical.choice`, and `Quot.sound`.
 
-OpenAI Codex agents developed the construction and the formal proofs. The rooted polynomial product rules and the original extremal family are due to Aliste-Prieto, de Mier, and Zamora. An independent agent rebuilt the two pictured trees and enumerated all 206,368 deletions of zero through five edges in each. The 372 nonzero partition counts agree. Extending that check through six cuts took 15.21 CPU seconds. A search of the original paper's forward citations and of the literature for five-cut examples and polynomial upper bounds found no earlier refutation.
+OpenAI Codex agents developed the construction and the formal proofs. The rooted polynomial product rules and the original extremal family are due to Aliste-Prieto, de Mier, and Zamora. An independent agent rebuilt the two pictured trees and enumerated all 206,368 deletions of zero through five edges in each. The 372 nonzero partition counts agree. Extending that check through six cuts took less than one CPU minute. A search of the original paper's forward citations and of the literature for five-cut examples and polynomial upper bounds found no earlier refutation.
 
 The initial approach combined the authors' 2017 construction with the classical counting argument for equal sums of powers. For $N$ of order $m^2\log(m+2)$, there are more subsets of $\{1,\ldots,N\}$ than vectors of power sums of degrees $0$ through $m-1$. Two subsets with the same vector give trees of order $O(N^2)$ by their Theorem 3.5. This yields the weaker bound $O(m^4\log^2(m+2))$ from prior methods. The smaller examples and the quadratic construction came from tracking the first unequal cut coefficient under root identification. [Aliste-Prieto, de Mier and Zamora (2017)](https://arxiv.org/abs/1509.09210) · [Borwein and Mossinghoff, classical counting bound](https://www.cecm.sfu.ca/~pborwein/PAPERS/P153.pdf)
