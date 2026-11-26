@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Exclusive sum labellings][note-56] | A finite graph with sum index $s$ has exclusive sum number at most $s3^{s-1}$. | [Lean][proof-56] · [#56][pr-56] |
 | [Hur–Kim moves on fair dice][note-32] | Three fair eight-sided dice stay fixed under both Hur–Kim moves, and their word cannot start with the proposed six-letter palindrome. | [Lean][proof-32] · [#32][pr-32] |
 | [Most frequent subsequences][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
 | [Shifted fake Gaussian coefficients][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
@@ -166,3 +167,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-12]: conjectures/GeorgeRationalDegreeRoots/README.md
 [proof-12]: conjectures/GeorgeRationalDegreeRoots/Solution.lean
 [pr-12]: https://github.com/aliromman/math/pull/12
+[proof-56]: conjectures/ExclusiveSumBound/Solution.lean
+[note-56]: conjectures/ExclusiveSumBound/README.md
+[pr-56]: https://github.com/aliromman/math/pull/56
