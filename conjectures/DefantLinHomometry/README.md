@@ -1,4 +1,4 @@
-# Two six-step Tamari orbits have different down-degree sums
+# Disproof of Defant and Lin’s Conjecture 10.2 on down-degree homometry in ν-Tamari lattices
 
 For the path $\nu=EENENENNEEEEEN$, two orbits of rowmotion in the same $\nu$-Tamari lattice have length six. Their total down-degrees are
 
@@ -26,9 +26,10 @@ A second search used the Young diagram $(9,4,4,3,2)$. Theorem 1.1 of Adenbaum, B
 ## Verification
 
 ```sh
-lake exe cache get
-lake build conjectures.DefantLinHomometry.Solution
-lake env leanchecker conjectures.DefantLinHomometry.Solution
+# Run at the merge commit for PR #54.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 OpenAI Codex found the two orbits, checked them against the bracket-vector rowmotion algorithm and the lower-cover order, and wrote the Lean proof.
+
+Colin Defant and James Lin, Rowmotion on m-Tamari and biCambrian lattices, Conjecture 10.2. [Publication](https://escholarship.org/content/qt5x945586/qt5x945586.pdf)

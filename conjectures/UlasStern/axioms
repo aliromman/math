@@ -1,0 +1,4 @@
+UlasStern.eisenstein_identity propext Classical.choice Quot.sound
+UlasStern.prime_divisor_iff propext Classical.choice Quot.sound
+UlasStern.prime_dvd_nineteen_iff propext Classical.choice Quot.sound
+UlasStern.resolution propext Classical.choice Quot.sound
