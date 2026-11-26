@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
 | [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
 | [Proof of Ulas’s Conjecture 4.4 on real zeros of Stern polynomials][note-70] | Every real value in Ulas’s family is positive. Its possible prime divisors at integer arguments are exactly the primes congruent to one modulo three. | [Positivity][proof-70] · [Prime divisors][arith-70] · [#70][pr-70] |
 | [Disproof of Dossou-Olory and Wagner’s conjecture on four-branch extremizers for the inducibility of the five-leaf tree A₅][note-31] | A root rotation increases the limiting density of the five-leaf tree in every proposed four-branch sequence. Its exact inducibility remains open. | [Lean][proof-31] · [#31][pr-31] |
@@ -191,3 +192,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-75]: conjectures/StrausBoundaryPolygon/README.md
 [proof-75]: conjectures/StrausBoundaryPolygon/Solution.lean
 [pr-75]: https://github.com/aliromman/math/pull/75
+[note-81]: conjectures/ErdosPurdyStraus/README.md
+[proof-81]: conjectures/ErdosPurdyStraus/Solution.lean
+[pr-81]: https://github.com/aliromman/math/pull/81
