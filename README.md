@@ -64,7 +64,7 @@ Each title links to a research note. Results on this branch link to local files.
 | [Liu’s first Walker inequality][note-2] | The cyclic inequality with side weight $a^k$ holds on every nonobtuse triangle for all real $k\le4$. | [Lean][proof-2] · [#2][pr-2] |
 | [Liu’s second Walker inequality][note-3] | The cyclic inequality with side-sum weight $(b+c)^k$ holds on every nonobtuse triangle for all real $k\ge-10$. | [Lean][proof-3] · [#3][pr-3] |
 | [Liu’s third Walker inequality][note-4] | The cyclic inequality with weight $(b+c-a)^k$ holds on every nonobtuse triangle for all real $k\ge-3$. | [Lean][proof-4] · [#4][pr-4] |
-| [Sun’s prime-power bound][note-16] | The first nine primes at exponent $1/2000$ violate the proposed real-power extension of Mandl’s inequality. | [Lean][proof-16] · [#16][pr-16] |
+| [Disproof of Sun’s Conjecture 2.1 on a real-power extension of Mandl’s inequality][note-16] | The first nine primes at exponent $1/2000$ violate the proposed real-power extension of Mandl’s inequality. | [Lean][proof-16] · [#16][pr-16] |
 | [Root ratios of Lucas sequences][note-11] | For the Lucas sequence with parameters $(A,B)=(3,-26)$, the ratio $u_{n+1}^{1/(n+1)}/u_n^{1/n}$ increases from $n=5$ to $n=6$. | [Lean][proof-11] · [#11][pr-11] |
 | [Liu’s weighted Erdős–Mordell bound][note-14] | An isosceles triangle and an interior point violate the proposed upper bound at $k=3999/1000$. | [Lean][proof-14] · [#14][pr-14] |
 | [Liu’s median Erdős–Mordell bound][note-15] | At an interior point of a thin obtuse triangle, the sum of vertex distances divided by the sum of side distances is below $45.84$. The proposed lower bound exceeds $45.89$. | [Lean][proof-15] · [#15][pr-15] |
@@ -99,9 +99,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
 [proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
-[note-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/README.md
-[proof-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/Solution.lean
-[pr-16]: https://github.com/aliromman/math/pull/16
 [note-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/README.md
 [proof-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/Solution.lean
 [pr-15]: https://github.com/aliromman/math/pull/15
@@ -174,3 +171,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-34]: conjectures/BroschPugesTreeProfile/Solution.lean
 [note-34]: conjectures/BroschPugesTreeProfile/README.md
 [pr-34]: https://github.com/aliromman/math/pull/34
+[note-16]: conjectures/SunPrimePowers/README.md
+[proof-16]: conjectures/SunPrimePowers/Solution.lean
+[pr-16]: https://github.com/aliromman/math/pull/16
