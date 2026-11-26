@@ -1,4 +1,4 @@
-# Stanley's tree isomorphism question
+# Two-site branch exchanges and a finite three-site search in Stanley’s tree isomorphism question
 
 Exchanging two rooted branches cannot give a counterexample by the argument below. A search at three attachment sites separated 111,144 trees on 49 to 85 vertices. Stanley's question remains open. This research note gives a partial argument and a reproducible finite search. It has no Lean proof or claim of priority.
 

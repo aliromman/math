@@ -1,4 +1,4 @@
-# Four positive integers force a repeated difference or product
+# Disproof of Sun’s Conjecture 3.10(ii) on simultaneous distinct differences and products in a circular order
 
 Place $2,3,4,6$ around a circle. Every order repeats a directed difference or a product of neighboring numbers. More generally, a set of four positive numbers fails exactly when its middle numbers are the harmonic and arithmetic means of its smallest and largest numbers.
 

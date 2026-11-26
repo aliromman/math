@@ -1,4 +1,4 @@
-# Three caterpillars beat two for every $k\ge 7$
+# Disproof of the Brosch–Puges double-caterpillar conjecture on tree profiles (Conjecture 1)
 
 Three caterpillars disprove Conjecture 1 of Daniel Brosch and Diane Puges
 for every $k\ge7$. Join them in the shape $A\star(B\star C)$, where
@@ -86,3 +86,5 @@ python3 scripts/verify.py --base HEAD^ --fetch-cache
 `Statement.lean` defines unordered pattern counts, the joint profile,
 and the published conjecture. `Solution.lean` proves
 `fails_from_seven` and `not_conjecture` and checks the latter's axioms.
+
+Daniel Brosch and Diane Puges, “Getting to the root of the problem: sums of squares for limits of trees,” Mathematical Programming, §5.2, Conjecture 1, DOI 10.1007/s10107-025-02305-1. [Publication](https://link.springer.com/article/10.1007/s10107-025-02305-1)

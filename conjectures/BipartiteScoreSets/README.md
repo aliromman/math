@@ -1,8 +1,8 @@
-# Every finite set of positive integers is a bipartite score set
+# Proof of Pirzada, Naikoo and Chishti’s Conjecture 2.1 on bipartite score sets
 
 Let two teams play across the team boundary. A win gives 2 points, a missing game gives each player 1, and a loss gives 0. **Every finite nonempty set of positive integers occurs as the set of all player scores.** If the largest score is $M$, we can give every player on the right that score, using at most $\lfloor M/2\rfloor+1$ players on the right. This bound is sharp.
 
-Pirzada, Naikoo and Chishti posed the existence question in 2006. In their graph, each pair across the two parts has one directed edge or no edge. The score is the size of the opposite part plus outdegree minus indegree. Their paper established the result for several classes, including sets of size at most three. The construction below covers every finite nonempty set of positive scores. [Original paper, Conjecture 2.1, p. 44](https://emis.de/ft/50074)
+Pirzada, Naikoo and Chishti stated this as Conjecture 2.1 in 2006. In their graph, each pair across the two parts has one directed edge or no edge. The score is the size of the opposite part plus outdegree minus indegree. Their paper established the result for several classes, including sets of size at most three. The construction below covers every finite nonempty set of positive scores. [Original paper, Conjecture 2.1, p. 44](https://emis.de/ft/50074#page=10)
 
 ## Proof
 

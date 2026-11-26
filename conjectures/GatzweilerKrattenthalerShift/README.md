@@ -1,4 +1,4 @@
-# Four shifted factors give a negative coefficient
+# Four-factor counterexamples to Gatzweiler and Krattenthaler’s Conjecture 4
 
 The polynomial
 
@@ -74,3 +74,5 @@ python3 scripts/verify.py
 `Statement.lean` gives the original conjecture over real polynomials.
 `Solution.lean` proves `counterexample_family` and `not_conjecture` and
 checks the axioms of the final theorem.
+
+Mona Gatzweiler and Christian Krattenthaler, A positivity conjecture for a quotient of q-binomial coefficients, Conjecture 4 on expression (2); restated as Conjecture 1.3 by Gatzweiler, Levicán-Santibáñez and Yoshida. [Publication](https://link.springer.com/article/10.1007/s11139-025-01285-2)

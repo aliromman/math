@@ -1,4 +1,4 @@
-# A tree’s degree polynomial has only real roots in the unit disk
+# Proof of George’s Conjecture 1 on nonreal degree roots of trees in the unit disk
 
 For a finite tree $T$, form the polynomial $D_T(z)=\sum_{v\in V(T)}z^{\deg(v)}$.
 Every nonreal root satisfies $|z|>1$. In particular, the degree roots of all

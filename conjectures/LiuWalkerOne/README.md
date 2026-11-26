@@ -1,4 +1,4 @@
-# Liu's first conjecture on Walker's triangle inequality
+# Proof of Liu’s Conjecture 1 on Walker’s inequality with side-power weights
 
 Jian Liu conjectured that every acute triangle with sides $a,b,c$ satisfies
 

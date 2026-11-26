@@ -1,4 +1,4 @@
-# Liu's second conjecture on Walker's triangle inequality
+# Proof of Liu’s Conjecture 2 on Walker’s inequality with side-sum weights
 
 For every acute triangle with sides $a,b,c$ and every real $k\ge-10$, Jian Liu conjectured
 

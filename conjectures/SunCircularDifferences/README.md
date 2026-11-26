@@ -1,4 +1,4 @@
-# Two missing elements rule out distinct cyclic differences
+# Disproof of Sun’s Conjecture 3.3(ii) on distinct cyclic differences in finite abelian groups of odd order
 
 In any finite abelian group of odd order $N\ge5$, take any $N-2$ elements. No circular ordering of those elements has distinct directed differences between neighbors. The smallest example is $\{0,1,2\}$ modulo $5$.
 
@@ -26,3 +26,5 @@ python3 scripts/verify.py
 ```
 
 The formal proof establishes the obstruction for every odd-order abelian group and applies it modulo $5$. OpenAI Codex found the counterexample and wrote the argument and Lean proof.
+
+Zhi-Wei Sun, “Some new problems in additive combinatorics,” Nanjing University Journal of Mathematical Biquarterly 36 (2019), 134–155. The author’s version arXiv:1309.1679v9 gives Conjecture 3.3(ii), p. 9. [Publication](https://arxiv.org/pdf/1309.1679v9#page=9)

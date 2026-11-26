@@ -1,4 +1,4 @@
-# A leaf move disproves the maximum conjecture for maximal matchings
+# Disproof of the Engbers–Erey conjecture on maximum average maximal-matching size in trees of fixed order and diameter
 
 Take the path from 0 to 11, attach a two-edge arm $2,12,13$ at vertex 2,
 and add a leaf at vertex 9. This is the proposed maximizer on 15 vertices
@@ -71,7 +71,7 @@ lake env leanchecker conjectures.EngbersErey.Solution
 Every finite simple graph has such a labeling. Each edge occurs once,
 with its smaller endpoint first. A sublist is a maximal matching precisely
 when its edges are pairwise disjoint and every graph edge meets one of them.
-[Solution.lean](Solution.lean) proves treehood and diameter with Mathlib,
+[Solution.lean](Solution.lean) proves that the competing tree has diameter 11,
 computes both rational averages in the kernel, and checks the transitive
 axioms of `EngbersErey.counterexample`.
 

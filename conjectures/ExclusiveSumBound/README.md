@@ -1,4 +1,4 @@
-# Edge sums determine an exclusive sum labelling with a bounded number of values
+# Solution to Haslegrave’s Question 3 on exclusive sum numbers and bounded sum index
 
 A graph that can be labelled with only $s$ distinct edge sums can be recognized using at most
 
@@ -32,3 +32,5 @@ python3 scripts/verify.py --base HEAD^ --fetch-cache
 `Statement.lean` defines the two parameters and the original boundedness question. `Ternary.lean` checks that the lower digits add without a carry and retain their individual values. `Solution.lean` constructs the labels for every finite simple graph and checks both implications in the adjacency rule.
 
 OpenAI Codex devised the incidence encoding and formalized it. A search of work on exclusive sum labellings, including subsequent papers on the sum and difference indices, found no earlier bound in terms of the sum index alone.
+
+John Haslegrave, Sum Index, Difference Index and Exclusive Sum Number of Graphs, Question 3 in the journal article, Question 5.4 in arXiv:2104.06959. [Publication](https://link.springer.com/article/10.1007/s00373-023-02624-0)
