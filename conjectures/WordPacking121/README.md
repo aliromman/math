@@ -1,4 +1,4 @@
-# Two letters suffice to pack the pattern $12\!-\!1$
+# Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1
 
 In a word of length $n$ on any ordered alphabet with at least two letters, the largest possible number of occurrences of $12\!-\!1$ is
 
@@ -35,9 +35,8 @@ In their 2003 conference proceedings, Burstein and Mansour asserted the binary e
 `Statement.lean` defines the occurrences, the finite maximum, and both iterated limits. `Proof.lean` verifies the finite formula and the conjecture. From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.WordPacking121.Proof
-lake env leanchecker conjectures.WordPacking121.Proof
+# Run at the merge commit for PR #13.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Burstein and Mansour proposed the binary construction and the finite optimum. Burstein, Hästö and Mansour stated the density conjecture in the journal article. OpenAI Codex proved the upper bound for every alphabet and wrote the Lean formalization.
