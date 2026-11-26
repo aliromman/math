@@ -98,7 +98,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Disproof of Defant and Lin’s Conjecture 10.2 on down-degree homometry in ν-Tamari lattices][note-54] | Two six-element rowmotion orbits in the same $\nu$-Tamari lattice have down-degree sums 18 and 17. | [Lean][proof-54] · [#54][pr-54] (open draft) |
+| [Disproof of Defant and Lin’s Conjecture 10.2 on down-degree homometry in ν-Tamari lattices][note-54] | Two six-element rowmotion orbits in the same $\nu$-Tamari lattice have down-degree sums 18 and 17. | [Lean][proof-54] · [#54][pr-54] |
 | [Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion][note-51] | A 32-element fence has a 237-ideal rowmotion orbit with mean size $16-6/79$, below the predicted 16. | [Lean][proof-51] · [#51][pr-51] (open draft) |
 | [Solution to Faustini and Vargas’s Problem 6.7 on flag vectors of connected split matroids][note-40] | Two connected rank-three matroid base polytopes have identical face counts and differ by one incidence between a vertex and a four-dimensional face. | [Lean][proof-40] · [#40][pr-40] (open draft) |
 | [Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors][note-30] | For every prefix length, two connected rank-two matroid base polytopes on equally many elements have the same initial face counts and differ by one facet. | [Lean][proof-30] · [#30][pr-30] (open draft) |
@@ -331,9 +331,6 @@ and cites the original source.
 [note-55]: https://github.com/aliromman/math/blob/9dce57f64add0c736a61d36a11859165357b55d2/conjectures/KurzBanzhaf/README.md
 [proof-55]: https://github.com/aliromman/math/blob/9dce57f64add0c736a61d36a11859165357b55d2/conjectures/KurzBanzhaf/Solution.lean
 [pr-55]: https://github.com/aliromman/math/pull/55
-[note-54]: https://github.com/aliromman/math/blob/34271731768f03ebdfbed659de8da2c7b5426e76/conjectures/DefantLinHomometry/README.md
-[proof-54]: https://github.com/aliromman/math/blob/34271731768f03ebdfbed659de8da2c7b5426e76/conjectures/DefantLinHomometry/Solution.lean
-[pr-54]: https://github.com/aliromman/math/pull/54
 [note-53]: conjectures/HaslegraveBipartite/README.md
 [proof-53]: conjectures/HaslegraveBipartite/Solution.lean
 [pr-53]: https://github.com/aliromman/math/pull/53
@@ -494,3 +491,6 @@ and cites the original source.
 [note-78]: conjectures/KarlovskySumAttainment/README.md
 [proof-78]: conjectures/KarlovskySumAttainment/Solution.lean
 [pr-78]: https://github.com/aliromman/math/pull/78
+[note-54]: conjectures/DefantLinHomometry/README.md
+[proof-54]: conjectures/DefantLinHomometry/Solution.lean
+[pr-54]: https://github.com/aliromman/math/pull/54
