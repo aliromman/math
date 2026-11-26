@@ -1,4 +1,4 @@
-# Reciprocal distance is a valid pebbling weight on every pendant hypercube
+# Proof of Yang, Yerger and Zhou’s Conjecture 2 on pebbling weights for pendant hypercubes
 
 Attach a root $r$ by one edge to any vertex of the $m$-dimensional cube. If a pebble configuration $p$ cannot put a pebble on $r$, then
 
@@ -29,8 +29,10 @@ Chung's odd two-pebble bound says that if $\sum_X\lceil p(X)/2\rceil>2^m$, two p
 ## Verification and attribution
 
 ```sh
-lake build conjectures.YangYergerZhouCube.Solution
-lake env leanchecker conjectures.YangYergerZhouCube.Solution
+# Run at the merge commit for PR #57.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement uses Mathlib graph distance, unrestricted finite pebble piles, and the original rule for a move. The proof constructs the moves in Chung’s two bounds and checks the facet identity. The axiom guard covers the final theorem. Searches for subsequent proofs using the conjecture, authors and reciprocal-distance weights found no earlier resolution. OpenAI Codex derived the facet argument and wrote the Lean proof.
+
+Marshall Yang, Carl Yerger and Runtian Zhou, Lollipop and cubic weight functions for graph pebbling, §2, Conjecture 2. [Publication](https://link.springer.com/article/10.1007/s10878-024-01248-1)
