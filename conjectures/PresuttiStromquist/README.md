@@ -1,10 +1,23 @@
-# The proposed packing measure for 2413 is not optimal
+# A higher packing density for the permutation pattern 2413
 
-A permutation contains the pattern 2413 when four entries, read from left to right, have ranks $2,4,1,3$. Presutti and Stromquist proposed a recursive arrangement of points that would pack this pattern as densely as possible. **Every choice of the two bubble sizes in their construction admits a strictly better arrangement.** This disproves their Conjecture 10.1. [Original chapter, pp. 315–316](https://doi.org/10.1017/CBO9780511902499.015)
+Four entries form 2413 when their ranks from left to right are $2,4,1,3$. A weighted permutation of 544 points gives the lower bound
+
+$$
+\delta(2413)\;\ge\;\frac{118609967629}{1132462080000}
+=0.104736370182920385\ldots
+$$
+
+This exceeds the estimate $0.10473602526603545\ldots$ in Presutti and Stromquist’s Conjecture 10.1. A separate argument disproves the proposed optimizer for every choice of its two bubble sizes. [Original chapter, pp. 315–316](https://doi.org/10.1017/CBO9780511902499.015)
 
 The obstruction is a corner of the last bubble. Points inside the bubble can form a copy of 2413 together. At its southeast corner, that opportunity disappears. An optimal arrangement must give the same chance of participating in a copy at almost every sampled point.
 
 ![A schematic isolated rectangle. Four points inside form 2413. At its southeast corner a continuing segment approaches the rectangle from outside.](diagram.svg)
+
+## The finite construction
+
+Place 32 points on each of four subsegments of a descending line and put a four-point copy of 2413 into each of two gaps. Take all four quarter-turns of this configuration. The result has $(4\cdot32+2\cdot4)\cdot4=544$ points with distinct horizontal and vertical coordinates. Each point has a positive integer weight. Their sum is $W=30\,720$. [Coordinates and weights](RationalWitness.lean)
+
+Fix the first and last points of a potential copy in horizontal order. The first must lie below the last. Scan the points between them from left to right. Each time a point lies below the first endpoint, multiply its weight by the total weight of earlier points above the last endpoint. The product counts the possible middle pair. Multiplication by the endpoint weights and summation gives $S=3\,886\,611\,419\,267\,072$. Four independent samples therefore form 2413 with probability $24S/W^4$. Replacing each point by a small increasing segment of the same mass preserves all these copies. The kernel-certified lower bound uses a separate count with enclosing rectangles. [Counting proof](RangeCount.lean) · [Probability theorem](Quantitative.lean)
 
 ## Why the corner matters
 

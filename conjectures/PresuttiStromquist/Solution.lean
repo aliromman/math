@@ -2,6 +2,8 @@ module
 
 public import conjectures.PresuttiStromquist.Block
 public import conjectures.PresuttiStromquist.Construction
+public import conjectures.PresuttiStromquist.Quantitative
+import Mathlib.Util.AssertNoSorry
 
 public section
 namespace PresuttiStromquist
@@ -21,5 +23,8 @@ theorem resolution : ¬Conjecture := by
 /-- info: 'PresuttiStromquist.resolution' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms resolution
+
+assert_no_sorry resolution
+assert_no_sorry Discrete.quantitative_witness
 
 end PresuttiStromquist
