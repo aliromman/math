@@ -35,6 +35,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Shifted fake Gaussian coefficients][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
 | [Counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
@@ -151,3 +152,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-27]: conjectures/SobolewskiPatternBound/README.md
 [proof-27]: conjectures/SobolewskiPatternBound/Solution.lean
 [pr-27]: https://github.com/aliromman/math/pull/27
+[proof-36]: conjectures/GatzweilerKrattenthalerShift/Solution.lean
+[note-36]: conjectures/GatzweilerKrattenthalerShift/README.md
+[pr-36]: https://github.com/aliromman/math/pull/36
