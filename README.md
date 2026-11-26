@@ -2,6 +2,8 @@
 
 Proofs, counterexamples, and partial results on published mathematical conjectures. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
+[Research ledger and cumulative statistics](research/ledger.md)
+
 ## Verification
 
 Install Elan, then run the following commands from a clean checkout. The first
@@ -29,7 +31,7 @@ and cites the original source.
 
 ## Discoveries
 
-Each title links to the research note. Proof links point to fixed revisions, and the pull requests show the current review status.
+Each title links to a research note. Results on this branch link to local files. Open drafts link to fixed revisions. The pull request records the review and verification history.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
@@ -60,7 +62,7 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | [The Erdős–Szekeres convex heptagon problem][note-9] | **Partial.** A finite SAT search rules out a heptagon-free 33-point extension of one specific 27-point pattern of triple orientations. The general question remains open. | [Search][proof-9] · [#9][pr-9] |
 | [Stanley’s tree isomorphism question][note-6] | **Partial.** A two-site branch exchange cannot produce nonisomorphic trees with the same chromatic symmetric function. A separate search distinguished 111,144 trees in a three-site family. | [Search][proof-6] · [#6][pr-6] |
 
-To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and follow the commands in its research note. [Install Elan][elan]
+Follow the reproduction commands in the research note. For an open draft, check out the linked pull request first. [Install Elan][elan]
 
 © 2026 Ali Romman · [Apache License 2.0](LICENSE) · [Cite this project](CITATION.cff) · [All pull requests][pulls]
 
