@@ -60,7 +60,8 @@ From the repository root, build the exact Lean statement. Generate the default
 with Lean.
 
 ```sh
-lake build
+lake exe cache get
+python3 scripts/verify.py
 mkdir -p scratch
 python3 conjectures/ErdosSzekeres/replay.py 33 > scratch/heptagon.cnf
 lake env cadical -q --lrat --no-binary scratch/heptagon.cnf scratch/heptagon.lrat
@@ -76,10 +77,10 @@ control. Use `pairs` to print the 44 representative deletion pairs, then
 
 Codex and collaborating AI agents designed the searches and checked the
 geometric encoding. A separate search made 101 complete plane-arrangement
-scans, covering 11,015,962 placement regions across the scans in 43 seconds.
+scans, covering 11,015,962 placement regions across the scans in about 1 minute.
 Each scan reached a minimum of one heptagon. A search using small clusters
 around eight centers also found no counterexample. An unrestricted search
-in projective coordinates stopped after 71 CPU seconds without a decision.
+in projective coordinates stopped after about 1 CPU minute without a decision.
 Lean checks the original conjecture statement.
 The finite exclusions have Boolean certificates. A Lean proof of the geometric
 exclusions and a resolution of the conjecture are both open tasks.
