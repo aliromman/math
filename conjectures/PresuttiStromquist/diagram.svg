@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="294" viewBox="0 0 680 294" role="img" aria-labelledby="title desc">
+<title id="title">The corner obstruction for packing 2413</title>
+<desc id="desc">Four interior points read from left to right have vertical ranks two, four, one, three. The continuing segment meets the southeast corner, where the vertical rank would be one.</desc>
+<rect width="680" height="294" fill="#faf9f6"/>
+<g fill="none" stroke="#bcc3c6" stroke-width="1" stroke-dasharray="4 5"><path d="M126 12V270M396 12V270M28 49H652M28 202H652"/></g>
+<rect x="126" y="49" width="270" height="153" fill="#e6f2ef" stroke="#267267" stroke-width="2"/>
+<g stroke="#155d54" stroke-width="1.3" fill="#116b5c"><circle cx="165" cy="141" r="5"/><circle cx="225" cy="74" r="5"/><circle cx="292" cy="176" r="5"/><circle cx="356" cy="103" r="5"/></g>
+<g font-family="system-ui, sans-serif" font-size="15" fill="#174b43"><text x="175" y="145">2</text><text x="235" y="79">4</text><text x="302" y="181">1</text><text x="366" y="107">3</text></g>
+<path d="M396 202L523 252" fill="none" stroke="#bd591e" stroke-width="3"/>
+<circle cx="396" cy="202" r="6" fill="#a54215"/>
+<g font-family="system-ui, sans-serif" font-size="15" fill="#2b3234"><text x="130" y="35">Isolated rectangle</text><text x="413" y="192">Southeast corner</text><text x="445" y="273">Continuing segment</text></g>
+</svg>
