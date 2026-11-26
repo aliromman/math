@@ -11,8 +11,11 @@ private def audit (env : Environment) (modules : Array Name) (contract : String)
   for (name, info) in env.constants do
     if let some i := env.getModuleIdxFor? name then
       if modules.contains env.header.moduleNames[i.toNat]! then
+        -- Lean also emits executable helpers for safe inductive and recursive definitions.
         if info.isUnsafe || info.isPartial then
-          throw <| IO.userError s!"kernel replay skips {name}"
+          let (proof, _, _) ← (Meta.isProp info.type).toIO
+            { fileName := "", fileMap := default } { env }
+          if proof then throw <| IO.userError s!"kernel replay skips proof {name}"
         names := names.push name
   let footprints := CollectAxioms.runM env do
     names.mapM (CollectAxioms.collectAndGet (fun _ _ => none))
@@ -42,9 +45,19 @@ private def audit (env : Environment) (modules : Array Name) (contract : String)
   if seen.isEmpty then throw <| IO.userError "empty axiom contract"
   IO.println s!"Checked {names.size} local declarations and {seen.size} exact axiom expectations."
 
+
 public unsafe def main (args : List String) : IO Unit := do
-  let file :: targets := args | throw <| IO.userError "expected an axiom file and module names"
-  let modules := targets.toArray.map String.toName
+  let file :: paths := args | throw <| IO.userError "expected a contract and module paths"
   initSearchPath (← findSysroot)
+  let mut modules := #[]
+  for path in paths do
+    let name := ((path.dropEnd 5).toString.replace "/" ".").toName
+    let (header, _, _) ← Parser.parseHeader (Parser.mkInputContext (← IO.FS.readFile path) path)
+    if Elab.HeaderSyntax.isModule header then
+      let olean ← findOLean name
+      for level in [OLeanLevel.server, OLeanLevel.private] do
+        let part := level.adjustFileName olean
+        unless ← part.pathExists do throw <| IO.userError s!"Incomplete replay: missing {part}"
+    modules := modules.push name
   withImportModules (modules.map fun m => { module := m, importAll := true }) {} fun env => do
     audit env modules (← IO.FS.readFile file)

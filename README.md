@@ -13,11 +13,11 @@ python3 scripts/verify.py
 python3 scripts/test_verify.py
 ```
 
-Lake builds the research library with warnings as errors. A separate
-`leanchecker` process replays each research module, including its private
-declarations, using Lean's kernel. The verifier checks the replayed module
-names against the source tree. It also traces the dependencies of every local
-declaration. The permitted axioms are `propext`, `Classical.choice`, and
+Lake builds the research library with warnings as errors. The verifier calls the pinned
+`leanchecker` routine in a separate process for each module in the source tree. It checks
+that all required object files exist, replays private proof bodies, and
+traces the dependencies of every local declaration. Research proofs need
+theorem names so the compiler retains them for replay. The permitted axioms are `propext`, `Classical.choice`, and
 `Quot.sound`.
 
 Each research directory with Lean sources has an `axioms` file. Each line
