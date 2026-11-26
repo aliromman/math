@@ -63,6 +63,7 @@ From the repository root, run
 ```sh
 lake exe cache get Mathlib.Combinatorics.SimpleGraph.Acyclic Mathlib.Combinatorics.SimpleGraph.Diam Mathlib.Data.Nat.Dist Mathlib.Data.Rat.Defs
 lake build
+python3 scripts/verify.py
 lake env leanchecker conjectures.EngbersErey.Solution
 ```
 
