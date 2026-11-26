@@ -1,6 +1,7 @@
 module
 
 public import conjectures.MarkovFactorFour.Characters
+public import conjectures.MarkovFactorFour.Statement
 public import Mathlib.RingTheory.MvPolynomial.Ideal
 public import Mathlib.Data.ZMod.Basic
 

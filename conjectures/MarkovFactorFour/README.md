@@ -1,4 +1,4 @@
-# Four divides every coefficient inside the critical triangle
+# Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials
 
 For every Markov polynomial, each coefficient strictly inside its critical triangle is a multiple of four. This proves Conjecture 8.1 of Evans, Veselov and Winn. Four is sharp. At slope $2/3$, the coefficient of $uv^2w$ is exactly $4$. [Original paper, §§3 and 8](https://amj.math.stonybrook.edu/Articles/250708-Winn/index.html)
 
@@ -38,10 +38,9 @@ in $R$. Induction on the Farey tree now proves the expression for every positive
 
 Evans, Veselov and Winn computed the first Pell sail and identified its coefficient $4$. A subsequent proof established the divisibility in the full Pell family $a/b=n/(n+1)$. Searches for the conjecture, the critical triangle, and coefficient congruences found no earlier proof for all slopes. OpenAI Codex developed the general argument and its Lean formalization. [Evans–Veselov–Winn, §9](https://amj.math.stonybrook.edu/Articles/250708-Winn/index.html) · [Pell-family proof](https://github.com/xzwwwwww/math/blob/93f15f5e04e25384d5eb3661bbfe53bac850f25f/Pell%E7%8C%9C%E6%83%B3/markov_pell_factor_four.pdf)
 
-The formal proof verifies the Euclidean path to every reduced slope, the trace identity, and the integer coefficient statement. [Statement](Statement.lean) · [Trace identity](Characters.lean) · [Proof and axiom check](Solution.lean)
+The formal proof verifies the Euclidean path to every reduced slope, the trace identity, and the integer coefficient statement. [Statement](Statement.lean) · [Farey tree and numerator polynomials](Farey.lean) · [Trace identity](Characters.lean) · [Proof and axiom check](Solution.lean)
 
 ~~~sh
-lake exe cache get
-lake build conjectures.MarkovFactorFour.Solution
-lake env leanchecker conjectures.MarkovFactorFour.Solution
+# Run at the merge commit for PR #85.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ~~~
