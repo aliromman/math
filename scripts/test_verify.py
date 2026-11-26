@@ -43,6 +43,12 @@ def main():
               + "#guard_msgs in\n#print axioms controlResult\n"
               + "#guard_msgs (drop error) in\n#check unknownDiagnosticName\n",
               "controlResult\n")
+        check("guarded theorem with visible errors",
+              valid + "#guard_msgs (warning) in\ntheorem guardedResult : True := True.intro\n",
+              "controlResult\nguardedResult\n")
+        check("guarded invalid declaration",
+              valid + "#guard_msgs (drop all) in\ntheorem discarded : MissingType := True.intro\n",
+              "controlResult\n", "Pass errors from guarded declarations")
         check("safe recursion", valid + "def lengthOf : List Nat → Nat\n"
               + "  | [] => 0\n  | _ :: xs => lengthOf xs + 1\n", "controlResult\n")
         check("partial definition", valid + "partial def loop (n : Nat) : Nat := loop n\n",
