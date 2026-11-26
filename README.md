@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Proof of Ulas’s Conjecture 4.4 on real zeros of Stern polynomials][note-70] | Every real value in Ulas’s family is positive. Its possible prime divisors at integer arguments are exactly the primes congruent to one modulo three. | [Positivity][proof-70] · [Prime divisors][arith-70] · [#70][pr-70] |
 | [Disproof of Dossou-Olory and Wagner’s conjecture on four-branch extremizers for the inducibility of the five-leaf tree A₅][note-31] | A root rotation increases the limiting density of the five-leaf tree in every proposed four-branch sequence. Its exact inducibility remains open. | [Lean][proof-31] · [#31][pr-31] |
 | [Proof of Pirzada, Naikoo and Chishti’s Conjecture 2.1 on bipartite score sets][note-60] | Every nonempty finite set of positive integers is the full set of scores of an oriented bipartite graph. | [Lean][proof-60] · [#60][pr-60] |
 | [Disproof of the Brosch–Puges double-caterpillar conjecture on tree profiles (Conjecture 1)][note-34] | For every $k\ge7$, joining three caterpillars beats the proposed two-caterpillar boundary. The cases $k=4,5,6$ remain open. | [Lean][proof-34] · [#34][pr-34] |
@@ -182,3 +183,7 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-31]: conjectures/WagnerTreeInducibility/Solution.lean
 [note-31]: conjectures/WagnerTreeInducibility/README.md
 [pr-31]: https://github.com/aliromman/math/pull/31
+[note-70]: conjectures/UlasStern/README.md
+[proof-70]: conjectures/UlasStern/Solution.lean
+[arith-70]: conjectures/UlasStern/Arithmetic.lean
+[pr-70]: https://github.com/aliromman/math/pull/70
