@@ -1,6 +1,7 @@
 module
 
 public import conjectures.WangLocalDensity.DoubleBroom
+public import conjectures.WangLocalDensity.LeafExtension
 
 public section
 namespace WangLocalDensity
@@ -38,5 +39,9 @@ theorem resolution : ¬Conjecture := by
 /-- info: 'WangLocalDensity.resolution' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms resolution
+
+/-- info: 'WangLocalDensity.leaf_extension' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms leaf_extension
 
 end WangLocalDensity
