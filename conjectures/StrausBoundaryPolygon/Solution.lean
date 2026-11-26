@@ -17,9 +17,8 @@ theorem heptagon_comparison : (2:ℝ)/3 < polygonArea Heptagon.quadrilateral / v
 
 /-- A nine-vertex convex polygon has a lower maximum quadrilateral ratio
     than the regular heptagon. Its maximizing trapezoid shares one edge. -/
-theorem conjecture1_false : ¬ Conjecture := by
-  intro claim
-  obtain ⟨r,maximum,_,minimum⟩ := claim 4 (by decide)
+theorem quadrilateral_counterexample : ¬ RegularPolygonMinimizes 4 := by
+  rintro ⟨r, maximum, _, minimum⟩
   have m := minimum Example.body Example.convex Example.compact Example.interior_nonempty
     Example.quadrilateral Example.maximal Example.shares
   have test := maximum.2 Heptagon.quadrilateral Heptagon.inscribed
@@ -28,6 +27,13 @@ theorem conjecture1_false : ¬ Conjecture := by
   rw [nonagon_ratio] at m
   have lower := div_le_div_of_nonneg_right test (le_of_lt Heptagon.area_positive)
   exact (not_lt_of_ge (lower.trans m)) heptagon_comparison
+
+theorem conjecture1_false : ¬ Conjecture :=
+  fun claim ↦ quadrilateral_counterexample (claim 4 (by decide))
+
+/-- info: 'StrausBoundaryPolygon.quadrilateral_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms quadrilateral_counterexample
 
 /-- info: 'StrausBoundaryPolygon.conjecture1_false' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in

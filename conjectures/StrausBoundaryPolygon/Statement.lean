@@ -39,14 +39,17 @@ def regularVertex (m : ℕ) (i : Fin m) : Plane :=
 
 def regularBody (m : ℕ) : Set Plane := convexHull ℝ (range (regularVertex m))
 
-/-- Straus's Conjecture 1. The regular (2n−1)-gon attains the least
-    possible area ratio when one side of a largest n-gon lies on the boundary. -/
-def Conjecture : Prop := ∀ n : ℕ, 3 < n →
+/-- The regular (2n−1)-gon attains the least area ratio when a largest
+    inscribed n-gon shares a side with the boundary. -/
+def RegularPolygonMinimizes (n : ℕ) : Prop :=
   ∃ r : Fin n → Plane, MaximalInscribed (regularBody (2*n-1)) r ∧
     SharesEdge (regularBody (2*n-1)) r ∧
     ∀ (K : Set Plane), Convex ℝ K → IsCompact K → (interior K).Nonempty →
     ∀ p : Fin n → Plane, MaximalInscribed K p → SharesEdge K p →
       polygonArea r / volume.real (regularBody (2*n-1)) ≤ polygonArea p / volume.real K
+
+/-- Straus's Conjecture 1 (1978, p. 309). -/
+def Conjecture : Prop := ∀ n : ℕ, 3 ≤ n → RegularPolygonMinimizes n
 
 end
 end StrausBoundaryPolygon
