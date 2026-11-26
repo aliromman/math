@@ -11,6 +11,7 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Independence roots of finite graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
+| [Real roots and prime divisors of Stern polynomials][note-70] | Every real value in Ulas’s family is positive. Its possible prime divisors at integer arguments are exactly the primes congruent to one modulo three. | [Positivity][proof-70] · [Prime divisors][arith-70] · [#70][pr-70] |
 | [Sobolewski’s binary-pattern progressions][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
 | [Bajnok’s restricted triple sums][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
 | [Roots of edge-cover polynomials][note-20] | A finite simple graph of minimum degree $d$ has at least $d$ distinct complex roots in its edge-cover polynomial. | [Lean][proof-20] · [#20][pr-20] |
@@ -118,5 +119,9 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
 [proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
+[note-70]: https://github.com/aliromman/math/blob/1d07a752d49bfc46aad80a98d4be06e1ca275181/conjectures/UlasStern/README.md
+[proof-70]: https://github.com/aliromman/math/blob/1d07a752d49bfc46aad80a98d4be06e1ca275181/conjectures/UlasStern/Solution.lean
+[arith-70]: https://github.com/aliromman/math/blob/1d07a752d49bfc46aad80a98d4be06e1ca275181/conjectures/UlasStern/Arithmetic.lean
+[pr-70]: https://github.com/aliromman/math/pull/70
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
