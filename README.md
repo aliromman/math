@@ -103,9 +103,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
 [proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
-[note-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/README.md
-[proof-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/Solution.lean
-[pr-19]: https://github.com/aliromman/math/pull/19
 [note-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/README.md
 [proof-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/Solution.lean
 [pr-16]: https://github.com/aliromman/math/pull/16
@@ -166,3 +163,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-32]: conjectures/HurKimFairDice/Solution.lean
 [note-32]: conjectures/HurKimFairDice/README.md
 [pr-32]: https://github.com/aliromman/math/pull/32
+[note-19]: conjectures/SunRealCycles/README.md
+[proof-19]: conjectures/SunRealCycles/Solution.lean
+[pr-19]: https://github.com/aliromman/math/pull/19
