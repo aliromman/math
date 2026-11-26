@@ -1,4 +1,4 @@
-# Infinitely many four-letter balanced words escape binary congruence expansion
+# Infinite four-letter counterexamples to Brauner et al.’s Conjecture 4.1 on balanced words
 
 For each $k\ge2$, repeat $\mathtt C(\mathtt{AB})^{k-1}\mathtt D(\mathtt{AB})^k$. These balanced words all escape binary congruence expansion. Their distinct least periods $4k$ give infinitely many different words, even up to translation. This refutes the fixed-alphabet finiteness prediction of Brauner, Crama, Delaporte, Jost and Libralesso. [Author manuscript, abstract](https://orbi.uliege.be/bitstream/2268/230109/1/Balanced%20words%20Dec%202018.pdf)
 
@@ -35,8 +35,8 @@ Restivo and Rosone had already printed a different period-16 balanced word, $\ma
 From the repository root, run
 
 ```sh
-lake build conjectures.BraunerBalancedWords.Solution
-lake env leanchecker conjectures.BraunerBalancedWords.Solution
+# Run at the merge commit for PR #49.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines two-sided words, balance, and the finite sequence of substitutions in Definitions 2.7 and 2.8. `Expansion.lean` proves the divisibility condition for every such sequence. `Construction.lean` identifies the displayed word and counts its letters on every interval. `Solution.lean` proves the unbounded family and refutes the original conjecture using $k=4$. The theorem `infinitely_many_exceptions` rules out every finite list of representatives up to translation. Axiom guards cover all three conclusions.
