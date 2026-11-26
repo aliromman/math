@@ -59,6 +59,9 @@ def main():
               "controlResult\n", "Type mismatch")
         check("placeholder", "theorem controlResult : False := by sorry\n",
               "controlResult\n", "uses `sorry`")
+        # The invalid proof is the second item submitted to the replay workers.
+        first = group / "First.lean"
+        first.write_text("theorem firstControl : True := True.intro\n")
         # Construct a malformed proof with Lean's documented kernel debug option.
         kernel_log = check("kernel rejects an ill-typed object file",
               "import Lean\nopen Lean Elab Command\nset_option debug.skipKernelTC true in\n"
@@ -67,6 +70,9 @@ def main():
               "controlResult\n", "(kernel) declaration type mismatch")
         if "Build completed successfully" not in kernel_log or "Replay.lean:" not in kernel_log:
             raise SystemExit("The kernel control must build before independent replay rejects it")
+        if "Kernel replay failed for conjectures.Control.Result" not in kernel_log:
+            raise SystemExit("The failure in the second replay task was lost")
+        first.unlink()
         check("unused private axiom", valid + "private axiom unexplained : False\n",
               "controlResult\n", "forbidden axiom")
         check("wrong exact list", valid, "controlResult propext\n", "expected [propext]")

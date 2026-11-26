@@ -1,5 +1,6 @@
 """Build and replay each research module and check the result declarations."""
 
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import os
 import subprocess
@@ -22,20 +23,29 @@ def research_groups():
         if group not in groups:
             raise SystemExit(f"Missing axiom contract for {path}")
         groups[group].append(path)
+    for group, sources in groups.items():
+        if not sources:
+            raise SystemExit(f"No Lean sources for {group}/axioms")
     return groups
 
 
+def replay_source(source):
+    artifact = Path(".lake/build/lib/lean") / source.with_suffix(".olean")
+    if not artifact.is_file():
+        raise SystemExit(f"Incomplete replay: missing {artifact}")
+    module = ".".join(source.with_suffix("").parts)
+    result = subprocess.run(["lean", str(AUDIT.with_name("Replay.lean"))],
+                            env={**os.environ, "RESEARCH_REPLAY_MODULE": module})
+    if result.returncode:
+        raise SystemExit(f"Kernel replay failed for {module} (exit {result.returncode})")
+
+
 def replay():
-    for group, sources in research_groups().items():
-        if not sources:
-            raise SystemExit(f"No Lean sources for {group}/axioms")
-        for source in sources:
-            artifact = Path(".lake/build/lib/lean") / source.with_suffix(".olean")
-            if not artifact.is_file():
-                raise SystemExit(f"Incomplete replay: missing {artifact}")
-            module = ".".join(source.with_suffix("").parts)
-            subprocess.run(["lean", str(AUDIT.with_name("Replay.lean"))], check=True,
-                           env={**os.environ, "RESEARCH_REPLAY_MODULE": module})
+    groups = research_groups()
+    sources = (source for files in groups.values() for source in files)
+    with ThreadPoolExecutor(max_workers=2) as workers:
+        list(workers.map(replay_source, sources))
+    for group, sources in groups.items():
         subprocess.run(["lean", "--run", str(AUDIT), str(group / "axioms"),
                         *(str(source) for source in sources)], check=True)
         print(f"Replayed {len(sources)} modules in {group}", flush=True)
