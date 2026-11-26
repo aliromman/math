@@ -47,7 +47,7 @@ Choose three pairwise nonisomorphic rooted trees $L_1,L_2,L_3$ of order $k$. Joi
 
 Each column independently separates every tree tested at each order by exact integer evaluation. For a concrete close pair take the four-vertex star rooted at its center, the four-vertex path rooted at an inner vertex, and the star rooted at a leaf, in that order. Compare the two opposite 3-cycles. Every partition count agrees for zero through three deleted edges. With four edges deleted, the component orders $(33,11,3,1,1)$ occur **208** and **207** times.
 
-From the repository root, run the following command with Python 3.9 or later. It also checks the 49-vertex pair by enumerating cuts directly. One run used 1.55 CPU seconds. OpenAI Codex developed the argument and implemented the search.
+From the repository root, run the following command with Python 3.9 or later. It also checks the 49-vertex pair by enumerating cuts directly. One run used less than one CPU minute. OpenAI Codex developed the argument and implemented the search.
 
 ```sh
 python3 conjectures/StanleyTreeCSF/replay.py

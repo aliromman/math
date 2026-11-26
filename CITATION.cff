@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this project and the mathematical sources for the result you use."
+title: Mathematical conjectures
+authors:
+  - given-names: Ali
+    family-names: Romman
+contact:
+  - given-names: Ali
+    family-names: Romman
+    website: https://github.com/aliromman
+abstract: >-
+  Ali Romman created and maintains this collection of mathematical proofs,
+  counterexamples, and research notes. OpenAI Codex assisted with searches,
+  mathematical arguments, and Lean formalizations.
+repository-code: https://github.com/aliromman/math
+license: Apache-2.0
