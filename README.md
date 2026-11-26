@@ -78,9 +78,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/README.md
 [proof-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/Solution.lean
 [pr-28]: https://github.com/aliromman/math/pull/28
-[note-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/README.md
-[proof-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/Solution.lean
-[pr-20]: https://github.com/aliromman/math/pull/20
 [note-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/README.md
 [proof-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/Solution.lean
 [pr-25]: https://github.com/aliromman/math/pull/25
@@ -159,3 +156,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-42]: conjectures/FangSubwordLength/Solution.lean
 [note-42]: conjectures/FangSubwordLength/README.md
 [pr-42]: https://github.com/aliromman/math/pull/42
+[note-20]: conjectures/EdgeCoverRootCount/README.md
+[proof-20]: conjectures/EdgeCoverRootCount/Solution.lean
+[pr-20]: https://github.com/aliromman/math/pull/20
