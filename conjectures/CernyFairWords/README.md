@@ -24,8 +24,7 @@ From the repository root, run the following commands.
 
 ```sh
 lake exe cache get
-lake build conjectures.CernyFairWords.Solution
-lake env leanchecker conjectures.CernyFairWords.Solution
+python3 scripts/verify.py
 ```
 
 The statement counts actual words and requires one integral polynomial for all positive alphabet sizes. The proof checks the transitive axioms of `CernyFairWords.resolution`. OpenAI Codex developed the argument and Lean formalization.
