@@ -1,8 +1,8 @@
 # An isosceles counterexample to Liu’s weighted Erdős–Mordell bound
 
-The isosceles triangle with vertices $(-1,0),(1,0),(0,84/13)$ and interior point $P=(0,60/11)$ violates the proposed upper bound at $k=3999/1000$.
+The isosceles triangle with vertices $A=(-1,0)$, $B=(1,0)$, $C=(0,84/13)$ and interior point $P=(0,60/11)$ violates the proposed upper bound at $k=3999/1000$.
 
-Let $R_i$ be the distances from $P$ to the three vertices, $r_i$ the perpendicular distances to their opposite sides, and $a_i$ the lengths of those sides. Set $w_i=\sqrt{a_i^2+kr_i^2}$. Liu conjectured that every triangle and every interior point satisfy
+Let $(R_1,R_2,R_3)=(PA,PB,PC)$ and $(a_1,a_2,a_3)=(BC,CA,AB)$. The quantities $r_1,r_2,r_3$ are the perpendicular distances from $P$ to the lines $BC,CA,AB$, respectively. Set $w_i=\sqrt{a_i^2+kr_i^2}$. Liu conjectured that every triangle and every interior point satisfy
 
 $$
 2\sum_i r_i \ \le\ \frac{2\sum_i(R_i+r_i)w_i}{\sum_i w_i}\ \le\ \sum_i R_i
@@ -34,8 +34,8 @@ This disproves the proposed two-sided refinement. The construction tests the upp
 From the repository root run
 
 ```sh
-lake build
-lake env leanchecker conjectures.LiuWeightedRadicals.Solution
+# Run at the merge commit for PR #14.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The Lean statement uses Cartesian distances and strict interior tests for both triangle orientations. The proof checks the rational comparison and the theorem’s axiom list. OpenAI Codex found the witness and wrote the proof.
