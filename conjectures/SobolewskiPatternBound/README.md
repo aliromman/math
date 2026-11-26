@@ -31,6 +31,5 @@ The proof checks overlapping occurrences, the leading-zero convention, the extre
 
 ```sh
 lake exe cache get
-lake build conjectures.SobolewskiPatternBound.Solution
-lake env leanchecker conjectures.SobolewskiPatternBound.Solution
+python3 scripts/verify.py
 ```
