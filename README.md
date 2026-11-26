@@ -123,9 +123,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/README.md
 [proof-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/Solution.lean
 [pr-15]: https://github.com/aliromman/math/pull/15
-[note-9]: https://github.com/aliromman/math/blob/af6070cb27d25a2a18b247fdc663c5051f64aaf6/conjectures/ErdosSzekeres/README.md
-[proof-9]: https://github.com/aliromman/math/blob/af6070cb27d25a2a18b247fdc663c5051f64aaf6/conjectures/ErdosSzekeres/replay.py
-[pr-9]: https://github.com/aliromman/math/pull/9
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
 [note-1]: conjectures/EngbersErey/README.md
@@ -147,3 +144,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [bound-7]: conjectures/RestrictedUMinimum/Growth.lean
 [proof-7]: conjectures/RestrictedUMinimum/Threshold.lean
 [pr-7]: https://github.com/aliromman/math/pull/7
+[note-9]: conjectures/ErdosSzekeres/README.md
+[proof-9]: conjectures/ErdosSzekeres/replay.py
+[pr-9]: https://github.com/aliromman/math/pull/9
