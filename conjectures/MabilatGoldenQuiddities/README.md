@@ -1,4 +1,4 @@
-# Irreducible golden-ratio quiddities have length four or five
+# Proof of Mabilat’s conjecture on irreducible golden-ratio quiddities
 
 Let $\varphi=(1+\sqrt5)/2$. The complete list of irreducible $\lambda$-quiddities with entries in $\mathbb Z\varphi$ is
 
@@ -8,7 +8,7 @@ $$
 \quad(k\in\mathbb Z).
 $$
 
-This proves Flavien Mabilat’s 2022 conjecture. The proof gives a uniform classification. For every integer $q\ge4$, replace $\varphi$ by $\lambda=2\cos(\pi/q)$ and the two constant five-term sequences by constant $q$-term sequences. These are all the indivisible pieces for the corresponding matrix equation from Coxeter’s frieze patterns. Mabilat’s conjecture is the case $q=5$. [Original conjecture, p. 7, and definitions, p. 3](https://arxiv.org/pdf/2212.03142).
+This proves Flavien Mabilat’s unnumbered conjecture after Proposition 3.9 on irreducible golden-ratio quiddities. The proof gives a uniform classification. For every integer $q\ge4$, replace $\varphi$ by $\lambda=2\cos(\pi/q)$ and the two constant five-term sequences by constant $q$-term sequences. These are all the indivisible pieces for the corresponding matrix equation from Coxeter’s frieze patterns. Mabilat’s conjecture is the case $q=5$. [Original conjecture, p. 7, and definitions, p. 3](https://arxiv.org/pdf/2212.03142#page=7).
 
 ## Why the list ends here
 
@@ -33,8 +33,8 @@ Mabilat proved that the constant $q$-term examples are irreducible and classifie
 Lean encodes each multiple of $\lambda$ by its unique integer coefficient. The real matrix product agrees with its image in $\mathbb C$. `Statement.lean` gives the source conjecture and the general theorem. `Ear.lean` proves the run bound. `Solution.lean` proves the classification, specializes it at $q=5$, and checks both theorems’ axioms. From the repository root, run
 
 ```sh
-lake build conjectures.MabilatGoldenQuiddities.Solution
-lake env leanchecker conjectures.MabilatGoldenQuiddities.Solution
+# Run at the merge commit for PR #38.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 AI agents derived the proof and wrote the Lean formalization. An independent agent checked the source definitions and the uniform proof. As a separate test, exact polynomial arithmetic verified the nonzero continuant for all 548,870 words of lengths 1 through 8 over $\{-2,-1,1,2\}$ that avoid the forbidden run, summed over $q=4,\ldots,10$.
