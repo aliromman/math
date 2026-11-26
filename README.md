@@ -66,10 +66,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 
 © 2026 Ali Romman · [Apache License 2.0](LICENSE) · [Cite this project](CITATION.cff) · [All pull requests][pulls]
 
-[note-7]: https://github.com/aliromman/math/blob/ffd3c2db319516682a86165833684f6b7def50f1/conjectures/RestrictedUMinimum/README.md
-[bound-7]: https://github.com/aliromman/math/blob/ffd3c2db319516682a86165833684f6b7def50f1/conjectures/RestrictedUMinimum/Growth.lean#L159
-[proof-7]: https://github.com/aliromman/math/blob/ffd3c2db319516682a86165833684f6b7def50f1/conjectures/RestrictedUMinimum/Threshold.lean#L82
-[pr-7]: https://github.com/aliromman/math/pull/7
 [note-21]: https://github.com/aliromman/math/blob/d8dffa5c5f845e3926754e15475ad6554fbd29ab/conjectures/KolblSimplexRoots/README.md
 [proof-21]: https://github.com/aliromman/math/blob/d8dffa5c5f845e3926754e15475ad6554fbd29ab/conjectures/KolblSimplexRoots/Solution.lean
 [pr-21]: https://github.com/aliromman/math/pull/21
@@ -147,3 +143,7 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-6]: conjectures/StanleyTreeCSF/README.md
 [proof-6]: conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
+[note-7]: conjectures/RestrictedUMinimum/README.md
+[bound-7]: conjectures/RestrictedUMinimum/Growth.lean
+[proof-7]: conjectures/RestrictedUMinimum/Threshold.lean
+[pr-7]: https://github.com/aliromman/math/pull/7
