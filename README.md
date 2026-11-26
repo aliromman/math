@@ -8,6 +8,7 @@ Each title links to the research note. Proof links point to fixed revisions, and
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [A largest triangle with a boundary side][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Independence roots of finite graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
@@ -118,5 +119,8 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
 [proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
+[note-81]: https://github.com/aliromman/math/blob/3fdf029b835d544eb07cc81ca576a26ab0e2bbfa/conjectures/ErdosPurdyStraus/README.md
+[proof-81]: https://github.com/aliromman/math/blob/3fdf029b835d544eb07cc81ca576a26ab0e2bbfa/conjectures/ErdosPurdyStraus/Solution.lean
+[pr-81]: https://github.com/aliromman/math/pull/81
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
