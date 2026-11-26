@@ -29,9 +29,10 @@ Prefer short arguments that explain why a conjecture holds or fails.
 - Prove that statement or its negation in a separate module. Give a
   mathematical argument that a reader can check independently.
 - Use the latest stable Lean release and compatible Mathlib release. Pin
-  the toolchain and dependencies. Build from a clean checkout. Run
-  `python3 scripts/verify.py` to replay every research module in the kernel
-  and check each result's exact transitive axioms.
+  the toolchain and dependencies. Build from a clean checkout. Follow the
+  instructions for [scoped pull request checks](README.md#scoped-pull-request-checks)
+  and [full verification](README.md#full-verification) to build the proofs,
+  replay them in the kernel, and check their transitive axioms.
 - Exclude proof placeholders, circular arguments, and unjustified axioms.
   Have an independent agent challenge the mathematical argument and its
   translation into Lean. Resolve findings and repeat verification after
@@ -51,6 +52,13 @@ Prefer short arguments that explain why a conjecture holds or fails.
 - Lead the pull request with the finding or the open obstacle. Credit prior
   work. Update the README catalogue with links to the note, proof, and pull
   request. Identify partial results and extensions of known work.
+- Use “Proof of …”, “Disproof of …”, or “Solution to …” for a full resolution.
+  For a partial or conditional result, name the exact case or assumption.
+  Credit the original proof and its authors when you formalize known work.
+- Keep the GitHub pull request title, the result README, and the root catalogue
+  consistent. Correct titles on already-merged pull requests as needed. Cite
+  paper-local numbers with the paper. Use an external catalogue number only
+  after you verify that its statement matches.
 - Review the diff and its author and committer metadata before pushing.
   Exclude credentials, private contact details, machine paths, and raw logs.
   Add infrastructure only when the research or its verification requires it.
