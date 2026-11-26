@@ -67,8 +67,8 @@ AI agents found the four exponents, derived the infinite family, and
 wrote the mathematical and Lean proofs. From the repository root, run
 
 ```sh
-lake build conjectures.GatzweilerKrattenthalerShift.Solution
-lake env leanchecker conjectures.GatzweilerKrattenthalerShift.Solution
+lake exe cache get
+python3 scripts/verify.py
 ```
 
 `Statement.lean` gives the original conjecture over real polynomials.
