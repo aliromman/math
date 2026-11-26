@@ -1,4 +1,4 @@
-# A predicted bound below 17 allows arbitrarily long binary progressions
+# Disproof of the pointwise bound in Sobolewski’s Conjecture 2 on monochromatic progressions in binary pattern sequences
 
 Color each nonnegative integer by the parity of the number of occurrences of the binary pattern `100000` in its expansion. The 32 multiples
 $0,d,2d,\ldots,31d$ with $d=2^{14}-1=16383$ all have color zero. Sobolewski’s proposed bound on their number is less than 17.
@@ -33,3 +33,5 @@ The proof checks overlapping occurrences, the leading-zero convention, the extre
 lake exe cache get
 python3 scripts/verify.py
 ```
+
+Bartosz Sobolewski, “On monochromatic arithmetic progressions in binary words associated with pattern sequences,” Theoretical Computer Science (2024), article 114815, Conjecture 2, DOI 10.1016/j.tcs.2024.114815. See also arXiv:2204.05287v2, p. 25. [Publication](https://arxiv.org/pdf/2204.05287v2#page=25)

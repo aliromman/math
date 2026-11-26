@@ -1,4 +1,4 @@
-# Three fair dice that neither of the proposed moves can change
+# Disproof of Hur and Kim’s fair dice conjecture (Conjecture 1)
 
 Roll any two of these eight-sided dice. Each wins exactly 32 of the 64 possible rolls.
 
@@ -42,3 +42,5 @@ From the repository root, run
 # Run at the merge commit for PR #32.
 python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Injo Hur and Yeansu Kim, “Possible Probability and Irreducibility of Balanced Nontransitive Dice,” Journal of Mathematics (2021), article 6648248, Conjecture 1 (fair dice), DOI 10.1155/2021/6648248. The preprint arXiv:2006.12866 calls it Conjecture 3.5. [Publication](https://onlinelibrary.wiley.com/doi/10.1155/2021/6648248)

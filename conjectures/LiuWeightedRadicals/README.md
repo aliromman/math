@@ -1,4 +1,4 @@
-# An isosceles counterexample to Liu’s weighted Erdős–Mordell bound
+# Disproof of Liu’s Conjecture 6.4 on weighted Erdős–Mordell bounds for an interior point
 
 The isosceles triangle with vertices $A=(-1,0)$, $B=(1,0)$, $C=(0,84/13)$ and interior point $P=(0,60/11)$ violates the proposed upper bound at $k=3999/1000$.
 

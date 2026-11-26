@@ -1,4 +1,4 @@
-# A Lucas sequence violates Sun’s ratio bound at index five
+# Disproof of the Lucas-sequence assertion in Sun’s Conjecture 3.1 on successive root ratios
 
 Start with $u_0=0$, $u_1=1$ and set $u_{n+2}=3u_{n+1}+26u_n$. Its fifth,
 sixth, and seventh terms are $1459$, $9135$, and $65339$. Sun’s conjecture
@@ -43,3 +43,5 @@ python3 scripts/verify.py
 `Statement.lean` states all three claims. `Solution.lean` proves their
 conjunction false and checks the axioms used. OpenAI Codex found the
 counterexample and wrote the argument and Lean proof.
+
+Zhi-Wei Sun, “Conjectures involving arithmetical sequences” (2013), Conjecture 3.1, Lucas-sequence assertion, arXiv:1208.2683v9, pp. 8–9. [Publication](https://arxiv.org/pdf/1208.2683v9#page=8)

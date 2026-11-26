@@ -1,4 +1,4 @@
-# Two 32-vertex trees have the same five-cut polynomial
+# Disproof of the Aliste-Prieto–de Mier–Zamora conjecture on the smallest trees with the same restricted U-polynomial
 
 Aliste-Prieto, de Mier, and Zamora predicted that the smallest such pair has 34 vertices. The two trees below have 32. For each way to delete up to five edges, record the sizes of the resulting components in any order. Every list of sizes occurs equally often in both trees. More generally, the proposed formula overestimates the minimum at **every cut depth $m\ge5$**, and the minimum has a quadratic upper bound.
 
@@ -18,7 +18,7 @@ $$
 \end{cases}
 $$
 
-The predicted minima are known for $m=2,3,4$. The pair in the figure gives $\Phi(5)\le32<34$. Its exact minimum remains open. For the full chromatic symmetric function, Stanley asked whether any two nonisomorphic trees can agree at *every* cut depth. That question remains open as well. [Aliste-Prieto, de Mier and Zamora, *Discrete Mathematics* 344 (2021), 112255, Conjecture 15 and Proposition 16](https://doi.org/10.1016/j.disc.2020.112255) · [Accepted manuscript, section 4](https://upcommons.upc.edu/server/api/core/bitstreams/d37478c0-b2df-4e6e-a862-358d205545a4/content) · [Smith, Smith and Tian, small cases](https://arxiv.org/abs/1505.01889)
+The predicted minima are known for $m=2,3,4$. The pair in the figure gives $\Phi(5)\le32<34$. Its exact minimum remains open. For the full chromatic symmetric function, Stanley asked whether any two nonisomorphic trees can agree at *every* cut depth. That question remains open as well. [Aliste-Prieto, de Mier and Zamora, *Discrete Mathematics* 344 (2021), 112255, Conjecture 15 and Proposition 16](https://doi.org/10.1016/j.disc.2020.112255) · [Accepted manuscript, section 4](https://upcommons.upc.edu/server/api/core/bitstreams/d37478c0-b2df-4e6e-a862-358d205545a4/content#page=12) · [Smith, Smith and Tian, small cases](https://arxiv.org/abs/1505.01889)
 
 ## Why five cuts agree
 

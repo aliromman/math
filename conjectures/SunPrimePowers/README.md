@@ -1,4 +1,4 @@
-# Disproof of Sun’s Conjecture 2.1 on a real-power extension of Mandl’s inequality
+# Disproof of Sun’s Conjecture 2.1 on a real-power extension of Mandl’s inequality using Panaitopol’s nine-prime example
 
 Take the first nine primes and raise each to the power $1/2000$. Even their geometric mean exceeds the upper bound that Sun proposed for their arithmetic mean.
 

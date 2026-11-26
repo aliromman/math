@@ -1,4 +1,4 @@
-# Which graph orders admit a given rational degree root?
+# Solution to George’s problem on the rational degree roots of graphs of a given order
 
 Let $p,q$ be coprime positive integers. Some simple graph on $n$ vertices has
 $-p/q$ as a root of its degree polynomial if and only if

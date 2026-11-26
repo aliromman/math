@@ -1,4 +1,4 @@
-# Infinitely many exceptional triangular products
+# Proof of Bagchi and Zhou-Zheng’s Conjecture 12 on sporadic shifts without triangular Diophantine pairs
 
 For every nonnegative integer $k$, no two positive triangular numbers have a product that becomes a square upon adding
 

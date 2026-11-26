@@ -1,4 +1,4 @@
-# Can 33 points avoid a convex heptagon?
+# Partial result on Erdős Problem 107 for 33-point extensions of specified 27- and 30-point order types
 
 In the classical 32-point example, erase any two points. Keep only the clockwise
 or counterclockwise orientation of every triple of the remaining 30. A finite
@@ -10,7 +10,7 @@ Erdős and Szekeres asked for the least number of points in the real plane, with
 no three collinear, that guarantees the vertices of a convex $k$-gon. Other
 points may lie inside the polygon. They conjectured $2^{k-2}+1$ for every
 $k\geq 3$. Their construction gives 32 points with no convex heptagon. Seven
-is the first open polygon size. [Original conjecture, p. 464](https://www.numdam.org/item/CM_1935__2__463_0.pdf) · [Lower-bound construction](https://www.renyi.hu/~p_erdos/1960-09.pdf) · [Baek and Balko](https://doi.org/10.4230/LIPIcs.SoCG.2025.13)
+is the first open polygon size. [Original conjecture, p. 464](https://www.numdam.org/item/CM_1935__2__463_0.pdf#page=3) · [Lower-bound construction](https://www.renyi.hu/~p_erdos/1960-09.pdf) · [Baek and Balko](https://doi.org/10.4230/LIPIcs.SoCG.2025.13)
 
 ## What the search excludes
 
@@ -84,3 +84,5 @@ in projective coordinates stopped after about 1 CPU minute without a decision.
 Lean checks the original conjecture statement.
 The finite exclusions have Boolean certificates. A Lean proof of the geometric
 exclusions and a resolution of the conjecture are both open tasks.
+
+The Erdős Problems catalogue lists the original convex-polygon conjecture as [Erdős Problem 107](https://www.erdosproblems.com/107).

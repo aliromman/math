@@ -1,4 +1,4 @@
-# Liu's third conjecture on Walker's inequality
+# Proof of Liu’s Conjecture 3 on Walker’s inequality with triangle-excess weights
 
 Jian Liu asked whether every acute triangle with sides $a,b,c$ satisfies
 

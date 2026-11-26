@@ -1,4 +1,4 @@
-# Fair words have a monic counting polynomial
+# Proof of Černý’s Conjecture 34 on counting fair words
 
 For each length $n\ge 1$, the number of fair words on $k$ letters is a monic integer polynomial in $k$ of degree $d=\lceil n/2\rceil$. This proves Conjecture 34 in Anton Černý’s *On Fair Words*, Journal of Automata, Languages and Combinatorics 14 (2009), 163–174. [Original paper](https://doi.org/10.25596/JALC-2009-163)
 

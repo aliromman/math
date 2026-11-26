@@ -1,4 +1,4 @@
-# Minimum degree forces distinct edge-cover roots
+# Proof of the Akbari–Oboudi conjecture on distinct edge-cover roots and minimum degree
 
 If every vertex of a finite simple graph has at least $d$ incident edges, its edge-cover polynomial has at least $d$ distinct complex roots. For example, the triangle has minimum degree two and edge-cover polynomial $3x^2+x^3$. Its two roots are $0$ and $-3$.
 
@@ -38,3 +38,5 @@ python3 scripts/verify.py
 ```
 
 Searches for the authors, the conjecture, and lower bounds on the number of distinct edge-cover roots found no earlier proof. Akbari and Oboudi used the degree bound to study real roots with multiplicity. The derivative combination above counts distinct complex roots. [Akbari and Oboudi, proof of Theorem 19](https://janos.cs.technion.ac.il/COURSES/236603-11/oboudi.pdf#page=17) Bencs, Csikvári and Regts bounded the locations of all edge-cover roots. OpenAI Codex derived the derivative argument and wrote the Lean proof. [Bencs, Csikvári and Regts](https://doi.org/10.37236/10185)
+
+Saeid Alikhani, “Graphs Whose Certain Polynomials Have Few Distinct Roots” (2013), article 195818, Conjecture 5, DOI 10.1155/2013/195818. Alikhani attributes it to Saieed Akbari and Mohammad Reza Oboudi, “On the edge cover polynomial of a graph,” DOI 10.1016/j.ejc.2012.05.005. [Publication](https://onlinelibrary.wiley.com/doi/10.1155/2013/195818)
