@@ -11,10 +11,12 @@ namespace KarlovskySumBound
 open Finset
 open scoped BigOperators
 
-/-- The integer gap between the penultimate partial product and F controls the sum. -/
+/-- The integer gap between the penultimate partial product and F determines
+    the bound. Any gap greater than one makes the inequality strict. -/
 private theorem gap_bound {F d K C T S : ℕ} (hd : 0<d) (large : d<F*(F+C))
     (rel : d*S=(F+d)*T) (est : K*T ≤ F+d+C) :
-    K*S ≤ (F+1)*(F+1+C) := by
+    K*S ≤ (F+1)*(F+1+C) ∧
+      (K*S=(F+1)*(F+1+C) → d=1 ∧ K*T=F+d+C) := by
   obtain ⟨j,hj⟩ := Nat.exists_eq_add_of_le hd
   obtain ⟨g,hg⟩ := Nat.exists_eq_add_of_le large
   have id : d*((F+1)*(F+1+C)) = (F+d)*(F+d+C) + j*(g+1) := by
@@ -25,9 +27,20 @@ private theorem gap_bound {F d K C T S : ℕ} (hd : 0<d) (large : d<F*(F+C))
     calc
       _ = (F+d)*(K*T) := by rw [←Nat.mul_left_comm,rel]; ring
       _ ≤ _ := Nat.mul_le_mul_left _ est
-  exact Nat.le_of_mul_le_mul_left (lower.trans (id ▸ Nat.le_add_right _ _)) hd
+  constructor
+  · exact Nat.le_of_mul_le_mul_left (lower.trans (id ▸ Nat.le_add_right _ _)) hd
+  · intro equal
+    rw [equal,id] at lower
+    have z : j*(g+1)=0 := by omega
+    have je : j=0 := (Nat.mul_eq_zero.mp z).resolve_right (by omega)
+    have one : d=1 := by omega
+    refine ⟨one,?_⟩
+    have exactprod : (F+d)*(K*T) = (F+d)*(F+d+C) := calc
+      _ = d*(K*S) := by rw [Nat.mul_left_comm d K,rel]; ring
+      _ = (F+d)*(F+d+C) := by rw [equal,id,je]; simp
+    exact Nat.eq_of_mul_eq_mul_left (by omega) exactprod
 
-private theorem upper_nat (k F : ℕ) :
+theorem upper_nat (k F : ℕ) :
     ((k.factorial:ℚ)*upper k F)=(F+1 : ℚ)*(F+1+(k.factorial:ℚ)*tri k) := by
   have tri' : 2*(tri k:ℚ)=(k:ℚ)*(k+1) := by exact_mod_cast tri_twice k
   have pos : (0:ℚ)<k.factorial := by exact_mod_cast k.factorial_pos
@@ -47,9 +60,17 @@ private theorem large_gap {k F d : ℕ} (hk : 2≤k) (hF : 0<F) (bound : d≤(k+
   rw [Nat.mul_comm F (k+1)] at h''
   exact bound.trans_lt h''
 
-private theorem core_bound {k F : ℕ} (hk : 2≤k) (hF : 0<F)
+/-- The factorial-scaled sum bound and the necessary conditions for equality. -/
+theorem sum_bound_and_equality {k F : ℕ} (hk : 2≤k) (hF : 0<F)
     {x : Fin (k+2) → ℕ} (sol : Solution F x) :
-    k.factorial*(∑ i,x i) ≤ (F+1)*(F+1+k.factorial*tri k) := by
+    let y:=x (Fin.last k).castSucc
+    let z:=x (Fin.last (k+1))
+    let A:=fun i : Fin k => x i.castSucc.castSucc
+    let all:=∑ i,x i
+    k.factorial*all ≤ (F+1)*(F+1+k.factorial*tri k) ∧
+      (k.factorial*all = (F+1)*(F+1+k.factorial*tri k) →
+        F+1=k.factorial*y ∧ k<y ∧ (∑ i,A i)=tri k ∧ z=F*(tri k+y)) := by
+  dsimp only
   let A:=fun i : Fin k => x i.castSucc.castSucc
   let y:=x (Fin.last k).castSucc
   let z:=x (Fin.last (k+1))
@@ -94,12 +115,29 @@ private theorem core_bound {k F : ℕ} (hk : 2≤k) (hF : 0<F)
     have mult := Nat.mul_le_mul_right G ky.le
     nlinarith only [eg,mult]
   have ds : d*(T+z) = (F+d)*T := by nlinarith only [gap]
+  have h := gap_bound (K:=K) (C:=C) dp (large_gap hk hF db) ds (by rwa [←eqQ])
   rw [st]
-  exact gap_bound (K:=K) (C:=C) dp (large_gap hk hF db) ds (by rwa [←eqQ])
+  refine ⟨h.1,fun exact' => ?_⟩
+  obtain ⟨one,tight⟩ := h.2 exact'
+  have tQ : K*T = Q+C := by simpa only [←eqQ] using tight
+  have gz : G=0 := by
+    by_contra! gp
+    have lt := Nat.mul_lt_mul_of_pos_right ky (Nat.pos_of_ne_zero gp)
+    change K*((∑ i,A i)+y)=(∏ i,A i)*y+K*tri k at tQ
+    dsimp only [K] at tQ
+    rw [es,pg] at tQ
+    nlinarith only [tQ,eg,lt]
+  have ez : E=0 := by
+    rw [gz,Nat.mul_zero] at eg
+    exact (Nat.mul_eq_zero.mp (Nat.eq_zero_of_le_zero eg)).resolve_left k.factorial_ne_zero
+  have P : (∏ i,A i)=k.factorial := by simpa only [gz,add_zero] using pg
+  have S : (∑ i,A i)=tri k := by simpa only [ez,add_zero] using es
+  refine ⟨by simpa only [Q,P,one] using eqQ.symm,ky,S,?_⟩
+  simpa only [one,one_mul,T,S] using gap
 
 theorem resolution : Conjecture2 := by
   intro k F hk hF x sol
-  have h := core_bound hk hF sol
+  have h := (sum_bound_and_equality hk hF sol).1
   have pos : (0:ℚ)<k.factorial := by exact_mod_cast k.factorial_pos
   apply le_of_mul_le_mul_left _ pos
   rw [upper_nat]

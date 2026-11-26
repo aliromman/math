@@ -1,4 +1,4 @@
-# The sharp sum bound for distinct factors
+# Proof of Karlovsky’s Conjecture 2 on the sum bound for distinct positive factors
 
 Five different positive integers whose product is 23 times their sum can add up to at most 240. The numbers $1,2,3,4,230$ attain that limit. The same bound has a single formula for every number of distinct factors and every positive integer multiplier. This proves Petr Karlovsky’s Conjecture 2. [Original paper, §9](https://doi.org/10.3390/math9212779)
 
@@ -28,10 +28,9 @@ For the last inequality, multiply by $d$. The difference between the right and l
 
 Petr Karlovsky, *Diophantine Equations Relating Sums and Products of Positive Integers*, Mathematics **9** (2021), 2779, §9, Conjecture 2, equation (18). The paper established a larger bound allowing repeated terms. Bukor, Filakovszky and Tóth studied the equation with repeated terms and estimated solution counts. Sándor and Zakarczemny bounded products for $F=n^h$ with repeated terms. Searches for the conjecture, author, and distinct-term bound found no earlier proof. [Karlovsky](https://www.mdpi.com/2227-7390/9/21/2779) · [Bukor, Filakovszky and Tóth](https://journals.us.edu.pl/index.php/AMSIL/article/view/14169) · [Sándor and Zakarczemny](https://arxiv.org/abs/2611.20799)
 
-The proof accepts every increasing positive integer tuple from equation (17). Its estimate for the partial product also appears in the separate proof of Karlovsky’s equality conjecture. OpenAI Codex developed and formalized the argument. [Statement](Statement.lean) · [Proof](Solution.lean)
+The proof accepts every increasing positive integer tuple from equation (17). The partial-product estimate also gives necessary conditions for equality. OpenAI Codex developed and formalized the argument. [Statement](Statement.lean) · [Proof](Solution.lean)
 
 ```sh
-lake exe cache get
-lake build conjectures.KarlovskySumBound.Solution
-lake env leanchecker conjectures.KarlovskySumBound.Solution
+# Run at the merge commit for PR #77.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
