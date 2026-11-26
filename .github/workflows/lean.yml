@@ -9,6 +9,8 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-24.04
+    env:
+      LEAN_NUM_THREADS: "2"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -28,4 +30,7 @@ jobs:
           find conjectures -name '*.lean' | lean --deps-json --stdin |
             jq -r '[.imports[].result.imports[].module | select(. == "Mathlib" or startswith("Mathlib."))] | unique[]' |
             xargs -r lake exe cache get
-      - run: lake build
+      - name: Build and replay every research module
+        run: python3 scripts/verify.py
+      - name: Test the verification gates
+        run: python3 scripts/test_verify.py
