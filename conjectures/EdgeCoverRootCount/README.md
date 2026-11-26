@@ -34,8 +34,7 @@ The Lean statement counts all edge covers of a finite simple graph and counts it
 
 ```sh
 lake exe cache get
-lake build conjectures.EdgeCoverRootCount.Solution
-lake env leanchecker conjectures.EdgeCoverRootCount.Solution
+python3 scripts/verify.py
 ```
 
 Searches for the authors, the conjecture, and lower bounds on the number of distinct edge-cover roots found no earlier proof. Akbari and Oboudi used the degree bound to study real roots with multiplicity. The derivative combination above counts distinct complex roots. [Akbari and Oboudi, proof of Theorem 19](https://janos.cs.technion.ac.il/COURSES/236603-11/oboudi.pdf#page=17) Bencs, Csikvári and Regts bounded the locations of all edge-cover roots. OpenAI Codex derived the derivative argument and wrote the Lean proof. [Bencs, Csikvári and Regts](https://doi.org/10.37236/10185)
