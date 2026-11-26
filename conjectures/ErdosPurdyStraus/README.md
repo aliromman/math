@@ -1,4 +1,4 @@
-# The sharp area ratio for a largest triangle with a boundary side
+# Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.
 
 A largest triangle in a convex body shares one side with the boundary. How much larger can the body be than the triangle? The exact maximum is
 
@@ -6,7 +6,7 @@ $$
 \boxed{\pi-4\arctan t-t^2=2.3075689464\ldots},\qquad (1+t)^4=2(1+t^2),\quad 0<t<\tfrac14.
 $$
 
-This answers Problem 3.4 of Erdős, Purdy and Straus (1982). A convex body bounded by elliptic arcs and line segments attains the maximum. The maximizing triangle shown on the left has exactly one boundary side. [Original paper, p. 52](https://users.renyi.hu/~p_erdos/1982-09.pdf)
+This answers Problem 3.4 of Erdős, Purdy and Straus (1982). A convex body bounded by elliptic arcs and line segments attains the maximum. The maximizing triangle shown on the left has exactly one boundary side. [Original paper, p. 52](https://users.renyi.hu/~p_erdos/1982-09.pdf#page=8)
 
 ![An extremizing body with two largest triangles. On the left the triangle shares the base. On the right its upper vertices lie at paired heights.](diagram.svg)
 
@@ -55,7 +55,6 @@ Straus stated a bound of $\sqrt5$ in Lemma 2 (1978). Jerónimo-Castro and Roldá
 The Lean statement uses compact convex subsets of the real plane, ordinary area, and all competing triangles. It also proves that allowing interior vertices gives the same bound: along each vertical section, the absolute determinant is largest at a boundary endpoint. The proof constructs an extremizer, proves the bound for arbitrary bodies, and checks the integral and the comparison with $\sqrt5$. OpenAI Codex developed the proof and formalization. [Statement](Statement.lean) · [Boundary equivalence](Boundary.lean) · [Area bound](Dual.lean) · [Extremizing body](Extremizer.lean) · [Final proof](Solution.lean)
 
 ```sh
-lake exe cache get
-lake build conjectures.ErdosPurdyStraus.Solution
-lake env leanchecker conjectures.ErdosPurdyStraus.Solution
+# Run at the merge commit for PR #81.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
