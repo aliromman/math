@@ -1,0 +1,5 @@
+HurKimFairDice.fair_witness propext Classical.choice Quot.sound
+HurKimFairDice.fixed_block_resolution propext Classical.choice Quot.sound
+HurKimFairDice.isolated propext Classical.choice Quot.sound
+HurKimFairDice.no_block propext Classical.choice Quot.sound
+HurKimFairDice.resolution propext Classical.choice Quot.sound

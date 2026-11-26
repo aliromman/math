@@ -1,4 +1,4 @@
-# Ulas’s Stern polynomials are positive on the real line
+# Proof of Ulas’s Conjecture 4.4 on real zeros of Stern polynomials
 
 For every $n\ge0$, the Stern polynomial with index
 
@@ -8,7 +8,7 @@ $$
 
 is strictly positive at every real argument. At integer arguments these same polynomials have an exact prime-divisor classification. A prime divides some $B_{h_n}(t)$, with $n\ge0$ and $t\in\mathbb Z$, **if and only if it is 1 modulo 3**. Every such prime occurs already in $B_{19}(t)=3t^2+3t+1$.
 
-Stern polynomials satisfy $B_0=0$, $B_1=1$, $B_{2j}=tB_j$, and $B_{2j+1}=B_j+B_{j+1}$. Maciej Ulas conjectured the absence of real roots for this family. Their coefficients count hyperbinary representations by the number of digits equal to one. [Ulas, *Strong arithmetic property of certain Stern polynomials*, Conjecture 4.4](https://arxiv.org/pdf/1909.10844)
+Stern polynomials satisfy $B_0=0$, $B_1=1$, $B_{2j}=tB_j$, and $B_{2j+1}=B_j+B_{j+1}$. Maciej Ulas conjectured the absence of real roots for this family. Their coefficients count hyperbinary representations by the number of digits equal to one. [Ulas, *Strong arithmetic property of certain Stern polynomials*, Conjecture 4.4](https://arxiv.org/pdf/1909.10844#page=16)
 
 ## The norm and the real roots
 
@@ -33,9 +33,8 @@ Conversely, if $p\equiv1\pmod3$, the multiplicative group of the field has an el
 From a clean checkout, run
 
 ```sh
-lake exe cache get
-lake build conjectures.UlasStern.Arithmetic
-lake env leanchecker conjectures.UlasStern.Arithmetic
+# Run at the merge commit for PR #70.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The source conjecture is in [Statement.lean](Statement.lean), positivity and the norm are in [Solution.lean](Solution.lean), and the prime classification is in [Arithmetic.lean](Arithmetic.lean). The guarded axiom lists permit only `propext`, `Classical.choice`, and `Quot.sound`.
