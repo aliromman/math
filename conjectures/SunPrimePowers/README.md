@@ -1,4 +1,4 @@
-# Nine primes disprove Sun’s extension of Mandl’s inequality
+# Disproof of Sun’s Conjecture 2.1 on a real-power extension of Mandl’s inequality
 
 Take the first nine primes and raise each to the power $1/2000$. Even their geometric mean exceeds the upper bound that Sun proposed for their arithmetic mean.
 
@@ -35,8 +35,10 @@ Searches by conjecture number, the prime-power bound, and extensions of Mandl’
 From the repository root run
 
 ```sh
-lake build
-lake env leanchecker conjectures.SunPrimePowers.Solution
+# Run at the merge commit for PR #16.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The proof computes the ninth prime and the product of the first nine primes. OpenAI Codex found the counterexample and wrote the argument and Lean proof.
+
+Zhi-Wei Sun, “Conjectures involving arithmetical sequences” (2013), Conjecture 2.1 and Remark 2.1, arXiv:1208.2683v9, p. 2. [Publication](https://arxiv.org/pdf/1208.2683v9#page=2)
