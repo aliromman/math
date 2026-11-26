@@ -94,9 +94,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-12]: https://github.com/aliromman/math/blob/01e30f9a10ba840fd054fed0f05ac4c74058c3fd/conjectures/GeorgeRationalDegreeRoots/README.md
 [proof-12]: https://github.com/aliromman/math/blob/01e30f9a10ba840fd054fed0f05ac4c74058c3fd/conjectures/GeorgeRationalDegreeRoots/Solution.lean
 [pr-12]: https://github.com/aliromman/math/pull/12
-[note-23]: https://github.com/aliromman/math/blob/c2bcf6ea244f2a25f1b63bede754d6c060701c04/conjectures/TriangularSporadic/README.md
-[proof-23]: https://github.com/aliromman/math/blob/c2bcf6ea244f2a25f1b63bede754d6c060701c04/conjectures/TriangularSporadic/Solution.lean
-[pr-23]: https://github.com/aliromman/math/pull/23
 [note-24]: https://github.com/aliromman/math/blob/212750d415b40370dad8f0e2aa482fd071cf1bf6/conjectures/BuchweitzGapset/README.md
 [proof-24]: https://github.com/aliromman/math/blob/212750d415b40370dad8f0e2aa482fd071cf1bf6/conjectures/BuchweitzGapset/Solution.lean
 [pr-24]: https://github.com/aliromman/math/pull/24
@@ -166,3 +163,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-19]: conjectures/SunRealCycles/README.md
 [proof-19]: conjectures/SunRealCycles/Solution.lean
 [pr-19]: https://github.com/aliromman/math/pull/19
+[note-23]: conjectures/TriangularSporadic/README.md
+[proof-23]: conjectures/TriangularSporadic/Solution.lean
+[pr-23]: https://github.com/aliromman/math/pull/23
