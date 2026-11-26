@@ -1,4 +1,4 @@
-# A sharp threshold for adjoining a Nim heap
+# Solution to Beideman, Bowen and Müyesser’s Question 3 for finite-depth impartial games
 
 Let $A$ be any impartial game position whose longest play takes $d$ moves. Add a Nim heap of size $k$. On each turn a player can move in the game, reduce the heap, or do both. The Grundy value of the combined position is exactly
 
@@ -8,7 +8,7 @@ $$
 
 The cutoff is best possible at every depth. At depth ten, for example, a game in the family below has value 28 with a heap of size 24. Increasing the heap to 25 raises the value to 35. Every subsequent stone adds one.
 
-Beideman, Bowen and Müyesser asked which positions eventually reach the upper bound when the auxiliary heap grows. The answer is **every position of finite depth**. Theorem 2 of their paper gives a quadratic sufficient bound when the other game is a disjoint sum of Nim heaps. Their Theorem 6 fixes the auxiliary heap and varies the subtraction-game position. Such periodicity is consistent with saturation for each fixed position. [*The Sprague-Grundy Function for Some Selective Compound Games*, Integers 20 (2020), §3.1, Question 3](https://math.colgate.edu/~integers/ug4/ug4.pdf)
+Beideman, Bowen and Müyesser asked which positions eventually reach the upper bound when the auxiliary heap grows. The answer is **every position of finite depth**. Theorem 2 of their paper gives a quadratic sufficient bound when the other game is a disjoint sum of Nim heaps. Their Theorem 6 fixes the auxiliary heap and varies the subtraction-game position. Such periodicity is consistent with saturation for each fixed position. [*The Sprague-Grundy Function for Some Selective Compound Games*, Integers 20 (2020), §3.1, Question 3](https://math.colgate.edu/~integers/ug4/ug4.pdf#page=18)
 
 ## Why the threshold works
 
@@ -53,8 +53,8 @@ The small heaps force the first offset to be at least $p-1$. Below $pq$ the two 
 Run these commands from the repository root with its pinned Lean and Mathlib releases.
 
 ```sh
-lake build conjectures.SelectiveCompound.Solution
-lake env leanchecker conjectures.SelectiveCompound.Solution
+# Run at the merge commit for PR #50.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the game, the legal selective moves, the Grundy value, and the property in Question 3. Positions can have arbitrary branching. The depth conditions say that every option is shorter and that some option begins a longest play. `Grundy.lean` proves the least-excluded-value properties. `Extremal.lean` constructs the games above, and `Solution.lean` proves the bound.
