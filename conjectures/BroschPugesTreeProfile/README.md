@@ -79,8 +79,8 @@ $k\ge7$, and wrote the proof and Lean formalization.
 From the repository root, run
 
 ```sh
-lake build conjectures.BroschPugesTreeProfile.Solution
-lake env leanchecker conjectures.BroschPugesTreeProfile.Solution
+# Run at the merge commit for PR #34.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines unordered pattern counts, the joint profile,
