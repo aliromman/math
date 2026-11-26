@@ -115,9 +115,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/README.md
 [proof-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/Solution.lean
 [pr-19]: https://github.com/aliromman/math/pull/19
-[note-3]: https://github.com/aliromman/math/blob/3ea47dfea9d88011674a698dcaa63e8c0faa9e60/conjectures/LiuWalkerTwo/README.md
-[proof-3]: https://github.com/aliromman/math/blob/3ea47dfea9d88011674a698dcaa63e8c0faa9e60/conjectures/LiuWalkerTwo/Solution.lean
-[pr-3]: https://github.com/aliromman/math/pull/3
 [note-4]: https://github.com/aliromman/math/blob/bb74f289fdddc5874f9adbd2376b1393ed826572/conjectures/LiuWalkerThree/README.md
 [proof-4]: https://github.com/aliromman/math/blob/bb74f289fdddc5874f9adbd2376b1393ed826572/conjectures/LiuWalkerThree/Solution.lean
 [pr-4]: https://github.com/aliromman/math/pull/4
@@ -147,3 +144,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-2]: conjectures/LiuWalkerOne/README.md
 [proof-2]: conjectures/LiuWalkerOne/Solution.lean
 [pr-2]: https://github.com/aliromman/math/pull/2
+[note-3]: conjectures/LiuWalkerTwo/README.md
+[proof-3]: conjectures/LiuWalkerTwo/Solution.lean
+[pr-3]: https://github.com/aliromman/math/pull/3
