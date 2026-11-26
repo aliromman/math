@@ -12,6 +12,7 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Independence roots of finite graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
 | [Sobolewski’s binary-pattern progressions][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
+| [Twelve-point counterexample for wheel matchings][note-68] | At ten crossings, twelve convex points admit 252 perfect matchings, a set with one interior point admits 248, and the regular wheel admits 176. | [Lean][proof-68] · [#68][pr-68] |
 | [Bajnok’s restricted triple sums][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
 | [Roots of edge-cover polynomials][note-20] | A finite simple graph of minimum degree $d$ has at least $d$ distinct complex roots in its edge-cover polynomial. | [Lean][proof-20] · [#20][pr-20] |
 | [Independence roots of even-order trees][note-25] | For a tree on $2k$ vertices with $k\ge3$, every root of the independence polynomial has modulus at most $2^{k-2}+k+1$. | [Lean][proof-25] · [#25][pr-25] |
@@ -118,5 +119,8 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
 [proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
+[note-68]: https://github.com/aliromman/math/blob/fa06c430e82e1260cc5eda9c6f67ce07e4f0866b/conjectures/WheelMatchings/README.md
+[proof-68]: https://github.com/aliromman/math/blob/fa06c430e82e1260cc5eda9c6f67ce07e4f0866b/conjectures/WheelMatchings/Solution.lean
+[pr-68]: https://github.com/aliromman/math/pull/68
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
