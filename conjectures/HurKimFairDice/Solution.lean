@@ -32,12 +32,23 @@ theorem no_block (x y z : Die) (h : [x,y,z].Nodup) (v : Word) :
 
 theorem resolution : ¬ Conjecture := by
   intro h
-  obtain ⟨x,y,z,k,hn,e⟩ := (h witness fair_witness).2
-  cases k with
-  | zero => have he := isolated e; simp [witness] at he
-  | succ k =>
-    rw [List.replicate_succ, List.flatten_cons] at e
-    exact no_block x y z hn _ e
+  obtain ⟨blocks, hb, hs⟩ := (h witness fair_witness).2
+  cases blocks with
+  | nil =>
+    have he := isolated hs
+    simp [witness] at he
+  | cons b bs =>
+    obtain ⟨x, y, z, hn, rfl⟩ := hb b List.mem_cons_self
+    exact no_block x y z hn _ hs
+
+theorem fixed_block_resolution : ¬ FixedBlockConjecture := by
+  intro h
+  apply resolution
+  intro w hw
+  obtain ⟨length, x, y, z, k, distinct, similar⟩ := h w hw
+  refine ⟨length, List.replicate k [x,y,z,z,y,x], ?_, similar⟩
+  intro b hb
+  exact ⟨x, y, z, distinct, (List.mem_replicate.mp hb).2⟩
 
 /-- info: 'HurKimFairDice.resolution' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in

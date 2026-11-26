@@ -8,7 +8,7 @@ Roll any two of these eight-sided dice. Each wins exactly 32 of the 64 possible 
 | B | 3, 8, 9, 13, 14, 15, 16, 22 |
 | C | 4, 5, 6, 10, 11, 17, 23, 24 |
 
-Injo Hur and Yeansu Kim conjectured that two operations suffice to turn every fair triple into repetitions of a six-letter palindrome such as `ABCCBA`. For these dice, neither operation can even make a first change. This disproves Conjecture 1 of their journal article, numbered 3.5 in the preprint. [Journal article, §3](https://doi.org/10.1155/2021/6648248) · [Preprint](https://arxiv.org/abs/2006.12866)
+Injo Hur and Yeansu Kim conjectured that two operations can turn every fair triple into a product of six-letter blocks of the form `xyzzyx`, where `x,y,z` are the three dice in some order. For these dice, neither operation can change the word. This disproves Conjecture 1 of their journal article, numbered 3.5 in the preprint. [Journal article, §3](https://doi.org/10.1155/2021/6648248) · [Preprint](https://arxiv.org/abs/2006.12866)
 
 ## Why the word is isolated
 
@@ -30,7 +30,7 @@ The second operation slides a permutation of `ABC` across an adjacent segment co
 | BCA | 15 | $(-1,1)$ | 15, 18 |
 | ABC | 20 | $(1,1)$ | 20, 23 |
 
-These are all the three-letter permutations in the word. Each row gives just the two ends of its block. A slide across a nonempty segment needs a third occurrence of the same differences. The word therefore stays fixed. It starts with two equal letters, whereas every proposed block starts with two different letters. The same obstruction works even if the order of the letters can change from block to block.
+These are all the three-letter permutations in the word. Each row gives just the two ends of its block. A slide across a nonempty segment needs a third occurrence of the same differences. The word therefore stays fixed. It starts with two equal letters, whereas every proposed block starts with two different letters. The Lean theorem `resolution` permits a different order of letters in each block. The theorem `fixed_block_resolution` covers repetitions of one block. Both follow from `no_block`, which excludes every possible first block.
 
 ## Source and verification
 
@@ -39,7 +39,6 @@ Related work gives algorithms for listing words with the same scattered pair cou
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.HurKimFairDice.Solution
-lake env leanchecker conjectures.HurKimFairDice.Solution
+# Run at the merge commit for PR #32.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```

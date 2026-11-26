@@ -2,12 +2,46 @@
 
 Proofs, counterexamples, and partial results on published mathematical conjectures. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
+[Research ledger and cumulative statistics](research/ledger.md)
+
+## Verification
+
+Install Elan, then run the following commands from a clean checkout. The first
+command gets the build files for the pinned Mathlib release.
+
+```sh
+lake exe cache get
+python3 scripts/verify.py
+python3 scripts/test_verify.py
+python3 scripts/test_selection.py
+```
+
+Lake builds the research library with warnings as errors. The verifier calls the pinned
+`leanchecker` routine in a separate process for each module in the source tree. It checks
+that all required object files exist, replays private proof bodies, and
+traces the dependencies of every local declaration. Research proofs need
+theorem names so the compiler retains them for replay. The permitted axioms are `propext`, `Classical.choice`, and
+`Quot.sound`.
+
+On pull requests, CI compares the tested merge commit with its first parent. It rebuilds changed research modules and their transitive importers, replays their proofs, and checks the full axiom contract in each affected directory. Edits to documentation alone pass after the verifier checks whether research sources use the changed files. Changes to the toolchain, dependencies, or verifier require a full check. Select **Run workflow** in the Lean workflow to audit the entire revision. To reproduce a pull request check locally, run `python3 scripts/verify.py --base BASE --fetch-cache`, where `BASE` is the tested base commit.
+
+Each research directory with Lean sources has an `axioms` file. Each line
+gives a result's qualified theorem name followed by its exact transitive
+axioms, separated by spaces. A theorem with no axioms has only its name on
+the line. A line that starts with `statement` can register the definition
+of an open question. The research note identifies what the proof establishes
+and cites the original source.
+
 ## Discoveries
 
-Each title links to the research note. Proof links point to fixed revisions, and the pull requests show the current review status.
+Each title links to a research note. Results on this branch link to local files. Open drafts link to fixed revisions. The pull request records the review and verification history.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Hur–Kim moves on fair dice][note-32] | Three fair eight-sided dice stay fixed under both Hur–Kim moves, and their word cannot start with the proposed six-letter palindrome. | [Lean][proof-32] · [#32][pr-32] |
+| [Most frequent subsequences][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
+| [Shifted fake Gaussian coefficients][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
+| [Counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Independence roots of finite graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
@@ -35,29 +69,19 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | [The Erdős–Szekeres convex heptagon problem][note-9] | **Partial.** A finite SAT search rules out a heptagon-free 33-point extension of one specific 27-point pattern of triple orientations. The general question remains open. | [Search][proof-9] · [#9][pr-9] |
 | [Stanley’s tree isomorphism question][note-6] | **Partial.** A two-site branch exchange cannot produce nonisomorphic trees with the same chromatic symmetric function. A separate search distinguished 111,144 trees in a three-site family. | [Search][proof-6] · [#6][pr-6] |
 
-To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and follow the commands in its research note. [Install Elan][elan]
+Follow the reproduction commands in the research note. For an open draft, check out the linked pull request first. [Install Elan][elan]
 
 © 2026 Ali Romman · [Apache License 2.0](LICENSE) · [Cite this project](CITATION.cff) · [All pull requests][pulls]
 
-[note-7]: https://github.com/aliromman/math/blob/ffd3c2db319516682a86165833684f6b7def50f1/conjectures/RestrictedUMinimum/README.md
-[bound-7]: https://github.com/aliromman/math/blob/ffd3c2db319516682a86165833684f6b7def50f1/conjectures/RestrictedUMinimum/Growth.lean#L159
-[proof-7]: https://github.com/aliromman/math/blob/ffd3c2db319516682a86165833684f6b7def50f1/conjectures/RestrictedUMinimum/Threshold.lean#L82
-[pr-7]: https://github.com/aliromman/math/pull/7
 [note-21]: https://github.com/aliromman/math/blob/d8dffa5c5f845e3926754e15475ad6554fbd29ab/conjectures/KolblSimplexRoots/README.md
 [proof-21]: https://github.com/aliromman/math/blob/d8dffa5c5f845e3926754e15475ad6554fbd29ab/conjectures/KolblSimplexRoots/Solution.lean
 [pr-21]: https://github.com/aliromman/math/pull/21
 [note-29]: https://github.com/aliromman/math/blob/f4bee61ac4d3435fcb9739ef5fac753b5a99e521/conjectures/BrownCameronGraphModulus/README.md
 [proof-29]: https://github.com/aliromman/math/blob/f4bee61ac4d3435fcb9739ef5fac753b5a99e521/conjectures/BrownCameronGraphModulus/Solution.lean
 [pr-29]: https://github.com/aliromman/math/pull/29
-[note-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/README.md
-[proof-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/Solution.lean
-[pr-27]: https://github.com/aliromman/math/pull/27
 [note-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/README.md
 [proof-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/Solution.lean
 [pr-28]: https://github.com/aliromman/math/pull/28
-[note-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/README.md
-[proof-20]: https://github.com/aliromman/math/blob/5d7be0f9946d477930b04c502b23098ed4f14ad9/conjectures/EdgeCoverRootCount/Solution.lean
-[pr-20]: https://github.com/aliromman/math/pull/20
 [note-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/README.md
 [proof-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/Solution.lean
 [pr-25]: https://github.com/aliromman/math/pull/25
@@ -79,44 +103,66 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
 [proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
-[note-10]: https://github.com/aliromman/math/blob/d8125823f3d4f0fee6eab50268fcfe85b946b2d6/conjectures/GeorgeTreeDegreeRoots/README.md
-[proof-10]: https://github.com/aliromman/math/blob/d8125823f3d4f0fee6eab50268fcfe85b946b2d6/conjectures/GeorgeTreeDegreeRoots/Solution.lean
-[pr-10]: https://github.com/aliromman/math/pull/10
-[note-18]: https://github.com/aliromman/math/blob/d06e00ea8bcc75041df81a07c50f1e8ef2547ff8/conjectures/SunCircularDifferences/README.md
-[proof-18]: https://github.com/aliromman/math/blob/d06e00ea8bcc75041df81a07c50f1e8ef2547ff8/conjectures/SunCircularDifferences/Solution.lean
-[pr-18]: https://github.com/aliromman/math/pull/18
 [note-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/README.md
 [proof-19]: https://github.com/aliromman/math/blob/552d4bd30d34ea91fb052fb108e1333a9538433b/conjectures/SunRealCycles/Solution.lean
 [pr-19]: https://github.com/aliromman/math/pull/19
-[note-1]: https://github.com/aliromman/math/blob/d9c0d8fcbbefa8eaa4de48f137a8d00d3ff47081/conjectures/EngbersErey/README.md
-[proof-1]: https://github.com/aliromman/math/blob/d9c0d8fcbbefa8eaa4de48f137a8d00d3ff47081/conjectures/EngbersErey/Solution.lean#L73
-[pr-1]: https://github.com/aliromman/math/pull/1
-[note-2]: https://github.com/aliromman/math/blob/49d11be30e532489f13c49acd25daffbf0c1f8d2/conjectures/LiuWalkerOne/README.md
-[proof-2]: https://github.com/aliromman/math/blob/49d11be30e532489f13c49acd25daffbf0c1f8d2/conjectures/LiuWalkerOne/Solution.lean
-[pr-2]: https://github.com/aliromman/math/pull/2
-[note-3]: https://github.com/aliromman/math/blob/3ea47dfea9d88011674a698dcaa63e8c0faa9e60/conjectures/LiuWalkerTwo/README.md
-[proof-3]: https://github.com/aliromman/math/blob/3ea47dfea9d88011674a698dcaa63e8c0faa9e60/conjectures/LiuWalkerTwo/Solution.lean
-[pr-3]: https://github.com/aliromman/math/pull/3
-[note-4]: https://github.com/aliromman/math/blob/bb74f289fdddc5874f9adbd2376b1393ed826572/conjectures/LiuWalkerThree/README.md
-[proof-4]: https://github.com/aliromman/math/blob/bb74f289fdddc5874f9adbd2376b1393ed826572/conjectures/LiuWalkerThree/Solution.lean
-[pr-4]: https://github.com/aliromman/math/pull/4
 [note-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/README.md
 [proof-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/Solution.lean
 [pr-16]: https://github.com/aliromman/math/pull/16
-[note-11]: https://github.com/aliromman/math/blob/4ce07db1acfbbb5bd8ddfeab3d7af2d872af13f6/conjectures/SunLucasRatios/README.md
-[proof-11]: https://github.com/aliromman/math/blob/4ce07db1acfbbb5bd8ddfeab3d7af2d872af13f6/conjectures/SunLucasRatios/Solution.lean
-[pr-11]: https://github.com/aliromman/math/pull/11
 [note-14]: https://github.com/aliromman/math/blob/88f5820fb6d4b5e9eca3dcff46822153b3559080/conjectures/LiuWeightedRadicals/README.md
 [proof-14]: https://github.com/aliromman/math/blob/88f5820fb6d4b5e9eca3dcff46822153b3559080/conjectures/LiuWeightedRadicals/Solution.lean
 [pr-14]: https://github.com/aliromman/math/pull/14
 [note-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/README.md
 [proof-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/Solution.lean
 [pr-15]: https://github.com/aliromman/math/pull/15
-[note-9]: https://github.com/aliromman/math/blob/af6070cb27d25a2a18b247fdc663c5051f64aaf6/conjectures/ErdosSzekeres/README.md
-[proof-9]: https://github.com/aliromman/math/blob/af6070cb27d25a2a18b247fdc663c5051f64aaf6/conjectures/ErdosSzekeres/replay.py
-[pr-9]: https://github.com/aliromman/math/pull/9
-[note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
-[proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
-[pr-6]: https://github.com/aliromman/math/pull/6
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
+[note-1]: conjectures/EngbersErey/README.md
+[proof-1]: conjectures/EngbersErey/Solution.lean
+[pr-1]: https://github.com/aliromman/math/pull/1
+[note-2]: conjectures/LiuWalkerOne/README.md
+[proof-2]: conjectures/LiuWalkerOne/Solution.lean
+[pr-2]: https://github.com/aliromman/math/pull/2
+[note-3]: conjectures/LiuWalkerTwo/README.md
+[proof-3]: conjectures/LiuWalkerTwo/Solution.lean
+[pr-3]: https://github.com/aliromman/math/pull/3
+[note-4]: conjectures/LiuWalkerThree/README.md
+[proof-4]: conjectures/LiuWalkerThree/Solution.lean
+[pr-4]: https://github.com/aliromman/math/pull/4
+[note-6]: conjectures/StanleyTreeCSF/README.md
+[proof-6]: conjectures/StanleyTreeCSF/replay.py
+[pr-6]: https://github.com/aliromman/math/pull/6
+[note-7]: conjectures/RestrictedUMinimum/README.md
+[bound-7]: conjectures/RestrictedUMinimum/Growth.lean
+[proof-7]: conjectures/RestrictedUMinimum/Threshold.lean
+[pr-7]: https://github.com/aliromman/math/pull/7
+[note-9]: conjectures/ErdosSzekeres/README.md
+[proof-9]: conjectures/ErdosSzekeres/replay.py
+[pr-9]: https://github.com/aliromman/math/pull/9
+[note-18]: conjectures/SunCircularDifferences/README.md
+[proof-18]: conjectures/SunCircularDifferences/Solution.lean
+[pr-18]: https://github.com/aliromman/math/pull/18
+[proof-35]: conjectures/CernyFairWords/Solution.lean
+[note-35]: conjectures/CernyFairWords/README.md
+[pr-35]: https://github.com/aliromman/math/pull/35
+[note-27]: conjectures/SobolewskiPatternBound/README.md
+[proof-27]: conjectures/SobolewskiPatternBound/Solution.lean
+[pr-27]: https://github.com/aliromman/math/pull/27
+[proof-36]: conjectures/GatzweilerKrattenthalerShift/Solution.lean
+[note-36]: conjectures/GatzweilerKrattenthalerShift/README.md
+[pr-36]: https://github.com/aliromman/math/pull/36
+[note-10]: conjectures/GeorgeTreeDegreeRoots/README.md
+[proof-10]: conjectures/GeorgeTreeDegreeRoots/Solution.lean
+[pr-10]: https://github.com/aliromman/math/pull/10
+[note-11]: conjectures/SunLucasRatios/README.md
+[proof-11]: conjectures/SunLucasRatios/Solution.lean
+[pr-11]: https://github.com/aliromman/math/pull/11
+[proof-42]: conjectures/FangSubwordLength/Solution.lean
+[note-42]: conjectures/FangSubwordLength/README.md
+[pr-42]: https://github.com/aliromman/math/pull/42
+[note-20]: conjectures/EdgeCoverRootCount/README.md
+[proof-20]: conjectures/EdgeCoverRootCount/Solution.lean
+[pr-20]: https://github.com/aliromman/math/pull/20
+[proof-32]: conjectures/HurKimFairDice/Solution.lean
+[note-32]: conjectures/HurKimFairDice/README.md
+[pr-32]: https://github.com/aliromman/math/pull/32

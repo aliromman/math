@@ -54,8 +54,16 @@ inductive Step (w : Word) : Word → Prop
 
 abbrev Similar := Relation.ReflTransGen Step
 
-/-- Hur and Kim, Conjecture 1, equivalently Conjecture 3.5 of the preprint. -/
+/-- A block contains a permutation of the dice followed by its reverse. -/
+def IsBlock (b : Word) : Prop :=
+  ∃ x y z : Die, [x,y,z].Nodup ∧ b = [x,y,z,z,y,x]
+
+/-- Hur and Kim's Conjecture 1 (preprint 3.5), with a choice of letters for each block. -/
 def Conjecture : Prop := ∀ w : Word, Fair w → 6 ∣ w.length ∧
+  ∃ blocks : List Word, (∀ b ∈ blocks, IsBlock b) ∧ Similar w blocks.flatten
+
+/-- The interpretation that repeats one fixed block. -/
+def FixedBlockConjecture : Prop := ∀ w : Word, Fair w → 6 ∣ w.length ∧
   ∃ (x y z : Die) (k : ℕ), [x,y,z].Nodup ∧
     Similar w (List.replicate k [x,y,z,z,y,x]).flatten
 
