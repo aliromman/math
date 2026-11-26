@@ -34,7 +34,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials][note-85] | In every Markov numerator, every coefficient strictly inside the critical triangle is divisible by four. The proof establishes divisibility throughout the surrounding lower rectangle. | [Lean][proof-85] · [#85][pr-85] (open draft) |
 | [Proof of the Evans–Veselov–Winn Location of 4 conjecture for Markov polynomials][note-86] | For every reduced slope $1<a<b$, the unique monomial on $bi+aj=ab+1$ has coefficient exactly $4$. | [Lean][proof-86] · [#86][pr-86] (open draft) |
 | [Four-factor counterexamples to Gatzweiler and Krattenthaler’s Conjecture 4][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
-| [Proof of Karlovsky’s Conjecture 2 on the sum bound for distinct positive factors][note-77] | For $n=k+2\ge4$ distinct positive factors whose product is $F$ times their sum, the sum is at most $(F+1)(F+1+k!k(k+1)/2)/k!$. | [Lean][proof-77] · [#77][pr-77] (open draft) |
+| [Proof of Karlovsky’s Conjecture 2 on the sum bound for distinct positive factors][note-77] | For $n=k+2\ge4$ distinct positive factors whose product is $F$ times their sum, the sum is at most $(F+1)(F+1+k!k(k+1)/2)/k!$. | [Lean][proof-77] · [#77][pr-77] |
 | [Proof of Karlovsky’s Conjecture 3 on attainment of the distinct-factor sum bound][note-78] | For $k=n-2\ge2$, equality occurs precisely at $F=k!y-1$ with $y>k$. The maximizing tuple is then unique up to order. | [Lean][proof-78] · [#78][pr-78] (open draft) |
 | [Disproof of the Lucas-sequence assertion in Sun’s Conjecture 3.1 on successive root ratios][note-11] | For the Lucas sequence with parameters $(A,B)=(3,-26)$, the ratio $u_{n+1}^{1/(n+1)}/u_n^{1/n}$ increases from $n=5$ to $n=6$. | [Lean][proof-11] · [#11][pr-11] |
 | [Proof of Mabilat’s conjecture on irreducible golden-ratio quiddities][note-38] | The irreducible quiddities over $\mathbb Z\lambda$ are classified for $\lambda=2\cos(\pi/q)$ and every integer $q\ge4$, including the conjectured golden-ratio case. | [Lean][proof-38] · [#38][pr-38] |
@@ -270,9 +270,6 @@ and cites the original source.
 [note-78]: https://github.com/aliromman/math/blob/01b53ade9bccb950ed87fa0b1edb8bfa9b58ff92/conjectures/KarlovskySumAttainment/README.md
 [proof-78]: https://github.com/aliromman/math/blob/01b53ade9bccb950ed87fa0b1edb8bfa9b58ff92/conjectures/KarlovskySumAttainment/Solution.lean
 [pr-78]: https://github.com/aliromman/math/pull/78
-[note-77]: https://github.com/aliromman/math/blob/d356e28732822dd92250ed1bb7d88735536ea6da/conjectures/KarlovskySumBound/README.md
-[proof-77]: https://github.com/aliromman/math/blob/d356e28732822dd92250ed1bb7d88735536ea6da/conjectures/KarlovskySumBound/Solution.lean
-[pr-77]: https://github.com/aliromman/math/pull/77
 [note-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/README.md
 [proof-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/Solution.lean
 [pr-76]: https://github.com/aliromman/math/pull/76
@@ -494,3 +491,6 @@ and cites the original source.
 [note-49]: conjectures/BraunerBalancedWords/README.md
 [proof-49]: conjectures/BraunerBalancedWords/Solution.lean
 [pr-49]: https://github.com/aliromman/math/pull/49
+[note-77]: conjectures/KarlovskySumBound/README.md
+[proof-77]: conjectures/KarlovskySumBound/Solution.lean
+[pr-77]: https://github.com/aliromman/math/pull/77
