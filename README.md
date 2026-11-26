@@ -119,8 +119,8 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
 [proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
-[note-95]: https://github.com/aliromman/math/blob/46aa0b12197b2563761290530b83f144ff3df567/conjectures/SavchenkoSix/README.md
-[proof-95]: https://github.com/aliromman/math/blob/46aa0b12197b2563761290530b83f144ff3df567/conjectures/SavchenkoSix/Solution.lean
+[note-95]: https://github.com/aliromman/math/blob/d467684efd774e341932ea05f11035938d45e07c/conjectures/SavchenkoSix/README.md
+[proof-95]: https://github.com/aliromman/math/blob/d467684efd774e341932ea05f11035938d45e07c/conjectures/SavchenkoSix/Solution.lean
 [pr-95]: https://github.com/aliromman/math/pull/95
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
