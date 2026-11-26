@@ -38,6 +38,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Bipartite score sets][note-60] | Every nonempty finite set of positive integers is the full set of scores of an oriented bipartite graph. | [Lean][proof-60] · [#60][pr-60] |
 | [Tree-profile boundaries][note-34] | For every $k\ge7$, joining three caterpillars beats the proposed two-caterpillar boundary. The cases $k=4,5,6$ remain open. | [Lean][proof-34] · [#34][pr-34] |
 | [Exclusive sum labellings][note-56] | A finite graph with sum index $s$ has exclusive sum number at most $s3^{s-1}$. | [Lean][proof-56] · [#56][pr-56] |
 | [Hur–Kim moves on fair dice][note-32] | Three fair eight-sided dice stay fixed under both Hur–Kim moves, and their word cannot start with the proposed six-letter palindrome. | [Lean][proof-32] · [#32][pr-32] |
@@ -174,3 +175,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-21]: conjectures/KolblSimplexRoots/README.md
 [proof-21]: conjectures/KolblSimplexRoots/Solution.lean
 [pr-21]: https://github.com/aliromman/math/pull/21
+[proof-60]: conjectures/BipartiteScoreSets/Solution.lean
+[note-60]: conjectures/BipartiteScoreSets/README.md
+[pr-60]: https://github.com/aliromman/math/pull/60
