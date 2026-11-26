@@ -1,6 +1,7 @@
 module
 
-public import conjectures.KarlovskySumAttainment.Arithmetic
+public import conjectures.KarlovskySumAttainment.Statement
+public import conjectures.KarlovskySumBound.Solution
 import Mathlib.Data.Nat.Factorial.BigOperators
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Tactic.Linarith
@@ -8,6 +9,7 @@ import Mathlib.Tactic.Ring
 
 @[expose] public section
 namespace KarlovskySumAttainment
+open KarlovskySumBound (Solution upper tri tri_twice upper_nat rank_lower sum_bound_and_equality)
 open Finset
 open scoped BigOperators
 
@@ -92,7 +94,7 @@ theorem equality_iff {k F : ℕ} (hk : 2≤k) (hF : 0<F)
     have p : (k.factorial:ℚ)*((∑ i,x i):ℕ)=k.factorial*upper k F := by rw [eq]
     rw [upper_nat] at p
     have n : k.factorial*(∑ i,x i) = (F+1)*(F+1+k.factorial*tri k) := by exact_mod_cast p
-    obtain ⟨fy,hi,hs,z⟩ := (core_bound hk hF sol).2 n
+    obtain ⟨fy,hi,hs,z⟩ := (sum_bound_and_equality hk hF sol).2 n
     let y:=x (Fin.last k).castSucc
     refine ⟨y,hi,fy,?_⟩
     have point (i : Fin k) : i.val+1=x i.castSucc.castSucc :=
@@ -120,7 +122,7 @@ theorem resolution : Conjecture3 := by
       (by simpa [y,mul_comm] using fy)
     refine ⟨extremizer k F y,sol,eq,?_⟩
     intro w wh
-    have bound := sum_le hk hF wh
+    have bound := KarlovskySumBound.resolution k F hk hF w wh
     rw [←eq] at bound
     exact_mod_cast bound
 

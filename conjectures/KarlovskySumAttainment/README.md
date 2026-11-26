@@ -1,4 +1,4 @@
-# Exactly when the sum bound is attained
+# Proof of Karlovsky’s Conjecture 3 on attainment of the distinct-factor sum bound
 
 Fix $n\ge4$, put $k=n-2$, and let $K=k!$ and $t=k(k+1)/2$. Among distinct positive integers whose product is $F$ times their sum, Karlovsky’s bound is attained **exactly when $F=Ky-1$ for an integer $y>k$**. For every such $F$, the only maximizing tuple in increasing order is
 
@@ -24,10 +24,9 @@ The final inequality, multiplied by $d$, has difference $(d-1)(F(F+C)-d)$. Since
 
 Petr Karlovsky, *Diophantine Equations Relating Sums and Products of Positive Integers*, Mathematics **9** (2021), 2779, §9, Conjecture 3, equation (19). The author predicted the complete set of multipliers and exhibited numerical examples. We prove necessity, sufficiency and uniqueness. Searches by author, equation and distinct-term equality conditions found no earlier proof. Earlier work on repeated terms gives estimates on their counts or on their largest coordinates. [Karlovsky](https://www.mdpi.com/2227-7390/9/21/2779) · [Bukor, Filakovszky and Tóth](https://journals.us.edu.pl/index.php/AMSIL/article/view/14169) · [Sándor and Zakarczemny](https://arxiv.org/abs/2611.20799)
 
-The proof establishes the sum estimate it uses and shares the partial-product argument with the separate proof of Conjecture 2. OpenAI Codex developed and formalized both proofs. [Statement](Statement.lean) · [Equality and uniqueness](Solution.lean)
+The proof uses the sum bound from Conjecture 2 and its necessary conditions for equality. OpenAI Codex developed and formalized both proofs. [Statement](Statement.lean) · [Shared sum bound](../KarlovskySumBound/Solution.lean) · [Equality and uniqueness](Solution.lean)
 
 ```sh
-lake exe cache get
-lake build conjectures.KarlovskySumAttainment.Solution
-lake env leanchecker conjectures.KarlovskySumAttainment.Solution
+# Run at the merge commit for PR #78.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```

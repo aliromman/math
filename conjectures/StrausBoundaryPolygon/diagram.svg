@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="205" viewBox="0 0 470 205" role="img" aria-labelledby="title"><title id="title">Maximal trapezoid in the nonagon and a larger area fraction in the regular heptagon</title>
+<rect width="470" height="205" fill="#ffffff"/>
+<polygon points="34.00,62.00 34.00,126.00 78.00,158.00 122.00,166.00 166.00,158.00 210.00,94.00 166.00,30.00 122.00,22.00 78.00,30.00" fill="#e7edf0" stroke="#22343a" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="34.00,62.00 34.00,126.00 166.00,158.00 166.00,30.00" fill="#78b5a7" stroke="#165c51" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="418.00,92.00 390.89,35.71 329.98,21.81 281.13,60.76 281.13,123.24 329.98,162.19 390.89,148.29" fill="#e7edf0" stroke="#22343a" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="418.00,92.00 329.98,21.81 281.13,123.24 390.89,148.29" fill="#78b5a7" stroke="#165c51" stroke-width="2" stroke-linejoin="round"/>
+<g font-family="system-ui, sans-serif" font-size="14" fill="#20343a" text-anchor="middle"><text x="122" y="191">Nonagon</text><text x="346" y="191">Regular heptagon</text></g></svg>
