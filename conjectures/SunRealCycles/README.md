@@ -39,8 +39,8 @@ Sun also discussed the real-number problem in a 2013 lecture. Searches by conjec
 From the repository root run
 
 ```sh
-lake build
-lake env leanchecker conjectures.SunRealCycles.Solution
+# Run at the merge commit for PR #19.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The Lean statement includes both parts and all three exceptional forms. The proof checks the classification, the example, and its exclusion from the exceptional forms. OpenAI Codex found the counterexample and classification and wrote the mathematical and Lean proofs.
