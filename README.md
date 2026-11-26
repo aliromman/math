@@ -13,6 +13,7 @@ command gets the build files for the pinned Mathlib release.
 lake exe cache get
 python3 scripts/verify.py
 python3 scripts/test_verify.py
+python3 scripts/test_selection.py
 ```
 
 Lake builds the research library with warnings as errors. The verifier calls the pinned
@@ -21,6 +22,8 @@ that all required object files exist, replays private proof bodies, and
 traces the dependencies of every local declaration. Research proofs need
 theorem names so the compiler retains them for replay. The permitted axioms are `propext`, `Classical.choice`, and
 `Quot.sound`.
+
+On pull requests, CI compares the tested merge commit with its first parent. It rebuilds changed research modules and their transitive importers, replays their proofs, and checks the full axiom contract in each affected directory. Edits to documentation alone pass after the verifier checks whether research sources use the changed files. Changes to the toolchain, dependencies, or verifier require a full check. Select **Run workflow** in the Lean workflow to audit the entire revision. To reproduce a pull request check locally, run `python3 scripts/verify.py --base BASE --fetch-cache`, where `BASE` is the tested base commit.
 
 Each research directory with Lean sources has an `axioms` file. Each line
 gives a result's qualified theorem name followed by its exact transitive
