@@ -28,4 +28,7 @@ jobs:
           find conjectures -name '*.lean' | lean --deps-json --stdin |
             jq -r '[.imports[].result.imports[].module | select(. == "Mathlib" or startswith("Mathlib."))] | unique[]' |
             xargs -r lake exe cache get
-      - run: lake build
+      - name: Build and replay every research module
+        run: python3 scripts/verify.py
+      - name: Test the verification gates
+        run: python3 scripts/test_verify.py

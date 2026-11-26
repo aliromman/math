@@ -2,6 +2,31 @@
 
 Proofs, counterexamples, and partial results on published mathematical conjectures. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
+## Verification
+
+Install Elan, then run the following commands from a clean checkout. The first
+command gets the build files for the pinned Mathlib release.
+
+```sh
+lake exe cache get
+python3 scripts/verify.py
+python3 scripts/test_verify.py
+```
+
+Lake builds the research library with warnings as errors. A separate
+`leanchecker` process replays each research module, including its private
+declarations, using Lean's kernel. The verifier checks the replayed module
+names against the source tree. It also traces the dependencies of every local
+declaration. The permitted axioms are `propext`, `Classical.choice`, and
+`Quot.sound`.
+
+Each research directory with Lean sources has an `axioms` file. Each line
+gives a result's qualified theorem name followed by its exact transitive
+axioms, separated by spaces. A theorem with no axioms has only its name on
+the line. A line that starts with `statement` can register the definition
+of an open question. The research note identifies what the proof establishes
+and cites the original source.
+
 ## Discoveries
 
 Each title links to the research note. Proof links point to fixed revisions, and the pull requests show the current review status.
