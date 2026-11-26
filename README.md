@@ -10,6 +10,7 @@ Each title links to the research note. Proof links point to fixed revisions, and
 | --- | --- | --- |
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
+| [Mean length of the accelerated Zeckendorf game][note-92] | Starting from $n$ ones, the mean number of turns is $O((\log n)^3)$, proving the proposed sublinear bound. | [Lean][proof-92] · [#92][pr-92] |
 | [Independence roots of finite graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
 | [Sobolewski’s binary-pattern progressions][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
 | [Bajnok’s restricted triple sums][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
@@ -118,5 +119,8 @@ To reproduce a result, check out its PR (for example, `gh pr checkout 7`) and fo
 [note-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/README.md
 [proof-6]: https://github.com/aliromman/math/blob/50c653f08a97c823ee0cd621eeb600d04a518dd0/conjectures/StanleyTreeCSF/replay.py
 [pr-6]: https://github.com/aliromman/math/pull/6
+[note-92]: https://github.com/aliromman/math/blob/aebfffb404e51929b9073f858f46aed57fad2ee8/conjectures/AcceleratedZeckendorf/README.md
+[proof-92]: https://github.com/aliromman/math/blob/aebfffb404e51929b9073f858f46aed57fad2ee8/conjectures/AcceleratedZeckendorf/Solution.lean
+[pr-92]: https://github.com/aliromman/math/pull/92
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
 [elan]: https://github.com/leanprover/elan
