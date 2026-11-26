@@ -1,4 +1,4 @@
-# Bipartite graphs with difference index d and sum index d + 1
+# Solution to Haslegrave’s Question 1 on difference and sum indices of bipartite graphs
 
 For every positive integer $d$, there is a finite connected bipartite graph with
 
@@ -37,10 +37,12 @@ Take $B=(4d+1)^{d-1}+2$. For $k\le d-1$ the right side is at most $(4d+1)^{d-1}B
 Run from the repository root with the pinned Lean and Mathlib releases.
 
 ```sh
-lake build conjectures.HaslegraveBipartite.Solution
-lake env leanchecker conjectures.HaslegraveBipartite.Solution
+# Run at the merge commit for PR #53.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement defines both minima over injective integer labellings of finite simple graphs. The proof verifies the two labellings, the degree obstruction, and the displacement count. Axiom guards cover the exact indices and the answer to Question 1.
 
 OpenAI Codex found the construction and growth argument and wrote the formal proof. A search of subsequent papers on both indices located no earlier answer to this question.
+
+John Haslegrave, Sum Index, Difference Index and Exclusive Sum Number of Graphs, Question 1 in the journal article, Question 5.1 in arXiv:2104.06959. [Publication](https://link.springer.com/article/10.1007/s00373-023-02624-0)
