@@ -101,9 +101,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/README.md
 [proof-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/Solution.lean
 [pr-16]: https://github.com/aliromman/math/pull/16
-[note-14]: https://github.com/aliromman/math/blob/88f5820fb6d4b5e9eca3dcff46822153b3559080/conjectures/LiuWeightedRadicals/README.md
-[proof-14]: https://github.com/aliromman/math/blob/88f5820fb6d4b5e9eca3dcff46822153b3559080/conjectures/LiuWeightedRadicals/Solution.lean
-[pr-14]: https://github.com/aliromman/math/pull/14
 [note-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/README.md
 [proof-15]: https://github.com/aliromman/math/blob/7576bcad4a477a06d2ac3bf7dac9a47bc65d349e/conjectures/LiuMedianRatio/Solution.lean
 [pr-15]: https://github.com/aliromman/math/pull/15
@@ -170,3 +167,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-56]: conjectures/ExclusiveSumBound/Solution.lean
 [note-56]: conjectures/ExclusiveSumBound/README.md
 [pr-56]: https://github.com/aliromman/math/pull/56
+[note-14]: conjectures/LiuWeightedRadicals/README.md
+[proof-14]: conjectures/LiuWeightedRadicals/Solution.lean
+[pr-14]: https://github.com/aliromman/math/pull/14
