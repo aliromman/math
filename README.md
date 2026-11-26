@@ -73,9 +73,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-29]: https://github.com/aliromman/math/blob/f4bee61ac4d3435fcb9739ef5fac753b5a99e521/conjectures/BrownCameronGraphModulus/README.md
 [proof-29]: https://github.com/aliromman/math/blob/f4bee61ac4d3435fcb9739ef5fac753b5a99e521/conjectures/BrownCameronGraphModulus/Solution.lean
 [pr-29]: https://github.com/aliromman/math/pull/29
-[note-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/README.md
-[proof-27]: https://github.com/aliromman/math/blob/69444d0db1364bf6fac20caf1b9e01d0a0ffbb42/conjectures/SobolewskiPatternBound/Solution.lean
-[pr-27]: https://github.com/aliromman/math/pull/27
 [note-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/README.md
 [proof-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/Solution.lean
 [pr-28]: https://github.com/aliromman/math/pull/28
@@ -151,3 +148,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-35]: conjectures/CernyFairWords/Solution.lean
 [note-35]: conjectures/CernyFairWords/README.md
 [pr-35]: https://github.com/aliromman/math/pull/35
+[note-27]: conjectures/SobolewskiPatternBound/README.md
+[proof-27]: conjectures/SobolewskiPatternBound/Solution.lean
+[pr-27]: https://github.com/aliromman/math/pull/27
