@@ -90,9 +90,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-22]: https://github.com/aliromman/math/blob/a5cb492a3b08718764bed02a2831dba979c9402f/conjectures/DefantNarayana/README.md
 [proof-22]: https://github.com/aliromman/math/blob/a5cb492a3b08718764bed02a2831dba979c9402f/conjectures/DefantNarayana/Solution.lean
 [pr-22]: https://github.com/aliromman/math/pull/22
-[note-13]: https://github.com/aliromman/math/blob/023ef6dd3b04f47cff626ba3f3934944d2d56073/conjectures/WordPacking121/README.md
-[proof-13]: https://github.com/aliromman/math/blob/023ef6dd3b04f47cff626ba3f3934944d2d56073/conjectures/WordPacking121/Proof.lean
-[pr-13]: https://github.com/aliromman/math/pull/13
 [note-24]: https://github.com/aliromman/math/blob/212750d415b40370dad8f0e2aa482fd071cf1bf6/conjectures/BuchweitzGapset/README.md
 [proof-24]: https://github.com/aliromman/math/blob/212750d415b40370dad8f0e2aa482fd071cf1bf6/conjectures/BuchweitzGapset/Solution.lean
 [pr-24]: https://github.com/aliromman/math/pull/24
@@ -187,3 +184,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [proof-70]: conjectures/UlasStern/Solution.lean
 [arith-70]: conjectures/UlasStern/Arithmetic.lean
 [pr-70]: https://github.com/aliromman/math/pull/70
+[note-13]: conjectures/WordPacking121/README.md
+[proof-13]: conjectures/WordPacking121/Proof.lean
+[pr-13]: https://github.com/aliromman/math/pull/13
