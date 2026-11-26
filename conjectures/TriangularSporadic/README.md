@@ -25,9 +25,8 @@ Ghosh and Sarnak studied the related integral Markoff surface. For these paramet
 From the repository root, run the following commands.
 
 ```sh
-lake exe cache get
-lake build
-lake env leanchecker conjectures.TriangularSporadic.Solution
+# Run at the merge commit for PR #23.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` gives the original conjecture over integers. `Solution.lean` proves the positive family and the conjecture. Its axiom check allows propositional extensionality, classical choice and quotient soundness. OpenAI Codex derived the argument and wrote the Lean proof.
