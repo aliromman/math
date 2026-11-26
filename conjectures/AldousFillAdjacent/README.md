@@ -46,4 +46,6 @@ lake build conjectures.AldousFillAdjacent.Solution
 lake env leanchecker conjectures.AldousFillAdjacent.Solution
 ```
 
-Example 7.21 of the same source treats swaps of arbitrary pairs and credits Flatto, Odlyzko, and Wales. Searches for stationary hitting times of cyclic adjacent-transposition shuffles, the modified bubble-sort graph and its Kirchhoff index found no earlier correction of Example 7.22. OpenAI Codex found the return obstruction and the corrected expansion, and wrote the Lean proofs.
+Aldous proved the leading asymptotic $\mathbb E T\sim m!$ for adjacent swaps on a line. Example 7.21 of the Aldous–Fill monograph treats swaps of arbitrary pairs and credits Flatto, Odlyzko, and Wales. Searches for stationary hitting times of cyclic adjacent-transposition shuffles, the modified bubble-sort graph and its Kirchhoff index found no earlier correction of Example 7.22. [Aldous, *Random walks on finite groups and rapidly mixing Markov chains* (1983), §§4.10 and 8](https://www.numdam.org/item/SPS_1983__17__243_0/)
+
+OpenAI Codex found the return obstruction and the corrected expansion, and wrote the Lean proofs.
