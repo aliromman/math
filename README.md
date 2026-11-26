@@ -35,6 +35,7 @@ Each title links to a research note. Results on this branch link to local files.
 
 | Research note | Finding | Proof / PR |
 | --- | --- | --- |
+| [Counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Restricted $U$-polynomials of trees][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Kölbl’s bound on Ehrhart roots][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Independence roots of finite graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
@@ -147,3 +148,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-18]: conjectures/SunCircularDifferences/README.md
 [proof-18]: conjectures/SunCircularDifferences/Solution.lean
 [pr-18]: https://github.com/aliromman/math/pull/18
+[proof-35]: conjectures/CernyFairWords/Solution.lean
+[note-35]: conjectures/CernyFairWords/README.md
+[pr-35]: https://github.com/aliromman/math/pull/35
