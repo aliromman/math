@@ -37,8 +37,7 @@ From the repository root, run
 
 ```sh
 lake exe cache get
-lake build
-lake env leanchecker conjectures.SunLucasRatios.Solution
+python3 scripts/verify.py
 ```
 
 `Statement.lean` states all three claims. `Solution.lean` proves their
