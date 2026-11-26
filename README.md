@@ -107,9 +107,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/README.md
 [proof-16]: https://github.com/aliromman/math/blob/988b03fe2a75c27a89509ca129a51edfd1ce7bac/conjectures/SunPrimePowers/Solution.lean
 [pr-16]: https://github.com/aliromman/math/pull/16
-[note-11]: https://github.com/aliromman/math/blob/4ce07db1acfbbb5bd8ddfeab3d7af2d872af13f6/conjectures/SunLucasRatios/README.md
-[proof-11]: https://github.com/aliromman/math/blob/4ce07db1acfbbb5bd8ddfeab3d7af2d872af13f6/conjectures/SunLucasRatios/Solution.lean
-[pr-11]: https://github.com/aliromman/math/pull/11
 [note-14]: https://github.com/aliromman/math/blob/88f5820fb6d4b5e9eca3dcff46822153b3559080/conjectures/LiuWeightedRadicals/README.md
 [proof-14]: https://github.com/aliromman/math/blob/88f5820fb6d4b5e9eca3dcff46822153b3559080/conjectures/LiuWeightedRadicals/Solution.lean
 [pr-14]: https://github.com/aliromman/math/pull/14
@@ -155,3 +152,6 @@ Follow the reproduction commands in the research note. For an open draft, check 
 [note-10]: conjectures/GeorgeTreeDegreeRoots/README.md
 [proof-10]: conjectures/GeorgeTreeDegreeRoots/Solution.lean
 [pr-10]: https://github.com/aliromman/math/pull/10
+[note-11]: conjectures/SunLucasRatios/README.md
+[proof-11]: conjectures/SunLucasRatios/Solution.lean
+[pr-11]: https://github.com/aliromman/math/pull/11
