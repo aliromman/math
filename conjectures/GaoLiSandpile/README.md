@@ -1,8 +1,8 @@
-# Three cliques with one edge removed refute the odd sandpile conjecture
+# Disproof of Li’s Odd Biconnected Graphs Conjecture on sandpile identities
 
 Take three copies of $K_5$. Delete one edge $u_i v_i$ in each copy and join $v_i$ to $u_{i+1}$, with indices modulo three. The resulting 15-vertex graph has the maximal stable sandpile as its group identity for every sink.
 
-The same construction works with $K_d$ for every $d\ge3$. For odd $d\ge5$ it gives a biconnected counterexample of order $3d$ to Rupert Li's conjecture that only odd cycles and complete graphs have this property among biconnected graphs of odd order. Yibo Gao and Li restated the conjecture as Question 3.5. Their exhaustive search through 11 vertices found no counterexample. Their rings of copies of $K_4$ minus an edge have even order. [Li, slide 16](https://math.mit.edu/research/highschool/primes/materials/2019/conf/5-1-Li.pdf) · [Gao and Li, Example 3.1 and Question 3.5](https://arxiv.org/pdf/2008.10079).
+The same construction works with $K_d$ for every $d\ge3$. For odd $d\ge5$ it gives a biconnected counterexample of order $3d$ to Rupert Li’s Odd Biconnected Graphs Conjecture, which states that only odd cycles and complete graphs have this property among biconnected graphs of odd order. Yibo Gao and Li restated the conjecture as Question 3.5. Their exhaustive search through 11 vertices found no counterexample. Their rings of copies of $K_4$ minus an edge have even order. [Li, slide 16](https://math.mit.edu/research/highschool/primes/materials/2019/conf/5-1-Li.pdf#page=29) · [Gao and Li, Example 3.1 and Question 3.5](https://arxiv.org/pdf/2008.10079).
 
 ## Proof
 
@@ -29,9 +29,8 @@ These entries satisfy the equation by substitution. For example, when $d=5$ and 
 `Statement.lean` defines recurrence using legal firings and defines the identity using the integer reduced Laplacian. `Solution.lean` proves the formula for every block size and sink, verifies biconnectivity and order, and checks the axioms of both the general result and the refutation. From the repository root run
 
 ```sh
-lake exe cache get
-lake build
-lake env leanchecker conjectures.GaoLiSandpile.Solution
+# Run at the merge commit for PR #39.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Searches for the named property, the conjecture, work citing Gao and Li, and rings of cliques with one missing edge found no prior odd-order counterexample. The construction extends the authors' diamond rings. Codex found the example, derived the general potentials, and wrote the Lean formalization. An independent agent checked the source definitions, both polynomial tables, and the formal statement. Direct legal stabilization of twice the maximal configuration also returned one copy for every sink at block sizes 5, 7, 9 and 11.
