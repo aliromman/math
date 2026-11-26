@@ -52,7 +52,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Solution to Beideman, Bowen and Müyesser’s Question 3 for finite-depth impartial games][note-50] | For any impartial game of finite depth $d$, a selective compound with a Nim heap of size $k$ has Grundy value $k+d$ when $k\ge\lfloor d^2/4\rfloor$. The cutoff is sharp at every depth. | [Lean][proof-50] · [#50][pr-50] |
 | [Solution to Bellec and Fritz’s attainment question for the Beat the Average game][note-90] | With $m\ge3$ independent rolls, the first roll falls below their mean with any probability strictly between $1/m$ and $(m-1)/m$. Both endpoints are unattainable. | [Lean][proof-90] · [#90][pr-90] (open draft) |
 | [Proof of Conjecture 1.11 of Garcia-Fernandezsesma and coauthors on the mean length of the accelerated Zeckendorf game][note-92] | Starting from $n$ ones, the mean number of turns is $O((\log n)^3)$, proving the proposed sublinear bound. | [Lean][proof-92] · [#92][pr-92] (open draft) |
-| [Disproof of Drexel, Peng and Richey’s Conjecture 1 on bias monotonicity in Penney’s ante][note-74] | At the same head probability near $0.451$, the count of favored longer words increases immediately to the right, for every length cap $n\ge4$. | [Lean][proof-74] · [#74][pr-74] (open draft) |
+| [Disproof of Drexel, Peng and Richey’s Conjecture 1 on bias monotonicity in Penney’s ante][note-74] | At the same head probability near $0.451$, the count of favored longer words increases immediately to the right, for every length cap $n\ge4$. | [Lean][proof-74] · [#74][pr-74] |
 | [Proof of Gallian and Rusin’s conjecture on the maximum game-size of 30-sided dice][note-63] | Exactly 44 different 30-sided dice occur in games with standard sum frequencies. Forty-three can occur in three-dice games, and the remaining die needs four. | [Lean][proof-63] · [#63][pr-63] (open draft) |
 | [Proof of Gallian and Rusin’s conjecture on the number of 105-sided solution dice][note-62] | Exactly 40 different 105-sided dice occur in games with standard sum frequencies, and all 40 occur in three-dice games. | [Lean][proof-62] · [#62][pr-62] (open draft) |
 | [Proof of Gallian and Rusin’s conjecture on the number of solution dice with p²q sides][note-65] | For every pair of distinct primes $p,q$, exactly 22 different $p^2q$-sided dice occur in games with standard sum frequencies. Each occurs in a three-dice game. | [Lean][proof-65] · [#65][pr-65] (open draft) |
@@ -279,9 +279,6 @@ and cites the original source.
 [note-75]: conjectures/StrausBoundaryPolygon/README.md
 [proof-75]: conjectures/StrausBoundaryPolygon/Solution.lean
 [pr-75]: https://github.com/aliromman/math/pull/75
-[note-74]: https://github.com/aliromman/math/blob/77447a49e41d214f3285fb301826752b8964674f/conjectures/PenneyBias/README.md
-[proof-74]: https://github.com/aliromman/math/blob/77447a49e41d214f3285fb301826752b8964674f/conjectures/PenneyBias/Solution.lean
-[pr-74]: https://github.com/aliromman/math/pull/74
 [note-73]: https://github.com/aliromman/math/blob/8bd681627f4936632074973d5b52eb5d4a65d7e9/conjectures/PracticalPolygons/README.md
 [proof-73]: https://github.com/aliromman/math/blob/8bd681627f4936632074973d5b52eb5d4a65d7e9/conjectures/PracticalPolygons/Solution.lean
 [pr-73]: https://github.com/aliromman/math/pull/73
@@ -494,3 +491,6 @@ and cites the original source.
 [note-38]: conjectures/MabilatGoldenQuiddities/README.md
 [proof-38]: conjectures/MabilatGoldenQuiddities/Solution.lean
 [pr-38]: https://github.com/aliromman/math/pull/38
+[note-74]: conjectures/PenneyBias/README.md
+[proof-74]: conjectures/PenneyBias/Solution.lean
+[pr-74]: https://github.com/aliromman/math/pull/74
