@@ -1,10 +1,10 @@
-# The first sum starts halfway through the missing-sum count
+# Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum
 
-When exactly $k$ sums are missing, the limiting mean position of the first present sum is $k/2+O(1)$. This gives the slope in Conjecture 8.1.
+When exactly $k$ sums are missing, the limiting mean position of the first present sum is $k/2+O(1)$. This gives the slope in the accepted manuscript’s Conjecture 8.1. The first arXiv version calls it Conjecture 7.1 and counts positions starting at one. [Original version, p. 23](https://arxiv.org/pdf/1109.4700v1#page=23)
 
 Choose a uniformly random subset $A$ of $\{0,\ldots,n-1\}$. Its sumset consists of all $a+b$ with $a,b\in A$, including $a=b$. Let $K$ count the missing integers in $[0,2n-2]$. Let $X=\min(A+A)=2\min A$. The authors conjectured that $e(k)=\lim_{n\to\infty}\mathbb E[X\mid K=k]$ is asymptotically linear as $k\to\infty$. The limit exists for each $k$, and $|e(k)-k/2|$ is bounded independently of $k$. The limit in $n$ comes first. For fixed $k$, the conditioning event has positive probability for all sufficiently large $n$.
 
-Lazarev, Miller and O’Bryant, *Distribution of missing sums in sumsets*, §8, p. 34 of the accepted manuscript. [Authors’ manuscript](https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/DistrMissingSums95.pdf) · [Journal article](https://doi.org/10.1080/10586458.2013.743304)
+Lazarev, Miller and O’Bryant, *Distribution of missing sums in sumsets*, §8, p. 34 of the accepted manuscript. [Authors’ manuscript](https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/DistrMissingSums95.pdf#page=34) · [Journal article](https://doi.org/10.1080/10586458.2013.743304)
 
 ## Proof
 
@@ -41,9 +41,8 @@ Green and Morris obtained the critical exponential rate for the one-sided number
 From a clean checkout of this draft, run
 
 ```sh
-lake exe cache get
-lake build conjectures.MissingSumFringes.First.Solution
-lake env leanchecker conjectures.MissingSumFringes.First.Solution
+# Run at the merge commit for PR #66.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement and solution are separate modules. The toolchain and Mathlib revision are pinned. An independent AI reviewer checked the source, the limiting argument, and the formal statements, enumerated all nonempty subsets through $n=21$, and replayed the exported theorems in the Nanoda kernel. The guarded axiom lists contain only `propext`, `Classical.choice`, and `Quot.sound`.
