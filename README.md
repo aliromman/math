@@ -86,7 +86,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Solution to George’s problem on the rational degree roots of graphs of a given order][note-12] | For coprime positive integers $p,q$, some simple graph on $n\ge1$ vertices has root $-p/q$ exactly when $p+q$ divides odd $n$ or $2(p+q)$ divides even $n$. | [Lean][proof-12] · [#12][pr-12] |
 | [Solution to Haslegrave’s Question 1 on difference and sum indices of bipartite graphs][note-53] | For every positive integer $d$, a finite connected bipartite graph has difference index $d$ and sum index $d+1$. | [Lean][proof-53] · [#53][pr-53] |
 | [Solution to Haslegrave’s Question 3 on exclusive sum numbers and bounded sum index][note-56] | A finite graph with sum index $s$ has exclusive sum number at most $s3^{s-1}$. | [Lean][proof-56] · [#56][pr-56] |
-| [Disproof of Leander and Linusson’s Conjecture 2 on path correlation in randomly oriented fixed-edge graphs][note-94] | With four vertices and three randomly oriented edges the path covariance is $-9/400$. For every fixed positive edge count $m$, multiplying it by $n^4$ gives limit $-m$. | [Lean][proof-94] · [#94][pr-94] (open draft) |
+| [Disproof of Leander and Linusson’s Conjecture 2 on path correlation in randomly oriented fixed-edge graphs][note-94] | With four vertices and three randomly oriented edges the path covariance is $-9/400$. For every fixed positive edge count $m$, multiplying it by $n^4$ gives limit $-m$. | [Lean][proof-94] · [#94][pr-94] |
 | [Disproof of Li’s Odd Biconnected Graphs Conjecture on sandpile identities][note-39] | An infinite family of biconnected graphs of odd order has the maximal stable sandpile identity for every sink. These graphs are neither cycles nor complete. | [Lean][proof-39] · [#39][pr-39] |
 | [Disproof of Ma and Tang’s Conjecture 5.2 on even-cycle homomorphism densities in tournaments][note-89] | Three equal transitive groups oriented in a cycle have triangle density $1/9$ and limiting six-cycle density $5/486$, below the proposed minimum by $775/1889568$. | [Lean][proof-89] · [#89][pr-89] (open draft) |
 | [Proof of Pirzada, Naikoo and Chishti’s Conjecture 2.1 on bipartite score sets][note-60] | Every nonempty finite set of positive integers is the full set of scores of an oriented bipartite graph. | [Lean][proof-60] · [#60][pr-60] |
@@ -210,9 +210,6 @@ and cites the original source.
 [note-95]: https://github.com/aliromman/math/blob/b43e4073bf4efbcd8ebb4dd5b5cad14aedeb1719/conjectures/SavchenkoSix/README.md
 [proof-95]: https://github.com/aliromman/math/blob/b43e4073bf4efbcd8ebb4dd5b5cad14aedeb1719/conjectures/SavchenkoSix/Solution.lean
 [pr-95]: https://github.com/aliromman/math/pull/95
-[note-94]: https://github.com/aliromman/math/blob/51891a1eb82efeb71619e2e572305193d6a5e3c3/conjectures/LeanderLinusson/README.md
-[proof-94]: https://github.com/aliromman/math/blob/51891a1eb82efeb71619e2e572305193d6a5e3c3/conjectures/LeanderLinusson/Solution.lean
-[pr-94]: https://github.com/aliromman/math/pull/94
 [note-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/README.md
 [proof-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/Solution.lean
 [pr-89]: https://github.com/aliromman/math/pull/89
@@ -494,3 +491,6 @@ and cites the original source.
 [note-93]: conjectures/PolygonEhrhart/README.md
 [proof-93]: conjectures/PolygonEhrhart/Solution.lean
 [pr-93]: https://github.com/aliromman/math/pull/93
+[note-94]: conjectures/LeanderLinusson/README.md
+[proof-94]: conjectures/LeanderLinusson/Solution.lean
+[pr-94]: https://github.com/aliromman/math/pull/94
