@@ -1,10 +1,10 @@
-# The longest interval in a random sumset starts at half the hole count
+# Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.2 on the start of the longest sumset interval
 
-When exactly $k$ sums are missing, the limiting mean left endpoint of the longest interval of consecutive sums is $k/2+O(1)$. Every way of breaking ties has the same limit. This gives the slope in Conjecture 8.2.
+When exactly $k$ sums are missing, the limiting mean left endpoint of the longest interval of consecutive sums is $k/2+O(1)$. Every way of breaking ties has the same limit. This gives the slope in Conjecture 8.2 of the accepted manuscript and the third arXiv version. The earlier versions instead ask for the position just after the last missing sum. [Original Conjecture 7.2](https://arxiv.org/pdf/1109.4700v1#page=23) · [Second version, Conjecture 8.2](https://arxiv.org/pdf/1109.4700v2#page=32) · [Third version, Conjecture 8.2](https://arxiv.org/pdf/1109.4700v3#page=34)
 
 Choose a uniformly random subset $A$ of $\{0,\ldots,n-1\}$. Its sumset consists of all $a+b$ with $a,b\in A$, including $a=b$. Let $K$ count the missing integers in $[0,2n-2]$. Choose any longest interval contained in $A+A$, and call its left endpoint $W$. The authors conjectured that $e(k)=\lim_{n\to\infty}\mathbb E[W\mid K=k]$ is asymptotically linear as $k\to\infty$. Ties can change the finite mean. For each $k$ the limit exists, is independent of those choices, and differs from $k/2$ by a bounded amount. The limit in $n$ comes first. For fixed $k$, the conditioning event has positive probability for all sufficiently large $n$.
 
-Lazarev, Miller and O’Bryant, *Distribution of missing sums in sumsets*, §8, p. 34 of the accepted manuscript. [Authors’ manuscript](https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/DistrMissingSums95.pdf) · [Journal article](https://doi.org/10.1080/10586458.2013.743304)
+Lazarev, Miller and O’Bryant, *Distribution of missing sums in sumsets*, §8, p. 34 of the accepted manuscript. [Authors’ manuscript](https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/DistrMissingSums95.pdf#page=34) · [Journal article](https://doi.org/10.1080/10586458.2013.743304)
 
 ## Proof
 
@@ -43,9 +43,8 @@ Green and Morris obtained the critical exponential rate for the one-sided number
 From a clean checkout of this draft, run
 
 ```sh
-lake exe cache get
-lake build conjectures.MissingSumFringes.Longest.Solution
-lake env leanchecker conjectures.MissingSumFringes.Longest.Solution
+# Run at the merge commit for PR #67.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement and solution are separate modules. The toolchain and Mathlib revision are pinned. An independent AI reviewer checked the source, the limiting argument, and the formal statements, enumerated all nonempty subsets through $n=21$, and replayed the exported theorems in the Nanoda kernel. The guarded axiom lists contain only `propext`, `Classical.choice`, and `Quot.sound`.
