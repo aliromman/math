@@ -1,4 +1,4 @@
-# Minimum totally concave polyominoes can have rectangular bounding boxes
+# Solution to the Barequet–Madras–Peters problem on nonsquare minimum-area totally concave polyominoes
 
 For every integer $t\ge4$, there is a minimum-area $t$-fold totally concave polyomino with bounding box $(3t+4)\times(3t+2)$. The smallest new example has 149 cells in a $16\times14$ box. Each row and each column of its box has five occupied runs.
 
@@ -19,7 +19,7 @@ For every integer $t\ge4$, there is a minimum-area $t$-fold totally concave poly
 .###.##.##.##.##
 ```
 
-A polyomino is a finite set of grid cells connected along their sides. It is $t$-fold totally concave if each row and column of its bounding box has at least $t$ gaps between occupied runs. Barequet, Madras and Peters proved that the minimum area is $6(t+1)^2-1$ for $t\ge3$. They constructed square minimizers at every such order and exhibited a $13\times11$ minimizer at $t=3$. Section 3.3 asks if nonsquare minimizers exist past that order. Their Theorem 7 gives the two possible shapes of the bounding box. The construction here realizes the second shape at every order. [Barequet, Madras and Peters, CCCG 2025, pp. 92–95](https://cccg-wads-2025.eecs.yorku.ca/cccg-papers/34.pdf)
+A polyomino is a finite set of grid cells connected along their sides. It is $t$-fold totally concave if each row and column of its bounding box has at least $t$ gaps between occupied runs. Barequet, Madras and Peters proved that the minimum area is $6(t+1)^2-1$ for $t\ge3$. They constructed square minimizers at every such order and exhibited a $13\times11$ minimizer at $t=3$. Section 3.3 asks if nonsquare minimizers exist past that order. Their Theorem 7 gives the two possible shapes of the bounding box. The construction here realizes the second shape at every order. [Barequet, Madras and Peters, CCCG 2025, §3.3, p. 95](https://cccg-wads-2025.eecs.yorku.ca/cccg-papers/34.pdf#page=4)
 
 ## Construction
 
@@ -47,8 +47,8 @@ For connectivity, give each occupied cell the integer rank $12\max(i,j)+D$. At e
 From the repository root, run
 
 ```sh
-lake build conjectures.BarequetRectangularPolyomino.Solution
-lake env leanchecker conjectures.BarequetRectangularPolyomino.Solution
+# Run at the merge commit for PR #47.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the original existence question. `Solution.lean` proves it and the stronger construction for every $t\ge4$. Its axiom guards check both theorems.

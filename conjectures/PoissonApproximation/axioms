@@ -1,0 +1,3 @@
+PoissonApproximation.low_mean propext Classical.choice Quot.sound
+PoissonApproximation.resolution propext Classical.choice Quot.sound
+PoissonApproximation.scaled_limit propext Classical.choice Quot.sound
