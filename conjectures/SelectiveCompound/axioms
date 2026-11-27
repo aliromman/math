@@ -1,0 +1,4 @@
+SelectiveCompound.Extremal.exact_threshold propext Classical.choice Quot.sound
+SelectiveCompound.Extremal.sharp_cutoff propext Classical.choice Quot.sound
+SelectiveCompound.Game.resolution propext Classical.choice Quot.sound
+SelectiveCompound.Game.saturation propext Classical.choice Quot.sound

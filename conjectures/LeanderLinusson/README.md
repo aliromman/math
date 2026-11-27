@@ -1,4 +1,4 @@
-# Two directed paths can be negatively correlated
+# Disproof of Leander and Linusson’s Conjecture 2 on path correlation in randomly oriented fixed-edge graphs
 
 Choose three of the six edges on four vertices uniformly, then orient each chosen edge by an independent fair coin. Let $A$ be the event that there is a directed path from $s$ to $a$, and $B$ the event that there is one from $t$ to $b$, where the four vertices are distinct. Then
 
@@ -46,8 +46,10 @@ The favorable count is consequently $(m)_r n^{2m-2r}+O_{m,r}(n^{2m-2r-1})$. When
 Run these commands from the repository root.
 
 ```sh
-lake build conjectures.LeanderLinusson.Solution
-lake env leanchecker conjectures.LeanderLinusson.Solution
+# Run at the merge commit for PR #94.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Lean checks the uniform edge-ordering multiplicity, the four-vertex count, the general disjoint-path limit, and the covariance limit. The source statement is in `Statement.lean`. Searches by title, authors, conjecture number, fixed-edge covariance, and sparse directed paths found no earlier disproof. The original authors also reported exact computations for the independent-edge model in their separate Conjecture 1. AI developed this counterexample, the sparse-limit argument, and the Lean proofs.
+
+Leander and Linusson, “Correlation of Paths Between Distinct Vertices in a Randomly Oriented Graph,” Mathematica Scandinavica 116 (2015), 287–300, Conjecture 2, p. 295, DOI 10.7146/math.scand.a-21163. This is the uniform fixed-edge model. [Publication](https://www.mscand.dk/article/view/21163)

@@ -1,0 +1,3 @@
+AcceleratedZeckendorf.cubic_log_bound propext Classical.choice Quot.sound
+AcceleratedZeckendorf.mean_bound propext Classical.choice Quot.sound
+AcceleratedZeckendorf.resolution propext Classical.choice Quot.sound
