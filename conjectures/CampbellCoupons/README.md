@@ -1,4 +1,4 @@
-# Four draws reverse Campbell’s coupon-collection inequality
+# Disproof of Campbell’s coupon-collection conjecture in “Games of chance with multiple objectives”
 
 In four independent draws, **two copies of each of two types** have probability $3/8$. **One copy of each of three types** has probability $4/9$. Both games use equally likely types. Campbell conjectured that the first probability was at least the second.
 
@@ -38,7 +38,6 @@ The Lean statement counts words in the uniform experiment. The proof identifies 
 Searches for the conjecture, stochastic comparisons between the two collection goals, and publications citing Campbell found no earlier disproof. The classical multiple-collection limit theorems concern the distribution of the completion time. OpenAI Codex developed the counterexample, both extensions, and the Lean formalization. [OpenAlex citation record](https://openalex.org/W1981223868)
 
 ~~~sh
-lake exe cache get
-lake build conjectures.CampbellCoupons.Solution
-lake env leanchecker conjectures.CampbellCoupons.Solution
+# Run at the merge commit for PR #82.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ~~~
