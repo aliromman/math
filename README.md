@@ -92,7 +92,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Pirzada, Naikoo and Chishti’s Conjecture 2.1 on bipartite score sets][note-60] | Every nonempty finite set of positive integers is the full set of scores of an oriented bipartite graph. | [Lean][proof-60] · [#60][pr-60] |
 | [Disproof of Savchenko’s conjecture on minimum cycle counts in tournaments of bounded diameter][note-91] | Moving one vertex within a 22-vertex tournament of diameter eight lowers the proposed minimum of 68 directed four-cycles to 67. At diameter ten a move lowers 44 five-cycles to 42. | [Lean][proof-91] · [#91][pr-91] (open draft) |
 | [Proof of Savchenko’s conjecture on the minimum number of directed six-cycles in a regular tournament][note-95] | Among all regular tournaments of every odd order, the circular tournament minimizes simple directed six-cycles. A seven-vertex determinant inequality gives a quantitative gap. | [Lean][proof-95] · [#95][pr-95] (open draft) |
-| [Proof of Yang, Yerger and Zhou’s Conjecture 2 on pebbling weights for pendant hypercubes][note-57] | Reciprocal distance gives a valid pebbling weight at a pendant root attached to a hypercube of every dimension $m\ge2$. | [Lean][proof-57] · [#57][pr-57] (open draft) |
+| [Proof of Yang, Yerger and Zhou’s Conjecture 2 on pebbling weights for pendant hypercubes][note-57] | Reciprocal distance gives a valid pebbling weight at a pendant root attached to a hypercube of every dimension $m\ge2$. | [Lean][proof-57] · [#57][pr-57] |
 
 ### Matroids, polytopes and posets
 
@@ -319,9 +319,6 @@ and cites the original source.
 [note-58]: https://github.com/aliromman/math/blob/0ebf481b76157f57540e39418392416b9ea63ac0/conjectures/KurzWeighted/README.md
 [proof-58]: https://github.com/aliromman/math/blob/0ebf481b76157f57540e39418392416b9ea63ac0/conjectures/KurzWeighted/Solution.lean
 [pr-58]: https://github.com/aliromman/math/pull/58
-[note-57]: https://github.com/aliromman/math/blob/f55ac5d51e84faba3a2c90c3d32575e884ef02b6/conjectures/YangYergerZhouCube/README.md
-[proof-57]: https://github.com/aliromman/math/blob/f55ac5d51e84faba3a2c90c3d32575e884ef02b6/conjectures/YangYergerZhouCube/Solution.lean
-[pr-57]: https://github.com/aliromman/math/pull/57
 [note-56]: conjectures/ExclusiveSumBound/README.md
 [proof-56]: conjectures/ExclusiveSumBound/Solution.lean
 [pr-56]: https://github.com/aliromman/math/pull/56
@@ -494,3 +491,6 @@ and cites the original source.
 [note-85]: conjectures/MarkovFactorFour/README.md
 [proof-85]: conjectures/MarkovFactorFour/Solution.lean
 [pr-85]: https://github.com/aliromman/math/pull/85
+[note-57]: conjectures/YangYergerZhouCube/README.md
+[proof-57]: conjectures/YangYergerZhouCube/Solution.lean
+[pr-57]: https://github.com/aliromman/math/pull/57
