@@ -104,7 +104,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors][note-30] | For every prefix length, two connected rank-two matroid base polytopes on equally many elements have the same initial face counts and differ by one facet. | [Lean][proof-30] · [#30][pr-30] |
 | [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
-| [Negative answer to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity for polygon face lattices][note-93] | For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] (open draft) |
+| [Solution to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity of order polytopes of polygon face lattices][note-93] | For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] |
 
 ### Probability and stochastic processes
 
@@ -213,9 +213,6 @@ and cites the original source.
 [note-94]: https://github.com/aliromman/math/blob/51891a1eb82efeb71619e2e572305193d6a5e3c3/conjectures/LeanderLinusson/README.md
 [proof-94]: https://github.com/aliromman/math/blob/51891a1eb82efeb71619e2e572305193d6a5e3c3/conjectures/LeanderLinusson/Solution.lean
 [pr-94]: https://github.com/aliromman/math/pull/94
-[note-93]: https://github.com/aliromman/math/blob/0177b87d175b7efa56b45de1daed3820d9ca29e7/conjectures/PolygonEhrhart/README.md
-[proof-93]: https://github.com/aliromman/math/blob/0177b87d175b7efa56b45de1daed3820d9ca29e7/conjectures/PolygonEhrhart/Solution.lean
-[pr-93]: https://github.com/aliromman/math/pull/93
 [note-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/README.md
 [proof-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/Solution.lean
 [pr-89]: https://github.com/aliromman/math/pull/89
@@ -494,3 +491,6 @@ and cites the original source.
 [note-37]: conjectures/McCuneSeatJumps/README.md
 [proof-37]: conjectures/McCuneSeatJumps/Solution.lean
 [pr-37]: https://github.com/aliromman/math/pull/37
+[note-93]: conjectures/PolygonEhrhart/README.md
+[proof-93]: conjectures/PolygonEhrhart/Solution.lean
+[pr-93]: https://github.com/aliromman/math/pull/93
