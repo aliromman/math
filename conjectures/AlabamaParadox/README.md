@@ -1,4 +1,4 @@
-# The sharp probability bound for the Alabama paradox
+# Proof of Janson and Linusson’s conjecture on the probability of the Alabama paradox under Hamilton’s method
 
 When Hamilton's method assigns seats, increasing the size of the house can make a state lose a seat. For fixed, rationally independent population shares, the limiting fraction of house sizes where this happens to **any** state is at most
 
@@ -51,7 +51,6 @@ Janson and Linusson introduced the flag and gave the examples that establish sha
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.AlabamaParadox.Solution
-lake env leanchecker conjectures.AlabamaParadox.Solution
+# Run at the merge commit for PR #33.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
