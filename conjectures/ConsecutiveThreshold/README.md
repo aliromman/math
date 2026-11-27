@@ -1,4 +1,4 @@
-# Consecutive patterns occur throughout the interval between their thresholds
+# Proof of Bevan and Threlfall’s Conjecture 21 on consecutive patterns between inversion thresholds
 
 Choose a permutation of $n$ letters uniformly among those with exactly $m$ inversions. Every fixed consecutive pattern appears with probability tending to one throughout the interval predicted by Bevan and Threlfall. For example, the probability of finding four adjacent entries in relative order $2143$ tends to one whenever
 
@@ -6,7 +6,7 @@ $$
 \sqrt n\ll m,\qquad n^{3/4}\ll \binom n2-m.
 $$
 
-Here $f\ll g$ means $f/g\to0$. An inversion is a pair of entries in decreasing order. Write $N=\binom n2$. If a pattern $\pi$ of length $k$ has $s$ inversions, its complement (reverse all value comparisons) has $s'=\binom k2-s$ inversions. The conjecture requires $n^{1-1/s}\ll m$ and $n^{1-1/s'}\ll N-m$. A side with zero inversions needs no condition. The result allows any sequence of valid inversion counts, including sequences that alternate between the two halves of the interval. [Original conjecture, §5, p. 20](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v31i4p6/pdf/)
+Here $f\ll g$ means $f/g\to0$. An inversion is a pair of entries in decreasing order. Write $N=\binom n2$. If a pattern $\pi$ of length $k$ has $s$ inversions, its complement (reverse all value comparisons) has $s'=\binom k2-s$ inversions. The conjecture requires $n^{1-1/s}\ll m$ and $n^{1-1/s'}\ll N-m$. A side with zero inversions needs no condition. The result allows any sequence of valid inversion counts, including sequences that alternate between the two halves of the interval. [Original conjecture, §5, p. 20](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v31i4p6/pdf/#page=20)
 
 ## A short proof of the missing middle
 
@@ -48,7 +48,6 @@ OpenAI Codex developed the arguments and the Lean formalization. A separate Code
 From this branch run the commands below. The project pins Lean 4.36.0 and the exact Mathlib revision in `lake-manifest.json`. The final theorem checks its transitive axiom list against `propext`, `Classical.choice`, and `Quot.sound`.
 
 ```sh
-lake exe cache get
-lake build
-lake env leanchecker conjectures.ConsecutiveThreshold.Solution
+# Run at the merge commit for PR #72.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
