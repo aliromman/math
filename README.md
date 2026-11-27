@@ -16,7 +16,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] (open draft) |
 | [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
-| [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] (open draft) |
+| [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] |
 | [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.2 on the start of the longest sumset interval][note-67] | With $k$ missing sums, every tie rule gives the same limiting mean left endpoint, $k/2+O(1)$. | [Lean][proof-67] · [#67][pr-67] |
@@ -247,9 +247,6 @@ and cites the original source.
 [note-62]: https://github.com/aliromman/math/blob/4a1587e3fd417b4897c5de2402677298e676aed3/conjectures/GallianRusinDice/README.md
 [proof-62]: https://github.com/aliromman/math/blob/4a1587e3fd417b4897c5de2402677298e676aed3/conjectures/GallianRusinDice/Solution.lean
 [pr-62]: https://github.com/aliromman/math/pull/62
-[note-61]: https://github.com/aliromman/math/blob/1fb4a95d838ad1fb81752b1926acc66ae7e443ca/conjectures/SidonSetSystems/README.md
-[proof-61]: https://github.com/aliromman/math/blob/1fb4a95d838ad1fb81752b1926acc66ae7e443ca/conjectures/SidonSetSystems/Solution.lean
-[pr-61]: https://github.com/aliromman/math/pull/61
 [note-60]: conjectures/BipartiteScoreSets/README.md
 [proof-60]: conjectures/BipartiteScoreSets/Solution.lean
 [pr-60]: https://github.com/aliromman/math/pull/60
@@ -494,3 +491,6 @@ and cites the original source.
 [note-67]: conjectures/MissingSumFringes/Longest/README.md
 [proof-67]: conjectures/MissingSumFringes/Longest/Solution.lean
 [pr-67]: https://github.com/aliromman/math/pull/67
+[note-61]: conjectures/SidonSetSystems/README.md
+[proof-61]: conjectures/SidonSetSystems/Solution.lean
+[pr-61]: https://github.com/aliromman/math/pull/61
