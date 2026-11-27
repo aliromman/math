@@ -1,4 +1,4 @@
-# The double gap is uniform
+# Proof of Khovanova and Wang’s Conjecture 7.1 on uniform final shadows in two-sided chip dispersion
 
 Start with $N\ge2$ chips in consecutive rooms of the integer line. Choose an adjacent occupied pair uniformly. Move its left chip to the nearest vacant room on the left and its right chip to the nearest vacant room on the right. Continue until no adjacent pair remains. Exactly one gap then has two empty rooms. Each of its $N-1$ possible positions has probability
 
@@ -6,7 +6,7 @@ $$
 \frac1{N-1}.
 $$
 
-This proves Conjecture 7.1 of Tanya Khovanova and Rich Wang. They classified the possible final configurations and checked uniformity through $N=13$. The probability of a specific configuration depends on its location. For example, four chips can end in five configurations with probabilities $1/6,1/6,1/3,1/6,1/6$, in order of increasing sum of room numbers. Grouping translations gives three gap positions of probability $1/3$ each. [Khovanova and Wang, “Ending States of a Special Variant of the Chip-Firing Algorithm,” §7.1](https://ecajournal.kms-ks.org/Volume2024/ECA2024_S2A20.pdf)
+This proves Conjecture 7.1 of Tanya Khovanova and Rich Wang. They classified the possible final configurations and checked uniformity through $N=13$. The probability of a specific configuration depends on its location. For example, four chips can end in five configurations with probabilities $1/6,1/6,1/3,1/6,1/6$, in order of increasing sum of room numbers. Grouping translations gives three gap positions of probability $1/3$ each. [Khovanova and Wang, “Ending States of a Special Variant of the Chip-Firing Algorithm,” §7.1](https://ecajournal.kms-ks.org/Volume2024/ECA2024_S2A20.pdf#page=11)
 
 ## Proof
 
@@ -37,9 +37,8 @@ Suppose $\sum_{r=1}^{N-1}p_rV(r,N-r)=0$. The recurrence gives $(p_1-p_{N-1})e_{N
 The statement records uniform random choice among all moves. The formal proof also identifies the indexed moves with adjacent occupied rooms, proves termination, and derives the terminal probabilities from the Laurent coefficients. The result concerns the position of the gap up to translation. The paper's recursive-tree conjecture 7.2 concerns the finer distribution of absolute positions.
 
 ```sh
-lake exe cache get
-lake build conjectures.ChipShadow.Solution
-lake env leanchecker conjectures.ChipShadow.Solution
+# Run at the merge commit for PR #100.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Searches by author, title, clusterons, two-sided dispersion, uniform gaps, and splines located no earlier proof of Conjecture 7.1. OpenAI Codex developed the argument and formal proof.
