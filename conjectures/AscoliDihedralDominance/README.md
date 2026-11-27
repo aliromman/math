@@ -1,4 +1,4 @@
-# Products beat quotients in generalized dihedral groups
+# Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups
 
 In every finite nonabelian generalized dihedral group, subsets with more products than quotients outnumber subsets with more quotients than products. For a finite abelian group $H$ with an element of order at least three, set $G=H\rtimes C_2$, where the nonidentity element of $C_2$ sends $h$ to $-h$. Then
 
@@ -8,7 +8,7 @@ $$
 \#\{A\subseteq G: |AA|<|AA^{-1}|\}.
 $$
 
-Here $AA=\{xy:x,y\in A\}$ and $AA^{-1}=\{xy^{-1}:x,y\in A\}$. The statement includes the groups with base $H=C_2^r\times C_3$, which the authors singled out as beyond their estimates. This is Conjecture 1.6 in the 2022 preprint by Ascoli, Cheigh, Dantas e Moura, Jeong, Keisling, Lilly, Miller, Ngamlamai and Phang. Their separate Conjecture 1.7 concerns each subset size individually. [Original conjecture, pp. 2–5](https://arxiv.org/pdf/2210.00669) [Published chapter](https://link.springer.com/chapter/10.1007/978-3-032-08549-8_1)
+Here $AA=\{xy:x,y\in A\}$ and $AA^{-1}=\{xy^{-1}:x,y\in A\}$. The statement includes the groups with base $H=C_2^r\times C_3$, which the authors singled out as beyond their estimates. This is Conjecture 1.6 in the 2022 preprint by Ascoli, Cheigh, Dantas e Moura, Jeong, Keisling, Lilly, Miller, Ngamlamai and Phang. Their separate Conjecture 1.7 concerns each subset size individually. [Original conjecture, pp. 2–5](https://arxiv.org/pdf/2210.00669#page=3) [Published chapter](https://link.springer.com/chapter/10.1007/978-3-032-08549-8_1)
 
 For $n=|H|\ge128$, let $W$ and $L$ be the two counts on the left and right. The proof gives the stronger bound
 
@@ -59,9 +59,8 @@ OpenAI Codex agents developed the argument, searched the literature and wrote th
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.AscoliDihedralDominance.Solution
-lake env leanchecker conjectures.AscoliDihedralDominance.Solution
+# Run at the merge commit for PR #52.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The independent statement is in [Statement.lean](Statement.lean). The final theorem is [AscoliDihedral.proved](Solution.lean). Its axiom check allows propositional extensionality, classical choice and quotient soundness.

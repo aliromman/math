@@ -63,16 +63,23 @@ def discountValue (B : ℕ) (xs : List H) (trim : Bool) (g : Dih H) :=
 
 def singleValue (B N : ℕ) := (weightedPair B 2).1 ^ (N/2)
 
-def pairValue (B : ℕ) (g h : Dih H) :=
-  let k := 2*orderValue (g*h)
+/-- The cycle weight for two distinct involutions with product `r`. -/
+def pairWeight (B : ℕ) (r : Dih H) :=
+  let k := 2*orderValue r
   (weightedPair B k).1 ^ (Fintype.card (Dih H)/k)
+
+def pairValue (B : ℕ) (g h : Dih H) := pairWeight B (g*h)
 
 def data (B : ℕ) (xs : List H) (trim : Bool) : ℕ×ℕ×ℕ :=
   let T := involutions (Dih H)
   let W := singleValue B (Fintype.card (Dih H))
   let v := discountValue B xs trim
+  -- An element can occur as the product of many involution pairs.
+  let elements := xs.map (Dih.mk false) ++ xs.map (Dih.mk true)
+  let pairs := elements.map fun r ↦ (r, pairWeight B r)
   ((∑ g ∈ T, (W - v g)),
-   (∑ gh ∈ T×ˢT, if gh.1=gh.2 then W - v gh.1 else pairValue B gh.1 gh.2),
+   (∑ gh ∈ T×ˢT, if gh.1=gh.2 then W - v gh.1 else
+      (pairs.lookup (gh.1*gh.2)).getD (pairValue B gh.1 gh.2)),
    (∑ g : Dih H, (evaluatePerm B (productStep g) - v g)))
 
 private theorem discount_in (trim : Bool) (g : Dih H) :
@@ -103,13 +110,21 @@ private theorem pairValue_eq (B : ℕ) (g h : Dih H) (hg : g∈involutions (Dih 
     pairValue B g h = familyWeight B (missingQuotients g∩missingQuotients h) := by
   have M := Dih.pairSides (mem_filter.mp hg).2.1 (mem_filter.mp hh).2.1
     (mem_filter.mp hg).2.2 (mem_filter.mp hh).2.2
-  rw [M.pair_formula,pairValue,orderValue_eq]
+  rw [M.pair_formula,pairValue,pairWeight,orderValue_eq]
 
 theorem data_eq (B : ℕ) (xs : List H) (hn : xs.Nodup) (hu : xs.toFinset=univ) (trim : Bool) :
     data B xs trim =
       ((∑ g ∈ involutions (Dih H), familyWeight B (good (discount trim) g)),
        (∑ gh ∈ involutions (Dih H)×ˢinvolutions (Dih H), familyWeight B (pairFamily (discount trim) gh)),
        (∑ g : Dih H, familyWeight B (bad (discount trim) g))) := by
+  have lookup (r : Dih H) (xs : List (Dih H)) :
+      ((xs.map fun x ↦ (x, pairWeight B x)).lookup r).getD (pairWeight B r) = pairWeight B r := by
+    induction xs with
+    | nil => rfl
+    | cons x xs ih =>
+      by_cases h : r = x
+      · simp [h]
+      · simpa [List.lookup_cons, beq_false_of_ne h] using ih
   unfold data
   apply Prod.ext
   · exact sum_congr rfl (fun g hg => goodValue B xs hn hu trim g hg)
@@ -118,7 +133,7 @@ theorem data_eq (B : ℕ) (xs : List H) (hn : xs.Nodup) (hu : xs.toFinset=univ) 
     intro gh hgh
     by_cases he : gh.1=gh.2
     · simpa [pairFamily,he] using goodValue B xs hn hu trim gh.1 (mem_product.mp hgh).1
-    · simpa [pairFamily,he] using pairValue_eq B gh.1 gh.2 (mem_product.mp hgh).1 (mem_product.mp hgh).2
+    · simpa only [pairFamily, he, ite_false, pairValue, lookup] using pairValue_eq B gh.1 gh.2 (mem_product.mp hgh).1 (mem_product.mp hgh).2
   · exact sum_congr rfl (fun g _ => badValue B xs hn hu trim g)
 
 def lowerTotal (N k : ℕ) (d : ℕ×ℕ×ℕ) : ℤ :=

@@ -1,0 +1,3 @@
+PresuttiStromquist.Discrete.quantitative_witness propext Classical.choice Quot.sound
+PresuttiStromquist.TwoBubble.not_optimal propext Classical.choice Quot.sound
+PresuttiStromquist.resolution propext Classical.choice Quot.sound
