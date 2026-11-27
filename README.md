@@ -18,7 +18,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
 | [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] (open draft) |
 | [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
-| [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] (open draft) |
+| [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.2 on the start of the longest sumset interval][note-67] | With $k$ missing sums, every tie rule gives the same limiting mean left endpoint, $k/2+O(1)$. | [Lean][proof-67] · [#67][pr-67] (open draft) |
 | [Disproof of the pointwise bound in Sobolewski’s Conjecture 2 on monochromatic progressions in binary pattern sequences][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
 | [Solution to Questions 4.1 and 4.2 of Eliahou, García-García, Marín-Aragón and Vigneron-Tenorio on Buchweitz sets][note-24] | A numerical semigroup has obstructions precisely at orders 2 and 4. Its excess counts at orders 2, 3, and 4 also disprove the proposed unimodality. | [Lean][proof-24] · [#24][pr-24] |
@@ -241,9 +241,6 @@ and cites the original source.
 [note-67]: https://github.com/aliromman/math/blob/49e76abc90fd3b76645e5c5e9fb6a0da29fe1ec8/conjectures/MissingSumFringes/Longest/README.md
 [proof-67]: https://github.com/aliromman/math/blob/49e76abc90fd3b76645e5c5e9fb6a0da29fe1ec8/conjectures/MissingSumFringes/Longest/Solution.lean
 [pr-67]: https://github.com/aliromman/math/pull/67
-[note-66]: https://github.com/aliromman/math/blob/7b343544e92b1f918e75e36dbc11d9247451481f/conjectures/MissingSumFringes/First/README.md
-[proof-66]: https://github.com/aliromman/math/blob/7b343544e92b1f918e75e36dbc11d9247451481f/conjectures/MissingSumFringes/First/Solution.lean
-[pr-66]: https://github.com/aliromman/math/pull/66
 [note-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/README.md
 [proof-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/Solution.lean
 [pr-65]: https://github.com/aliromman/math/pull/65
@@ -494,3 +491,6 @@ and cites the original source.
 [note-17]: conjectures/LayeredWordPacking/README.md
 [proof-17]: conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
+[note-66]: conjectures/MissingSumFringes/First/README.md
+[proof-66]: conjectures/MissingSumFringes/First/Solution.lean
+[pr-66]: https://github.com/aliromman/math/pull/66
