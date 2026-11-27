@@ -8,9 +8,9 @@ Luis Ferroni and Benjamin Schröter asked whether a universal number of initial 
 
 Choose $m\ge4$ with $m>c+1$. For each nonempty subset $S$ of $[m]$, make one class containing the $2|S|$ elements
 
-$$
+```math
 (S,j,b),\qquad j\in S,\quad b\in\{0,1\}.
-$$
+```
 
 Use the even-sized subsets for one matroid and the odd-sized subsets for the other. In both, a basis is any pair of elements from different classes. There are at least three classes, so both matroids are connected. The two ground sets have equal size. For a fixed $j$, toggling any other label in $S$ pairs the even and odd possibilities.
 
@@ -25,15 +25,15 @@ The support of a face consists of the elements used by at least one of its verti
 
 These descriptions also run in reverse. To expose the first shape, give its support weight one and the other elements weight zero. For the second shape, give its two sides weights two and one, and the other elements weight zero. The dimension counts follow by taking differences of indicator vectors. In the first shape, fix one element as an anchor. Given any two support elements, a third class supplies a common partner, so their coordinate difference is an edge direction. In the second shape, fix one anchor on each side. The differences from the other elements to their own anchors form a basis for the directions of the face.
 
-A $k$-face therefore uses at most $k+2$ elements. If $k<c$, there is a label $r$ absent from every marked position $j$ on its support. Choose the least such label and change each class $S$ to $S\mathbin{\triangle}\{r\}$. This keeps $j$ in its class, reverses parity and preserves all equalities and inequalities between class labels. The image has the same shape and dimension. Its marked positions stay the same, so toggling again gives the original face. Thus the two polytopes have equal $f_k$.
+A $k$-face therefore uses at most $k+2$ elements. If $k<c$, there is a label $r$ absent from every marked position $j$ on its support. Choose the least such label and change each class $S$ to $`S\mathbin{\triangle}\{r\}`$. This keeps $j$ in its class, reverses parity and preserves all equalities and inequalities between class labels. The image has the same shape and dimension. Its marked positions stay the same, so toggling again gives the original face. Thus the two polytopes have equal $f_k$.
 
 ## Where the counts separate
 
 Write $n$ for the common ground-set size. Each polytope has dimension $n-1$. A facet of the first shape omits one element. All classes have at least two elements, so each of the $n$ choices gives a facet. A facet of the second shape uses all elements and separates one whole class from the rest. Since there are at least three classes, each choice of a class gives a distinct facet. Consequently
 
-$$
+```math
 f_{n-2}=n+\#\{\text{classes}\}.
-$$
+```
 
 Toggling a fixed label pairs all even and odd subsets. The empty subset supplies no elements, so the even matroid has exactly one fewer class and one fewer facet.
 

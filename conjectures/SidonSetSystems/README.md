@@ -1,12 +1,12 @@
 # Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems
 
-For every fixed $k\ge 3$, the largest Sidon system of $k$-element subsets of $\{1,\ldots,n\}$ has size
+For every fixed $k\ge 3$, the largest Sidon system of $k$-element subsets of $`\{1,\ldots,n\}`$ has size
 
 $$
 F_k(n)=\binom{n-1}{k-1}+O_k(n^{k-2}).
 $$
 
-In a Sidon system, the sumset $A+B=\{a+b:a\in A,\ b\in B\}$ determines the unordered pair $A,B$, including when $A=B$. For example, $F_4(n)=n^3/6+O(n^2)$. The coefficient $1/6$ is the first leading coefficient left open in the original paper.
+In a Sidon system, the sumset $`A+B=\{a+b:a\in A,\ b\in B\}`$ determines the unordered pair $A,B$, including when $A=B$. For example, $F_4(n)=n^3/6+O(n^2)$. The coefficient $1/6$ is the first leading coefficient left open in the original paper.
 
 Cilleruelo, Serra and Wötzel proved $F_k(n)\le U_k(n)=\binom{n-1}{k-1}+n-k$. They conjectured after Theorem 1.3 that $F_k(n)/U_k(n)\to 1$ for every fixed $k\ge2$. They proved $F_2(n)=2n-3$ and the asymptotic result for $k=3$. The formula above resolves all remaining cases. [Original paper](https://ems.press/journals/rmi/articles/16730) · [Author manuscript, p. 1 and §6.1](https://arxiv.org/pdf/1802.10511)
 

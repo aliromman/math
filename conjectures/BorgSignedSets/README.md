@@ -28,7 +28,7 @@ All extensions of members of $\mathcal A$ form an intersecting set of
 full words. A word and any of its nonzero global label shifts disagree
 everywhere. Thus this set meets each orbit of global shifts at most once.
 Extend it to a set $U$ that takes exactly one word in every orbit.
-On the uniform probability space of full words put $h=k\,1_U-1$. Its
+On the uniform probability space of full words put $`h=k\,1_U-1`$. Its
 mean is zero and its mean square is $k-1$.
 
 For $B\in\mathcal F$, let $h_B$ be the mean of $h$ with the

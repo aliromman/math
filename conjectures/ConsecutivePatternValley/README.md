@@ -14,7 +14,7 @@ Bevan and Threlfall conjectured that for every consecutive pattern $\pi$ and $n\
 
 ## A calculation without enumeration
 
-Write $[j]_q=1+q+\cdots+q^{j-1}$. Inserting the largest letter of a permutation in each possible position adds every inversion count from 0 to $j-1$ once. Thus the coefficient of $q^m$ in $[7]_q!=\prod_{j=1}^7[j]_q$ counts the permutations in layer $m$. The coefficients at $m=7,8,9$ are 359, 455 and 531.
+Write $[j]_q=1+q+\cdots+q^{j-1}$. Inserting the largest letter of a permutation in each possible position adds every inversion count from 0 to $j-1$ once. Thus the coefficient of $q^m$ in $`[7]_q!=\prod_{j=1}^7[j]_q`$ counts the permutations in layer $m$. The coefficients at $m=7,8,9$ are 359, 455 and 531.
 
 Fix one of the three five-entry windows. Sorting the entries inside the window leaves every inversion involving a position outside it unchanged. Each sorted window has $5!$ reorderings, and their internal inversion enumerator is $[5]_q!$. Exactly one reordering has pattern 51234, with four internal inversions. Across all three windows the occurrence enumerator is therefore
 

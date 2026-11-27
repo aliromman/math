@@ -14,7 +14,7 @@ Stern polynomials satisfy $B_0=0$, $B_1=1$, $B_{2j}=tB_j$, and $B_{2j+1}=B_j+B_{
 
 The first quadratic identity in the proof of Ulas’s Theorem 3.1 already gives $B_{h_n}=(t^2+t+1)X^2+(t+2)XY+Y^2$ for a consecutive pair of Stern values $X,Y$ there. Completing the square gives $4B_{h_n}=(2Y+(t+2)X)^2+3t^2X^2$. At $t\ne0$, both binary digit transformations on consecutive Stern values are invertible, so the pair cannot vanish. At $t=0$ every odd-index polynomial has value one. This proves the conjecture directly from Ulas’s identity.
 
-The formal proof also derives a norm identity over any commutative ring, directly from the two binary blocks in $h_n$. Its binary word is $(10)^n(01)^n1$. Reading a block 10 acts on $(B_j,B_{j+1})$ by $M=\left(\begin{smallmatrix}t&t\\1&1+t\end{smallmatrix}\right)$, and 01 acts by the matrix with both row and column orders reversed. Write $M^n=aM+bI$, starting from $(a,b)=(0,1)$ and updating to $((2t+1)a+b,-t^2a)$. Multiplication of the two blocks gives
+The formal proof also derives a norm identity over any commutative ring, directly from the two binary blocks in $h_n$. Its binary word is $(10)^n(01)^n1$. Reading a block 10 acts on $(B_j,B_{j+1})$ by $`M=\left(\begin{smallmatrix}t&t\\1&1+t\end{smallmatrix}\right)`$, and 01 acts by the matrix with both row and column orders reversed. Write $M^n=aM+bI$, starting from $(a,b)=(0,1)$ and updating to $((2t+1)a+b,-t^2a)$. Multiplication of the two blocks gives
 
 $$
 B_{h_n}(t)=u^2+uv+v^2,\qquad u=b+(t+1)a,\quad v=ta.

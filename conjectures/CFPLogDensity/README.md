@@ -15,11 +15,11 @@ Conlon, Fox and Pham found the extremal coloring and proved the two-color case, 
 
 For a set $A$ of positive integers, write $\Sigma(A)$ for its finite subset sums. Its upper logarithmic density is
 
-$$
+```math
 \overline d_{\log}(\Sigma(A))=
 \limsup_{x\to\infty}\frac{1}{\log x}
 \sum_{\substack{1\le n\le x\\n\in\Sigma(A)}}\frac1n.
-$$
+```
 
 Among all partitions into $r$ nonempty parts, take the minimum of the largest of these $r$ densities. The theorem computes that minimum and gives a partition attaining it.
 

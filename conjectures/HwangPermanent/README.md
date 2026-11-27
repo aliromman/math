@@ -37,7 +37,7 @@ For $n=2d$, leave the $d-4$ outer antidiagonal cells in place. Replace the patte
 
 ## Verification and attribution
 
-`Statement.lean` defines Hwang's conjecture with Mathlib's matrix permanent. The formal proof counts the eight-by-eight boards by inclusion-exclusion. To extend them, it uses the polynomial $P_A(x)=\operatorname{per}(A+xJ)$, where $J$ is the all-ones matrix. Its coefficient of $x^{8-k}$ on the initial board is $(8-k)!r_k(A)$. Adding two outer indices acts on this polynomial by differentiation, addition, and multiplication by polynomials with nonnegative coefficients. The proof verifies every coefficient of the initial difference and its positive constant term at every later order. From the repository root, run
+`Statement.lean` defines Hwang's conjecture with Mathlib's matrix permanent. The formal proof counts the eight-by-eight boards by inclusion-exclusion. To extend them, it uses the polynomial $P_A(x)=\mathop{\mathrm{per}}(A+xJ)$, where $J$ is the all-ones matrix. Its coefficient of $x^{8-k}$ on the initial board is $(8-k)!r_k(A)$. Adding two outer indices acts on this polynomial by differentiation, addition, and multiplication by polynomials with nonnegative coefficients. The proof verifies every coefficient of the initial difference and its positive constant term at every later order. From the repository root, run
 
 ```sh
 # Run at the merge commit for PR #44.

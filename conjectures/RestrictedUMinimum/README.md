@@ -50,9 +50,9 @@ Two factors of $\delta$ supply $t^2$. The terms with no further cut cancel becau
 
 Finally, connect $ac$ to $bd$ by one edge in the first tree, and $ad$ to $bc$ in the second. Keeping this edge gives the same product. When it is cut, the difference is
 
-$$
+```math
 t\,[L(ac)L(bd)-L(ad)L(bc)].
-$$
+```
 
 The determinant is linear in each of $a-b$ and $c-d$. The total difference is divisible by $t^{1+2+3}=t^6$, as required.
 
@@ -102,4 +102,4 @@ The main theorems are `counterexample`, `quadratic_bound`, and `pointwise_counte
 
 OpenAI Codex agents developed the construction and the formal proofs. The rooted polynomial product rules and the original extremal family are due to Aliste-Prieto, de Mier, and Zamora. An independent agent rebuilt the two pictured trees and enumerated all 206,368 deletions of zero through five edges in each. The 372 nonzero partition counts agree. Extending that check through six cuts took less than one CPU minute. A search of the original paper's forward citations and of the literature for five-cut examples and polynomial upper bounds found no earlier refutation.
 
-The initial approach combined the authors' 2017 construction with the classical counting argument for equal sums of powers. For $N$ of order $m^2\log(m+2)$, there are more subsets of $\{1,\ldots,N\}$ than vectors of power sums of degrees $0$ through $m-1$. Two subsets with the same vector give trees of order $O(N^2)$ by their Theorem 3.5. This yields the weaker bound $O(m^4\log^2(m+2))$ from prior methods. The smaller examples and the quadratic construction came from tracking the first unequal cut coefficient under root identification. [Aliste-Prieto, de Mier and Zamora (2017)](https://arxiv.org/abs/1509.09210) · [Borwein and Mossinghoff, classical counting bound](https://www.cecm.sfu.ca/~pborwein/PAPERS/P153.pdf)
+The initial approach combined the authors' 2017 construction with the classical counting argument for equal sums of powers. For $N$ of order $m^2\log(m+2)$, there are more subsets of $`\{1,\ldots,N\}`$ than vectors of power sums of degrees $0$ through $m-1$. Two subsets with the same vector give trees of order $O(N^2)$ by their Theorem 3.5. This yields the weaker bound $O(m^4\log^2(m+2))$ from prior methods. The smaller examples and the quadratic construction came from tracking the first unequal cut coefficient under root identification. [Aliste-Prieto, de Mier and Zamora (2017)](https://arxiv.org/abs/1509.09210) · [Borwein and Mossinghoff, classical counting bound](https://www.cecm.sfu.ca/~pborwein/PAPERS/P153.pdf)

@@ -6,17 +6,17 @@ $$
 [t]L(t)=-\frac{298495711}{35302608}.
 $$
 
-This gives a negative answer to Lundström and Saud Maia Leite’s question about polygons. Their paper proves coefficient positivity for the crown poset of vertices and edges. The full face lattice adds the empty face and the polygon itself. The authors also found a negative coefficient in the **order polynomial** of the 7-gon face lattice. The Ehrhart polynomial counts maps to $\{0,\ldots,t\}$ and equals the order polynomial evaluated at $t+1$. The paper explicitly asks whether the coefficients after that translation remain nonnegative. [Published paper, Question 6.4](https://www.sciencedirect.com/science/article/pii/S0195669825001969) · [Authors’ revised preprint, Question 6.5, p. 33](https://arxiv.org/pdf/2504.05123#page=33)
+This gives a negative answer to Lundström and Saud Maia Leite’s question about polygons. Their paper proves coefficient positivity for the crown poset of vertices and edges. The full face lattice adds the empty face and the polygon itself. The authors also found a negative coefficient in the **order polynomial** of the 7-gon face lattice. The Ehrhart polynomial counts maps to $`\{0,\ldots,t\}`$ and equals the order polynomial evaluated at $t+1$. The paper explicitly asks whether the coefficients after that translation remain nonnegative. [Published paper, Question 6.4](https://www.sciencedirect.com/science/article/pii/S0195669825001969) · [Authors’ revised preprint, Question 6.5, p. 33](https://arxiv.org/pdf/2504.05123#page=33)
 
 ## Counting the lattice points
 
-A lattice point assigns a height in $\{0,\ldots,t\}$ to each face. Heights increase weakly under inclusion. Fix the bottom and top heights. If their difference is $s-1$, subtracting the bottom height gives $s$ available heights for each vertex and edge. An edge whose endpoints have heights $i,j\in\{0,\ldots,s-1\}$ has exactly $s-\max(i,j)$ possible heights.
+A lattice point assigns a height in $`\{0,\ldots,t\}`$ to each face. Heights increase weakly under inclusion. Fix the bottom and top heights. If their difference is $s-1$, subtracting the bottom height gives $s$ available heights for each vertex and edge. An edge whose endpoints have heights $`i,j\in\{0,\ldots,s-1\}`$ has exactly $s-\max(i,j)$ possible heights.
 
 Let $K_s$ be the $s\times s$ matrix with entries $s-\max(i,j)$. Multiplication sums over successive vertex heights. Taking the trace closes the cycle. There are $t+2-s$ choices of bottom height, so
 
-$$
-L(t)=\sum_{s=1}^{t+1}(t+2-s)\,\operatorname{tr}(K_s^{13}).
-$$
+```math
+L(t)=\sum_{s=1}^{t+1}(t+2-s)\,\mathop{\mathrm{tr}}(K_s^{13}).
+```
 
 For example, this gives $L(0)=1$, $L(1)=271445$, and $L(2)=1385949918$. The polytope has dimension 28, one coordinate per face. Differentiating the interpolation formula at zero gives
 

@@ -4,12 +4,12 @@ Two connected rank-three matroids on 11 elements have the same number of faces i
 
 ## The two matroids
 
-Use the ground set $\{0,1,\ldots,10\}$. The bases are the triples that lie in none of the six specified lines. A vertex of the base polytope is the indicator vector of a basis.
+Use the ground set $`\{0,1,\ldots,10\}`$. The bases are the triples that lie in none of the six specified lines. A vertex of the base polytope is the indicator vector of a basis.
 
 | Matroid | Lines of size 3 | Lines of size 4 | Line of size 5 |
 | --- | --- | --- | --- |
-| $A$ | $\{0,1,5\},\ \{0,2,6\},\ \{0,3,4\}$ | $\{1,3,7,8\},\ \{2,4,7,9\}$ | $\{5,6,8,9,10\}$ |
-| $B$ | $\{0,1,2\},\ \{3,4,5\},\ \{6,7,8\}$ | $\{0,3,6,9\},\ \{1,4,7,10\}$ | $\{2,5,8,9,10\}$ |
+| $A$ | $`\{0,1,5\},\ \{0,2,6\},\ \{0,3,4\}`$ | $`\{1,3,7,8\},\ \{2,4,7,9\}`$ | $`\{5,6,8,9,10\}`$ |
+| $B$ | $`\{0,1,2\},\ \{3,4,5\},\ \{6,7,8\}`$ | $`\{0,3,6,9\},\ \{1,4,7,10\}`$ | $`\{2,5,8,9,10\}`$ |
 
 In each row, two distinct lines have at most one point in common. The six inequalities that bound each line's rank by two give a split matroid. Any two ground elements can replace one another in a suitable basis, so each matroid is connected. Both face vectors, starting with vertices and ending with the whole polytope, are
 
@@ -23,11 +23,11 @@ The cd-index $\Psi$ records the numbers of nested faces of every choice of dimen
 
 For a pair of intersecting lines of sizes $r,s$, the coefficient for choosing $i,j\ge2$ of their other points is $\binom{r-1}{i}\binom{s-1}{j}$. In the difference of the two formulas, the coefficients for $i+j=4$ and $5$ cancel after exchanging the two factors when needed. At $i+j=6$ only $(3,3)$ and $(2,4)$ survive, with opposite signs. Write $\Delta_m$ for an $m$-dimensional simplex. The formula reduces to
 
-$$
+```math
 \Psi(B)-\Psi(A)=
   \bigl(\Psi(\Delta_2\times\Delta_2)-\Psi(\Delta_1\times\Delta_3)\bigr)
   \,d\,\Psi(\Delta_4).
-$$
+```
 
 Both products in parentheses have dimension four, so their $c^4$ coefficients are both one. Every surviving monomial in the full difference therefore contains at least two copies of $d$. Under $c=a+b$ and $d=ab+ba$, every term contains at least two copies of $b$. This proves equality of all ordinary face counts. A vertex–four-face flag takes its first $b$ at position 0 and its second at position 4. Its difference is the difference in vertex counts of the two products, $3\cdot3-2\cdot4=1$.
 
