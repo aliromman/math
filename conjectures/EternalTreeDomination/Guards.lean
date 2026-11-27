@@ -9,6 +9,18 @@ open SimpleGraph
 
 variable {V I : Type*} {G : SimpleGraph V} {k r : ℕ}
 
+/-- An online strategy supplies a response sequence for each finite list of attacks. -/
+theorem OnlineDefense.defends {p : I → V} (h : OnlineDefense G k p) (attacks : List V) :
+    Defends G k p attacks := by
+  obtain ⟨position, rfl, step⟩ := h
+  suffices run : ∀ history, Defends G k (position history) attacks from run []
+  induction attacks with
+  | nil => exact fun _ ↦ trivial
+  | cons a rest ih =>
+    intro history
+    obtain ⟨move, hit⟩ := step history a
+    exact ⟨position (a :: history), move, hit, ih (a :: history)⟩
+
 theorem defends_relabel {I J : Type*} (e : I ≃ J) {p : J→V} {a : List V} :
     Defends G k p a → Defends G k (p∘e) a := by
   induction a generalizing p with
@@ -52,15 +64,19 @@ theorem grow_along_walk {V : Type*} {G : SimpleGraph V} (f : V→ℕ)
     | cons adj w ih => have := edge adj; simp only [Walk.length_cons]; omega
   exact (bound w).trans (Nat.add_le_add_left len _)
 
-/-- A cover by diameter-k blocks supplies an online response to every attack. -/
-theorem block_defense {S : Type*} [DecidableEq I] (k : ℕ) (T : SimpleGraph (I×S))
-    (diam : ∀ (i : I) (s t : S), T.edist (i,s) (i,t)≤k) (a : I→S) (attacks : List (I×S)) :
-    Defends T k (fun i ↦ (i,a i)) attacks := by
-  induction attacks generalizing a with
-  | nil => trivial
-  | cons v vs ih =>
-    let b := Function.update a v.1 v.2
-    refine ⟨fun i ↦ (i,b i),fun i ↦ diam _ _ _,⟨v.1,?_⟩,ih b⟩
-    simp [b]
+/-- A guard stays in its own block. Only the guard in the attacked block changes position. -/
+theorem block_online {S : Type*} [DecidableEq I] (k : ℕ) (T : SimpleGraph (I × S))
+    (diam : ∀ (i : I) (s t : S), T.edist (i, s) (i, t) ≤ k) (a : I → S) :
+    OnlineDefense T k (fun i ↦ (i, a i)) := by
+  let location (history : List (I × S)) : I → S :=
+    history.foldr (fun attack old ↦ Function.update old attack.1 attack.2) a
+  refine ⟨fun history i ↦ (i, location history i), rfl, ?_⟩
+  rintro history ⟨i, s⟩
+  exact ⟨fun j ↦ diam j _ _, i, by simp [location]⟩
+
+theorem block_defense {S : Type*} [DecidableEq I] (k : ℕ) (T : SimpleGraph (I × S))
+    (diam : ∀ (i : I) (s t : S), T.edist (i, s) (i, t) ≤ k) (a : I → S)
+    (attacks : List (I × S)) : Defends T k (fun i ↦ (i, a i)) attacks :=
+  (block_online k T diam a).defends attacks
 
 end EternalTreeDomination

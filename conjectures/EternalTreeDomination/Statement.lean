@@ -13,10 +13,17 @@ variable {V : Type*}
 def Dominates {I : Type*} (G : SimpleGraph V) (k : ℕ) (p : I → V) : Prop :=
   ∀ v, ∃ i, G.edist (p i) v≤k
 
-/-- All the guards may move at each attack, each by at most k edges. -/
+/-- The finite attack and response sequences in the published definition on page 31. -/
 def Defends {I : Type*} (G : SimpleGraph V) (k : ℕ) (p : I → V) : List V → Prop
   | [] => True
   | a::as => ∃ q : I → V, (∀ i, G.edist (p i) (q i)≤k) ∧ (∃ i, q i=a) ∧ Defends G k q as
+
+/-- One strategy answers each attack using only the attacks seen so far.
+The head of the history is the most recent attack. -/
+def OnlineDefense {I : Type*} (G : SimpleGraph V) (k : ℕ) (p : I → V) : Prop :=
+  ∃ position : List V → I → V, position [] = p ∧ ∀ history a,
+    (∀ i, G.edist (position history i) (position (a :: history) i) ≤ k) ∧
+      ∃ i, position (a :: history) i = a
 
 def domCount (G : SimpleGraph V) (k r : ℕ) := ∃ p : Fin r → V, Dominates G k p
 

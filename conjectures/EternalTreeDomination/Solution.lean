@@ -25,6 +25,19 @@ private theorem path_segment {n : ℕ} (a b : Fin n) (hab : a.val≤b.val) :
   obtain ⟨d,rfl⟩ := Nat.exists_eq_add_of_le hab
   simpa using segment (a:=a) d hb
 
+/-- The guard starts at the first vertex and moves to the most recent attack. -/
+theorem odd_path_online (h : ℕ) :
+    OnlineDefense (pathGraph (2*h+2)) (2*h+1)
+      (fun _ : Fin 1 ↦ (⟨0, by omega⟩ : Fin (2*h+2))) := by
+  let G := pathGraph (2*h+2)
+  have dist (u v : Fin (2*h+2)) : G.edist u v≤(2*h+1 : ℕ) := by
+    wlog huv : u.val≤v.val generalizing u v
+    · rw [edist_comm]; exact this v u (by omega)
+    refine (path_segment u v huv).trans ?_
+    exact_mod_cast (show v.val-u.val≤2*h+1 by omega)
+  refine ⟨fun history _ ↦ history.headD ⟨0, by omega⟩, rfl, ?_⟩
+  exact fun history attack ↦ ⟨fun _ ↦ dist _ _, 0, rfl⟩
+
 /-- At every odd radius, the path whose length equals that radius has the same obstruction. -/
 theorem odd_path (h : ℕ) :
     let G := pathGraph (2*h+2)
@@ -32,17 +45,7 @@ theorem odd_path (h : ℕ) :
   let G := pathGraph (2*h+2)
   let a : Fin (2*h+2) := ⟨0,by omega⟩
   let b : Fin (2*h+2) := ⟨2*h+1,by omega⟩
-  have dist (u v : Fin (2*h+2)) : G.edist u v≤(2*h+1 : ℕ) := by
-    wlog huv : u.val≤v.val generalizing u v
-    · rw [edist_comm]; exact this v u (by omega)
-    refine (path_segment u v huv).trans ?_
-    exact_mod_cast (show v.val-u.val≤2*h+1 by omega)
-  have defense (p : Fin (2*h+2)) (w : List (Fin (2*h+2))) :
-      Defends G (2*h+1) (fun _ : Fin 1 ↦ p) w := by
-    induction w generalizing p with
-    | nil => trivial
-    | cons x xs ih => exact ⟨fun _ ↦ x,fun _ ↦ dist _ _,⟨0,rfl⟩,ih x⟩
-  have one : eternalCount G (2*h+1) 1 := ⟨fun _ ↦ a,defense a⟩
+  have one : eternalCount G (2*h+1) 1 := ⟨fun _ ↦ a, (odd_path_online h).defends⟩
   have low {r k} : domCount G k r → 1≤r := by
     rintro ⟨_,hp⟩
     obtain ⟨s,_⟩ := hp a

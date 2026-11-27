@@ -1,4 +1,4 @@
-# The gap in a tree domination conjecture can be arbitrarily large
+# Disproof of Clow and van Bommel’s Conjecture 8.2 on eternal distance domination in trees
 
 For every positive integer $t$, there is a tree that $t$ mobile guards can defend at range three, even though it requires $2t$ stationary guards at range one. The tree also needs $t$ stationary guards at range three. This disproves Conjecture 8.2 of Clow and van Bommel with every positive integer as the gap.
 
@@ -11,7 +11,7 @@ $$
 
 ## The conjecture
 
-The distance-$k$ domination number $\gamma_k(T)$ is the fewest stationary guards needed to place every vertex of $T$ within $k$ edges of a guard. For eternal domination, vertices come under attack one at a time. All guards may move up to $k$ edges after each attack. A guard must reach the attacked vertex. The least number that can answer every attack sequence is $\gamma^{\infty}_{\mathrm{all},k}(T)$. The paper permits guards to share a vertex.
+The distance-$k$ domination number $\gamma_k(T)$ is the fewest stationary guards needed to place every vertex of $T$ within $k$ edges of a guard. For eternal domination, vertices come under attack one at a time. All guards may move up to $k$ edges after each attack. A guard must reach the attacked vertex. The least number that can answer every attack sequence is $\gamma^{\infty}_{\mathrm{all},k}(T)$. The paper permits guards to share a vertex. Its definition on page 31 asks for a response sequence for each finite attack list. Both constructions here also give a single strategy that uses only the attacks seen so far.
 
 Clow and van Bommel proved a result for trees at range two. They conjectured that for every finite tree and every integer $k>2$,
 
@@ -55,9 +55,10 @@ Cox, Meger, and Messinger gave the eternal domination number of paths in Theorem
 Run these commands from the repository root with the pinned Lean toolchain and Mathlib revision.
 
 ```sh
-lake exe cache get
-lake build conjectures.EternalTreeDomination.Solution
-lake env leanchecker conjectures.EternalTreeDomination.Solution
+# Run at the merge commit for PR #83.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-`Statement.lean` gives the conjecture. `Solution.lean` proves the path formulas and the disproof. `Tree.lean` and `Blocks.lean` prove the arbitrary-tree construction and its three exact guard counts.
+`Statement.lean` gives the published conjecture and defines an online strategy. `odd_path_online` and `block_online` give such a strategy for the path and the block construction. `OnlineDefense.defends` converts either strategy into the response sequences in the published definition. `Solution.lean` proves the path formulas and the disproof. `Tree.lean` and `Blocks.lean` prove the arbitrary-tree construction and its three exact guard counts.
+
+Clow and van Bommel, “Eternal Distance-2 Domination in Trees,” Ars Combinatoria 163 (2025), 29–49, §8, Conjecture 8.2, DOI 10.61091/ars163-03. Earlier path formulas are due to Cox, Meger and Messinger. The submitted result also constructs arbitrarily large additive gaps. [Publication](https://combinatorialpress.com/article/ars/Volume%20163/eternal-distance-2-domination-in-trees.pdf#page=19)
