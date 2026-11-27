@@ -1,4 +1,4 @@
-# The carousel minimizes six-cycles in every regular tournament
+# Proof of Savchenko’s conjecture on the minimum number of directed six-cycles in a regular tournament
 
 Seat an odd number $n$ of players around a circle. Each player beats the next $(n-1)/2$ players clockwise. Every other tournament on the same players in which everyone wins equally often has at least as many directed six-cycles. This proves Sergey Savchenko’s minimum conjecture, announced in 2010 and published in the *Journal of Graph Theory* in 2016. He had determined the cycle count for this circular tournament and the maximum for regular tournaments. [2010 announcement, p. 18](https://people.dm.unipi.it/ilas2010/pdf/abstracts-ct.pdf) · [Original article](https://doi.org/10.1002/jgt.21914)
 
@@ -50,9 +50,8 @@ For odd orders below seven there are no six-cycles.
 Savchenko restated the minimum conjecture in 2024. The 2022 work of Grzesik, Král’, Lovász, and Volec treats maximum cycle densities. Searches using the original title, citations and later results on regular tournaments found no earlier proof of the finite minimum. OpenAI Codex derived the seven-vertex inequality and the exact deficit, formalized the argument, and ran a separate mathematical and kernel audit. [Savchenko’s restatement](https://arxiv.org/abs/2403.07629) · [Maximum cycle densities](https://doi.org/10.1016/j.jctb.2022.07.007)
 
 ```sh
-lake exe cache get
-lake build conjectures.SavchenkoSix.Solution
-lake env leanchecker conjectures.SavchenkoSix.Solution
+# Run at the merge commit for PR #95.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the conjecture. In `Solution.lean`, `resolution` proves the minimum and `gap` proves the quantitative bound. The Lean cycle counts include all six choices of the starting player on both sides.
