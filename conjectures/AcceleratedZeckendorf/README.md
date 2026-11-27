@@ -1,6 +1,6 @@
-# The mean accelerated Zeckendorf game lasts at most a cubic logarithm
+# Proof of Conjecture 1.11 of Garcia-Fernandezsesma and coauthors on the mean length of the accelerated Zeckendorf game
 
-Starting with $n$ ones, the expected number of turns in the accelerated Zeckendorf game is $O((\log n)^3)$. This proves Conjecture 1.11, which asks whether the mean is $o(n)$. The authors previously proved a logarithmic minimum game length and a linear upper bound on every game. Their simulations suggested sublinear growth. The estimate here excludes growth of order $n^\delta$ for every fixed $\delta>0$. It leaves the precise order between a logarithm and its cube open. [Original paper, pp. 4–5 and 9–12](https://www.mathstat.dal.ca/FQ/Papers/62-1/milleretal04072023.pdf)
+Starting with $n$ ones, the expected number of turns in the accelerated Zeckendorf game is $O((\log n)^3)$. This proves Conjecture 1.11, which asks whether the mean is $o(n)$. The authors previously proved a logarithmic minimum game length and a linear upper bound on every game. Their simulations suggested sublinear growth. The estimate here excludes growth of order $n^\delta$ for every fixed $\delta>0$. It leaves the precise order between a logarithm and its cube open. [Original paper, pp. 4–5 and 9–12](https://www.mathstat.dal.ca/FQ/Papers/62-1/milleretal04072023.pdf#page=3)
 
 ## Game and conjecture
 
@@ -38,8 +38,8 @@ $$
 Run the following commands from the repository root.
 
 ```sh
-lake build conjectures.AcceleratedZeckendorf.Solution
-lake env leanchecker conjectures.AcceleratedZeckendorf.Solution
+# Run at the merge commit for PR #92.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The Lean statement defines the uniform choice over all legal batch sizes. The proof shows that its full expectation equals the finite recursion at horizon $5n$. The final module checks the axiom lists of the mean bound and the conjecture.
