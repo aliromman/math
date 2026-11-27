@@ -2,11 +2,11 @@
 
 Place $2,3,4,6$ around a circle. Every order repeats a directed difference or a product of neighboring numbers. More generally, a set of four positive numbers fails exactly when its middle numbers are the harmonic and arithmetic means of its smallest and largest numbers.
 
-Sun conjectured that any set of more than three distinct nonzero real numbers admits an order in which the adjacent differences are pairwise distinct and the adjacent products are also pairwise distinct. The sole stated exception is a set of the form $\{s,-s,t,-t\}$. Four positive integers fall outside that exception. The first part of the conjecture asks for distinct sums and products, with three stated exceptions. The journal published the paper in 2019. The author’s version 9 lists the question as Conjecture 3.10(ii) on pp. 12–13. Versions 6 and 8 list it as 3.12(ii). [Zhi-Wei Sun, *Some new problems in additive combinatorics*](https://arxiv.org/pdf/1309.1679v9#page=12)
+Sun conjectured that any set of more than three distinct nonzero real numbers admits an order in which the adjacent differences are pairwise distinct and the adjacent products are also pairwise distinct. The sole stated exception is a set of the form $`\{s,-s,t,-t\}`$. Four positive integers fall outside that exception. The first part of the conjecture asks for distinct sums and products, with three stated exceptions. The journal published the paper in 2019. The author’s version 9 lists the question as Conjecture 3.10(ii) on pp. 12–13. Versions 6 and 8 list it as 3.12(ii). [Zhi-Wei Sun, *Some new problems in additive combinatorics*](https://arxiv.org/pdf/1309.1679v9#page=12)
 
 ## Proof
 
-The two pairs $\{2,6\}$ and $\{3,4\}$ have equal products:
+The two pairs $`\{2,6\}`$ and $`\{3,4\}`$ have equal products:
 
 $$
 2\cdot 6=3\cdot 4=12.

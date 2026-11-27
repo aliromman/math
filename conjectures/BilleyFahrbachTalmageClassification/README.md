@@ -10,7 +10,7 @@ $2^{n-|S|-1}p_S(n)$. This formula defines the peak polynomial.
 For nonempty $S$, all complex roots of $p_S$ are real precisely when $S$ is
 one of the following.
 
-- $\{2\}$, $\{2,4\}$, $\{3\}$, or $\{3,5\}$.
+- $`\{2\}`$, $`\{2,4\}`$, $`\{3\}`$, or $`\{3,5\}`$.
 - A nonempty admissible set $A$ together with $c+3$, where $c=\max A$.
 - A nonempty admissible set $A$ together with both $c+3$ and $c+5$.
 
@@ -25,20 +25,20 @@ real-rooted peak polynomials. The argument below proves this converse.
 ## Proof
 
 Let $A$ be the part of the peak set up to a peak $c$. For
-$\operatorname{Re}s>0$ put
+$\mathop{\mathrm{Re}}s>0$ put
 $D_s(y)=u^s-v^s$, where $u=(1+y)/2$ and $v=(1-y)/2$. There is a
 nonnegative increasing density $f$ such that
 
-$$
+```math
 p_A(c+s)=\prod_{j=1}^c(s+j)\int_0^1 f(y)D_s(y)\,dy.
-$$
+```
 
 To construct $f$, express $p_A$ in its rising binomial basis. Use the
 shifted coefficients as the Bernstein coefficients of a polynomial $W$,
 with endpoint coefficients zero and common factor $1/c!$. Li's symmetry and
 discrete concavity imply $W(t)=W(1-t)$ and $W''(t)\le0$ on $[0,1]$.
 The beta integral gives
-$p_A(c+s)=s\prod_{j=1}^c(s+j)\int_0^1 W(t)t^{s-1}\,dt$.
+$`p_A(c+s)=s\prod_{j=1}^c(s+j)\int_0^1 W(t)t^{s-1}\,dt`$.
 Integration by parts gives the displayed formula with
 $f(y)=W'((1-y)/2)/2$. The normalized value for an empty prefix is
 $D_s(1)=1$. The shared Lean modules adapt Alex Chengyu Li's MIT-licensed
@@ -49,10 +49,10 @@ proof of coefficient concavity and its connection to permutation counts.
 Suppose a gap $g$ ends at position $c+a+g$. To append this gap, replace the
 current integrand $F(s)$ by
 
-$$
+```math
 -2\,\mathbf{1}_{g\text{ even}}F(s)+
 \sum_{j=a+1}^{a+g-1}(-1)^{a+g-1-j}\binom{s}{j}F(j).
-$$
+```
 
 This is the peak recurrence after division by the prefix product. It
 gives three exhaustive cases.
@@ -97,7 +97,7 @@ gives three exhaustive cases.
    $D_1=D_2=y$ removes all dependence on the earlier peaks except a
    positive scalar and known integer linear factors. The residual
    polynomials are translates of the four polynomials for
-   $\{2,4,\ldots,2+2r\}$, $0\le r\le3$. The first two split into integer
+   $`\{2,4,\ldots,2+2r\}`$, $0\le r\le3$. The first two split into integer
    linear factors. The last two contain $x^2+2x+5$ and
    $17x^3-17x^2+87x+105$, respectively. The first decreases in modulus
    from $-1$ to $-1+i$, and the second from $1$ to $1+2i$. These exact

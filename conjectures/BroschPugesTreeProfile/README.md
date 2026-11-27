@@ -20,10 +20,10 @@ First take $k\ge14$. Write $u=53/100$, $q=47/100$, and $v=q/2$. Six sampled leav
 when they split three and three at the outer fork, or when they split three
 and three between $B$ and $C$. In the limit this gives
 
-$$
+```math
 Y=20(uq)^3+20v^6
  =\frac5{16}+\frac{18\,048\,673}{3\,200\,000\,000\,000}.
-$$
+```
 
 A double caterpillar with branch proportions $p$ and $1-p$ has
 $E_6$ density $20[p(1-p)]^3\le 5/16$. To compare the trees at the same

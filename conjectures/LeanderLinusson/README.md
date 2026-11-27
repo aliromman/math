@@ -5,7 +5,7 @@ Choose three of the six edges on four vertices uniformly, then orient each chose
 $$
 \Pr(A)=\Pr(B)=\frac7{20},\qquad
 \Pr(A\cap B)=\frac1{10},\qquad
-\operatorname{Cov}(\mathbf1_A,\mathbf1_B)=-\frac9{400}.
+\mathop{\mathrm{Cov}}(\mathbf1_A,\mathbf1_B)=-\frac9{400}.
 $$
 
 This disproves Conjecture 2 of Madeleine Leander and Svante Linusson. They conjectured positive correlation for every vertex count $n$ and edge count $m$ in the uniformly oriented fixed-edge model. Their statement uses the complementary events that the paths are absent. Taking both complements preserves covariance. They proved positivity for every fixed positive edge density and sufficiently large $n$. [*Correlation of Paths Between Distinct Vertices in a Randomly Oriented Graph*, Math. Scand. 116 (2015), pp. 287–300, especially p. 295](https://www.mscand.dk/article/download/21163/18655/48247)
@@ -13,14 +13,14 @@ This disproves Conjecture 2 of Madeleine Leander and Svante Linusson. They conje
 For each fixed $m\ge1$, we obtain a negative leading term when the number of vertices grows.
 
 $$
-\lim_{n\to\infty} n^4\operatorname{Cov}(\mathbf1_A,\mathbf1_B)=-m.
+\lim_{n\to\infty} n^4\mathop{\mathrm{Cov}}(\mathbf1_A,\mathbf1_B)=-m.
 $$
 
 More generally, the probability of $r$ specified directed connections on $2r$ distinct vertices, multiplied by $n^{2r}$, tends to the falling factorial $m(m-1)\cdots(m-r+1)$. The limit is zero when $r>m$.
 
 ## Four vertices
 
-There are $\binom63\,2^3=160$ oriented outcomes. Forty contain the arc $s\to a$. Each of the two possible paths of length two occurs in eight outcomes, one of which also has the direct arc. The two paths of length three each occur once. The total is $40+2(8-1)+2=56$.
+There are $`\binom63\,2^3=160`$ oriented outcomes. Forty contain the arc $s\to a$. Each of the two possible paths of length two occurs in eight outcomes, one of which also has the direct arc. The two paths of length three each occur once. The total is $40+2(8-1)+2=56$.
 
 For the joint event, classify an outcome by which requested paths are direct arcs.
 
@@ -39,7 +39,7 @@ List the tails and heads of the $m$ directed edges in $2m$ slots. Each oriented 
 
 If $m>r$, each choice leaves $2m-2r$ free entries. A repeated value removes at least one free choice. The same estimate bounds the contribution from all possible longer paths. Indeed, both endpoints of each path must occur in the list. Fix one occurrence of each of the $2r$ prescribed vertices. If any two slots agree, at least one lies outside these fixed occurrences. Once its partner is specified, its value is determined. For fixed $m,r$ the number of choices of slot positions is bounded independently of $n$.
 
-The favorable count is consequently $(m)_r n^{2m-2r}+O_{m,r}(n^{2m-2r-1})$. When $m=r$, all slots are needed for distinct prescribed vertices and the count is exactly $m!$. When $m<r$, there are too few slots. Taking $r=1,2$ gives the covariance limit since $(m)_2-m^2=-m$.
+The favorable count is consequently $`(m)_r n^{2m-2r}+O_{m,r}(n^{2m-2r-1})`$. When $m=r$, all slots are needed for distinct prescribed vertices and the count is exactly $m!$. When $m<r$, there are too few slots. Taking $r=1,2$ gives the covariance limit since $(m)_2-m^2=-m$.
 
 ## Verification and attribution
 

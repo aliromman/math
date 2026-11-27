@@ -2,10 +2,10 @@
 
 For every positive integer $n$ and every $0\le\lambda\le1$,
 
-$$
-d_K\!\left(\operatorname{Bin}(n,\lambda/n),\operatorname{Pois}(\lambda)\right)
+```math
+d_K\!\left(\mathop{\mathrm{Bin}}(n,\lambda/n),\mathop{\mathrm{Pois}}(\lambda)\right)
 =e^{-\lambda}-(1-\lambda/n)^n.
-$$
+```
 
 Here $d_K$ is the largest absolute difference between the two cumulative probabilities over all real thresholds. The probability of getting zero successes gives the exact error. At $n=2$ and $\lambda=1$, for example, the distance is $e^{-1}-1/4$.
 
@@ -18,7 +18,7 @@ Write $B_j$ and $P_j$ for the binomial and Poisson probabilities of $j$ successe
 $$
 \frac{B_1}{P_1}=\frac{B_2}{P_2}=e q^{n-1}>1,
 \qquad
-\frac{B_{j+1}/P_{j+1}}{B_j/P_j}=\frac{n-j}{n-1} \quad (j<n).
+\frac{B_{j+1}/P_{j+1}}{B_j/P_j}=\frac{n-j}{n-1} \quad (j\lt n).
 $$
 
 For $3\le j\le n$, the factors $n,n-1,\ldots,n-j+1$ have arithmetic mean at most $n-1$. Their product is at most $(n-1)^j$. Hence $B_j/P_j\le e q^n<1$. For $j>n$ the binomial mass vanishes. Thus the cumulative difference rises from $D_0$ to $D_2$ and then decreases to zero.
