@@ -110,7 +110,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Disproof of Berend, Ernst, Kontorovich and Kumar’s Conjecture 5.2 as stated and proof of the corrected interior interval tiling][note-96] | A deterministic endpoint disproves the literal ordering. The closures of the nondegenerate interior intervals tile in lexicographic order for every even order of independence. | [Lean][proof-96] · [#96][pr-96] (open draft) |
+| [Disproof of Berend, Ernst, Kontorovich and Kumar’s Conjecture 5.2 as stated and proof of the corrected interior interval tiling][note-96] | A deterministic endpoint disproves the literal ordering. The closures of the nondegenerate interior intervals tile in lexicographic order for every even order of independence. | [Lean][proof-96] · [#96][pr-96] |
 | [Disproof of Campbell’s coupon-collection conjecture in “Games of chance with multiple objectives”][note-82] | In four draws the two probabilities are $3/8<4/9$. The reversal factor grows like $\sqrt{e k/(2\pi)}$ at the earliest square deadline. For fixed goals the proposed order eventually holds. | [Lean][proof-82] · [#82][pr-82] |
 | [Correction to the Aldous–Fill hitting-time heuristic for random cyclic adjacent transpositions (Example 7.22)][note-102] | The mean divided by $m!$ is $1+2/m+O(m^{-2})$, correcting the predicted coefficient of one. | [Lean][proof-102] · [#102][pr-102] (open draft) |
 | [Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1][note-99] | The width is positive recurrent and its stationary tail has exact exponent $d(k-1)/(k-d)$. | [Lean][proof-99] · [#99][pr-99] (open draft) |
@@ -210,9 +210,6 @@ and cites the original source.
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
-[note-96]: https://github.com/aliromman/math/blob/9605d964b0a210747a6327acfae31c9954a9f2dd/conjectures/BekkOrder/README.md
-[proof-96]: https://github.com/aliromman/math/blob/9605d964b0a210747a6327acfae31c9954a9f2dd/conjectures/BekkOrder/Solution.lean
-[pr-96]: https://github.com/aliromman/math/pull/96
 [note-95]: https://github.com/aliromman/math/blob/b43e4073bf4efbcd8ebb4dd5b5cad14aedeb1719/conjectures/SavchenkoSix/README.md
 [proof-95]: https://github.com/aliromman/math/blob/b43e4073bf4efbcd8ebb4dd5b5cad14aedeb1719/conjectures/SavchenkoSix/Solution.lean
 [pr-95]: https://github.com/aliromman/math/pull/95
@@ -494,3 +491,6 @@ and cites the original source.
 [note-48]: conjectures/BaranyFurediCover/README.md
 [proof-48]: conjectures/BaranyFurediCover/Solution.lean
 [pr-48]: https://github.com/aliromman/math/pull/48
+[note-96]: conjectures/BekkOrder/README.md
+[proof-96]: conjectures/BekkOrder/Solution.lean
+[pr-96]: https://github.com/aliromman/math/pull/96
