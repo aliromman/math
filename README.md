@@ -63,7 +63,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Disproof of Aichholzer et al.’s wheel-set conjecture for perfect matchings with prescribed crossings][note-68] | At ten crossings, twelve convex points admit 252 perfect matchings, a set with one interior point admits 248, and the regular wheel admits 176. | [Lean][proof-68] · [#68][pr-68] |
-| [Solution to the Barequet–Madras–Peters problem on nonsquare minimum-area totally concave polyominoes][note-47] | Minimum-area $t$-fold totally concave polyominoes can have nonsquare bounding boxes for every $t\ge4$. | [Lean][proof-47] · [#47][pr-47] (open draft) |
+| [Solution to the Barequet–Madras–Peters problem on nonsquare minimum-area totally concave polyominoes][note-47] | Minimum-area $t$-fold totally concave polyominoes can have nonsquare bounding boxes for every $t\ge4$. | [Lean][proof-47] · [#47][pr-47] |
 | [Proof of Edelsbrunner, Garber and Saghafian’s Conjecture C on maximal planar hypertriangulations][note-87] | At every level, every maximal hypertriangulation has the same maximum number of triangles. Any smaller one admits a single insertion that splits a triangle into three. | [Lean][proof-87] · [#87][pr-87] |
 | [Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
 | [Disproof of Liu’s Conjecture 1 on the median refinement of the Erdős–Mordell inequality][note-15] | At an interior point of a thin obtuse triangle, the sum of vertex distances divided by the sum of side distances is below $45.84$. The proposed lower bound exceeds $45.89$. | [Lean][proof-15] · [#15][pr-15] |
@@ -229,9 +229,6 @@ and cites the original source.
 [note-50]: conjectures/SelectiveCompound/README.md
 [proof-50]: conjectures/SelectiveCompound/Solution.lean
 [pr-50]: https://github.com/aliromman/math/pull/50
-[note-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/README.md
-[proof-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/Solution.lean
-[pr-47]: https://github.com/aliromman/math/pull/47
 [note-42]: conjectures/FangSubwordLength/README.md
 [proof-42]: conjectures/FangSubwordLength/Solution.lean
 [pr-42]: https://github.com/aliromman/math/pull/42
@@ -494,3 +491,6 @@ and cites the original source.
 [note-63]: conjectures/GallianRusinGame/README.md
 [proof-63]: conjectures/GallianRusinGame/Solution.lean
 [pr-63]: https://github.com/aliromman/math/pull/63
+[note-47]: conjectures/BarequetRectangularPolyomino/README.md
+[proof-47]: conjectures/BarequetRectangularPolyomino/Solution.lean
+[pr-47]: https://github.com/aliromman/math/pull/47
