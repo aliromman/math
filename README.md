@@ -150,7 +150,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Bevan and Threlfall’s Conjecture 21 on consecutive patterns between inversion thresholds][note-72] | Every fixed consecutive pattern occurs with probability tending to one throughout the interval between its two inversion thresholds. | [Lean][proof-72] · [#72][pr-72] (open draft) |
 | [Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts][note-69] | The expected count of 51234 falls and then rises across the 7-, 8-, and 9-inversion layers in seven letters. | [Lean][proof-69] · [#69][pr-69] |
 | [Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
-| [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] (open draft) |
+| [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] |
 | [Proof of Černý’s Conjecture 34 on counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Disproof of Fang’s Conjecture 5.7 on the length of a most frequent subsequence][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
 | [Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] (open draft) |
@@ -219,9 +219,6 @@ and cites the original source.
 [note-81]: conjectures/ErdosPurdyStraus/README.md
 [proof-81]: conjectures/ErdosPurdyStraus/Solution.lean
 [pr-81]: https://github.com/aliromman/math/pull/81
-[note-80]: https://github.com/aliromman/math/blob/630f442eaca158f78541a2850870e88e55f34a10/conjectures/LuckySpots/README.md
-[proof-80]: https://github.com/aliromman/math/blob/630f442eaca158f78541a2850870e88e55f34a10/conjectures/LuckySpots/Solution.lean
-[pr-80]: https://github.com/aliromman/math/pull/80
 [note-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/README.md
 [proof-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/Solution.lean
 [pr-76]: https://github.com/aliromman/math/pull/76
@@ -494,3 +491,6 @@ and cites the original source.
 [note-43]: conjectures/ChauveHistoryGrowth/README.md
 [proof-43]: conjectures/ChauveHistoryGrowth/Solution.lean
 [pr-43]: https://github.com/aliromman/math/pull/43
+[note-80]: conjectures/LuckySpots/README.md
+[proof-80]: conjectures/LuckySpots/Solution.lean
+[pr-80]: https://github.com/aliromman/math/pull/80
