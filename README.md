@@ -99,7 +99,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Disproof of Defant and Lin’s Conjecture 10.2 on down-degree homometry in ν-Tamari lattices][note-54] | Two six-element rowmotion orbits in the same $\nu$-Tamari lattice have down-degree sums 18 and 17. | [Lean][proof-54] · [#54][pr-54] |
-| [Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion][note-51] | A 32-element fence has a 237-ideal rowmotion orbit with mean size $16-6/79$, below the predicted 16. | [Lean][proof-51] · [#51][pr-51] (open draft) |
+| [Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion][note-51] | A 32-element fence has a 237-ideal rowmotion orbit with mean size $16-6/79$, below the predicted 16. | [Lean][proof-51] · [#51][pr-51] |
 | [Solution to Faustini and Vargas’s Problem 6.7 on flag vectors of connected split matroids][note-40] | Two connected rank-three matroid base polytopes have identical face counts and differ by one incidence between a vertex and a four-dimensional face. | [Lean][proof-40] · [#40][pr-40] (open draft) |
 | [Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors][note-30] | For every prefix length, two connected rank-two matroid base polytopes on equally many elements have the same initial face counts and differ by one facet. | [Lean][proof-30] · [#30][pr-30] |
 | [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
@@ -235,9 +235,6 @@ and cites the original source.
 [note-52]: https://github.com/aliromman/math/blob/53cf96dac7d827d3500752546741f5bdf732afd5/conjectures/AscoliDihedralDominance/README.md
 [proof-52]: https://github.com/aliromman/math/blob/53cf96dac7d827d3500752546741f5bdf732afd5/conjectures/AscoliDihedralDominance/Solution.lean
 [pr-52]: https://github.com/aliromman/math/pull/52
-[note-51]: https://github.com/aliromman/math/blob/b78b43bea8713d22237982bb3f45e96d095a0b8c/conjectures/FenceRowmotion/README.md
-[proof-51]: https://github.com/aliromman/math/blob/b78b43bea8713d22237982bb3f45e96d095a0b8c/conjectures/FenceRowmotion/Solution.lean
-[pr-51]: https://github.com/aliromman/math/pull/51
 [note-50]: conjectures/SelectiveCompound/README.md
 [proof-50]: conjectures/SelectiveCompound/Solution.lean
 [pr-50]: https://github.com/aliromman/math/pull/50
@@ -494,3 +491,6 @@ and cites the original source.
 [note-73]: conjectures/PracticalPolygons/README.md
 [proof-73]: conjectures/PracticalPolygons/Solution.lean
 [pr-73]: https://github.com/aliromman/math/pull/73
+[note-51]: conjectures/FenceRowmotion/README.md
+[proof-51]: conjectures/FenceRowmotion/Solution.lean
+[pr-51]: https://github.com/aliromman/math/pull/51
