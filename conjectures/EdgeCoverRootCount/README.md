@@ -1,4 +1,4 @@
-# Proof of the Akbari–Oboudi conjecture on distinct edge-cover roots and minimum degree
+# Proof of Alikhani’s Conjecture 5 on the minimum degree and the number of distinct edge-cover roots
 
 If every vertex of a finite simple graph has at least $d$ incident edges, its edge-cover polynomial has at least $d$ distinct complex roots. For example, the triangle has minimum degree two and edge-cover polynomial $3x^2+x^3$. Its two roots are $0$ and $-3$.
 
