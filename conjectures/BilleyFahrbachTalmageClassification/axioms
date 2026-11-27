@@ -1,0 +1,4 @@
+statement BilleyFahrbachTalmageClassification.Conjecture propext Classical.choice Quot.sound
+BilleyFahrbachTalmageClassification.conjecture propext Classical.choice Quot.sound
+BilleyFahrbachTalmageClassification.all_admissible propext Classical.choice Quot.sound
+BilleyFahrbachTalmageClassification.complex_zeros propext Classical.choice Quot.sound
