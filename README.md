@@ -4,6 +4,8 @@ This collection contains 99 research notes on published mathematical questions. 
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
+Ali Romman (2026). *Mathematical conjectures* (v1.0.0). Zenodo. [DOI 10.5281/zenodo.24577194](https://doi.org/10.5281/zenodo.24577194)
+
 ## Results
 
 Each row links to the research note, its proof or search code, and the pull request. Open drafts are marked beside their PR links and link to fixed revisions. **Partial** marks an investigation whose main question remains open. **Extension** marks a result that builds on an earlier counterexample.
