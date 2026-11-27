@@ -1,0 +1,2 @@
+KurzWeighted.complete_lower_bound propext Classical.choice Quot.sound
+KurzWeighted.resolution propext Classical.choice Quot.sound

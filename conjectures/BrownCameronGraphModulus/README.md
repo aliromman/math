@@ -1,4 +1,4 @@
-# How far can an independence root lie from zero?
+# Proof of Brown and Cameron’s Conjecture 4.2 on the maximum modulus of independence roots of graphs
 
 For any graph on $n\ge3$ vertices, every root $z$ of its independence polynomial satisfies
 
@@ -31,7 +31,8 @@ The Eneström–Kakeya theorem bounds the root moduli by the largest consecutive
 Cameron's dissertation also gives the problem as Conjecture 6.3.1. Searches for the conjecture and subsequent work on maximum-modulus independence roots found no earlier proof. OpenAI Codex derived the coefficient bound and formalized the graph counts, the integer partition optimization and the polynomial root estimate in Lean. [Dissertation, Chapter 6](https://dalspaceb.library.dal.ca/server/api/core/bitstreams/c903bf10-142c-4ffe-965a-1927ad52197a/content)
 
 ```sh
-lake exe cache get
-lake build conjectures.BrownCameronGraphModulus.Solution
-lake env leanchecker conjectures.BrownCameronGraphModulus.Solution
+# Run at the merge commit for PR #29.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Jason I. Brown and Ben Cameron, “Maximum Modulus of Independence Roots of Graphs and Trees,” arXiv:1812.09775v1, §4, p. 21, journal DOI 10.1007/s00373-020-02160-1. Preprint Conjecture 4.2 is also Conjecture 6.3.1 in Ben Cameron’s dissertation, On the Roots of Independence Polynomials. [Publication](https://arxiv.org/pdf/1812.09775v1#page=21)
