@@ -1,4 +1,4 @@
-# The exact probability of a three-state Alabama paradox
+# Disproof of McCune’s Conjecture 1 on Alabama-paradox probabilities
 
 When a legislature adds seats under Hamilton’s largest-remainder rule, a state can lose a seat. With three states and uniformly distributed population shares, the probability of a loss after an increase of $k$ seats from a house of size $H$ is
 
@@ -35,9 +35,8 @@ For example, a jump from 9 to 15 seats has zero probability of a loss. A jump fr
 The Lean statement uses the uniform area of the loss event under the largest-remainder rule, including ties. The proof establishes the formula, its support and maximum, the failure of the original conjecture, and the four positive probabilities above. From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.McCuneSeatJumps.Solution
-lake env leanchecker conjectures.McCuneSeatJumps.Solution
+# Run at the merge commit for PR #37.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 McCune supplied the model, the conjecture and the one-seat calculation. Searches for prior work on larger jumps found no earlier general formula. OpenAI Codex agents derived and formalized it. An independent agent checked the proof against the original model and compared it with exact polygon intersections for 71 pairs of house sizes and jumps.

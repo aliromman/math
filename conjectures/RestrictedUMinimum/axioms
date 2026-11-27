@@ -1,0 +1,5 @@
+RestrictedUMinimum.Tree.cutPolynomial_coeff propext Classical.choice Quot.sound
+RestrictedUMinimum.Tree.cutPolynomial_eq_graph_edge_sum propext Classical.choice Quot.sound
+RestrictedUMinimum.counterexample propext Classical.choice Quot.sound
+RestrictedUMinimum.pointwise_counterexample propext Classical.choice Quot.sound
+RestrictedUMinimum.quadratic_bound propext Classical.choice Quot.sound
