@@ -157,7 +157,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Hwang’s conjecture on adding cells to a triangular permutation board][note-44] | Four added cells in an eight-by-eight board allow 589 permutations against the proposed 584. The construction extends to $d$ added cells in every even order $2d\ge8$. | [Lean][proof-44] · [#44][pr-44] |
 | [Infinite four-letter counterexamples to Brauner et al.’s Conjecture 4.1 on balanced words][note-49] | **Extension.** Four letters give infinitely many periodic balanced words outside binary congruence expansion. Restivo and Rosone gave the earlier period-16 example. | [Lean][proof-49] · [#49][pr-49] |
 | [Solution to Larson’s Question 2 on optimal power maps of symmetric groups][note-45] | Every power map maximizing the number of weak components on $S_n$ acts nontrivially on cycles of just one length. A finite rule lists every maximizing exponent. | [Lean][proof-45] · [#45][pr-45] |
-| [Disproof of Presutti and Stromquist’s Conjecture 10.1 on the proposed packing-density optimizer for 2413][note-84] | A weighted permutation gives density at least $0.1047363701829$, above the proposed $0.1047360252660$. A corner argument rules out every choice of the two bubble sizes. | [Lean][proof-84] · [#84][pr-84] (open draft) |
+| [Disproof of Presutti and Stromquist’s Conjecture 10.1 on the proposed packing-density optimizer for 2413][note-84] | A weighted permutation gives density at least $0.1047363701829$, above the proposed $0.1047360252660$. A corner argument rules out every choice of the two bubble sizes. | [Lean][proof-84] · [#84][pr-84] |
 
 ## Verification
 
@@ -201,9 +201,6 @@ and cites the original source.
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
-[note-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/README.md
-[proof-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/Solution.lean
-[pr-84]: https://github.com/aliromman/math/pull/84
 [note-81]: conjectures/ErdosPurdyStraus/README.md
 [proof-81]: conjectures/ErdosPurdyStraus/Solution.lean
 [pr-81]: https://github.com/aliromman/math/pull/81
@@ -494,3 +491,6 @@ and cites the original source.
 [note-40]: conjectures/SplitMatroidFlags/README.md
 [proof-40]: conjectures/SplitMatroidFlags/Solution.lean
 [pr-40]: https://github.com/aliromman/math/pull/40
+[note-84]: conjectures/PresuttiStromquist/README.md
+[proof-84]: conjectures/PresuttiStromquist/Solution.lean
+[pr-84]: https://github.com/aliromman/math/pull/84
