@@ -1,4 +1,4 @@
-# A smaller disk for independence roots of even trees
+# Proof of Brown and Cameron’s Conjecture 4.4 on the maximum modulus of independence roots of even-order trees
 
 Let $T$ be a tree on $2k$ vertices, with $k\ge3$. Every complex root $z$ of its independence polynomial satisfies
 
@@ -33,7 +33,8 @@ This bounds every ratio $a_j/a_{j+1}$. The Eneström–Kakeya theorem gives the 
 Cameron's dissertation repeats the bound as Conjecture 6.3.3. Searches for both formulations, subsequent papers citing Brown and Cameron, and public mathematical proof archives found no earlier proof of the even-tree bound. OpenAI Codex derived the counting argument and wrote the Lean formalization. [Dissertation, Chapter 6](https://dalspaceb.library.dal.ca/server/api/core/bitstreams/c903bf10-142c-4ffe-965a-1927ad52197a/content)
 
 ```sh
-lake exe cache get
-lake build conjectures.BrownCameronEvenTrees.Solution
-lake env leanchecker conjectures.BrownCameronEvenTrees.Solution
+# Run at the merge commit for PR #25.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Jason I. Brown and Ben Cameron, “Maximum Modulus of Independence Roots of Graphs and Trees,” arXiv:1812.09775v1, §4, p. 21, journal DOI 10.1007/s00373-020-02160-1. Preprint Conjecture 4.4 is also Conjecture 6.3.3 in Ben Cameron’s dissertation, On the Roots of Independence Polynomials. [Publication](https://arxiv.org/pdf/1812.09775v1#page=21)
