@@ -505,6 +505,6 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/README.md
 [proof-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/Solution.lean
 [pr-116]: https://github.com/aliromman/math/pull/116
-[note-117]: https://github.com/aliromman/math/blob/56b6f06e080a3a1b02c17264c08eac23f823f844/conjectures/PeakRootBounds/README.md
-[proof-117]: https://github.com/aliromman/math/blob/56b6f06e080a3a1b02c17264c08eac23f823f844/conjectures/PeakRootBounds/Solution.lean
+[note-117]: https://github.com/aliromman/math/blob/3118a60e0fa6a227c1e61bc2974c0afd6cc6cac9/conjectures/PeakRootBounds/README.md
+[proof-117]: https://github.com/aliromman/math/blob/3118a60e0fa6a227c1e61bc2974c0afd6cc6cac9/conjectures/PeakRootBounds/Solution.lean
 [pr-117]: https://github.com/aliromman/math/pull/117
