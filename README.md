@@ -55,7 +55,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Drexel, Peng and Richey’s Conjecture 1 on bias monotonicity in Penney’s ante][note-74] | At the same head probability near $0.451$, the count of favored longer words increases immediately to the right, for every length cap $n\ge4$. | [Lean][proof-74] · [#74][pr-74] |
 | [Proof of Gallian and Rusin’s conjecture on the maximum game-size of 30-sided dice][note-63] | Exactly 44 different 30-sided dice occur in games with standard sum frequencies. Forty-three can occur in three-dice games, and the remaining die needs four. | [Lean][proof-63] · [#63][pr-63] (open draft) |
 | [Proof of Gallian and Rusin’s conjecture on the number of 105-sided solution dice][note-62] | Exactly 40 different 105-sided dice occur in games with standard sum frequencies, and all 40 occur in three-dice games. | [Lean][proof-62] · [#62][pr-62] |
-| [Proof of Gallian and Rusin’s conjecture on the number of solution dice with p²q sides][note-65] | For every pair of distinct primes $p,q$, exactly 22 different $p^2q$-sided dice occur in games with standard sum frequencies. Each occurs in a three-dice game. | [Lean][proof-65] · [#65][pr-65] (open draft) |
+| [Proof of Gallian and Rusin’s conjecture on the number of solution dice with p²q sides][note-65] | For every pair of distinct primes $p,q$, exactly 22 different $p^2q$-sided dice occur in games with standard sum frequencies. Each occurs in a three-dice game. | [Lean][proof-65] · [#65][pr-65] |
 | [Disproof of Hur and Kim’s fair dice conjecture (Conjecture 1)][note-32] | Three fair eight-sided dice stay fixed under both Hur–Kim moves, and their word cannot start with the proposed six-letter palindrome. | [Lean][proof-32] · [#32][pr-32] |
 
 ### Euclidean and discrete geometry
@@ -214,9 +214,6 @@ and cites the original source.
 [proof-70]: conjectures/UlasStern/Solution.lean
 [arith-70]: conjectures/UlasStern/Arithmetic.lean
 [pr-70]: https://github.com/aliromman/math/pull/70
-[note-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/README.md
-[proof-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/Solution.lean
-[pr-65]: https://github.com/aliromman/math/pull/65
 [note-63]: https://github.com/aliromman/math/blob/6792709c95e3525758cb4c8cba06635ec3fc9705/conjectures/GallianRusinGame/README.md
 [proof-63]: https://github.com/aliromman/math/blob/6792709c95e3525758cb4c8cba06635ec3fc9705/conjectures/GallianRusinGame/Solution.lean
 [pr-63]: https://github.com/aliromman/math/pull/63
@@ -494,3 +491,6 @@ and cites the original source.
 [note-62]: conjectures/GallianRusinDice/README.md
 [proof-62]: conjectures/GallianRusinDice/Solution.lean
 [pr-62]: https://github.com/aliromman/math/pull/62
+[note-65]: conjectures/GallianRusinPrimeSquare/README.md
+[proof-65]: conjectures/GallianRusinPrimeSquare/Solution.lean
+[pr-65]: https://github.com/aliromman/math/pull/65
