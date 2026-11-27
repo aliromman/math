@@ -82,7 +82,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Alikhani’s Conjecture 5 on the minimum degree and the number of distinct edge-cover roots][note-20] | A finite simple graph of minimum degree $d$ has at least $d$ distinct complex roots in its edge-cover polynomial. | [Lean][proof-20] · [#20][pr-20] |
 | [Proof of Brown and Cameron’s Conjecture 4.2 on the maximum modulus of independence roots of graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
-| [Disproof of Brown and Mol’s conjecture on uniqueness of node-reliability fixed points in graphs with two or more cut vertices][note-101] | Even with two cut vertices, node reliability can cross the diagonal arbitrarily many times. A 36-vertex example has at least three crossings. | [Lean][proof-101] · [#101][pr-101] (open draft) |
+| [Disproof of Brown and Mol’s conjecture on uniqueness of node-reliability fixed points in graphs with two or more cut vertices][note-101] | Even with two cut vertices, node reliability can cross the diagonal arbitrarily many times. A 36-vertex example has at least three crossings. | [Lean][proof-101] · [#101][pr-101] |
 | [Solution to George’s problem on the rational degree roots of graphs of a given order][note-12] | For coprime positive integers $p,q$, some simple graph on $n\ge1$ vertices has root $-p/q$ exactly when $p+q$ divides odd $n$ or $2(p+q)$ divides even $n$. | [Lean][proof-12] · [#12][pr-12] |
 | [Solution to Haslegrave’s Question 1 on difference and sum indices of bipartite graphs][note-53] | For every positive integer $d$, a finite connected bipartite graph has difference index $d$ and sum index $d+1$. | [Lean][proof-53] · [#53][pr-53] |
 | [Solution to Haslegrave’s Question 3 on exclusive sum numbers and bounded sum index][note-56] | A finite graph with sum index $s$ has exclusive sum number at most $s3^{s-1}$. | [Lean][proof-56] · [#56][pr-56] |
@@ -198,9 +198,6 @@ and cites the original source.
 [note-102]: https://github.com/aliromman/math/blob/902ad98160373a53b2c2368e8a5fa85d62514625/conjectures/AldousFillAdjacent/README.md
 [proof-102]: https://github.com/aliromman/math/blob/902ad98160373a53b2c2368e8a5fa85d62514625/conjectures/AldousFillAdjacent/Solution.lean
 [pr-102]: https://github.com/aliromman/math/pull/102
-[note-101]: https://github.com/aliromman/math/blob/f306661116f4f5f001258fb026d26fce484d28f6/conjectures/BrownMolFixed/README.md
-[proof-101]: https://github.com/aliromman/math/blob/f306661116f4f5f001258fb026d26fce484d28f6/conjectures/BrownMolFixed/Solution.lean
-[pr-101]: https://github.com/aliromman/math/pull/101
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
@@ -494,3 +491,6 @@ and cites the original source.
 [note-87]: conjectures/Hypertriangulations/README.md
 [proof-87]: conjectures/Hypertriangulations/Solution.lean
 [pr-87]: https://github.com/aliromman/math/pull/87
+[note-101]: conjectures/BrownMolFixed/README.md
+[proof-101]: conjectures/BrownMolFixed/Solution.lean
+[pr-101]: https://github.com/aliromman/math/pull/101
