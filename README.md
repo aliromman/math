@@ -503,13 +503,13 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-115]: https://github.com/aliromman/math/blob/c9c53a1afb879fbd4c2759d11315ab57e3de5d40/conjectures/BajnokRestrictedMinimum/README.md
 [proof-115]: https://github.com/aliromman/math/blob/c9c53a1afb879fbd4c2759d11315ab57e3de5d40/conjectures/BajnokRestrictedMinimum/Solution.lean
 [pr-115]: https://github.com/aliromman/math/pull/115
-[note-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/README.md
+[note-116]: https://github.com/aliromman/math/blob/f774288f7e48f19cf8e03e55e1363e541dbaa6c8/conjectures/BorgSignedSets/README.md
 [proof-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/Solution.lean
 [pr-116]: https://github.com/aliromman/math/pull/116
-[note-117]: https://github.com/aliromman/math/blob/3118a60e0fa6a227c1e61bc2974c0afd6cc6cac9/conjectures/PeakRootBounds/README.md
+[note-117]: https://github.com/aliromman/math/blob/902c9a186ce323620a606077035fe0a9c2c6fb1c/conjectures/PeakRootBounds/README.md
 [proof-117]: https://github.com/aliromman/math/blob/3118a60e0fa6a227c1e61bc2974c0afd6cc6cac9/conjectures/PeakRootBounds/Solution.lean
 [pr-117]: https://github.com/aliromman/math/pull/117
 
-[note-118]: https://github.com/aliromman/math/blob/83f199675d6173119316c8e303edc1d98f98046a/conjectures/BilleyFahrbachTalmageClassification/README.md
+[note-118]: https://github.com/aliromman/math/blob/a9ca354722c8d16cbb4eb67c96a297031a427dc3/conjectures/BilleyFahrbachTalmageClassification/README.md
 [proof-118]: https://github.com/aliromman/math/blob/83f199675d6173119316c8e303edc1d98f98046a/conjectures/BilleyFahrbachTalmageClassification/Solution.lean
 [pr-118]: https://github.com/aliromman/math/pull/118
