@@ -1,4 +1,4 @@
-# A Fano-plane counterexample to real-rooted Narayana sums
+# Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums
 
 An integral generalized permutohedron can have a Narayana sum with four nonreal roots. Our example has 28 lattice points. Its polynomial is
 
@@ -37,7 +37,8 @@ Choe, Oxley, Sokal and Wagner used these same Fano intersection counts in Exampl
 The Lean statement uses symmetric exchange to describe exactly the lattice-point sets of integral generalized permutohedra. Defant explains this correspondence immediately after Question 6.1 and states it explicitly in Section 2.4 of the subsequent paper. The proof verifies exchange for the 28 points and checks the full polynomial identity and the nonreal-root argument. [Lattice-point characterization](https://arxiv.org/html/2611.13479#S2.SS4)
 
 ```sh
-lake exe cache get
-lake build conjectures.DefantNarayana.Solution
-lake env leanchecker conjectures.DefantNarayana.Solution
+# Run at the merge commit for PR #22.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Colin Defant, “Fertilitopes,” Discrete & Computational Geometry 70 (2023), 713–752, Question 6.1, second question, DOI 10.1007/s00454-023-00488-y. [Publication](https://link.springer.com/article/10.1007/s00454-023-00488-y)
