@@ -1,4 +1,4 @@
-# Every maximal planar hypertriangulation has the maximum number of triangles
+# Proof of Edelsbrunner, Garber and Saghafian’s Conjecture C on maximal planar hypertriangulations
 
 Edelsbrunner, Garber, and Saghafian’s Conjecture C holds at every level. We also obtain a local test. If a hypertriangulation has fewer triangles than the maximum, one can split a single face into three by inserting one admissible point. Each such step adds two triangles.
 
@@ -47,7 +47,8 @@ The source gives the level-two theorem and discusses earlier results in convex p
 From the repository root, run the following commands with the pinned toolchain.
 
 ```sh
-lake exe cache get
-lake build conjectures.Hypertriangulations.Solution
-lake env leanchecker conjectures.Hypertriangulations.Solution
+# Run at the merge commit for PR #87.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Edelsbrunner, Garber and Saghafian, “Order-2 Delaunay triangulations optimize angles,” Advances in Mathematics 461 (2025), 110055, §6, Conjecture C, p. 30, DOI 10.1016/j.aim.2024.110055. [Publication](https://pub.ista.ac.at/~edels/Papers/2025-01-Order2Angles.pdf#page=30)

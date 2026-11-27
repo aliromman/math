@@ -1,0 +1,7 @@
+WheelMatchings.counterexample propext Classical.choice Quot.sound
+WheelMatchings.exposed propext Classical.choice Quot.sound
+WheelMatchings.interior_coordinates propext Classical.choice Quot.sound
+WheelMatchings.no_proposed_bound propext Classical.choice Quot.sound
+WheelMatchings.oneInterior_count propext Classical.choice Quot.sound
+WheelMatchings.oneInterior_general propext Classical.choice Quot.sound
+WheelMatchings.resolution propext Classical.choice Quot.sound
