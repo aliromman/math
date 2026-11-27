@@ -12,9 +12,9 @@ This proves Flavien Mabilat’s unnumbered conjecture after Proposition 3.9 on i
 
 ## Why the list ends here
 
-Write $k$ for the entry $k\lambda$ and set $A_k=\left(\begin{smallmatrix}k\lambda&-1\\1&0\end{smallmatrix}\right)$. A nonempty sequence is a quiddity if $A_{k_n}\cdots A_{k_1}=\pm I$. Gluing adds the first endpoint of each piece to the last endpoint of the other and keeps both interiors. A quiddity of length at least three is reducible if a rotation of it or its reversal is such a gluing, with both pieces of length at least three and the second piece a quiddity.
+Write $k$ for the entry $k\lambda$ and set $`A_k=\left(\begin{smallmatrix}k\lambda&-1\\1&0\end{smallmatrix}\right)`$. A nonempty sequence is a quiddity if $A_{k_n}\cdots A_{k_1}=\pm I$. Gluing adds the first endpoint of each piece to the last endpoint of the other and keeps both interiors. A quiddity of length at least three is reducible if a rotation of it or its reversal is such a gluing, with both pieces of length at least three and the second piece a quiddity.
 
-**Every quiddity contains a zero or $q-2$ consecutive copies of the same sign $s\in\{-1,1\}$.** Start the first matrix column at $(1,0)$ and track its slope $r$. The next entry $k$ changes the slope to $1/(k\lambda-r)$. Put $\theta=\pi/q$ and $S_j=\sin(j\theta)/\sin\theta$. If the sequence avoids both patterns, then after a run of $j$ copies of $s$ the signed slope satisfies
+**Every quiddity contains a zero or $q-2$ consecutive copies of the same sign $`s\in\{-1,1\}`$.** Start the first matrix column at $(1,0)$ and track its slope $r$. The next entry $k$ changes the slope to $1/(k\lambda-r)$. Put $\theta=\pi/q$ and $S_j=\sin(j\theta)/\sin\theta$. If the sequence avoids both patterns, then after a run of $j$ copies of $s$ the signed slope satisfies
 
 $$
 sr\le B_j=\frac{S_{j+1}}{S_{j+2}},\qquad 0\le j\le q-3.
@@ -37,4 +37,4 @@ Lean encodes each multiple of $\lambda$ by its unique integer coefficient. The r
 python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-AI agents derived the proof and wrote the Lean formalization. An independent agent checked the source definitions and the uniform proof. As a separate test, exact polynomial arithmetic verified the nonzero continuant for all 548,870 words of lengths 1 through 8 over $\{-2,-1,1,2\}$ that avoid the forbidden run, summed over $q=4,\ldots,10$.
+AI agents derived the proof and wrote the Lean formalization. An independent agent checked the source definitions and the uniform proof. As a separate test, exact polynomial arithmetic verified the nonzero continuant for all 548,870 words of lengths 1 through 8 over $`\{-2,-1,1,2\}`$ that avoid the forbidden run, summed over $q=4,\ldots,10$.

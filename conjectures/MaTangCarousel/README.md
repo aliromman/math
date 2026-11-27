@@ -26,10 +26,10 @@ A six-cycle advances six times or three times. With six advances there is no ran
 
 The first row requires four ranks in order. The second requires three in order and one independent comparison. The third requires three independent comparisons. Thus
 
-$$
+```math
 t(C_6,T)\;\longrightarrow\;
 \frac{3}{3^6}\left(1+\frac{6}{24}+\frac{12}{12}+\frac{2}{8}\right)=\frac{5}{486}.
-$$
+```
 
 For finite groups, ties can only remove strict comparisons. The same fraction is an upper bound for every group size.
 

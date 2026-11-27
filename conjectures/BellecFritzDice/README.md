@@ -3,7 +3,7 @@
 For three independent rolls $A,B,C$ of any real-valued die,
 
 $$
-\Pr(2A<B+C)<\frac23.
+\Pr(2A\lt B+C)<\frac23.
 $$
 
 Bellec and Fritz proved that the supremum is $2/3$ and that every law with a point mass falls strictly below it. After Theorem 1.5 they asked whether a continuous distribution can attain it. The strict inequality answers their question. In fact, the probabilities attainable by atomless nonnegative dice form exactly $(1/3,2/3)$. [Original paper, pp. 5–6](https://arxiv.org/pdf/2412.15179) · [Journal article](https://doi.org/10.1080/00029890.2026.2702871)

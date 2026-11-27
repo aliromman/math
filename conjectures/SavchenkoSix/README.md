@@ -12,7 +12,7 @@ $$
 D_k(T)=\sum_{|U|=k}(\det S_U-1).
 $$
 
-Every four-vertex determinant is the square of a signed sum of three numbers in $\{-1,1\}$. Hence it is one or nine and $D_4\ge0$. For the carousel, a permutation and simultaneous sign changes to rows and columns transform $S$ into the sign matrix of a linearly ordered tournament. Its four-vertex and six-vertex principal determinants all equal one.
+Every four-vertex determinant is the square of a signed sum of three numbers in $`\{-1,1\}`$. Hence it is one or nine and $D_4\ge0$. For the carousel, a permutation and simultaneous sign changes to rows and columns transform $S$ into the sign matrix of a linearly ordered tournament. Its four-vertex and six-vertex principal determinants all equal one.
 
 On every seven-vertex tournament, regular or otherwise,
 
@@ -35,7 +35,7 @@ $$
 64\bigl(c_6(T)-c_6(R_n)\bigr)=\left(\binom n2-14\right)D_4(T)-D_6(T).
 $$
 
-To obtain the identity, first count closed walks by the trace of the sixth power of the adjacency matrix. A repeated vertex must occur at opposite positions of the walk. Inclusion–exclusion over the three opposite pairs leaves a fourth-power trace correction when two regular tournaments are compared. If $A$ is the adjacency matrix, regularity gives $2A+I=S+J$ and $SJ=JS=0$ for the all-ones matrix $J$. Expansion then leaves the difference of $\operatorname{tr}S^6+21\operatorname{tr}S^4$. Newton’s identities express these traces in sums of principal minors and give the displayed formula.
+To obtain the identity, first count closed walks by the trace of the sixth power of the adjacency matrix. A repeated vertex must occur at opposite positions of the walk. Inclusion–exclusion over the three opposite pairs leaves a fourth-power trace correction when two regular tournaments are compared. If $A$ is the adjacency matrix, regularity gives $2A+I=S+J$ and $SJ=JS=0$ for the all-ones matrix $J$. Expansion then leaves the difference of $\mathop{\mathrm{tr}}S^6+21\mathop{\mathrm{tr}}S^4$. Newton’s identities express these traces in sums of principal minors and give the displayed formula.
 
 Since $\binom n2-14-\binom{n-4}{2}=4(n-6)$, the local inequality proves the stronger bound
 

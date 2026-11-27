@@ -19,14 +19,14 @@ $$a_1=2+\sum_{k\ge3}(k-2)a_k.$$
 
 Suppose $0<|z|\le1$ and $D_T(z)=0$. Divide by $z^2$ and take imaginary parts.
 The degree-two term becomes real. For $m\ge0$, the bound
-$|\operatorname{Im}(z^m)|\le m|\operatorname{Im}z|$ follows by induction from
+$|\mathop{\mathrm{Im}}(z^m)|\le m|\mathop{\mathrm{Im}}z|$ follows by induction from
 the product formula for the imaginary part and $|z|\le1$. Thus
 
-$$\frac{a_1}{|z|^2}|\operatorname{Im}z|
-\le\sum_{k\ge3}(k-2)a_k|\operatorname{Im}z|
-=(a_1-2)|\operatorname{Im}z|.$$
+$$\frac{a_1}{|z|^2}|\mathop{\mathrm{Im}}z|
+\le\sum_{k\ge3}(k-2)a_k|\mathop{\mathrm{Im}}z|
+=(a_1-2)|\mathop{\mathrm{Im}}z|.$$
 
-This forces $\operatorname{Im}z=0$.
+This forces $\mathop{\mathrm{Im}}z=0$.
 
 ## Prior work
 

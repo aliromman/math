@@ -2,9 +2,9 @@
 
 Attach a root $r$ by one edge to any vertex of the $m$-dimensional cube. If a pebble configuration $p$ cannot put a pebble on $r$, then
 
-$$
+```math
 \sum_{v\ne r}\frac{p(v)}{d(v,r)}\;\le\;\sum_{v\ne r}\frac{1}{d(v,r)}.
-$$
+```
 
 This proves Conjecture 2 of Yang, Yerger and Zhou for every $m\ge2$. The authors used such weights in low dimensions and showed how the general result gives the ordinary cube pebbling number $2^n$. [Yang, Yerger and Zhou, *Lollipop and cubic weight functions for graph pebbling*, §2](https://doi.org/10.1007/s10878-024-01248-1)
 
@@ -12,9 +12,9 @@ This proves Conjecture 2 of Yang, Yerger and Zhou for every $m\ge2$. The authors
 
 Identify a cube vertex with the set $X$ of coordinates in which it differs from the attachment. Its distance to $r$ is $|X|+1$. Write $W(p)$ for the left side of the inequality. For each coordinate $i$, push every available pair of pebbles across that coordinate toward the attachment. In the nearer face, each $X$ now contains
 
-$$
+```math
 p_i(X)=p(X)+\left\lfloor p(X\cup\{i\})/2\right\rfloor.
-$$
+```
 
 Each push is an allowed move, so $p_i$ is still unsolvable. Also $p(\varnothing)\le1$, since two pebbles there could reach the root. Under this condition, summing over the faces gives
 

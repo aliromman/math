@@ -12,7 +12,7 @@ Here $f\ll g$ means $f/g\to0$. An inversion is a pair of entries in decreasing o
 
 Bevan and Threlfall proved the result near both endpoints in Theorem 1. The following argument covers the middle. Reflection of the values lets us work with $m\le N/2$.
 
-Let $A_h$ count the permutations with $h$ inversions. Give a permutation $\sigma$ weight $q^{\operatorname{inv}(\sigma)}$. Conditional on the inversion count, this law is uniform. For $m>0$, take $q=A_{m-1}/A_m$. The sequence $(A_h)$ is symmetric and log-concave. Its generating polynomial is the product of $1+x+\cdots+x^{j-1}$ for $1\le j\le n$. Thus $0<q\le1$, and the tilted layer weights at $m-1$ and $m$ tie for the maximum. In particular, the tilted law gives layer $m$ probability at least $1/(N+1)$.
+Let $A_h$ count the permutations with $h$ inversions. Give a permutation $\sigma$ weight $q^{\mathop{\mathrm{inv}}(\sigma)}$. Conditional on the inversion count, this law is uniform. For $m>0$, take $q=A_{m-1}/A_m$. The sequence $(A_h)$ is symmetric and log-concave. Its generating polynomial is the product of $1+x+\cdots+x^{j-1}$ for $1\le j\le n$. Thus $0<q\le1$, and the tilted layer weights at $m-1$ and $m$ tie for the maximum. In particular, the tilted law gives layer $m$ probability at least $1/(N+1)$.
 
 To bound $q$ from below, encode a permutation by its inversion digits. Each digit counts the smaller entries to the right of that position. For a code of sum $m$, decrease a positive digit $e_i$ by one and give this move weight $e_i$. Each starting code contributes $m$. A code of sum $m-1$ receives weight at most $\sum_i(e_i+1)=m-1+n$. Hence $m A_m\le(m-1+n)A_{m-1}$, so $q\ge1/2$ whenever $m\ge n$.
 

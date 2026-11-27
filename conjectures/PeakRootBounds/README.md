@@ -2,8 +2,8 @@
 
 Let $S$ be a nonempty set of peak positions in a permutation and let
 $m=\max S$. Every complex zero $z$ of its peak polynomial satisfies
-$|z|\le m$ and $\operatorname{Re}z\ge-3$. The first bound is attained at
-$m$. The second is attained at $-3$ by $S=\{2,4\}$.
+$|z|\le m$ and $\mathop{\mathrm{Re}}z\ge-3$. The first bound is attained at
+$m$. The second is attained at $-3$ by $`S=\{2,4\}`$.
 [Billey, Fahrbach and Talmage, Conjectures 1.6 and 6.4, *Experimental Mathematics* 25 (2016), 165–175](https://doi.org/10.1080/10586458.2015.1051193)
 · [Text of the conjecture](https://arxiv.org/html/1410.8506v2#S6)
 
@@ -22,7 +22,7 @@ of all the other terms. [Li's coefficient theorem](https://doi.org/10.2139/ssrn.
 · [Disk proof](Disk.lean)
 
 For the real-part bound, set $D_j=\binom{j+2}{2}$ and
-$W_j=\binom{j+3}{3}$. If $\operatorname{Re}z<-3$, both
+$W_j=\binom{j+3}{3}$. If $\mathop{\mathrm{Re}}z<-3$, both
 $|\binom zj|/D_j$ and $|\binom{z-1}{j}|/W_j$ increase strictly with $j$.
 For a prefix $A$ ending at $a$, write $M$ for its leading Newton
 coefficient and $f(j)=p_A(j)$. Then $f(a)=0$, $f$ is nondecreasing
@@ -31,11 +31,11 @@ follows by summing the rising coefficients at $a+1$. Each coefficient is
 at least $M$. [Peak values](../PermutationPeaks/Values.lean) · [Binomial norm estimates](ComplexBasis.lean)
 
 The induction bounds $p_A$ in two bases. In the ordinary basis its norm
-is at most $(W_{a-1}+1)M\,|\binom z{a-1}|/D_{a-1}$. In the shifted
+is at most $`(W_{a-1}+1)M\,|\binom z{a-1}|/D_{a-1}`$. In the shifted
 basis, subtract its leading term $M\binom{z-1}{a-1}$. The norm of the
-remainder is at most $2W_{a-1}M\,|\binom{z-1}{a-2}|/W_{a-2}$. For
+remainder is at most $`2W_{a-1}M\,|\binom{z-1}{a-2}|/W_{a-2}`$. For
 $a=2$ the factor $2W_{a-1}M$ can be replaced by $M$.
-The singleton formula $p_{\{a\}}(z)=\binom{z-1}{a-1}-1$ starts the induction.
+The singleton formula $`p_{\{a\}}(z)=\binom{z-1}{a-1}-1`$ starts the induction.
 
 Append the last peak at $m$ and set $r=m-1$. The new leading coefficient
 is $f(r)$. If $m-a=2$, the recurrence gives
