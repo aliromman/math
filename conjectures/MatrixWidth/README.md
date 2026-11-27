@@ -1,6 +1,6 @@
-# The stationary width of the Matrix event graph
+# Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1
 
-Suppose $k$ participants each add one vertex in a round. Each independently picks $d$ distinct parents uniformly from the current $u$ tips. The selected parents cease to be tips, and the $k$ new vertices become tips. For $k>d>1$, the chain has a stationary distribution, and every width $u\ge k$ has finite mean return time. This proves the conjecture of Jacob, Beer, Henze and Hartenstein. [Original paper, §§VIII.A–C](https://publikationen.bibliothek.kit.edu/1000129939/103560274)
+Suppose $k$ participants each add one vertex in a round. Each independently picks $d$ distinct parents uniformly from the current $u$ tips. The selected parents cease to be tips, and the $k$ new vertices become tips. For $k>d>1$, the chain has a stationary distribution, and every width $u\ge k$ has finite mean return time. This proves the conjecture of Jacob, Beer, Henze and Hartenstein. [Original paper, §§VIII.A–C](https://publikationen.bibliothek.kit.edu/1000129939/103560274#page=14)
 
 The stationary width $U$ has an exact tail exponent:
 
@@ -32,7 +32,6 @@ The authors derived the one-step mean, variance and complete transition probabil
 The computation uses the original uniform subset space. A state with index $x$ represents physical width $k+x$. The theorem `resolution` proves the conjecture and `width_tail_rate` gives the limit in physical width.
 
 ```sh
-lake exe cache get
-lake build conjectures.MatrixWidth.Solution
-lake env leanchecker conjectures.MatrixWidth.Solution
+# Run at the merge commit for PR #99.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
