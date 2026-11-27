@@ -1,6 +1,6 @@
 module
 
-public import conjectures.PeakRootBounds.Statement
+public import conjectures.PermutationPeaks.ComplexValue
 public import conjectures.PermutationPeaks.EndpointCoefficients
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
@@ -11,8 +11,8 @@ import Mathlib.Tactic.Ring
 /-! Values and growth of the peak polynomial at and after its last peak. -/
 
 @[expose] public section
-namespace PeakRootBounds
-open PermutationPeaks PeakPolynomials ReflectedNewton Polynomial Finset
+namespace PermutationPeaks
+open PeakPolynomials ReflectedNewton Polynomial Finset
 
 noncomputable def leadingValue (S : Finset ℕ) : ℝ := peakCoefficient S 0
 
@@ -86,4 +86,4 @@ theorem adjacent_extension_zero (S : Finset ℕ) (hne : S.Nonempty) (z : ℂ) :
     h.2 _ (mem_insert_of_mem (maxPeak_mem hne)) (mem_insert_self ..)
   simp [peakValue, peakPolynomial_inadmissible _ hbad]
 
-end PeakRootBounds
+end PermutationPeaks

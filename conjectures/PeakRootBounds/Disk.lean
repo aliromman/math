@@ -1,7 +1,7 @@
 module
 
 public import conjectures.PeakRootBounds.DiskBasis
-public import conjectures.PeakRootBounds.PeakValues
+public import conjectures.PermutationPeaks.Values
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum

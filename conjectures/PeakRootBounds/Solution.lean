@@ -2,6 +2,7 @@ module
 
 public import conjectures.PeakRootBounds.Disk
 public import conjectures.PeakRootBounds.HalfPlane
+public import conjectures.PeakRootBounds.Statement
 
 @[expose] public section
 namespace PeakRootBounds

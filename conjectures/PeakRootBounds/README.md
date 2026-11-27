@@ -28,7 +28,7 @@ For a prefix $A$ ending at $a$, write $M$ for its leading Newton
 coefficient and $f(j)=p_A(j)$. Then $f(a)=0$, $f$ is nondecreasing
 on the integers above $a$, and $f(a+1)\ge(a-1)M$. The last inequality
 follows by summing the rising coefficients at $a+1$. Each coefficient is
-at least $M$. [Peak values](PeakValues.lean) · [Binomial norm estimates](ComplexBasis.lean)
+at least $M$. [Peak values](../PermutationPeaks/Values.lean) · [Binomial norm estimates](ComplexBasis.lean)
 
 The induction bounds $p_A$ in two bases. In the ordinary basis its norm
 is at most $(W_{a-1}+1)M\,|\binom z{a-1}|/D_{a-1}$. In the shifted
