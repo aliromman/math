@@ -4,7 +4,6 @@ public import Mathlib.Analysis.LocallyConvex.Separation
 public import Mathlib.LinearAlgebra.Dimension.Constructions
 public import Mathlib.LinearAlgebra.Dimension.Finite
 public import Mathlib.Topology.Algebra.Group.Pointwise
-import Mathlib.Tactic
 
 /-!
 The separation and rounding arguments are adapted from Chen's CC0 formalization

@@ -1,10 +1,11 @@
 module
 
 public import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
-public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 public import Mathlib.Data.Finset.Sort
 public import Mathlib.Basic.Real.Basic
-import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.FieldSimp
 
 @[expose] public section
 namespace ErdosSuranyi708

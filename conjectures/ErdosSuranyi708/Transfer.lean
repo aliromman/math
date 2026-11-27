@@ -4,7 +4,6 @@ public import conjectures.ErdosSuranyi708.Balance
 public import conjectures.ErdosSuranyi708.SeedCount
 public import conjectures.ErdosSuranyi708.TermComparison
 public import conjectures.ErdosSuranyi708.TermTail
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

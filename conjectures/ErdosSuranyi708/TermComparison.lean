@@ -1,7 +1,6 @@
 module
 
 public import conjectures.ErdosSuranyi708.Terms
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

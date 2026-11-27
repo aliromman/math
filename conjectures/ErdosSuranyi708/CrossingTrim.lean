@@ -3,7 +3,7 @@ module
 public import conjectures.ErdosSuranyi708.Crossing
 public import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Tactic
+import Mathlib.Algebra.BigOperators.Field
 
 @[expose] public section
 namespace ErdosSuranyi708

@@ -3,7 +3,6 @@ module
 public import conjectures.ErdosSuranyi708.Scores
 public import Mathlib.Data.Nat.Log
 public import Mathlib.Algebra.Order.Archimedean.Real.Basic
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

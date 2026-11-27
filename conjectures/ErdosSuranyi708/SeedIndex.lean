@@ -2,7 +2,6 @@ module
 
 public import conjectures.ErdosSuranyi708.Site
 public import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

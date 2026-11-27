@@ -4,7 +4,6 @@ public import Mathlib.NumberTheory.Chebyshev
 public import Mathlib.NumberTheory.EulerProduct.Basic
 public import Mathlib.NumberTheory.Harmonic.Bounds
 public import Mathlib.Analysis.PSeries
-public import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

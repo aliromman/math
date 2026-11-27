@@ -3,7 +3,6 @@ module
 public import conjectures.ErdosSuranyi708.Buckets
 public import conjectures.ErdosSuranyi708.Sieve
 public import conjectures.ErdosSuranyi708.Discrepancy
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

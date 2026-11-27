@@ -3,7 +3,6 @@ module
 public import conjectures.ErdosSuranyi708.SeedIndex
 public import conjectures.ErdosSuranyi708.Envelope
 public import Mathlib.Analysis.SpecialFunctions.Pow.NthRootLemmas
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

@@ -2,7 +2,6 @@ module
 
 public import conjectures.ErdosSuranyi708.Buckets
 public import conjectures.ErdosSuranyi708.CrossingTrim
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

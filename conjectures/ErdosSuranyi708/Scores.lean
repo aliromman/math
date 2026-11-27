@@ -2,7 +2,7 @@ module
 
 public import conjectures.ErdosSuranyi708.Reduction
 public import Mathlib.Combinatorics.Hall.Finite
-import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
 
 @[expose] public section
 namespace ErdosSuranyi708

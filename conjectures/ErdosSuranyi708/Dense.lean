@@ -1,7 +1,8 @@
 module
 
 public import conjectures.ErdosSuranyi708.Scores
-import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 @[expose] public section
 namespace ErdosSuranyi708

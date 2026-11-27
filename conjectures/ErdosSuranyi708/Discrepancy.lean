@@ -8,7 +8,6 @@ public import Mathlib.Data.Nat.Choose.Sum
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 import Mathlib.Analysis.SpecialFunctions.Log.Base
 import Mathlib.Analysis.Complex.ExponentialBounds
-import Mathlib.Tactic
 
 @[expose] public section
 namespace ErdosSuranyi708

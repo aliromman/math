@@ -1,7 +1,9 @@
 module
 
 public import conjectures.ErdosSuranyi708.Sieve
-import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 @[expose] public section
 namespace ErdosSuranyi708
