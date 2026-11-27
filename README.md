@@ -17,7 +17,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] (open draft) |
 | [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] (open draft) |
 | [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] (open draft) |
-| [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] (open draft) |
+| [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] (open draft) |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.2 on the start of the longest sumset interval][note-67] | With $k$ missing sums, every tie rule gives the same limiting mean left endpoint, $k/2+O(1)$. | [Lean][proof-67] · [#67][pr-67] (open draft) |
 | [Disproof of the pointwise bound in Sobolewski’s Conjecture 2 on monochromatic progressions in binary pattern sequences][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
@@ -259,9 +259,6 @@ and cites the original source.
 [note-60]: conjectures/BipartiteScoreSets/README.md
 [proof-60]: conjectures/BipartiteScoreSets/Solution.lean
 [pr-60]: https://github.com/aliromman/math/pull/60
-[note-59]: https://github.com/aliromman/math/blob/d3b7530c237906402c2971590a4c2799714f8e80/conjectures/CFPLogDensity/README.md
-[proof-59]: https://github.com/aliromman/math/blob/d3b7530c237906402c2971590a4c2799714f8e80/conjectures/CFPLogDensity/Solution.lean
-[pr-59]: https://github.com/aliromman/math/pull/59
 [note-56]: conjectures/ExclusiveSumBound/README.md
 [proof-56]: conjectures/ExclusiveSumBound/Solution.lean
 [pr-56]: https://github.com/aliromman/math/pull/56
@@ -494,3 +491,6 @@ and cites the original source.
 [note-72]: conjectures/ConsecutiveThreshold/README.md
 [proof-72]: conjectures/ConsecutiveThreshold/Solution.lean
 [pr-72]: https://github.com/aliromman/math/pull/72
+[note-59]: conjectures/CFPLogDensity/README.md
+[proof-59]: conjectures/CFPLogDensity/Solution.lean
+[pr-59]: https://github.com/aliromman/math/pull/59
