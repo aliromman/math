@@ -501,6 +501,6 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-115]: https://github.com/aliromman/math/blob/c9c53a1afb879fbd4c2759d11315ab57e3de5d40/conjectures/BajnokRestrictedMinimum/README.md
 [proof-115]: https://github.com/aliromman/math/blob/c9c53a1afb879fbd4c2759d11315ab57e3de5d40/conjectures/BajnokRestrictedMinimum/Solution.lean
 [pr-115]: https://github.com/aliromman/math/pull/115
-[note-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/README.md
+[note-116]: https://github.com/aliromman/math/blob/f774288f7e48f19cf8e03e55e1363e541dbaa6c8/conjectures/BorgSignedSets/README.md
 [proof-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/Solution.lean
 [pr-116]: https://github.com/aliromman/math/pull/116
