@@ -1,4 +1,4 @@
-# Every positive integer is a practical number plus two polygonal numbers
+# Proof of Somu and Tran’s Conjecture 14 on sums of a practical number and two polygonal numbers
 
 For each $s\in\{4,5,6,7,8,10\}$, every positive integer has a representation
 
@@ -6,7 +6,7 @@ $$n=p+P_s(x)+P_s(y),\qquad P_s(x)=(s-2)\binom{x}{2}+x,$$
 
 where $x,y\ge0$ and $p$ is practical. This means every integer from $1$ through $p$ is a sum of distinct positive divisors of $p$. For example, $43=6+10+27$ uses two decagonal numbers.
 
-This proves Conjecture 14 of Sai Teja Somu and Duc Van Khanh Tran. Their Theorem 2 proves eventual representation for every order $s>3$. They also tested the six conjectured orders below $10^8$. Their counterexamples at the other orders, together with this proof, classify every order $s>3$. Searches by title, authors, conjecture number, and the corresponding OEIS sequences found their paper and computations. We found no earlier proof covering every positive integer for these six orders. [Original paper, §§4–5](https://cs.uwaterloo.ca/journals/JIS/VOL27/Somu/somu5.pdf)
+This proves Conjecture 14 of Sai Teja Somu and Duc Van Khanh Tran. Their Theorem 2 proves eventual representation for every order $s>3$. They also tested the six conjectured orders below $10^8$. Their counterexamples at the other orders, together with this proof, classify every order $s>3$. Searches by title, authors, conjecture number, and the corresponding OEIS sequences found their paper and computations. We found no earlier proof covering every positive integer for these six orders. [Original paper, §§4–5](https://cs.uwaterloo.ca/journals/JIS/VOL27/Somu/somu5.pdf#page=11)
 
 ## Proof
 
@@ -21,9 +21,8 @@ This covers $5M^2/6\le n\le12M^2/5$. The successive scale factors $5,7,11,17,25$
 Run these commands from the repository root with the pinned Lean and Mathlib versions.
 
 ```sh
-lake exe cache get
-lake build conjectures.PracticalPolygons.Solution
-lake env leanchecker conjectures.PracticalPolygons.Solution
+# Run at the merge commit for PR #73.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 OpenAI Codex developed the congruence argument, finite certificates, and Lean formalization. Somu and Tran posed the conjecture and established the preceding eventual theorem. [Statement](Statement.lean) · [Proof](Solution.lean)
