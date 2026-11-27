@@ -1,4 +1,4 @@
-# The largest binomial–Poisson discrepancy occurs at zero
+# Proof of the Nagaev–Chebotarev conjecture on the exact binomial–Poisson distance at mean one
 
 For every positive integer $n$ and every $0\le\lambda\le1$,
 
@@ -59,7 +59,8 @@ Adell, Anoz and Lekuona proved the formula for $\lambda\le2-\sqrt2$ and gave an 
 Lean uses Mathlib’s binomial and Poisson probability measures. It takes the supremum over all real thresholds and proves the scaled limit. [Statement](Statement.lean) · [General theorem and resolution](Solution.lean) · [Limit](Limit.lean)
 
 ```sh
-lake exe cache get
-lake build conjectures.PoissonApproximation.Solution
-lake env leanchecker conjectures.PoissonApproximation.Solution
+# Run at the merge commit for PR #79.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Nagaev and Chebotarev, “On Approximation of the Tails of the Binomial Distribution with These of the Poisson Law,” Mathematics 9 (2021), 845, §6, equation (84), DOI 10.3390/math9080845. The conjectured finite identity is at mean one. The proof covers the whole interval from zero to one. [Publication](https://www.mdpi.com/2227-7390/9/8/845)
