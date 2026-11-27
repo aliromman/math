@@ -139,7 +139,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Janson and Linusson’s conjecture on the probability of the Alabama paradox under Hamilton’s method][note-33] | With fixed rationally independent population shares, the limiting frequency of house sizes at which any state loses a seat is at most $1-2/e$. The source gives examples approaching the bound. | [Lean][proof-33] · [#33][pr-33] (open draft) |
 | [Proof of Kurz and Napel’s conjecture on a voter with half the Banzhaf power of each other voter][note-55] | Every committee of at least six voters admits a voting rule that gives one voter half the normalized Banzhaf power of each other voter. | [Lean][proof-55] · [#55][pr-55] (open draft) |
-| [Proof of Kurz’s Conjecture 8 on Banzhaf approximation in weighted voting games][note-58] | Every weighted rule on $n\ge2$ voters has normalized Banzhaf vector at $\ell_1$ distance at least $1/(18n)$ from $(2,\ldots,2,1)/(2n-1)$. | [Lean][proof-58] · [#58][pr-58] (open draft) |
+| [Proof of Kurz’s Conjecture 8 on Banzhaf approximation in weighted voting games][note-58] | Every weighted rule on $n\ge2$ voters has normalized Banzhaf vector at $\ell_1$ distance at least $1/(18n)$ from $(2,\ldots,2,1)/(2n-1)$. | [Lean][proof-58] · [#58][pr-58] |
 | [Disproof of McCune’s Conjecture 1 on Alabama-paradox probabilities][note-37] | Exact probabilities for every positive house size and seat increase under the uniform three-state model refute both conjectured monotonicity rules. | [Lean][proof-37] · [#37][pr-37] (open draft) |
 
 ### Words and permutations
@@ -313,9 +313,6 @@ and cites the original source.
 [note-59]: https://github.com/aliromman/math/blob/d3b7530c237906402c2971590a4c2799714f8e80/conjectures/CFPLogDensity/README.md
 [proof-59]: https://github.com/aliromman/math/blob/d3b7530c237906402c2971590a4c2799714f8e80/conjectures/CFPLogDensity/Solution.lean
 [pr-59]: https://github.com/aliromman/math/pull/59
-[note-58]: https://github.com/aliromman/math/blob/0ebf481b76157f57540e39418392416b9ea63ac0/conjectures/KurzWeighted/README.md
-[proof-58]: https://github.com/aliromman/math/blob/0ebf481b76157f57540e39418392416b9ea63ac0/conjectures/KurzWeighted/Solution.lean
-[pr-58]: https://github.com/aliromman/math/pull/58
 [note-56]: conjectures/ExclusiveSumBound/README.md
 [proof-56]: conjectures/ExclusiveSumBound/Solution.lean
 [pr-56]: https://github.com/aliromman/math/pull/56
@@ -494,3 +491,6 @@ and cites the original source.
 [note-83]: conjectures/EternalTreeDomination/README.md
 [proof-83]: conjectures/EternalTreeDomination/Solution.lean
 [pr-83]: https://github.com/aliromman/math/pull/83
+[note-58]: conjectures/KurzWeighted/README.md
+[proof-58]: conjectures/KurzWeighted/Solution.lean
+[pr-58]: https://github.com/aliromman/math/pull/58
