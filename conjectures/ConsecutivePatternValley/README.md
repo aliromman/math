@@ -1,4 +1,4 @@
-# Seven letters disprove unimodality for consecutive pattern counts
+# Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts
 
 In a random permutation of seven letters, the expected number of consecutive copies of **51234** falls and then rises as the inversion count increases from 7 to 9.
 
@@ -29,11 +29,12 @@ The coefficients at degrees 7, 8 and 9 are $3\cdot4$, $3\cdot5$ and $3\cdot6$. D
 From a clean checkout, run
 
 ```sh
-lake exe cache get
-lake build conjectures.ConsecutivePatternValley.Solution
-lake env leanchecker conjectures.ConsecutivePatternValley.Solution
+# Run at the merge commit for PR #69.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The formal statement defines the uniform average on each inversion layer and weak unimodality on the full range. The proof checks the three counts directly on permutations and rules out a peak on either side of 8. A separate AI researcher checked the statement against the journal paper and independently computed both generating functions. The final theorem’s guarded axiom list contains only `propext`, `Classical.choice`, and `Quot.sound`.
 
 Bevan and Threlfall posed the conjecture. OpenAI Codex found the example and developed the proof and formalization. A search by authors, conjecture number, and pattern-count unimodality found no earlier counterexample.
+
+Bevan and Threlfall, “Thresholds for Patterns in Random Permutations with a Given Number of Inversions,” Electronic Journal of Combinatorics 31 (2024), P4.6, Conjecture 22, p. 20. The printed bound is n ≥ |π| + 2. [Publication](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v31i4p6/pdf/#page=20)
