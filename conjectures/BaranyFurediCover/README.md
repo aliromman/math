@@ -2,22 +2,22 @@
 
 The square with vertices $(0,0),(2,1),(1,3),(-1,2)$ has area 5 and lattice covering radius $3/5$. Its longest line of lattice points contains three points, so its lattice diameter is 2. Thus
 
-$$
-\frac{\operatorname{area}(P)\,\mu(P)}{\ell(P)}=\frac32.
-$$
+```math
+\frac{\mathop{\mathrm{area}}(P)\,\mu(P)}{\ell(P)}=\frac32.
+```
 
 This is the largest possible ratio for a square with lattice vertices. There are also squares of arbitrarily large lattice diameter that exceed the proposed constant $(1+\sqrt2)/2$.
 
 ## The original comparison
 
-Bárány and Füredi define $\ell(P)$ as the greatest number of lattice points on a line in $P$, less one. The covering radius $\mu(P)$ is the least scale at which integer translates of the scaled polygon cover the plane. After equation (6), the authors compare $\operatorname{area}(P)\mu(P)$ with $\ell(P)$ and propose the factor $(1+\sqrt2)/2$. Their own example $Q^6(t)$ already yields $16/13>(1+\sqrt2)/2$ at $t=1$. Their paper gives both numbers. The results proved here determine the sharp constant for all lattice squares and show that the proposed factor still fails at unbounded lattice diameter. [Bárány and Füredi, *On the lattice diameter of a convex polygon*, Discrete Mathematics 241 (2001), pp. 41–50, §3](https://www.renyi.hu/~barany/cikkek/84.pdf#page=5)
+Bárány and Füredi define $\ell(P)$ as the greatest number of lattice points on a line in $P$, less one. The covering radius $\mu(P)$ is the least scale at which integer translates of the scaled polygon cover the plane. After equation (6), the authors compare $\mathop{\mathrm{area}}(P)\mu(P)$ with $\ell(P)$ and propose the factor $(1+\sqrt2)/2$. Their own example $Q^6(t)$ already yields $16/13>(1+\sqrt2)/2$ at $t=1$. Their paper gives both numbers. The results proved here determine the sharp constant for all lattice squares and show that the proposed factor still fails at unbounded lattice diameter. [Bárány and Füredi, *On the lattice diameter of a convex polygon*, Discrete Mathematics 241 (2001), pp. 41–50, §3](https://www.renyi.hu/~barany/cikkek/84.pdf#page=5)
 
 ## The three exact quantities
 
 Translate the square and apply a symmetry of the integer grid. Its side vectors can be written as $(a,b)$ and $(-b,a)$ with integers $a\ge b\ge0$ and $a>0$. Put $D=a^2+b^2$. Then
 
 $$
-\operatorname{area}(P)=D,\qquad
+\mathop{\mathrm{area}}(P)=D,\qquad
 \mu(P)=\frac{a+b}{D},\qquad
 \ell(P)=a+\left\lfloor\frac{b^2}{a}\right\rfloor.
 $$
@@ -36,7 +36,7 @@ $$
 \frac{p}{4q-2p-1}>\frac{1+\sqrt2}{2}.
 $$
 
-The strict inequality reduces to $2\sqrt2\,p>4q-1$. Squaring and using the Pell equation gives $8q>9$. The diameters are at least $q$, which grows without bound.
+The strict inequality reduces to $`2\sqrt2\,p>4q-1`$. Squaring and using the Pell equation gives $8q>9$. The diameters are at least $q$, which grows without bound.
 
 ## Verification and attribution
 

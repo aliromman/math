@@ -6,7 +6,7 @@ Matt Larson asked which exponent $2\le a<\exp(S_n)$ maximizes the number $N(a,S_
 
 ## The rule
 
-Let $L=\operatorname{lcm}(1,\ldots,n)$. For each $n/2<k\le n$ with $k\ge2$, let $B_k$ be the least common multiple of the lengths from 1 through $n$ other than $k$. Form $a=1+jB_k$ for $1\le j\le k$. Keep the pairs with $a<L$ and $a\not\equiv1\pmod k$. If $k$ is an odd prime, keep only $a\equiv-1\pmod k$.
+Let $L=\mathop{\mathrm{lcm}}(1,\ldots,n)$. For each $n/2<k\le n$ with $k\ge2$, let $B_k$ be the least common multiple of the lengths from 1 through $n$ other than $k$. Form $a=1+jB_k$ for $1\le j\le k$. Keep the pairs with $a<L$ and $a\not\equiv1\pmod k$. If $k$ is an odd prime, keep only $a\equiv-1\pmod k$.
 
 Assign each remaining length the weight
 

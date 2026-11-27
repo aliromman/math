@@ -30,7 +30,7 @@ The multiplier has nonnegative coefficients and increases coefficient by coeffic
 
 Within either family, moving one leaf from a smaller child to a larger child increases the product of the two factors. Balanced splitting minimizes it and splitting off one leaf maximizes it. The increase is strict at degree two whenever the split has actually become less even. The duplication term propagates this strict inequality to every later coefficient. Induction through the tree gives both extremizers and their equality cases.
 
-Root duplication gives $h_T(i+j)\ge h_T(i)h_T(j)$. A finite exponential upper bound and Fekete's lemma give the stated limit, which is at least any single $n$th root. The size-two recurrence on a caterpillar gives $4h_T(2)\ge k^3$.
+Root duplication gives $h_T(i+j)\ge h_T(i)h_T(j)$. A finite exponential upper bound and Fekete's lemma give the stated limit, which is at least any single $`n`$th root. The size-two recurrence on a caterpillar gives $4h_T(2)\ge k^3$.
 
 For the balanced upper bound, let $U$ be the positive Catalan series satisfying $U=16kz+U^2$. For a subtree with $m$ leaves put $s=m/k$ and $w(s)=(s+s^2)/16$. At a balanced split of normalized sizes $x,z$, one has $x\le2z$ and $z\le2x$. Expansion gives
 
@@ -41,7 +41,7 @@ $$
 Since $U^2\le U$ coefficient by coefficient, the grammar gives $H_T\le w(s)U$ by induction. The Catalan bound $C_n\le4^n$ gives $E(T)\le64k$. The lower bound $E(T)\ge k$ follows from $h_T(1)=k$.
 
 The limiting constant comes from replacing every leaf of an outer tree of growth $r$ by the same $m$-leaf tree. The resulting growth factor is between $mr$ and $mr+C_m$, for a constant $C_m$ that depends only on the inner tree. In generating functions this operation substitutes $Q_{\mathrm{inner}}-1$ for $z$. Its first coefficient is $m$, and a finite exponential bound on the other coefficients gives
-$ m z \le Q_{\mathrm{inner}}-1 \le m z/(1-C_mz)$.
+$` m z \le Q_{\mathrm{inner}}-1 \le m z/(1-C_mz)`$.
 Substitution in the outer series gives the lower bound. Substitution in the upper geometric series $1/(1-rz)$ gives the upper bound.
 
 For the complete tree with $2^h$ leaves, the ratio $E/2^h$ increases with $h$ and is bounded by 64. For each fixed $m$, grafting a balanced $m$-leaf tree under every leaf of the complete tree gives the balanced tree with $m2^h$ leaves. Its ratio has the same limit. Monotonicity then bounds every other leaf count between consecutive multiples of $2^h$. As $m$ increases, the relative gap between adjacent multiples is at most $1/m$.

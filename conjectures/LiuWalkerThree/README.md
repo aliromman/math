@@ -26,13 +26,12 @@ The first two summands add to $d[A(c+d)^k-B(c-d)^k]$.
 The third summand is $(c-a)(c-b)Qt^k\ge0$.
 The following factorization settles the endpoint $k=-3$.
 
-$$
+```math
 \begin{aligned}
 A(c-d)^3-B(c+d)^3
- = d\big[&t^3(c^2+d^2)\\
- &+2Q\{t^2(2c-a-b)+4(a+b)(c-a)(c-b)\}\big]\ge0.
+ = d\big[&t^3(c^2+d^2)\\ &+2Q\{t^2(2c-a-b)+4(a+b)(c-a)(c-b)\}\big]\ge0.
 \end{aligned}
-$$
+```
 
 Each factor on the right is nonnegative. Divide by the positive
 $(c-d)^3(c+d)^3$ to get $A(c+d)^{-3}\ge B(c-d)^{-3}$.

@@ -21,7 +21,7 @@ More generally, concatenate $r$ copies of `ababa`, each on its own pair of lette
 Among subsequences of length at most seven, the largest frequency is 136, attained by `ababab`. To reproduce the counts, split the occurrences according to whether they use the first input position. For letters $a,b$ and words $w,v$, this gives
 
 $$
-\operatorname{occ}(aw,bv)=\operatorname{occ}(w,bv)+[a=b]\operatorname{occ}(w,v).
+\mathop{\mathrm{occ}}(aw,bv)=\mathop{\mathrm{occ}}(w,bv)+[a=b]\mathop{\mathrm{occ}}(w,v).
 $$
 
 An empty pattern occurs once. A nonempty pattern occurs zero times in an empty input. The Lean proof checks the binary counts against all subsequences of this word.

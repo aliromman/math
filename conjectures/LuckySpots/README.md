@@ -29,10 +29,10 @@ Run any $l\ge j$ preferences on a circle of $j$ spots. The first $j$ cars fill i
 
 Let $A_j(l)$ count the $l$-letter words that fill the first $j$ spots and make the last one lucky. Write $F_i$ for the number of parking functions on $i$ spots, including $F_0=1$. If the first empty spot is $i+1<j$, exactly $i$ preferences lie to its left. They form a parking function there. The other preferences alone determine the luck of $j$. Thus $A_j(l)=E_j(l)$ for $l\ge j$, where
 
-$$
+```math
 E_j(l)=K_j j^l-\sum_{\substack{0\le i\le j-2\\i\le l}}
 \binom li F_i K_{j-i-1}(j-i-1)^{l-i}.
-$$
+```
 
 For $l<j-1$, there are at least two vacancies. The same first-empty cases partition all $j^l$ words. Write $t_i=\binom li F_i(j-i-1)^{l-i}$ for the size of each case. Counting occurrences of the letter $j$ yields $\sum_i t_i(l-i)/(j-i-1)=lj^l/j$. Substituting this and $\sum_i t_i=j^l$ into the expression for $E_j(l)$ gives $(l-j+1)E_j(l)=j^l/(2j)$.
 

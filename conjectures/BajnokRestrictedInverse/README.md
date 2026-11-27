@@ -2,7 +2,9 @@
 
 The eight nonzero squares modulo 17 form the set
 
-$$Q=\{1,2,4,8,9,13,15,16\}.$$
+```math
+Q=\{1,2,4,8,9,13,15,16\}.
+```
 
 Sums of three distinct elements of $Q$ attain **every nonzero residue and omit zero**. Their number is $16=3(8-3)+1$, the minimum permitted by the Dias da Silva–Hamidoune theorem. Yet $Q$ is not an arithmetic progression. In fact, precisely two families of eight-element subsets of $\mathbb F_{17}$ have 16 distinct triple sums. They are the invertible affine images of an eight-term interval and of $Q$. The families contain 136 and 34 sets, respectively.
 
@@ -16,11 +18,11 @@ The sums $1+2+15\equiv1$ and $1+4+15\equiv3$ represent a square and a nonsquare.
 
 If $Q$ were a progression with step $d\ne0$, at least seven elements of $Q$ would remain in $Q$ after adding $d$. For $d=1$ there are three such elements, and for $d=3$ there are four. Multiplication by a nonzero square sends these two steps to all possible nonzero steps.
 
-A smaller witness over $\mathbb F_{11}$ is $\{0,1,3,4,5,9\}$. It has ten distinct triple sums and is not an arithmetic progression. The correspondence with Bajnok's inverse problem and the classification over $\mathbb F_{17}$ are the contributions here.
+A smaller witness over $\mathbb F_{11}$ is $`\{0,1,3,4,5,9\}`$. It has ten distinct triple sums and is not an arithmetic progression. The correspondence with Bajnok's inverse problem and the classification over $\mathbb F_{17}$ are the contributions here.
 
 ## Classification over the field of order 17
 
-A set with 16 triple sums has a unique missing residue $y$. Translating the set by $-y/3$ makes the missing residue zero. For that normalized problem, the allowed eight-element sets are precisely the nonzero dilations of $Q$ and of $\{5,6,7,8,9,10,11,12\}$.
+A set with 16 triple sums has a unique missing residue $y$. Translating the set by $-y/3$ makes the missing residue zero. For that normalized problem, the allowed eight-element sets are precisely the nonzero dilations of $Q$ and of $`\{5,6,7,8,9,10,11,12\}`$.
 
 Lean checks this finite classification by building the set one residue at a time. After choosing $x$, it discards any remaining $y$ for which $-x-y$ is a previously chosen point and all three residues are distinct. A branch stops when the number of remaining candidates is too small. The proof shows that this procedure keeps every solution, then checks its finite output in the kernel. Translation gives the classification above.
 

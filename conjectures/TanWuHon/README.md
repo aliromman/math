@@ -28,7 +28,7 @@ The main counting observation concerns a partition whose parts are all at most $
 
 Write $k$ for the size of an optimal partition. A partition with copies of $L$ and one large part gives $r\le Lk$. Above the proposed threshold, $k\ge2f-1$. If a part $s<L$ occurred at least $2L-1$ times, the observation with $M=2L-1$ would bound the number of parts below $2L$ by $f-1$. The others each weigh at least $2L$, which would give total weight greater than $Lk+f$.
 
-Thus every $s<L$ occurs at most $2L-2$ times. Comparing all parts with $L+1$ bounds their total deficit from parts below $L$ by $D=(L-1)^2(L+2)$. This forces enough copies of $L$ whenever $L\le f$ and $D+\lfloor f/L\rfloor<f$. Since $\operatorname{lcm}(1,\ldots,L-1)$ divides $f$, only 36 pairs $(f,L)$ remain, the largest with $f=420$. The proof checks these pairs by branching on the multiplicity of each small part and tracking the attainable subset sums. For $f=1,2,4,6$ it also checks the short initial intervals directly. Lean proves the validity of each pruning rule and checks all finite cases in its kernel.
+Thus every $s<L$ occurs at most $2L-2$ times. Comparing all parts with $L+1$ bounds their total deficit from parts below $L$ by $D=(L-1)^2(L+2)$. This forces enough copies of $L$ whenever $L\le f$ and $D+\lfloor f/L\rfloor<f$. Since $\mathop{\mathrm{lcm}}(1,\ldots,L-1)$ divides $f$, only 36 pairs $(f,L)$ remain, the largest with $f=420$. The proof checks these pairs by branching on the multiplicity of each small part and tracking the attainable subset sums. For $f=1,2,4,6$ it also checks the short initial intervals directly. Lean proves the validity of each pruning rule and checks all finite cases in its kernel.
 
 ## The exact answer for odd $f$
 

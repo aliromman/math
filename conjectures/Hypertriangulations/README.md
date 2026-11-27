@@ -6,31 +6,31 @@ Edelsbrunner, Garber, and Saghafian’s Conjecture C holds at every level. We al
 
 Take a finite set $A$ in the plane, with no three points on a line and no four on a circle. Choose $1\le k<|A|$. Label each $k$-point average by the subset of $A$ that produced it. A hypertriangulation triangulates the convex hull of these averages. It may omit some averages. Each edge must join two labels that differ by one exchange. If several labels give the same point, a triangulation may use at most one there.
 
-A hypertriangulation is *maximal* if it admits no proper subdivision of the same kind. Is its triangle count as large as that of any level-$k$ hypertriangulation of $A$? The authors established the level-two case, cited the case of points in convex position, and posed the general question in §6, p. 30. [Original article, *Advances in Mathematics* 461 (2025), 110055](https://doi.org/10.1016/j.aim.2024.110055)
+A hypertriangulation is *maximal* if it admits no proper subdivision of the same kind. Is its triangle count as large as that of any level-$`k`$ hypertriangulation of $A$? The authors established the level-two case, cited the case of points in convex position, and posed the general question in §6, p. 30. [Original article, *Advances in Mathematics* 461 (2025), 110055](https://doi.org/10.1016/j.aim.2024.110055)
 
 ## A face weight
 
-Write $Ua$ for $U\cup\{a\}$. Fix a triangle and orient it counterclockwise. Its three labels have one of two forms.
+Write $Ua$ for $`U\cup\{a\}`$. Fix a triangle and orient it counterclockwise. Its three labels have one of two forms.
 
 | Face | Labels in cyclic order | Eligible points inside the original triangle $abc$ |
 |---|---|---|
 | White | $Ua,Ub,Uc$ | $p\notin U$ |
 | Black | $Xbc,Xca,Xab$ | $p\in X$ |
 
-Give the face weight $1+2m$, where $m$ counts its eligible points. A white face is a translated and scaled copy of $abc$. Each eligible $p$ gives a new interior vertex $Up$. A black face is a translated, scaled, and centrally reflected copy of $abc$. Its new interior vertex is $(X\setminus\{p\})abc$. In both cases the new label differs by one exchange from each corner, so joining it to the corners is an admissible subdivision.
+Give the face weight $1+2m$, where $m$ counts its eligible points. A white face is a translated and scaled copy of $abc$. Each eligible $p$ gives a new interior vertex $Up$. A black face is a translated, scaled, and centrally reflected copy of $abc$. Its new interior vertex is $`(X\setminus\{p\})abc`$. In both cases the new label differs by one exchange from each corner, so joining it to the corners is an admissible subdivision.
 
 ## Why the total is constant
 
 Identify each label with its zero–one vector. All labels lie in the hypersimplex
 
-$$
+```math
 \Delta(k,A)=\left\{x\in[0,1]^A:\sum_{a\in A}x_a=k\right\}.
-$$
+```
 
 A labelled triangular face lifts to a triangular two-dimensional face of this polytope. Give the reverse orientation the negative weight. The signed sum around each three-dimensional face vanishes. There are two cases.
 
 * A tetrahedron varies four original points. Every other input point contributes its signed triangle indicators. Their alternating sum is zero because the two projected sides of the tetrahedral boundary cover the plane with equal multiplicities. This remains true when one of the four points is inside the triangle of the other three. In that case the large triangle counts this point and contributes $1+2=3$ against three smaller triangles of weight one. When the four points form a convex quadrilateral, two triangles appear on each side. For a black tetrahedron, the omitted corner of each three-point test belongs to the fixed set for that face, so the same accounting applies.
-* An octahedron varies two choices among four points $a,b,c,d$. Opposite faces correspond to the same original triangle with opposite boundary signs. Their constant terms cancel. For the pair varying $a,b,c$, the white face has fixed set $Xd$ and the black face has fixed set $X$. The three vertices of $abc$ cannot be interior, and $d$ is excluded from both counts. Thus each point outside $\{a,b,c,d\}$ contributes its signed triangle indicator with a fixed coefficient, either $+2$ or $-2$. Its four indicators again have alternating sum zero.
+* An octahedron varies two choices among four points $a,b,c,d$. Opposite faces correspond to the same original triangle with opposite boundary signs. Their constant terms cancel. For the pair varying $a,b,c$, the white face has fixed set $Xd$ and the black face has fixed set $X$. The three vertices of $abc$ cannot be interior, and $d$ is excluded from both counts. Thus each point outside $`\{a,b,c,d\}`$ contributes its signed triangle indicator with a fixed coefficient, either $+2$ or $-2$. Its four indicators again have alternating sum zero.
 
 A convex polytope has zero second homology. Consequently a closed chain of triangular faces is a sum of boundaries of three-dimensional faces. The total signed weight of a lifted triangulation therefore depends only on its oriented boundary. The Lean proof constructs the corresponding weights on individual edges directly by adding one input label at a time. Its two local consistency checks are precisely the tetrahedron and octahedron identities above.
 

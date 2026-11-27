@@ -10,11 +10,11 @@ For $n\ge2$, the Buchweitz obstruction occurs when the sumset $nG$ of $n$ gaps h
 | 3 | 200 | 200 | 0 |
 | 4 | 281 | 280 | 1 |
 
-The strict inequality fails exactly between two orders where it holds. For $n\ge5$, all sums lie between $n$ and $71n$, so $|nG|\le70n+1\le 40(2n-1)$. Thus the full Buchweitz set is $\{2,4\}$. The excesses $1,0,1$ also contradict the proposed unimodality in the authors’ Question 4.2.
+The strict inequality fails exactly between two orders where it holds. For $n\ge5$, all sums lie between $n$ and $71n$, so $|nG|\le70n+1\le 40(2n-1)$. Thus the full Buchweitz set is $`\{2,4\}`$. The excesses $1,0,1$ also contradict the proposed unimodality in the authors’ Question 4.2.
 
 ## Checking the counts
 
-Reflect the gaps about $71/2$. The resulting set is $[36,70]\cup P$, where $P=\{0,1,5,6,25,29\}$. Reflection preserves each sumset size. For $n=2,3,4$, the sums containing an entry from $[36,70]$ fill $[36,70n]$. Indeed, $[36,70]$ and $[72,140]$ miss only 71 between them, and $71=70+1$. Further copies of $[36,70]$ then give overlapping intervals. The sums below 36 come entirely from $P$ and have sizes 16, 25 and 36. This gives the three counts in the table.
+Reflect the gaps about $71/2$. The resulting set is $[36,70]\cup P$, where $`P=\{0,1,5,6,25,29\}`$. Reflection preserves each sumset size. For $n=2,3,4$, the sums containing an entry from $[36,70]$ fill $[36,70n]$. Indeed, $[36,70]$ and $[72,140]$ miss only 71 between them, and $71=70+1$. Further copies of $[36,70]$ then give overlapping intervals. The sums below 36 come entirely from $P$ and have sizes 16, 25 and 36. This gives the three counts in the table.
 
 A 2024 presentation by Marín-Aragón restated the interval question for gapsets. Pontes also listed it as open in her 2024 thesis. Searches for the Buchweitz interval question, disconnected Buchweitz sets, and subsequent work on the original paper found no earlier counterexample. OpenAI Codex derived the construction from the small summands of a reflected gapset and wrote the proof. [2024 presentation](https://imns2024.uca.es/wp-content/uploads/2024/07/Marin_Aragon_Jerez_24.pdf#page=19) · [Pontes, conclusion](https://repositorio.ufjf.br/jspui/bitstream/ufjf/17346/1/letiannealvesvenanciodepontes.pdf)
 
