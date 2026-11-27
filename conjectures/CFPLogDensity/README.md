@@ -1,4 +1,4 @@
-# The sharp logarithmic density of monochromatic subset sums
+# Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums
 
 Color the positive integers with three colors. For at least one color, the sums of distinct integers of that color have upper logarithmic density at least **0.8526248994…**. There is a coloring for which this bound is attained.
 
@@ -9,7 +9,7 @@ c_r=\frac{1-1/(2b)}{1-b^{-r}}
    =\left(1-\frac{1}{2b}\right)\left(1+\frac{1}{2rb-r}\right).
 $$
 
-Conlon, Fox and Pham found the extremal coloring and proved the two-color case, answering a question of Erdős. Their Conjecture 10 asks whether their upper bound is sharp for every larger number of colors. The proof below establishes the matching lower bound for arbitrary colorings. [Conlon, Fox and Pham, *The upper logarithmic density of monochromatic subset sums*, Mathematika 68 (2022), 1292–1301, pp. 2 and 9 of the preprint](https://arxiv.org/pdf/2105.15195) · [Erdős problem 1211, the two-color case](https://www.erdosproblems.com/1211)
+Conlon, Fox and Pham found the extremal coloring and proved the two-color case, answering a question of Erdős. Their Conjecture 10 asks whether their upper bound is sharp for every larger number of colors. The proof below establishes the matching lower bound for arbitrary colorings. [Conlon, Fox and Pham, *The upper logarithmic density of monochromatic subset sums*, Mathematika 68 (2022), 1292–1301, pp. 2 and 9 of the preprint](https://arxiv.org/pdf/2105.15195#page=9) · [Erdős Problem 1211, the earlier two-color question](https://www.erdosproblems.com/1211)
 
 ## The statement
 
@@ -49,16 +49,15 @@ At the proposed optimum, Bernoulli's inequality $(bz)^r\ge 1+r(bz-1)$ gives $1-c
 
 ## Why the bound is attained
 
-Use the cyclic coloring of Conlon, Fox and Pham. Color $n$ by $k\bmod r$ when $b^k\le\log n<b^{k+1}$, assigning the finitely many initial integers to the first color. If the largest term of a subset sum is $n$, then the sum lies between $n$ and $n^2$. For a fixed color, the possible logarithms therefore lie in intervals $[a,2ba]$ with successive left endpoints in ratio $b^r$. These intervals are disjoint because $b^r-2b=(r-1)(2b-1)>0$. The covered fraction rises inside each interval and falls in the next gap. A geometric sum at the right endpoints shows that the largest limiting fraction is $(1-1/(2b))/(1-b^{-r})$. Passing from lengths to reciprocal sums costs a bounded amount per interval and only $O(\log\log x)$ up to $x$. Every color occurs. [Original construction, pp. 2–3](https://arxiv.org/pdf/2105.15195)
+Use the cyclic coloring of Conlon, Fox and Pham. Color $n$ by $k\bmod r$ when $b^k\le\log n<b^{k+1}$, assigning the finitely many initial integers to the first color. If the largest term of a subset sum is $n$, then the sum lies between $n$ and $n^2$. For a fixed color, the possible logarithms therefore lie in intervals $[a,2ba]$ with successive left endpoints in ratio $b^r$. These intervals are disjoint because $b^r-2b=(r-1)(2b-1)>0$. The covered fraction rises inside each interval and falls in the next gap. A geometric sum at the right endpoints shows that the largest limiting fraction is $(1-1/(2b))/(1-b^{-r})$. Passing from lengths to reciprocal sums costs a bounded amount per interval and only $O(\log\log x)$ up to $x$. Every color occurs. [Original construction, pp. 2–3](https://arxiv.org/pdf/2105.15195#page=9)
 
 ## Verification and attribution
 
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.CFPLogDensity.Solution
-lake env leanchecker conjectures.CFPLogDensity.Solution
+# Run at the merge commit for PR #59.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The proof includes the finite subset-sum argument, the logarithmic-density estimates, the product argument, the extremal coloring, and the transitive axiom check. The project pins Lean 4.36.0 and Mathlib. OpenAI Codex developed the lower bound and wrote the Lean formalization. Searches by the paper title, multicolor extension, cyclic coloring, and cited references found the authors' two-color result and no earlier proof of Conjecture 10.
