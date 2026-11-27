@@ -11,7 +11,7 @@ import Mathlib.Tactic.Ring
 
 public section
 namespace GallianRusinGame
-open Polynomial Finset
+open GallianRusin Polynomial Finset
 open scoped BigOperators
 
 private abbrev evalC (P : ℤ[X]) (z : ℂ) := P.eval₂ (Int.castRingHom ℂ) z
@@ -128,7 +128,7 @@ theorem multiplicity_bound {m d e p : ℕ} {P : ℤ[X]} (hp : Nat.Prime p) (cop 
   let g := cyclotomic (d*p) ℤ
   let roots := (g.map (Int.castRingHom ℂ)).roots
   have gp := Nat.mul_pos hd hp.pos
-  obtain ⟨k,hk,dy,others,_,_,hgame⟩ := game
+  obtain ⟨k,hk,dy,others,_,_,hgame⟩ := solutionDie_iff_plays.mp game
   obtain ⟨D,hD⟩ := divides
   have no (z : ℂ) (hz : z∈roots) : evalC P z≠0 := by
     have prim := primitive_of_mem gp hz

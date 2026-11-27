@@ -1,4 +1,4 @@
-# One 30-sided die needs four dice
+# Proof of Gallian and Rusin’s conjecture on the maximum game-size of 30-sided dice
 
 Exactly 44 distinct 30-sided dice can take part in a game whose sum has the same distribution as the sum of ordinary dice. Of these, 43 can appear in a game of three. One requires four. Its face counts, in order for labels 1 through 14, are
 
@@ -31,11 +31,12 @@ For 43 choices, two companions complete a three-dice game. The exception has $P=
 Run the following commands from the repository root.
 
 ```sh
-lake exe cache get
-lake build conjectures.GallianRusinGame.Solution
-lake env leanchecker conjectures.GallianRusinGame.Solution
+# Run at the merge commit for PR #63.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-`Statement.lean` defines the face distribution, games, and the conjectured maximum. `Multiplicity.lean` proves the bound for any auxiliary prime. `Solution.lean` proves the exact number of dice, the uniqueness and face labels of the exception, and the conjecture. Lean checks all numerical certificates in its kernel.
+`Statement.lean` states the conjectured maximum. The shared [dice model](../GallianRusin/Die.lean) relates games of a specified size to games with a nonempty list of companions. `Multiplicity.lean` proves the bound for any auxiliary prime. `Solution.lean` proves the exact number of dice, the uniqueness and face labels of the exception, and the conjecture. Lean checks all numerical certificates in its kernel.
 
 Searches for the original article, game-size four, the 30-faced case, later work on exotic dice, and public proof catalogues found the original witness and the two-dice classification. No earlier proof of the upper bound four was located. AI developed the upper bound argument, the enumeration, and the Lean proofs. The original paper supplies the cyclotomic model and the earlier lower witness.
+
+Joseph A. Gallian and David J. Rusin, Cyclotomic polynomials and nonstandard dice, unnumbered conjecture following the corollaries to Theorem 7, p. 256, that the maximum game-size for 30 labels is four. [Publication](https://www.cs.umd.edu/users/gasarch/BLOGPAPERS/nonstandarddice.pdf#page=12)

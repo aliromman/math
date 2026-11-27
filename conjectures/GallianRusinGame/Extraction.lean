@@ -10,20 +10,7 @@ import Mathlib.Tactic.Ring
 
 public section
 namespace GallianRusinGame
-open Polynomial Finset
-
-private theorem peel {p : ℤ[X]} (prime : Prime p) (k : ℕ) {A B T : ℤ[X]}
-    (h : A*B=p^k*T) : ∃ n U V, A=p^n*U ∧ U*V=T := by
-  induction k generalizing A B with
-  | zero => exact ⟨0,A,B,by simp,by simpa using h⟩
-  | succ k ih =>
-    rw [pow_succ',mul_assoc] at h
-    obtain ⟨Y,e⟩|⟨Y,e⟩ := prime.dvd_or_dvd (h ▸ dvd_mul_right p _)
-    · rw [e,mul_assoc] at h
-      obtain ⟨n,U,V,nu,uv⟩ := ih (mul_left_cancel₀ prime.ne_zero h)
-      exact ⟨n+1,U,V,by rw [e,nu,pow_succ',mul_assoc],uv⟩
-    · rw [e,mul_left_comm] at h
-      exact ih (mul_left_cancel₀ prime.ne_zero h)
+open GallianRusin Polynomial Finset
 
 private theorem faces {x y z : ℕ} {s : ℤ} (unit : IsUnit s) (sum : (2:ℤ)^x*(3^y*(5^z*s))=30) :
     x=1 ∧ y=1 ∧ z=1 ∧ s=1 := by
@@ -55,7 +42,7 @@ private theorem faces {x y z : ℕ} {s : ℤ} (unit : IsUnit s) (sum : (2:ℤ)^x
 
 theorem extraction {P : ℤ[X]} (game : SolutionDie 30 P) :
     ∃ c : Code, c.a<11 ∧ c.b<11 ∧ c.c<11 ∧ c.d<11 ∧ P=assemble c := by
-  obtain ⟨k,_,play⟩ := id game
+  obtain ⟨k,_,play⟩ := solutionDie_iff_plays.mp game
   obtain ⟨die,others,_,_,h⟩ := play
   rw [standard_eq,assemble_eq] at h
   simp only [pow_one,mul_pow] at h

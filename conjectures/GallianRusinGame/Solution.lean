@@ -6,7 +6,7 @@ import Mathlib.Tactic.Ring
 
 public section
 namespace GallianRusinGame
-open Polynomial Finset
+open GallianRusin Polynomial Finset
 
 set_option maxRecDepth 4096
 
@@ -50,8 +50,7 @@ private theorem play_three {P Q R : ℤ[X]} (p : Die 30 P) (q : Die 30 Q) (r : D
 
 private theorem extract_choices {P : ℤ[X]} (game : SolutionDie 30 P) : ∃ t∈choices,assemble t=P := by
   obtain ⟨t,a,b,c,d,rfl⟩ := extraction game
-  obtain ⟨_,_,p,_,_,_,_⟩ := game
-  exact ⟨_,valid_choice p a b c d,rfl⟩
+  exact ⟨_,valid_choice game.1 a b c d,rfl⟩
 
 private theorem others_three {P : ℤ[X]} (g : Plays 30 3 P) :
     ∃ Q R, SolutionDie 30 Q ∧ SolutionDie 30 R ∧ P*Q*R=standard 30^3 := by
@@ -67,8 +66,10 @@ private theorem others_three {P : ℤ[X]} (g : Plays 30 3 P) :
       have q := faces Q (by simp)
       have r := faces R (by simp)
       simp only [List.prod_cons,List.prod_nil,mul_one] at product
-      exact ⟨Q,R,⟨3,by decide,play_three q p r (by rw [←product]; ring)⟩,
-        ⟨3,by decide,play_three r p q (by rw [←product]; ring)⟩,by simpa [mul_assoc] using product⟩
+      refine ⟨Q, R, solutionDie_iff_plays.mpr ⟨3, by decide, ?_⟩,
+        solutionDie_iff_plays.mpr ⟨3, by decide, ?_⟩, by simpa [mul_assoc] using product⟩
+      · exact play_three q p r (by rw [←product]; ring)
+      · exact play_three r p q (by rw [←product]; ring)
 
 private theorem exception_four : Plays 30 4 (assemble exception) := by
   let u : Code := ⟨0,1,1,1⟩
@@ -119,9 +120,9 @@ theorem exactly_forty_four : Set.ncard {P : ℤ[X] | SolutionDie 30 P}=44 := by
     rintro ⟨t,ht,rfl⟩
     by_cases h : t=exception
     · rw [h]
-      exact ⟨4,by decide,exception_four⟩
+      exact solutionDie_iff_plays.mpr ⟨4,by decide,exception_four⟩
     obtain ⟨u,hu,v,hv,a,b,c,d⟩ := partners t ht h
-    exact ⟨3,by decide,play_three (choices_are_dice ht) (choices_are_dice hu)
+    exact solutionDie_iff_plays.mpr ⟨3,by decide,play_three (choices_are_dice ht) (choices_are_dice hu)
       (choices_are_dice hv) (triple a b c d)⟩
   rw [eq,Set.ncard_coe_finset,Finset.card_image_of_injOn]
   · exact number

@@ -1,0 +1,6 @@
+LarsonPowerMap.card_cycleLength propext Classical.choice Quot.sound
+LarsonPowerMap.card_hasCycle_mul propext Classical.choice Quot.sound
+LarsonPowerMap.count_for_candidate propext Classical.choice Quot.sound
+LarsonPowerMap.eight propext Classical.choice Quot.sound
+LarsonPowerMap.exact_answer propext Classical.choice Quot.sound
+LarsonPowerMap.resolution propext Classical.choice Quot.sound
