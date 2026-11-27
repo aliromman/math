@@ -113,7 +113,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Berend, Ernst, Kontorovich and Kumar’s Conjecture 5.2 as stated and proof of the corrected interior interval tiling][note-96] | A deterministic endpoint disproves the literal ordering. The closures of the nondegenerate interior intervals tile in lexicographic order for every even order of independence. | [Lean][proof-96] · [#96][pr-96] |
 | [Disproof of Campbell’s coupon-collection conjecture in “Games of chance with multiple objectives”][note-82] | In four draws the two probabilities are $3/8<4/9$. The reversal factor grows like $\sqrt{e k/(2\pi)}$ at the earliest square deadline. For fixed goals the proposed order eventually holds. | [Lean][proof-82] · [#82][pr-82] |
 | [Correction to the Aldous–Fill hitting-time heuristic for random cyclic adjacent transpositions (Example 7.22)][note-102] | The mean divided by $m!$ is $1+2/m+O(m^{-2})$, correcting the predicted coefficient of one. | [Lean][proof-102] · [#102][pr-102] (open draft) |
-| [Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1][note-99] | The width is positive recurrent and its stationary tail has exact exponent $d(k-1)/(k-d)$. | [Lean][proof-99] · [#99][pr-99] (open draft) |
+| [Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1][note-99] | The width is positive recurrent and its stationary tail has exact exponent $d(k-1)/(k-d)$. | [Lean][proof-99] · [#99][pr-99] |
 | [Proof of Khovanova and Wang’s Conjecture 7.1 on uniform final shadows in two-sided chip dispersion][note-100] | All $N-1$ positions of the final double gap have equal probability. | [Lean][proof-100] · [#100][pr-100] |
 | [Proof of the Nagaev–Chebotarev conjecture on the exact binomial–Poisson distance at mean one][note-79] | At every mean $0\le\lambda\le1$ and every positive sample size, the largest difference between the two cumulative distributions occurs at zero. | [Lean][proof-79] · [#79][pr-79] |
 | [Disproof of Weinberger and Shayevitz’s Conjecture 1 on greedy dictatorship for the binary erasure channel][note-98] | A twelve-bit majority beats the first surviving bit for every message length at least twelve. | [Lean][proof-98] · [#98][pr-98] (open draft) |
@@ -201,9 +201,6 @@ and cites the original source.
 [note-101]: https://github.com/aliromman/math/blob/f306661116f4f5f001258fb026d26fce484d28f6/conjectures/BrownMolFixed/README.md
 [proof-101]: https://github.com/aliromman/math/blob/f306661116f4f5f001258fb026d26fce484d28f6/conjectures/BrownMolFixed/Solution.lean
 [pr-101]: https://github.com/aliromman/math/pull/101
-[note-99]: https://github.com/aliromman/math/blob/22b332ce8a1f65777056682445fc6b6d0b57e16f/conjectures/MatrixWidth/README.md
-[proof-99]: https://github.com/aliromman/math/blob/22b332ce8a1f65777056682445fc6b6d0b57e16f/conjectures/MatrixWidth/Solution.lean
-[pr-99]: https://github.com/aliromman/math/pull/99
 [note-98]: https://github.com/aliromman/math/blob/b99c71128e0f8969003efcee27bc7b7c6f60ff93/conjectures/WeinbergerShayevitz/README.md
 [proof-98]: https://github.com/aliromman/math/blob/b99c71128e0f8969003efcee27bc7b7c6f60ff93/conjectures/WeinbergerShayevitz/Solution.lean
 [pr-98]: https://github.com/aliromman/math/pull/98
@@ -494,3 +491,6 @@ and cites the original source.
 [note-30]: conjectures/FerroniFacePrefix/README.md
 [proof-30]: conjectures/FerroniFacePrefix/Solution.lean
 [pr-30]: https://github.com/aliromman/math/pull/30
+[note-99]: conjectures/MatrixWidth/README.md
+[proof-99]: conjectures/MatrixWidth/Solution.lean
+[pr-99]: https://github.com/aliromman/math/pull/99
