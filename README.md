@@ -1,6 +1,6 @@
 # Mathematical conjectures
 
-This collection contains 99 research notes on published mathematical questions. Of these, 97 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 100 research notes on published mathematical questions. Of these, 98 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
@@ -31,6 +31,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
+| [Proof of the sharp asymptotic bound in Erdős–Surányi Problem 708][note-120] | Any run of $\max A$ consecutive integers contains a subset of size at most $(2+o(1))n$ whose product is divisible by the product of the $n$ inputs. The leading constant 2 is sharp. | [Lean][proof-120] · [#120][pr-120] (draft) |
 | [Proof of Bagchi and Zhou-Zheng’s Conjecture 12 on sporadic shifts without triangular Diophantine pairs][note-23] | For every integer $k\ge0$, adding $2\cdot7^{6k+2}$ to a product of two positive triangular numbers gives a nonsquare. | [Lean][proof-23] · [#23][pr-23] |
 | [Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials][note-88] | At odd index $1{,}122{,}987$, the 63rd cyclotomic polynomial divides the Fekete polynomial, although the relevant residue counts differ by one. | [Lean][proof-88] · [#88][pr-88] |
 | [Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials][note-85] | In every Markov numerator, every coefficient strictly inside the critical triangle is divisible by four. The proof establishes divisibility throughout the surrounding lower rectangle. | [Lean][proof-85] · [#85][pr-85] |
@@ -487,3 +488,7 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-102]: conjectures/AldousFillAdjacent/README.md
 [proof-102]: conjectures/AldousFillAdjacent/Solution.lean
 [pr-102]: https://github.com/aliromman/math/pull/102
+
+[note-120]: https://github.com/aliromman/math/blob/4c92799a61a16e3906517db3d756adec19de2dfc/conjectures/ErdosSuranyi708/README.md
+[proof-120]: https://github.com/aliromman/math/blob/4c92799a61a16e3906517db3d756adec19de2dfc/conjectures/ErdosSuranyi708/Proof.lean
+[pr-120]: https://github.com/aliromman/math/pull/120
