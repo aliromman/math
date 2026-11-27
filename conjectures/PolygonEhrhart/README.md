@@ -1,4 +1,4 @@
-# A 13-gon gives a negative Ehrhart coefficient
+# Solution to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity of order polytopes of polygon face lattices
 
 Let $L(t)$ count the lattice points in the $t$-th dilate of the order polytope of the face lattice of a 13-gon. Its linear coefficient is
 
@@ -32,9 +32,8 @@ The counts satisfy $1\le L(t)\le (t+1)^{28}$ because the all-zero assignment is 
 The Lean proof starts from the face-incidence inequalities. It proves the transfer identity, computes all 29 sample counts in the kernel, and checks the interpolation functional on the monomial basis. Each multiplication by the transfer matrix takes one prefix sum and one suffix sum, since its entry counts the heights above both endpoints.
 
 ```sh
-lake exe cache get
-lake build conjectures.PolygonEhrhart.Solution
-lake env leanchecker conjectures.PolygonEhrhart.Solution
+# Run at the merge commit for PR #93.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Searches for the published question, polygon face lattices, Ehrhart positivity and the 13-gon coefficient located no prior counterexample. Recent work proving real-rootedness for the $h^*$-polynomial of the crown addresses a different polynomial. OpenAI Codex found the counterexample, derived the transfer calculation and formalized the proof. [Real-rootedness paper](https://arxiv.org/abs/2610.40496)
