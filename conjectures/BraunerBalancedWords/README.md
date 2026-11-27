@@ -4,9 +4,9 @@ For each $k\ge2$, repeat $\mathtt C(\mathtt{AB})^{k-1}\mathtt D(\mathtt{AB})^k$.
 
 At $k=4$ the 16-letter block
 
-$$
+```math
 \mathtt{C\,ABABAB\,D\,ABABABAB}
-$$
+```
 
 repeats to give a balanced word of least period 16 that cannot arise from a balanced binary word by congruence substitutions. Brauner, Crama, Delaporte, Jost and Libralesso conjectured that every balanced word on $N$ letters is such an expansion or has period at most $2^N-1$. At four letters their bound is 15. [Conjecture 4.1, *Theoretical Computer Science* 793 (2019), 169–180](https://doi.org/10.1016/j.tcs.2019.06.017) · [Author manuscript](https://orbi.uliege.be/bitstream/2268/230109/1/Balanced%20words%20Dec%202018.pdf)
 

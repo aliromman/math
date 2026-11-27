@@ -1,6 +1,6 @@
 # Disproof of Sun’s Conjecture 3.3(ii) on distinct cyclic differences in finite abelian groups of odd order
 
-In any finite abelian group of odd order $N\ge5$, take any $N-2$ elements. No circular ordering of those elements has distinct directed differences between neighbors. The smallest example is $\{0,1,2\}$ modulo $5$.
+In any finite abelian group of odd order $N\ge5$, take any $N-2$ elements. No circular ordering of those elements has distinct directed differences between neighbors. The smallest example is $`\{0,1,2\}`$ modulo $5$.
 
 In Conjecture 3.3, Sun asked whether every subset of $n>2$ elements of a finite abelian group of odd order has a circular ordering with distinct adjacent sums. He also conjectured that a circular ordering with distinct adjacent differences exists whenever $n\nmid N$. The obstruction concerns the second assertion. [Zhi-Wei Sun, *Some new problems in additive combinatorics*, Conjecture 3.3, p. 9 (2019)](https://arxiv.org/pdf/1309.1679#page=9)
 

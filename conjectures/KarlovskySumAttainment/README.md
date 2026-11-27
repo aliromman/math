@@ -2,9 +2,9 @@
 
 Fix $n\ge4$, put $k=n-2$, and let $K=k!$ and $t=k(k+1)/2$. Among distinct positive integers whose product is $F$ times their sum, Karlovsky’s bound is attained **exactly when $F=Ky-1$ for an integer $y>k$**. For every such $F$, the only maximizing tuple in increasing order is
 
-$$
+```math
 (1,2,\ldots,k,\;y,\;F(t+y)).
-$$
+```
 
 This proves Karlovsky’s Conjecture 3 and identifies every equality case. For five terms the condition is $F\equiv5\pmod6$ and $F\ge23$. At $F=23$, the unique maximizer is $(1,2,3,4,230)$, of sum 240. [Original conjecture, §9](https://doi.org/10.3390/math9212779)
 

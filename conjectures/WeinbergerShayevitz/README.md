@@ -11,7 +11,7 @@ This disproves Conjecture 1 of Nir Weinberger and Ofer Shayevitz. They conjectur
 Let $z(x)$ be the expected helper bit on input $x$, with the bit represented by $+1$ or $-1$. For a score $w(x)$, let $X,Y$ be independent uniform input words and set
 
 $$
-r_w(x)=\mathbb E_Y\operatorname{sgn}(w(x)-w(Y)),\qquad
+r_w(x)=\mathbb E_Y\mathop{\mathrm{sgn}}(w(x)-w(Y)),\qquad
 A(z,w)=\mathbb E_X[z(X)r_w(X)].
 $$
 
@@ -23,18 +23,18 @@ $$
 
 Indeed, if $B$ words score below $x$, $H$ score above it and $T$ tie with it, then $r_w(x)=(B-H)/N$. The mean rank of $x$ in its tie class is $H+(T+1)/2$ in descending order and $B+(T+1)/2$ in ascending order. Also, $A(z,w)\le A(z,z)$ follows by swapping $X,Y$ and pairing the two terms.
 
-For three scores $a,b,c$, the cyclic sum of $\operatorname{sgn}(a-b)\operatorname{sgn}(a-c)$ is one unless all three scores agree, when it is zero. Taking three independent scores gives $\mathbb E[r_w(X)^2]\le1/3$. Cauchy–Schwarz now gives $A(z,w)^2\le\mathbb E[z(X)^2]/3$.
+For three scores $a,b,c$, the cyclic sum of $\mathop{\mathrm{sgn}}(a-b)\mathop{\mathrm{sgn}}(a-c)$ is one unless all three scores agree, when it is zero. Taking three independent scores gives $\mathbb E[r_w(X)^2]\le1/3$. Cauchy–Schwarz now gives $A(z,w)^2\le\mathbb E[z(X)^2]/3$.
 
 ## The two helper bits
 
 For the first surviving bit, the expected sign after prepending a bit of sign $b$ is $b/4+3z(x)/4$. Its mean square therefore satisfies $M_{n+1}=1/16+9M_n/16$ and $M_0=0$. Thus $M_n\le1/7$ and $A(z,z)\le1/\sqrt{21}$. This gives the lower bound above.
 
-For majority, send $+1$ when at least as many ones as zeros survive in the twelve chosen positions. Score guesses by the number of ones in those positions. The other bits can be ignored at every length. To check the exact score, let $p_j=\binom{12}{j}/2^{12}$. Given $j$ input ones, the surviving ones and zeros have independent distributions $U_j\sim\operatorname{Bin}(j,1/4)$ and $V_j\sim\operatorname{Bin}(12-j,1/4)$. Then
+For majority, send $+1$ when at least as many ones as zeros survive in the twelve chosen positions. Score guesses by the number of ones in those positions. The other bits can be ignored at every length. To check the exact score, let $p_j=\binom{12}{j}/2^{12}$. Given $j$ input ones, the surviving ones and zeros have independent distributions $U_j\sim\mathop{\mathrm{Bin}}(j,1/4)$ and $V_j\sim\mathop{\mathrm{Bin}}(12-j,1/4)$. Then
 
 $$
 A=\sum_{j=0}^{12}p_j
 \bigl(2\Pr[U_j\ge V_j]-1\bigr)
-\sum_{i=0}^{12}p_i\operatorname{sgn}(j-i)
+\sum_{i=0}^{12}p_i\mathop{\mathrm{sgn}}(j-i)
 =\frac{3845275777343}{17592186044416}.
 $$
 

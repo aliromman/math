@@ -19,7 +19,7 @@ Let $M=H+k$. An allocation $a$ to a population vector $p$ is a strict Hamilton a
 These bounds imply that a losing state drops just one seat and is the only loser. Suppose it falls from $\ell$ to $\ell-1$. For each of the other states, write $A,B$ for its old and new allocations. Its population share minus the loser’s share lies in the interval
 
 $$
-\frac{B-\ell}{M}<s<\frac{A-\ell+1}{H}.
+\frac{B-\ell}{M}\lt s<\frac{A-\ell+1}{H}.
 $$
 
 The two differences describe a rectangle. Its side lengths have denominator $HM$. Their integer numerators sum to $W=H+2k-3k\ell$. When both are positive, each is less than $H$. The two interval bounds then imply all rounding inequalities in both houses. The population shares are positive, so the whole rectangle represents an actual loss. Different old allocations or different losers give disjoint rectangles.

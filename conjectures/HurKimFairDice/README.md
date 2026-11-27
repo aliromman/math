@@ -20,7 +20,7 @@ AABCCCABBCCABBBBCAAAABCC
 
 The first operation exchanges a neighboring pair `xy` and a neighboring pair `yx` elsewhere. The only transitions between different letters in this word are `AB`, `BC`, and `CA`. None occurs in reverse.
 
-The second operation slides a permutation of `ABC` across an adjacent segment containing equal numbers of all three letters. To check all possible slides, record the two differences $(\#A-\#C,\#B-\#C)$ after each prefix. A segment has equal counts exactly when the differences are the same at its two ends.
+The second operation slides a permutation of `ABC` across an adjacent segment containing equal numbers of all three letters. To check all possible slides, record the two differences $`(\#A-\#C,\#B-\#C)`$ after each prefix. A segment has equal counts exactly when the differences are the same at its two ends.
 
 | Three-letter block | Number of letters before the block | Prefix differences there | All prefix lengths with those differences |
 |---|---:|---:|---|

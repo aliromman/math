@@ -6,7 +6,7 @@ Gallian and Rusin allow any finite number of dice greater than one. Labels are p
 
 ## Which dice work?
 
-Write $A_r=1+x+\cdots+x^{r-1}$ and let $\Phi_j$ be the $j$th cyclotomic polynomial. Encode a die by $P(x)$, with the coefficient of $x^k$ equal to the number of faces labeled $k+1$. The 22 polynomials are
+Write $A_r=1+x+\cdots+x^{r-1}$ and let $\Phi_j$ be the $`j`$th cyclotomic polynomial. Encode a die by $P(x)$, with the coefficient of $x^k$ equal to the number of faces labeled $k+1$. The 22 polynomials are
 
 $$
 P=A_q A_p^a A_p(x^p)^b\Phi_{pq}^c\Phi_{p^2q}^d,\qquad
@@ -33,7 +33,7 @@ $$
 
 The support of $U$ is the entire interval $[0,N]$ and $N<s$. Extend its coefficients periodically by $v_i=[x^{i\bmod s}]U$. For $q\le i<pq$, the identity gives $[x^i]P=v_i-v_{i-q}$. Write $r=q\bmod s>0$. If $N+1<s$ and $N+1<pq$, choose $j=\max(0,N+1-r)$. Then $v_j>0$, $v_{q+j}=0$, and $q+j<pq$. This gives a negative coefficient.
 
-These two inequalities hold except possibly when $a=2$ and one prime is 2. If $p=2$, the period is $(1,3,3,1)$. Choose $j=2$ for $q\equiv1\pmod4$, or $j=1$ for $q\equiv3\pmod4$. If $q=2$, the coefficient at $2p-1$ is $[x^{2p-1}](1-x^2)A_p^3=2-2p<0$.
+These two inequalities hold except possibly when $a=2$ and one prime is 2. If $p=2$, the period is $(1,3,3,1)$. Choose $j=2$ for $q\equiv1\pmod4$, or $j=1$ for $q\equiv3\pmod4$. If $q=2$, the coefficient at $2p-1$ is $`[x^{2p-1}](1-x^2)A_p^3=2-2p<0`$.
 
 Conversely, every allowed product splits into three geometric sums. Pair $\Phi_{pq}$ with $A_p$ or $A_q$, and pair $D$ with $A_p(x^p)$ or $A_q(x^p)$. These pairings give nonnegative coefficients and $p^2q$ faces. For each allowed exponent tuple, two more allowed tuples bring every exponent total to 3. The three polynomials therefore multiply to $A_{p^2q}^3$. Lean verifies these 22 finite choices and proves the products are distinct.
 

@@ -2,10 +2,10 @@
 
 Four entries form 2413 when their ranks from left to right are $2,4,1,3$. A weighted permutation of 544 points gives the lower bound
 
-$$
+```math
 \delta(2413)\;\ge\;\frac{118609967629}{1132462080000}
 =0.104736370182920385\ldots
-$$
+```
 
 This exceeds the estimate $0.10473602526603545\ldots$ in Presutti and Stromquist’s Conjecture 10.1. A separate argument disproves the proposed optimizer for every choice of its two bubble sizes. [Original chapter, pp. 315–316](https://doi.org/10.1017/CBO9780511902499.015)
 
@@ -15,9 +15,9 @@ The obstruction is a corner of the last bubble. Points inside the bubble can for
 
 ## The finite construction
 
-Place 32 points on each of four subsegments of a descending line and put a four-point copy of 2413 into each of two gaps. Take all four quarter-turns of this configuration. The result has $(4\cdot32+2\cdot4)\cdot4=544$ points with distinct horizontal and vertical coordinates. Each point has a positive integer weight. Their sum is $W=30\,720$. [Coordinates and weights](RationalWitness.lean)
+Place 32 points on each of four subsegments of a descending line and put a four-point copy of 2413 into each of two gaps. Take all four quarter-turns of this configuration. The result has $(4\cdot32+2\cdot4)\cdot4=544$ points with distinct horizontal and vertical coordinates. Each point has a positive integer weight. Their sum is $`W=30\,720`$. [Coordinates and weights](RationalWitness.lean)
 
-Fix the first and last points of a potential copy in horizontal order. The first must lie below the last. Scan the points between them from left to right. Each time a point lies below the first endpoint, multiply its weight by the total weight of earlier points above the last endpoint. The product counts the possible middle pair. Multiplication by the endpoint weights and summation gives $S=3\,886\,611\,419\,267\,072$. Four independent samples therefore form 2413 with probability $24S/W^4$. Replacing each point by a small increasing segment of the same mass preserves all these copies. A separate proof certifies the lower bound with enclosing rectangles. It discards boxes that cannot contain the pattern and splits the wider interval in the first comparison that remains undecided. If all six inequalities hold throughout the boxes, it adds the product of the four box weights. [Counting proof](RangeCount.lean) · [Probability theorem](Quantitative.lean)
+Fix the first and last points of a potential copy in horizontal order. The first must lie below the last. Scan the points between them from left to right. Each time a point lies below the first endpoint, multiply its weight by the total weight of earlier points above the last endpoint. The product counts the possible middle pair. Multiplication by the endpoint weights and summation gives $`S=3\,886\,611\,419\,267\,072`$. Four independent samples therefore form 2413 with probability $24S/W^4$. Replacing each point by a small increasing segment of the same mass preserves all these copies. A separate proof certifies the lower bound with enclosing rectangles. It discards boxes that cannot contain the pattern and splits the wider interval in the first comparison that remains undecided. If all six inequalities hold throughout the boxes, it adds the product of the four box weights. [Counting proof](RangeCount.lean) · [Probability theorem](Quantitative.lean)
 
 ## Why the corner matters
 
@@ -27,7 +27,7 @@ $$
 D+4\epsilon\bigl(H(p)-D\bigr)+O(\epsilon^2).
 $$
 
-At a maximum, $H(p)\le D$ for every $p$. Also $\int H\,d\mu=D$, so $H(p)=D$ for almost every sampled point. At a point $c$ whose horizontal and vertical lines have zero mass, $H$ is continuous. Moving $c$ slightly preserves all comparisons with almost every triple of other samples. If every neighborhood of $c$ has positive mass, then $H(c)=D$ as well.
+At a maximum, $H(p)\le D$ for every $p$. Also $`\int H\,d\mu=D`$, so $H(p)=D$ for almost every sampled point. At a point $c$ whose horizontal and vertical lines have zero mass, $H$ is continuous. Moving $c$ slightly preserves all comparisons with almost every triple of other samples. If every neighborhood of $c$ has positive mass, then $H(c)=D$ as well.
 
 Now suppose a rectangle $R$ contains a copy of the entire arrangement. Suppose also that almost every point outside $R$ lies outside both its horizontal and its vertical coordinate intervals. Let $c$ be its southeast corner and $q$ a point inside. Compare the pattern made with three other samples.
 

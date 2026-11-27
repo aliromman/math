@@ -2,7 +2,7 @@
 
 Fix an even integer $2\le k<n$. Among $n$ Bernoulli variables of common mean $p$ that are independent in every group of $k$, which joint laws maximize the probability that all variables equal one? As $p$ increases from zero to one, the nondegenerate optimal bases occur in lexicographic order. Each occupies one interval. Their closures cover $[0,1]$, with consecutive intervals meeting at a single bias.
 
-The endpoint counterexample disproves Conjecture 5.2 of Berend, Ernst, Kontorovich and Kumar as stated. The corrected interior interval tiling holds for every even $k$ in the stated range. With the paper’s literal definition, a basis can be feasible again at $p=1$ after its interval ends. For $n=3$, $k=2$, the basis $\{0,1,3\}$ has weights $(1-p)(1-2p),3p(1-p),p^2$. Its feasibility set is $[0,1/2]\cup\{1\}$. Taking the closure of each nondegenerate *interior* feasibility interval gives precisely the proposed tiling. [Original paper, §5 and Conjecture 5.2](https://link.springer.com/article/10.1007/s10959-026-01487-4#Sec14)
+The endpoint counterexample disproves Conjecture 5.2 of Berend, Ernst, Kontorovich and Kumar as stated. The corrected interior interval tiling holds for every even $k$ in the stated range. With the paper’s literal definition, a basis can be feasible again at $p=1$ after its interval ends. For $n=3$, $k=2$, the basis $`\{0,1,3\}`$ has weights $(1-p)(1-2p),3p(1-p),p^2$. Its feasibility set is $`[0,1/2]\cup\{1\}`$. Taking the closure of each nondegenerate *interior* feasibility interval gives precisely the proposed tiling. [Original paper, §5 and Conjecture 5.2](https://link.springer.com/article/10.1007/s10959-026-01487-4#Sec14)
 
 ## Why the order is forced
 

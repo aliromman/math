@@ -10,7 +10,7 @@ This proves a conjecture of Svante Janson and Svante Linusson. Their examples ap
 
 ## Freeze the last winning remainder
 
-Write $p_j$ for state $j$'s population share. At house size $n$, Hamilton first assigns $\lfloor np_j\rfloor$ seats, then gives the remaining seats to the states with the largest fractional remainders. Let $i$ be the last winner and let $c=\{np_i\}$. The allocation to state $j$ is exactly
+Write $p_j$ for state $j$'s population share. At house size $n$, Hamilton first assigns $\lfloor np_j\rfloor$ seats, then gives the remaining seats to the states with the largest fractional remainders. Let $i$ be the last winner and let $`c=\{np_i\}`$. The allocation to state $j$ is exactly
 
 $$
 a_j=\lfloor np_j+1-c\rfloor.
@@ -18,9 +18,9 @@ $$
 
 Keep this cutoff fixed while increasing $n$ by one. No frozen allocation decreases. A state $j\ne i$ gains one frozen seat exactly when
 
-$$
+```math
 \{n(p_j-p_i)\}\ge 1-p_j.
-$$
+```
 
 The cutoff state itself cannot gain. If at most one state crosses, the frozen allocations use at most $n+1$ seats. Hamilton can then award all these seats and fill any vacant seat by lowering the cutoff. **A loss requires at least two crossings.**
 
