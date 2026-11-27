@@ -1,7 +1,6 @@
 module
 
 public import conjectures.SplitMatroidFlags.InputData
-import Mathlib.Tactic
 
 @[expose] public section
 

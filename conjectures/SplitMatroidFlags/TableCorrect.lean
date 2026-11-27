@@ -3,7 +3,6 @@ module
 public import conjectures.SplitMatroidFlags.LocalCodes
 public import conjectures.SplitMatroidFlags.Families
 public import conjectures.SplitMatroidFlags.RankThree
-import Mathlib.Tactic
 
 @[expose] public section
 

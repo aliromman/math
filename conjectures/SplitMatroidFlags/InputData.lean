@@ -2,7 +2,6 @@ module
 
 public import conjectures.SplitMatroidFlags.Histogram
 public import conjectures.SplitMatroidFlags.Families
-import Mathlib.Tactic
 
 @[expose] public section
 

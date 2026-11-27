@@ -2,7 +2,7 @@ module
 
 public import conjectures.SplitMatroidFlags.Masks
 public import conjectures.SplitMatroidFlags.Exchange
-import Mathlib.Tactic
+import Mathlib.Tactic.Tauto
 
 @[expose] public section
 

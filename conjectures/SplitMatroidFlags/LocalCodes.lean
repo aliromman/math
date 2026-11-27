@@ -2,7 +2,6 @@ module
 
 public import conjectures.SplitMatroidFlags.Counting
 public import conjectures.SplitMatroidFlags.Tables
-import Mathlib.Tactic
 
 @[expose] public section
 

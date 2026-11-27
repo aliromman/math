@@ -3,7 +3,6 @@ module
 public import conjectures.SplitMatroidFlags.Tables
 import Mathlib.Data.List.Nodup
 import Mathlib.Data.Finset.Dedup
-import Mathlib.Tactic
 
 @[expose] public section
 

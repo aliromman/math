@@ -1,4 +1,4 @@
-# The same face counts can hide one vertex–face incidence
+# Solution to Faustini and Vargas’s Problem 6.7 on flag vectors of connected split matroids
 
 Two connected rank-three matroids on 11 elements have the same number of faces in every dimension. Their base polytopes have **75,887** and **75,888** incidences between a vertex and a four-dimensional face. This answers the question of Faustini and Vargas in the negative. They proved that the ordinary face counts do determine all flag counts for connected sparse paving matroids. [Problem 6.7 in the revised paper](https://arxiv.org/html/2512.05250v2#S6.SS4) · [Problem 6.5 in the original paper](https://arxiv.org/html/2512.05250v1#S6.SS2)
 
@@ -40,7 +40,6 @@ The revised paper reports an affirmative computer check through 12 ground elemen
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.SplitMatroidFlags.Solution
-lake env leanchecker conjectures.SplitMatroidFlags.Solution
+# Run at the merge commit for PR #40.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```

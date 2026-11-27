@@ -2,7 +2,6 @@ module
 
 public import conjectures.SplitMatroidFlags.Bipartite
 public import conjectures.SplitMatroidFlags.Masks
-import Mathlib.Tactic
 
 @[expose] public section
 

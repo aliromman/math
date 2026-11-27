@@ -2,7 +2,6 @@ module
 
 public import conjectures.SplitMatroidFlags.Matroids
 public import conjectures.SplitMatroidFlags.TableCorrect
-import Mathlib.Tactic
 
 @[expose] public section
 

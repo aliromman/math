@@ -1,7 +1,6 @@
 module
 
 public import conjectures.SplitMatroidFlags.Enumeration
-import Mathlib.Tactic
 
 @[expose] public section
 
@@ -9,16 +8,22 @@ namespace SplitMatroidFlags
 
 open Finset
 
+/-- During kernel replay, update the cell with one traversal of the list. -/
+def incrementBin (a : Array ℕ) (i : ℕ) := (a.toList.modify i (· + 1)).toArray
+
+private lemma increment_eq (a : Array ℕ) (i : ℕ) : incrementBin a i = a.modify i (· + 1) := by
+  simp only [incrementBin, ← Array.toList_modify, Array.toArray_toList]
+
 /-- Cell zero counts vertex–4-face incidences. Cell d+1 counts d-dimensional faces. -/
 def pushTag (a : Array ℕ) (t : ℕ × Bool) :=
-  let b := if t.1 = 4 then a.modify 0 (· + 1) else a
-  if t.2 then b.modify (t.1 + 1) (· + 1) else b
+  let b := if t.1 = 4 then incrementBin a 0 else a
+  if t.2 then incrementBin b (t.1 + 1) else b
 
 def bin (i : ℕ) (t : ℕ × Bool) :=
   if i = 0 then accepts false 4 t else accepts true (i-1) t
 
 @[simp] private lemma size_pushTag (a : Array ℕ) (t : ℕ × Bool) : (pushTag a t).size = a.size := by
-  simp only [pushTag]
+  simp only [pushTag, increment_eq]
   split <;> split <;> simp
 
 private lemma value_pushTag (a : Array ℕ) (t : ℕ × Bool) (i : ℕ) (h : i < a.size) :
@@ -26,10 +31,10 @@ private lemma value_pushTag (a : Array ℕ) (t : ℕ × Bool) (i : ℕ) (h : i <
   obtain ⟨d,b⟩ := t
   cases i with
   | zero =>
-    cases b <;> by_cases eq : d = 4 <;> simp [pushTag,bin,eq,accepts,Array.getElem_modify]
+    cases b <;> by_cases eq : d = 4 <;> simp [pushTag,increment_eq,bin,eq,accepts,Array.getElem_modify]
   | succ j =>
     cases b <;> by_cases eq : d = 4 <;> by_cases hj : d = j <;>
-      simp_all [pushTag,bin,accepts,Array.getElem_modify]
+      simp_all [pushTag,increment_eq,bin,accepts,Array.getElem_modify]
     have hn : j ≠ 4 := Ne.symm hj
     simp [hn,hj]
 
@@ -55,19 +60,34 @@ def basisData (H : Lines) : List BasisData := (chartList H).map fun a => (a,(row
 
 def basisTags (b : BasisData) := tags (rowList b.2) (lowRows b.1) (outside b.1)
 
-def accumulate (D : List BasisData) (a : Array ℕ) := D.foldl (fun v b => tally (basisTags b) v) a
+/-- Fold each subset directly into the histogram, without building the list of all tags. -/
+def tallyBasis (a : Array ℕ) (b : BasisData) :=
+  let codes := rowList b.2
+  let low := lowRows b.1
+  (subsets (outside b.1)).foldl (fun counts t =>
+    (sliceList codes t.1).foldl (fun v r =>
+      pushTag v (t.2 + overlapCount r, ascending low r)) counts) a
+
+private lemma tallyBasis_eq (a : Array ℕ) (b : BasisData) : tallyBasis a b = tally (basisTags b) a := by
+  simp only [tallyBasis, tally, basisTags, tags, List.foldl_flatMap, List.foldl_map]
+
+def accumulate (D : List BasisData) (a : Array ℕ) := D.foldl tallyBasis a
+
+private lemma accumulate_cons (b : BasisData) (D : List BasisData) (a : Array ℕ) :
+    accumulate (b :: D) a = accumulate D (tally (basisTags b) a) := by
+  simp only [accumulate, List.foldl_cons, tallyBasis_eq]
 
 @[simp] lemma accumulate_size (D : List BasisData) (a : Array ℕ) : (accumulate D a).size = a.size := by
   induction D generalizing a with
   | nil => rfl
-  | cons b D ih => exact (ih _).trans (tally_size _ _)
+  | cons b D ih => rw [accumulate_cons, ih, tally_size]
 
 lemma accumulate_value (D : List BasisData) (a : Array ℕ) (i : ℕ) (hi : i < a.size) :
     (accumulate D a)[i]'(by simpa using hi) = a[i] + (D.map fun b => (basisTags b).countP (bin i)).sum := by
   induction D generalizing a with
   | nil => simp [accumulate]
   | cons b D ih =>
-    change (accumulate D (tally (basisTags b) a))[i]'(by simpa using hi) = _
+    simp only [accumulate_cons]
     rw [ih _ (by simpa using hi),tally_value _ _ _ hi]
     simp [Nat.add_assoc]
 
