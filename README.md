@@ -147,7 +147,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Proof of Archer et al.’s conjecture on cycles avoiding 3412 in one-line form and 213 in cycle form][note-46] | A two-class decomposition gives the conjectured generating function for cycles avoiding 3412 in one-line notation and 213 in cycle notation starting at 1. | [Lean][proof-46] · [#46][pr-46] |
-| [Proof of Bevan and Threlfall’s Conjecture 21 on consecutive patterns between inversion thresholds][note-72] | Every fixed consecutive pattern occurs with probability tending to one throughout the interval between its two inversion thresholds. | [Lean][proof-72] · [#72][pr-72] (open draft) |
+| [Proof of Bevan and Threlfall’s Conjecture 21 on consecutive patterns between inversion thresholds][note-72] | Every fixed consecutive pattern occurs with probability tending to one throughout the interval between its two inversion thresholds. | [Lean][proof-72] · [#72][pr-72] |
 | [Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts][note-69] | The expected count of 51234 falls and then rises across the 7-, 8-, and 9-inversion layers in seven letters. | [Lean][proof-69] · [#69][pr-69] |
 | [Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
 | [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] |
@@ -228,9 +228,6 @@ and cites the original source.
 [note-73]: https://github.com/aliromman/math/blob/8bd681627f4936632074973d5b52eb5d4a65d7e9/conjectures/PracticalPolygons/README.md
 [proof-73]: https://github.com/aliromman/math/blob/8bd681627f4936632074973d5b52eb5d4a65d7e9/conjectures/PracticalPolygons/Solution.lean
 [pr-73]: https://github.com/aliromman/math/pull/73
-[note-72]: https://github.com/aliromman/math/blob/f90cb86baebde1db8a24300bc97ba761329355c6/conjectures/ConsecutiveThreshold/README.md
-[proof-72]: https://github.com/aliromman/math/blob/f90cb86baebde1db8a24300bc97ba761329355c6/conjectures/ConsecutiveThreshold/Solution.lean
-[pr-72]: https://github.com/aliromman/math/pull/72
 [note-71]: https://github.com/aliromman/math/blob/a30ef138c3548ceb9e2f7b9f2692ed60e28aaebf/conjectures/TanWuHon/README.md
 [proof-71]: https://github.com/aliromman/math/blob/a30ef138c3548ceb9e2f7b9f2692ed60e28aaebf/conjectures/TanWuHon/Solution.lean
 [pr-71]: https://github.com/aliromman/math/pull/71
@@ -494,3 +491,6 @@ and cites the original source.
 [note-80]: conjectures/LuckySpots/README.md
 [proof-80]: conjectures/LuckySpots/Solution.lean
 [pr-80]: https://github.com/aliromman/math/pull/80
+[note-72]: conjectures/ConsecutiveThreshold/README.md
+[proof-72]: conjectures/ConsecutiveThreshold/Solution.lean
+[pr-72]: https://github.com/aliromman/math/pull/72
