@@ -116,7 +116,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1][note-99] | The width is positive recurrent and its stationary tail has exact exponent $d(k-1)/(k-d)$. | [Lean][proof-99] · [#99][pr-99] |
 | [Proof of Khovanova and Wang’s Conjecture 7.1 on uniform final shadows in two-sided chip dispersion][note-100] | All $N-1$ positions of the final double gap have equal probability. | [Lean][proof-100] · [#100][pr-100] |
 | [Proof of the Nagaev–Chebotarev conjecture on the exact binomial–Poisson distance at mean one][note-79] | At every mean $0\le\lambda\le1$ and every positive sample size, the largest difference between the two cumulative distributions occurs at zero. | [Lean][proof-79] · [#79][pr-79] |
-| [Disproof of Weinberger and Shayevitz’s Conjecture 1 on greedy dictatorship for the binary erasure channel][note-98] | A twelve-bit majority beats the first surviving bit for every message length at least twelve. | [Lean][proof-98] · [#98][pr-98] (open draft) |
+| [Disproof of Weinberger and Shayevitz’s Conjecture 1 on greedy dictatorship for the binary erasure channel][note-98] | A twelve-bit majority beats the first surviving bit for every message length at least twelve. | [Lean][proof-98] · [#98][pr-98] |
 
 ### Trees
 
@@ -201,9 +201,6 @@ and cites the original source.
 [note-101]: https://github.com/aliromman/math/blob/f306661116f4f5f001258fb026d26fce484d28f6/conjectures/BrownMolFixed/README.md
 [proof-101]: https://github.com/aliromman/math/blob/f306661116f4f5f001258fb026d26fce484d28f6/conjectures/BrownMolFixed/Solution.lean
 [pr-101]: https://github.com/aliromman/math/pull/101
-[note-98]: https://github.com/aliromman/math/blob/b99c71128e0f8969003efcee27bc7b7c6f60ff93/conjectures/WeinbergerShayevitz/README.md
-[proof-98]: https://github.com/aliromman/math/blob/b99c71128e0f8969003efcee27bc7b7c6f60ff93/conjectures/WeinbergerShayevitz/Solution.lean
-[pr-98]: https://github.com/aliromman/math/pull/98
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
@@ -494,3 +491,6 @@ and cites the original source.
 [note-94]: conjectures/LeanderLinusson/README.md
 [proof-94]: conjectures/LeanderLinusson/Solution.lean
 [pr-94]: https://github.com/aliromman/math/pull/94
+[note-98]: conjectures/WeinbergerShayevitz/README.md
+[proof-98]: conjectures/WeinbergerShayevitz/Solution.lean
+[pr-98]: https://github.com/aliromman/math/pull/98
