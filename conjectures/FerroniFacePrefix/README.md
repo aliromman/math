@@ -1,4 +1,4 @@
-# Arbitrarily many face counts agree before the facets differ
+# Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors
 
 For every $c$, two connected rank-two matroid base polytopes can have the same number of elements and the same first $c$ face counts, while their numbers of facets differ by one.
 
@@ -44,7 +44,6 @@ Ferroni and Schröter give a general rank-two face formula in Corollary 2.12. Th
 The Lean statement uses the basis-exchange axiom. It defines faces by maximizing real linear functionals and measures their affine dimension in the real coordinate space of the indicator vectors. From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.FerroniFacePrefix.Solution
-lake env leanchecker conjectures.FerroniFacePrefix.Solution
+# Run at the merge commit for PR #30.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
