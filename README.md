@@ -100,7 +100,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Disproof of Defant and Lin’s Conjecture 10.2 on down-degree homometry in ν-Tamari lattices][note-54] | Two six-element rowmotion orbits in the same $\nu$-Tamari lattice have down-degree sums 18 and 17. | [Lean][proof-54] · [#54][pr-54] |
 | [Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion][note-51] | A 32-element fence has a 237-ideal rowmotion orbit with mean size $16-6/79$, below the predicted 16. | [Lean][proof-51] · [#51][pr-51] |
-| [Solution to Faustini and Vargas’s Problem 6.7 on flag vectors of connected split matroids][note-40] | Two connected rank-three matroid base polytopes have identical face counts and differ by one incidence between a vertex and a four-dimensional face. | [Lean][proof-40] · [#40][pr-40] (open draft) |
+| [Solution to Faustini and Vargas’s Problem 6.7 on flag vectors of connected split matroids][note-40] | Two connected rank-three matroid base polytopes have identical face counts and differ by one incidence between a vertex and a four-dimensional face. | [Lean][proof-40] · [#40][pr-40] |
 | [Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors][note-30] | For every prefix length, two connected rank-two matroid base polytopes on equally many elements have the same initial face counts and differ by one facet. | [Lean][proof-30] · [#30][pr-30] |
 | [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
@@ -229,9 +229,6 @@ and cites the original source.
 [note-42]: conjectures/FangSubwordLength/README.md
 [proof-42]: conjectures/FangSubwordLength/Solution.lean
 [pr-42]: https://github.com/aliromman/math/pull/42
-[note-40]: https://github.com/aliromman/math/blob/8c27e3ac6e8e418b3e09101b8958f3e113876acc/conjectures/SplitMatroidFlags/README.md
-[proof-40]: https://github.com/aliromman/math/blob/8c27e3ac6e8e418b3e09101b8958f3e113876acc/conjectures/SplitMatroidFlags/Solution.lean
-[pr-40]: https://github.com/aliromman/math/pull/40
 [note-36]: conjectures/GatzweilerKrattenthalerShift/README.md
 [proof-36]: conjectures/GatzweilerKrattenthalerShift/Solution.lean
 [pr-36]: https://github.com/aliromman/math/pull/36
@@ -491,6 +488,9 @@ and cites the original source.
 [note-41]: conjectures/PalssonYuTriangles/README.md
 [proof-41]: conjectures/PalssonYuTriangles/Solution.lean
 [pr-41]: https://github.com/aliromman/math/pull/41
+[note-40]: conjectures/SplitMatroidFlags/README.md
+[proof-40]: conjectures/SplitMatroidFlags/Solution.lean
+[pr-40]: https://github.com/aliromman/math/pull/40
 [note-84]: conjectures/PresuttiStromquist/README.md
 [proof-84]: conjectures/PresuttiStromquist/Solution.lean
 [pr-84]: https://github.com/aliromman/math/pull/84

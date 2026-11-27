@@ -121,40 +121,45 @@ private theorem quad_solid (a b c d : Cloud) (ha : a.valid) (hb : b.valid)
 
 /-- A failed inequality can be discarded. Each remaining comparison determines which box to split. -/
 def dead (a b c d : Frame) : Bool :=
-  b.xr ≤ a.xl || c.xr ≤ b.xl || d.xr ≤ c.xl ||
-    a.yr ≤ c.yl || d.yr ≤ a.yl || b.yr ≤ d.yl
+  b.xr.ble a.xl || c.xr.ble b.xl || d.xr.ble c.xl ||
+    a.yr.ble c.yl || d.yr.ble a.yl || b.yr.ble d.yl
 
-def width (xlo xhi ylo : ℕ) : ℕ :=
-  if xhi < ylo then 0 else xhi - xlo
+inductive Split where
+  | separated | first | second | third | fourth
 
-def choose (a b c d : Frame) : Fin 4 :=
-  let sa := max (width a.xl a.xr b.xl)
-    (max (width a.yl a.yr d.yl) (if c.yr < a.yl then 0 else a.yr-a.yl))
-  let sb := max (width b.xl b.xr c.xl)
-    (max (if a.xr < b.xl then 0 else b.xr-b.xl) (if d.yr < b.yl then 0 else b.yr-b.yl))
-  let sc := max (width c.xl c.xr d.xl)
-    (max (width c.yl c.yr a.yl) (if b.xr < c.xl then 0 else c.xr-c.xl))
-  let sd := max (width d.yl d.yr b.yl)
-    (max (if c.xr < d.xl then 0 else d.xr-d.xl) (if a.yr < d.yl then 0 else d.yr-d.yl))
-  if sb ≤ sa && sc ≤ sa && sd ≤ sa then 0 else if sc ≤ sb && sd ≤ sb then 1
-  else if sd ≤ sc then 2 else 3
+/-- Split the wider interval in the first unresolved coordinate comparison. -/
+def choose (a b c d : Frame) : Split :=
+  let wider (i j : Split) (u v : ℕ) := bif v.ble u then i else j
+  bif d.yl.ble a.yr then wider .first .fourth (a.yr - a.yl) (d.yr - d.yl) else
+  bif c.xl.ble b.xr then wider .second .third (b.xr - b.xl) (c.xr - c.xl) else
+  bif b.yl.ble d.yr then wider .fourth .second (d.yr - d.yl) (b.yr - b.yl) else
+  bif a.yl.ble c.yr then wider .third .first (c.yr - c.yl) (a.yr - a.yl) else
+  bif b.xl.ble a.xr then wider .first .second (a.xr - a.xl) (b.xr - b.xl) else
+  bif d.xl.ble c.xr then wider .third .fourth (c.xr - c.xl) (d.xr - d.xl) else .separated
+
+private theorem solid_of_separated {a b c d : Frame} (h : choose a b c d = .separated) :
+    solid a b c d := by
+  simp only [choose, cond_eq_ite, Nat.ble_eq] at h
+  repeat' split at h
+  all_goals simp_all [solid]
 
 def lower : ℕ → Cloud → Cloud → Cloud → Cloud → ℕ
   | 0, _, _, _, _ => 0
   | n+1, a,b,c,d =>
     let A := a.frame; let B := b.frame; let C := c.frame; let D := d.frame
-    if dead A B C D then 0 else if solid A B C D then A.weight*B.weight*C.weight*D.weight else
+    if dead A B C D then 0 else
     match choose A B C D with
-    | 0 => match a with
+    | .separated => A.weight*B.weight*C.weight*D.weight
+    | .first => match a with
       | .node _ l r => lower n l b c d + lower n r b c d
       | _ => 0
-    | 1 => match b with
+    | .second => match b with
       | .node _ l r => lower n a l c d + lower n a r c d
       | _ => 0
-    | 2 => match c with
+    | .third => match c with
       | .node _ l r => lower n a b l d + lower n a b r d
       | _ => 0
-    | 3 => match d with
+    | .fourth => match d with
       | .node _ l r => lower n a b c l + lower n a b c r
       | _ => 0
 
@@ -168,8 +173,7 @@ theorem lower_le_quad (n) (a b c d : Cloud) (ha : a.valid) (hb : b.valid)
     split
     · exact Nat.zero_le _
     split
-    · exact (quad_solid a b c d ha hb hc hd (by assumption)).symm.le
-    split
+    · exact (quad_solid a b c d ha hb hc hd (solid_of_separated (by assumption))).symm.le
     · cases a with
       | leaf => exact Nat.zero_le _
       | node f l r =>
