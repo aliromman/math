@@ -1,4 +1,4 @@
-# No die can attain the two-thirds bound in Beat the Average
+# Solution to Bellec and Fritz’s attainment question for the Beat the Average game
 
 For three independent rolls $A,B,C$ of any real-valued die,
 
@@ -44,9 +44,10 @@ Bellec and Fritz supplied the three-roll supremum, their discrete examples and t
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.BellecFritzDice.Solution
-lake env leanchecker conjectures.BellecFritzDice.Solution
+# Run at the merge commit for PR #90.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` gives the original attainment question. `resolution` proves its negation. `attainable_spectrum` gives the exact interval for every sample size $m\ge3$, and `three_rolls` proves the three-roll formula.
+
+Bellec and Fritz, “Optimizing over iid distributions and the Beat the Average game,” question after Theorem 1.5 and §5.2, DOI 10.1080/00029890.2026.2702871. The two-thirds supremum for three rolls is unattained by an atomless die. The proof of the attainable range credits Will Sawin’s digit construction. [Publication](https://arxiv.org/html/2412.15179v4#S5.SS2)
