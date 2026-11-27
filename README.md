@@ -102,7 +102,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion][note-51] | A 32-element fence has a 237-ideal rowmotion orbit with mean size $16-6/79$, below the predicted 16. | [Lean][proof-51] · [#51][pr-51] (open draft) |
 | [Solution to Faustini and Vargas’s Problem 6.7 on flag vectors of connected split matroids][note-40] | Two connected rank-three matroid base polytopes have identical face counts and differ by one incidence between a vertex and a four-dimensional face. | [Lean][proof-40] · [#40][pr-40] (open draft) |
 | [Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors][note-30] | For every prefix length, two connected rank-two matroid base polytopes on equally many elements have the same initial face counts and differ by one facet. | [Lean][proof-30] · [#30][pr-30] (open draft) |
-| [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] (open draft) |
+| [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Negative answer to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity for polygon face lattices][note-93] | For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] (open draft) |
 
@@ -392,9 +392,6 @@ and cites the original source.
 [note-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/README.md
 [proof-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/Solution.lean
 [pr-25]: https://github.com/aliromman/math/pull/25
-[note-22]: https://github.com/aliromman/math/blob/a5cb492a3b08718764bed02a2831dba979c9402f/conjectures/DefantNarayana/README.md
-[proof-22]: https://github.com/aliromman/math/blob/a5cb492a3b08718764bed02a2831dba979c9402f/conjectures/DefantNarayana/Solution.lean
-[pr-22]: https://github.com/aliromman/math/pull/22
 [note-13]: conjectures/WordPacking121/README.md
 [proof-13]: conjectures/WordPacking121/Proof.lean
 [pr-13]: https://github.com/aliromman/math/pull/13
@@ -494,3 +491,6 @@ and cites the original source.
 [note-46]: conjectures/ArcherCycles/README.md
 [proof-46]: conjectures/ArcherCycles/Solution.lean
 [pr-46]: https://github.com/aliromman/math/pull/46
+[note-22]: conjectures/DefantNarayana/README.md
+[proof-22]: conjectures/DefantNarayana/Solution.lean
+[pr-22]: https://github.com/aliromman/math/pull/22
