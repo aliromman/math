@@ -62,7 +62,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Disproof of Aichholzer et al.’s wheel-set conjecture for perfect matchings with prescribed crossings][note-68] | At ten crossings, twelve convex points admit 252 perfect matchings, a set with one interior point admits 248, and the regular wheel admits 176. | [Lean][proof-68] · [#68][pr-68] (open draft) |
+| [Disproof of Aichholzer et al.’s wheel-set conjecture for perfect matchings with prescribed crossings][note-68] | At ten crossings, twelve convex points admit 252 perfect matchings, a set with one interior point admits 248, and the regular wheel admits 176. | [Lean][proof-68] · [#68][pr-68] |
 | [Solution to the Barequet–Madras–Peters problem on nonsquare minimum-area totally concave polyominoes][note-47] | Minimum-area $t$-fold totally concave polyominoes can have nonsquare bounding boxes for every $t\ge4$. | [Lean][proof-47] · [#47][pr-47] (open draft) |
 | [Proof of Edelsbrunner, Garber and Saghafian’s Conjecture C on maximal planar hypertriangulations][note-87] | At every level, every maximal hypertriangulation has the same maximum number of triangles. Any smaller one admits a single insertion that splits a triangle into three. | [Lean][proof-87] · [#87][pr-87] (open draft) |
 | [Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
@@ -235,9 +235,6 @@ and cites the original source.
 [proof-70]: conjectures/UlasStern/Solution.lean
 [arith-70]: conjectures/UlasStern/Arithmetic.lean
 [pr-70]: https://github.com/aliromman/math/pull/70
-[note-68]: https://github.com/aliromman/math/blob/d0990c5fd782937c436940ae31f81bdc14fd55af/conjectures/WheelMatchings/README.md
-[proof-68]: https://github.com/aliromman/math/blob/d0990c5fd782937c436940ae31f81bdc14fd55af/conjectures/WheelMatchings/Solution.lean
-[pr-68]: https://github.com/aliromman/math/pull/68
 [note-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/README.md
 [proof-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/Solution.lean
 [pr-65]: https://github.com/aliromman/math/pull/65
@@ -494,3 +491,6 @@ and cites the original source.
 [note-61]: conjectures/SidonSetSystems/README.md
 [proof-61]: conjectures/SidonSetSystems/Solution.lean
 [pr-61]: https://github.com/aliromman/math/pull/61
+[note-68]: conjectures/WheelMatchings/README.md
+[proof-68]: conjectures/WheelMatchings/Solution.lean
+[pr-68]: https://github.com/aliromman/math/pull/68
