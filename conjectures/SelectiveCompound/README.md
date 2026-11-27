@@ -36,12 +36,12 @@ This proves the induction step. The product of two nonnegative integers with sum
 
 ## Games that attain the cutoff
 
-Start with an ordinary heap of size $q$. Place $p$ new positions in a chain above it. From its $i$th position, a player can move to the preceding position or to any ordinary heap of size less than $i-1$. The top position has depth $p+q$. For $p\ge1$ its value with the auxiliary heap is
+Start with an ordinary heap of size $q$. Place $p$ new positions in a chain above it. From its $`i`$th position, a player can move to the preceding position or to any ordinary heap of size less than $i-1$. The top position has depth $p+q$. For $p\ge1$ its value with the auxiliary heap is
 
 $$
 F(k)=
 \begin{cases}
-k+p-1 & k<pq,\\
+k+p-1 & k\lt pq,\\
 k+p+q & k\ge pq.
 \end{cases}
 $$

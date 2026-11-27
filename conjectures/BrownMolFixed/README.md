@@ -6,9 +6,9 @@ Keep each vertex of a graph independently with probability $p$. Write $R_G(p)$ f
 
 Take ten cliques in a row with the following sizes.
 
-$$
+```math
 1,\;1,\;5,\;5,\;5,\;5,\;8,\;4,\;1,\;1.
-$$
+```
 
 Join every vertex in each clique to every vertex in the next one. The second and ninth cliques each consist of a cut vertex. The surviving graph is connected and nonempty exactly when the occupied cliques form one nonempty interval.
 
@@ -18,9 +18,9 @@ Join every vertex in each clique to every vertex in the next one. The second and
 
 The signs give three roots in disjoint intervals by continuity. Here is a short way to reproduce the calculation with rational arithmetic. Scan the cliques from left to right. Let $E,A,F$ be the probabilities that the occupied interval is empty, reaches the current clique, or has already ended. Start at $(1,0,0)$. A clique of size $w$ is empty with probability $e=(1-p)^w$. Update the three probabilities by
 
-$$
+```math
 (E,A,F)\longmapsto\big(Ee,\;(E+A)(1-e),\;(A+F)e\big).
-$$
+```
 
 At the end $R_G(p)=A+F$. The formal proof evaluates the equivalent sum over the occupied intervals at all four rational points.
 

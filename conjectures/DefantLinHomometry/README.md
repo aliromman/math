@@ -4,7 +4,7 @@ For the path $\nu=EENENENNEEEEEN$, two orbits of rowmotion in the same $\nu$-Tam
 
 $$3+3+4+3+2+3=18,\qquad 3+2+4+2+4+2=17.$$
 
-The down-degree counts how many elements lie immediately below a lattice element. Defant and Lin conjectured that two rowmotion orbits of the same length always have the same total down-degree. The six steps give orbit averages $3$ and $17/6$. [Defant and Lin, *Rowmotion on $m$-Tamari and biCambrian lattices*, Conjecture 10.2](https://doi.org/10.5070/C64163852)
+The down-degree counts how many elements lie immediately below a lattice element. Defant and Lin conjectured that two rowmotion orbits of the same length always have the same total down-degree. The six steps give orbit averages $3$ and $17/6$. [Defant and Lin, *Rowmotion on $`m`$-Tamari and biCambrian lattices*, Conjecture 10.2](https://doi.org/10.5070/C64163852)
 
 ## The two cycles
 

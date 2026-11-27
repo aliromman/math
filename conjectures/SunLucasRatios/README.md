@@ -21,9 +21,9 @@ $A>1$, $B\ne0$, $A^2>4B$ and either $A>2$ or $B\ge-9$.
 The parameters $A=3$, $B=-26$ satisfy every hypothesis. Raising the
 cross-multiplied ratio inequality to the power $105$ reduces it to
 
-$$
+```math
 9135^{35}<1459^{21}\,65339^{15},
-$$
+```
 
 which follows by integer arithmetic. Hou, Sun, and Wen proved the decrease
 for Fibonacci numbers and an eventual decrease for general Lucas sequences.
