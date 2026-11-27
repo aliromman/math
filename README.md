@@ -146,7 +146,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Proof of Archer et al.’s conjecture on cycles avoiding 3412 in one-line form and 213 in cycle form][note-46] | A two-class decomposition gives the conjectured generating function for cycles avoiding 3412 in one-line notation and 213 in cycle notation starting at 1. | [Lean][proof-46] · [#46][pr-46] (open draft) |
+| [Proof of Archer et al.’s conjecture on cycles avoiding 3412 in one-line form and 213 in cycle form][note-46] | A two-class decomposition gives the conjectured generating function for cycles avoiding 3412 in one-line notation and 213 in cycle notation starting at 1. | [Lean][proof-46] · [#46][pr-46] |
 | [Proof of Bevan and Threlfall’s Conjecture 21 on consecutive patterns between inversion thresholds][note-72] | Every fixed consecutive pattern occurs with probability tending to one throughout the interval between its two inversion thresholds. | [Lean][proof-72] · [#72][pr-72] (open draft) |
 | [Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts][note-69] | The expected count of 51234 falls and then rises across the 7-, 8-, and 9-inversion layers in seven letters. | [Lean][proof-69] · [#69][pr-69] |
 | [Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
@@ -328,9 +328,6 @@ and cites the original source.
 [note-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/README.md
 [proof-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/Solution.lean
 [pr-47]: https://github.com/aliromman/math/pull/47
-[note-46]: https://github.com/aliromman/math/blob/ca54ffc474202b2fbd5497faa956416bbb361073/conjectures/ArcherCycles/README.md
-[proof-46]: https://github.com/aliromman/math/blob/ca54ffc474202b2fbd5497faa956416bbb361073/conjectures/ArcherCycles/Solution.lean
-[pr-46]: https://github.com/aliromman/math/pull/46
 [note-45]: https://github.com/aliromman/math/blob/36457744c38b567e557b4397f7e6b8f704383369/conjectures/LarsonPowerMap/README.md
 [proof-45]: https://github.com/aliromman/math/blob/36457744c38b567e557b4397f7e6b8f704383369/conjectures/LarsonPowerMap/Solution.lean
 [pr-45]: https://github.com/aliromman/math/pull/45
@@ -494,3 +491,6 @@ and cites the original source.
 [note-90]: conjectures/BellecFritzDice/README.md
 [proof-90]: conjectures/BellecFritzDice/Solution.lean
 [pr-90]: https://github.com/aliromman/math/pull/90
+[note-46]: conjectures/ArcherCycles/README.md
+[proof-46]: conjectures/ArcherCycles/Solution.lean
+[pr-46]: https://github.com/aliromman/math/pull/46
