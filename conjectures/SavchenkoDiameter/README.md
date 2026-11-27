@@ -1,4 +1,4 @@
-# Moving one vertex saves a directed cycle
+# Disproof of Savchenko’s conjecture on minimum cycle counts in tournaments of bounded diameter
 
 Two tournaments on 22 vertices have diameter eight. Savchenko’s proposed minimizer has **68 directed four-cycles**. Moving one vertex from an end block to the middle gives **67**. A second example on 18 vertices reduces the number of five-cycles from 44 to 42.
 
@@ -26,9 +26,8 @@ The five-cycle example uses eleven blocks. The proposed model has end sizes 4 an
 The proof enumerates each directed cycle once, starting at its least vertex. It also computes the vertices reachable from each starting point to check the diameter exactly in both counterexamples. Searches for the original article, the later paper and results on the minimum number of short cycles at fixed diameter located the known special cases and no earlier counterexample. OpenAI Codex found the examples and formalized the disproof.
 
 ```sh
-lake exe cache get
-lake build conjectures.SavchenkoDiameter.Solution
-lake env leanchecker conjectures.SavchenkoDiameter.Solution
+# Run at the merge commit for PR #91.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the proposed extremal tournament and the full conjecture. `Solution.lean` proves `resolution` and verifies both examples.
