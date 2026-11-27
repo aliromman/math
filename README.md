@@ -51,7 +51,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Solution to Beideman, Bowen and Müyesser’s Question 3 for finite-depth impartial games][note-50] | For any impartial game of finite depth $d$, a selective compound with a Nim heap of size $k$ has Grundy value $k+d$ when $k\ge\lfloor d^2/4\rfloor$. The cutoff is sharp at every depth. | [Lean][proof-50] · [#50][pr-50] |
 | [Solution to Bellec and Fritz’s attainment question for the Beat the Average game][note-90] | With $m\ge3$ independent rolls, the first roll falls below their mean with any probability strictly between $1/m$ and $(m-1)/m$. Both endpoints are unattainable. | [Lean][proof-90] · [#90][pr-90] (open draft) |
-| [Proof of Conjecture 1.11 of Garcia-Fernandezsesma and coauthors on the mean length of the accelerated Zeckendorf game][note-92] | Starting from $n$ ones, the mean number of turns is $O((\log n)^3)$, proving the proposed sublinear bound. | [Lean][proof-92] · [#92][pr-92] (open draft) |
+| [Proof of Conjecture 1.11 of Garcia-Fernandezsesma and coauthors on the mean length of the accelerated Zeckendorf game][note-92] | Starting from $n$ ones, the mean number of turns is $O((\log n)^3)$, proving the proposed sublinear bound. | [Lean][proof-92] · [#92][pr-92] |
 | [Disproof of Drexel, Peng and Richey’s Conjecture 1 on bias monotonicity in Penney’s ante][note-74] | At the same head probability near $0.451$, the count of favored longer words increases immediately to the right, for every length cap $n\ge4$. | [Lean][proof-74] · [#74][pr-74] |
 | [Proof of Gallian and Rusin’s conjecture on the maximum game-size of 30-sided dice][note-63] | Exactly 44 different 30-sided dice occur in games with standard sum frequencies. Forty-three can occur in three-dice games, and the remaining die needs four. | [Lean][proof-63] · [#63][pr-63] (open draft) |
 | [Proof of Gallian and Rusin’s conjecture on the number of 105-sided solution dice][note-62] | Exactly 40 different 105-sided dice occur in games with standard sum frequencies, and all 40 occur in three-dice games. | [Lean][proof-62] · [#62][pr-62] (open draft) |
@@ -225,9 +225,6 @@ and cites the original source.
 [note-93]: https://github.com/aliromman/math/blob/0177b87d175b7efa56b45de1daed3820d9ca29e7/conjectures/PolygonEhrhart/README.md
 [proof-93]: https://github.com/aliromman/math/blob/0177b87d175b7efa56b45de1daed3820d9ca29e7/conjectures/PolygonEhrhart/Solution.lean
 [pr-93]: https://github.com/aliromman/math/pull/93
-[note-92]: https://github.com/aliromman/math/blob/ee8cbfbd1c807fe18bae3b5cf61cbe77681bcda2/conjectures/AcceleratedZeckendorf/README.md
-[proof-92]: https://github.com/aliromman/math/blob/ee8cbfbd1c807fe18bae3b5cf61cbe77681bcda2/conjectures/AcceleratedZeckendorf/Solution.lean
-[pr-92]: https://github.com/aliromman/math/pull/92
 [note-91]: https://github.com/aliromman/math/blob/9c312e688df9ee77721687e855745a5848bbc254/conjectures/SavchenkoDiameter/README.md
 [proof-91]: https://github.com/aliromman/math/blob/9c312e688df9ee77721687e855745a5848bbc254/conjectures/SavchenkoDiameter/Solution.lean
 [pr-91]: https://github.com/aliromman/math/pull/91
@@ -494,3 +491,6 @@ and cites the original source.
 [note-69]: conjectures/ConsecutivePatternValley/README.md
 [proof-69]: conjectures/ConsecutivePatternValley/Solution.lean
 [pr-69]: https://github.com/aliromman/math/pull/69
+[note-92]: conjectures/AcceleratedZeckendorf/README.md
+[proof-92]: conjectures/AcceleratedZeckendorf/Solution.lean
+[pr-92]: https://github.com/aliromman/math/pull/92
