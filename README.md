@@ -50,7 +50,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Solution to Beideman, Bowen and Müyesser’s Question 3 for finite-depth impartial games][note-50] | For any impartial game of finite depth $d$, a selective compound with a Nim heap of size $k$ has Grundy value $k+d$ when $k\ge\lfloor d^2/4\rfloor$. The cutoff is sharp at every depth. | [Lean][proof-50] · [#50][pr-50] |
-| [Solution to Bellec and Fritz’s attainment question for the Beat the Average game][note-90] | With $m\ge3$ independent rolls, the first roll falls below their mean with any probability strictly between $1/m$ and $(m-1)/m$. Both endpoints are unattainable. | [Lean][proof-90] · [#90][pr-90] (open draft) |
+| [Solution to Bellec and Fritz’s attainment question for the Beat the Average game][note-90] | With $m\ge3$ independent rolls, the first roll falls below their mean with any probability strictly between $1/m$ and $(m-1)/m$. Both endpoints are unattainable. | [Lean][proof-90] · [#90][pr-90] |
 | [Proof of Conjecture 1.11 of Garcia-Fernandezsesma and coauthors on the mean length of the accelerated Zeckendorf game][note-92] | Starting from $n$ ones, the mean number of turns is $O((\log n)^3)$, proving the proposed sublinear bound. | [Lean][proof-92] · [#92][pr-92] |
 | [Disproof of Drexel, Peng and Richey’s Conjecture 1 on bias monotonicity in Penney’s ante][note-74] | At the same head probability near $0.451$, the count of favored longer words increases immediately to the right, for every length cap $n\ge4$. | [Lean][proof-74] · [#74][pr-74] |
 | [Proof of Gallian and Rusin’s conjecture on the maximum game-size of 30-sided dice][note-63] | Exactly 44 different 30-sided dice occur in games with standard sum frequencies. Forty-three can occur in three-dice games, and the remaining die needs four. | [Lean][proof-63] · [#63][pr-63] (open draft) |
@@ -228,9 +228,6 @@ and cites the original source.
 [note-91]: https://github.com/aliromman/math/blob/9c312e688df9ee77721687e855745a5848bbc254/conjectures/SavchenkoDiameter/README.md
 [proof-91]: https://github.com/aliromman/math/blob/9c312e688df9ee77721687e855745a5848bbc254/conjectures/SavchenkoDiameter/Solution.lean
 [pr-91]: https://github.com/aliromman/math/pull/91
-[note-90]: https://github.com/aliromman/math/blob/b421be9d57deee245b872b3273f4b12012b51d83/conjectures/BellecFritzDice/README.md
-[proof-90]: https://github.com/aliromman/math/blob/b421be9d57deee245b872b3273f4b12012b51d83/conjectures/BellecFritzDice/Solution.lean
-[pr-90]: https://github.com/aliromman/math/pull/90
 [note-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/README.md
 [proof-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/Solution.lean
 [pr-89]: https://github.com/aliromman/math/pull/89
@@ -494,3 +491,6 @@ and cites the original source.
 [note-92]: conjectures/AcceleratedZeckendorf/README.md
 [proof-92]: conjectures/AcceleratedZeckendorf/Solution.lean
 [pr-92]: https://github.com/aliromman/math/pull/92
+[note-90]: conjectures/BellecFritzDice/README.md
+[proof-90]: conjectures/BellecFritzDice/Solution.lean
+[pr-90]: https://github.com/aliromman/math/pull/90
