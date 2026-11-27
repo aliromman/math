@@ -1,4 +1,4 @@
-# Thirteen squares disprove the zig-zag walk conjecture
+# Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on zig-zag walks and prime polyomino ideals
 
 The polyomino below has no zig-zag walk. Over every field, the quotient by its polyomino ideal contains two nonzero elements whose product is zero. This disproves Conjecture 1.2 of Mascia, Rinaldo and Romeo, and their reported equivalence for polyominoes with at most 14 cells. [Original paper, Illinois Journal of Mathematics 64 (2020), 291–304](https://doi.org/10.1215/00192082-8591560) · [Author manuscript](https://arxiv.org/abs/1907.08438)
 
@@ -58,8 +58,10 @@ A search of the original paper, the authors’ implementation, later work on spe
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.PolyominoPrimality.Solution
+# Run at the merge commit for PR #64.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the conjecture for an arbitrary coefficient field. `Solution.lean` proves its negation for every field and checks the transitive axioms. AI agents found the counterexample, derived the zero divisors, wrote the Lean proof and independently audited the result.
+
+Carla Mascia, Giancarlo Rinaldo and Francesco Romeo, Primality of multiply connected polyominoes, Conjecture 1.2 under the printed condition (Z3) of Definition 3.2. [Publication](https://arxiv.org/pdf/1907.08438#page=2)
