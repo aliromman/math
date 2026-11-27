@@ -81,7 +81,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Proof of Alikhani’s Conjecture 5 on the minimum degree and the number of distinct edge-cover roots][note-20] | A finite simple graph of minimum degree $d$ has at least $d$ distinct complex roots in its edge-cover polynomial. | [Lean][proof-20] · [#20][pr-20] |
-| [Proof of Brown and Cameron’s Conjecture 4.2 on the maximum modulus of independence roots of graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] (open draft) |
+| [Proof of Brown and Cameron’s Conjecture 4.2 on the maximum modulus of independence roots of graphs][note-29] | For a graph on $n\ge3$ vertices, every independence root has modulus at most $\max(p_1\cdots p_r+r)$ over all partitions $p_1+\cdots+p_r=n-1$ into positive integers. | [Lean][proof-29] · [#29][pr-29] |
 | [Disproof of Brown and Mol’s conjecture on uniqueness of node-reliability fixed points in graphs with two or more cut vertices][note-101] | Even with two cut vertices, node reliability can cross the diagonal arbitrarily many times. A 36-vertex example has at least three crossings. | [Lean][proof-101] · [#101][pr-101] (open draft) |
 | [Solution to George’s problem on the rational degree roots of graphs of a given order][note-12] | For coprime positive integers $p,q$, some simple graph on $n\ge1$ vertices has root $-p/q$ exactly when $p+q$ divides odd $n$ or $2(p+q)$ divides even $n$. | [Lean][proof-12] · [#12][pr-12] |
 | [Solution to Haslegrave’s Question 1 on difference and sum indices of bipartite graphs][note-53] | For every positive integer $d$, a finite connected bipartite graph has difference index $d$ and sum index $d+1$. | [Lean][proof-53] · [#53][pr-53] |
@@ -371,9 +371,6 @@ and cites the original source.
 [note-21]: conjectures/KolblSimplexRoots/README.md
 [proof-21]: conjectures/KolblSimplexRoots/Solution.lean
 [pr-21]: https://github.com/aliromman/math/pull/21
-[note-29]: https://github.com/aliromman/math/blob/f4bee61ac4d3435fcb9739ef5fac753b5a99e521/conjectures/BrownCameronGraphModulus/README.md
-[proof-29]: https://github.com/aliromman/math/blob/f4bee61ac4d3435fcb9739ef5fac753b5a99e521/conjectures/BrownCameronGraphModulus/Solution.lean
-[pr-29]: https://github.com/aliromman/math/pull/29
 [note-27]: conjectures/SobolewskiPatternBound/README.md
 [proof-27]: conjectures/SobolewskiPatternBound/Solution.lean
 [pr-27]: https://github.com/aliromman/math/pull/27
@@ -494,3 +491,6 @@ and cites the original source.
 [note-25]: conjectures/BrownCameronEvenTrees/README.md
 [proof-25]: conjectures/BrownCameronEvenTrees/Solution.lean
 [pr-25]: https://github.com/aliromman/math/pull/25
+[note-29]: conjectures/BrownCameronGraphModulus/README.md
+[proof-29]: conjectures/BrownCameronGraphModulus/Solution.lean
+[pr-29]: https://github.com/aliromman/math/pull/29
