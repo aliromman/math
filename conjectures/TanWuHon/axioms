@@ -1,0 +1,5 @@
+TanWuHon.half_scale propext Classical.choice Quot.sound
+TanWuHon.lower_scale propext Classical.choice Quot.sound
+TanWuHon.odd_exact propext Classical.choice Quot.sound
+TanWuHon.odd_threshold propext Classical.choice Quot.sound
+TanWuHon.resolution propext Classical.choice Quot.sound

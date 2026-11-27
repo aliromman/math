@@ -1,8 +1,8 @@
-# Exactly 22 dice for every size $p^2q$
+# Proof of Gallian and Rusin’s conjecture on the number of solution dice with p²q sides
 
 For any two distinct primes $p,q$, **exactly 22** labelings of a $p^2q$-sided die can appear in a game with the sum frequencies of ordinary dice. Every one occurs in a game of three dice. Thus 12-sided dice and 18-sided dice, for example, have the same count despite their different face counts.
 
-Gallian and Rusin allow any finite number of dice greater than one. Labels are positive integers and can repeat. Labelings that differ only in the order of the faces count once. The authors exhibited 22 labelings and conjectured these were all. Chao, Gabel, Larson, and Nasr later classified the eight games with two dice. [Gallian and Rusin, pp. 245 and 259](https://www.cs.umd.edu/users/gasarch/BLOGPAPERS/nonstandarddice.pdf) · [Chao et al., Theorem 4.6](https://arxiv.org/html/2408.10331v1#S4.Thmtheorem4)
+Gallian and Rusin allow any finite number of dice greater than one. Labels are positive integers and can repeat. Labelings that differ only in the order of the faces count once. The authors exhibited 22 labelings and conjectured these were all. Chao, Gabel, Larson, and Nasr later classified the eight games with two dice. [Gallian and Rusin, pp. 245 and 259](https://www.cs.umd.edu/users/gasarch/BLOGPAPERS/nonstandarddice.pdf#page=15) · [Chao et al., Theorem 4.6](https://arxiv.org/html/2408.10331v1#S4.Thmtheorem4)
 
 ## Which dice work?
 
@@ -42,9 +42,8 @@ Conversely, every allowed product splits into three geometric sums. Pair $\Phi_{
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.GallianRusinPrimeSquare.Solution
-lake env leanchecker conjectures.GallianRusinPrimeSquare.Solution
+# Run at the merge commit for PR #65.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-`Statement.lean` defines the original conjecture. The axiom checks in `Solution.lean` cover the classification, the three-dice realization, and the exact count. Searches for the conjecture, polynomial dice, nonstandard number generators, and subsequent work on dice relabeling found the two-dice result above and no earlier proof for games of arbitrary size. AI developed the proof and Lean formalization. Gallian and Rusin introduced the cyclotomic representation and the lower bound of 22.
+`Statement.lean` states the original conjecture using the shared [dice model](../GallianRusin/Die.lean). The axiom checks in `Solution.lean` cover the classification, the three-dice realization, and the exact count. Searches for the conjecture, polynomial dice, nonstandard number generators, and subsequent work on dice relabeling found the two-dice result above and no earlier proof for games of arbitrary size. AI developed the proof and Lean formalization. Gallian and Rusin introduced the cyclotomic representation and the lower bound of 22.

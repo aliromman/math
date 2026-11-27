@@ -2,14 +2,14 @@ module
 
 public import conjectures.GallianRusinPrimeSquare.Progressions
 public import Mathlib.RingTheory.Polynomial.Cyclotomic.Expand
-public import Mathlib.RingTheory.Polynomial.Cyclotomic.Roots
+public import conjectures.GallianRusin.Factorization
 import Mathlib.Data.Nat.Factorization.Defs
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
 @[expose] public section
 namespace GallianRusinPrimeSquare
-open Polynomial Finset
+open GallianRusin Polynomial Finset
 
 noncomputable abbrev F (j : ℕ) : ℤ[X] := cyclotomic j ℤ
 
@@ -80,19 +80,6 @@ theorem product_eval {p q a b c d : ℕ} (hp : p.Prime) (hq : q.Prime) (hne : p�
     (hab : a+b=2) : (product p q a b c d).eval 1=p^2*q := by
   simp only [product,eval_mul,eval_pow,geom_eval,pair_eval hp hq hne,tall_eval hp hq hne,one_pow,mul_one]
   rw [mul_assoc,←pow_add,hab,mul_comm]
-
-private theorem peel {p : ℤ[X]} (prime : Prime p) (k : ℕ) {A B T : ℤ[X]}
-    (h : A*B=p^k*T) : ∃ n U V, A=p^n*U ∧ U*V=T := by
-  induction k generalizing A B with
-  | zero => exact ⟨0,A,B,by simp,by simpa using h⟩
-  | succ k ih =>
-    rw [pow_succ',mul_assoc] at h
-    obtain ⟨Y,e⟩|⟨Y,e⟩ := prime.dvd_or_dvd (h ▸ dvd_mul_right p _)
-    · rw [e,mul_assoc] at h
-      obtain ⟨n,U,V,nu,uv⟩ := ih (mul_left_cancel₀ prime.ne_zero h)
-      exact ⟨n+1,U,V,by rw [e,nu,pow_succ',mul_assoc],uv⟩
-    · rw [e,mul_left_comm] at h
-      exact ih (mul_left_cancel₀ prime.ne_zero h)
 
 private theorem faces {p q a b z : ℕ} (hp : p.Prime) (hq : q.Prime) (hne : p≠q)
     {s : ℤ} (unit : IsUnit s) (val : (p:ℤ)^a*((p:ℤ)^b*((q:ℤ)^z*s))=(p:ℤ)^2*q) :
