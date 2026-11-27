@@ -5,6 +5,34 @@ PRs at their draft verification cutoffs. The catalogue contains 99
 mathematical PRs through PR 102. The historical registers below give the
 revisions and checks for the original 90. [Result catalogue](../README.md#results)
 
+## Research after v1.0.0
+
+The next campaign began on 27 November 2026 at 05:44 UTC. Its first verified
+draft disproves Olarte, Santos, Spreer and Stump’s Conjecture 3.5 on dual
+pairs in flag complexes. The 12-vertex example has nine essential vertices.
+An independent reviewer checked the published statement and enumerated all
+4,096 subsets. CI rebuilt and replayed both Lean modules and checked both
+axiom contracts. [Draft PR 114](https://github.com/aliromman/math/pull/114) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45951794370)
+
+The second draft disproves Bajnok’s Conjecture 9 on restricted double
+sumsets. A set of 19 residues modulo 444 has 34 sums of distinct pairs.
+The conjecture predicts 35. An independent reviewer checked the published
+formula and the example. CI built and replayed four Lean modules and
+checked five axiom contracts. [Draft PR 115](https://github.com/aliromman/math/pull/115) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45959191164)
+
+| Cutoff (UTC) | Verified resolutions | Numbered Erdős problems | Elapsed | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 27 November 2026, 06:28 | 1 | 0 | 44 min | 880,000 | 51,940,000 | 270,000 | 1,150,000 | 53,090,000 |
+| 27 November 2026, 07:34 | 2 | 0 | 1 h 50 min | 1,660,000 | 172,790,000 | 690,000 | 2,340,000 | 175,130,000 |
+
+The campaign has verified two of its five target resolutions. Neither has a
+numbered Erdős problem ID. Each row gives cumulative figures through the
+corresponding proof check, including concurrent investigations. Each total
+counts each participant once and is rounded independently. The 99 mathematical
+PRs catalogued at v1.0.0 predate these drafts.
+
 ## What the 99 mathematical PRs settled
 
 Counting one primary target per PR and listing the three catalogue extensions
