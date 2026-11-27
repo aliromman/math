@@ -1,4 +1,4 @@
-# Four added cells allow 589 permutations instead of 584
+# Disproof of Hwang’s conjecture on adding cells to a triangular permutation board
 
 Start with the eight-by-eight board whose cells on or below the main diagonal are allowed. Add four cells above the diagonal. Hwang proposed the antidiagonal cells $(1,8),(2,7),(3,6),(4,5)$. They allow 584 permutations. The four cells
 
@@ -10,7 +10,7 @@ allow 589. The same change in the middle eight rows and columns defeats the prop
 
 ## Original conjecture
 
-Suk-Geun Hwang conjectured that for every $n\ge1$ and $2d\le n$, the lower triangular board gains the most allowed permutations when its $d$ additional cells are $(i,n+1-i)$ for $1\le i\le d$. The number of allowed permutations is the permanent of the board's zero-one matrix. Hwang proved the construction is optimal when $n$ is sufficiently large relative to fixed $d$. The example above has $n=2d$. [Hwang, *Permutations with partially forbidden positions*, Journal of the Korean Mathematical Society 38 (2001), pp. 793–808, Section 3, p. 803](https://mathnet.or.kr/mathnet/kms_tex/977985.pdf)
+Suk-Geun Hwang conjectured that for every $n\ge1$ and $2d\le n$, the lower triangular board gains the most allowed permutations when its $d$ additional cells are $(i,n+1-i)$ for $1\le i\le d$. The number of allowed permutations is the permanent of the board's zero-one matrix. Hwang proved the construction is optimal when $n$ is sufficiently large relative to fixed $d$. The example above has $n=2d$. [Hwang, *Permutations with partially forbidden positions*, Journal of the Korean Mathematical Society 38 (2001), pp. 793–808, Section 3, p. 803](https://mathnet.or.kr/mathnet/kms_tex/977985.pdf#page=11)
 
 ## Counting the permutations
 
@@ -40,8 +40,8 @@ For $n=2d$, leave the $d-4$ outer antidiagonal cells in place. Replace the patte
 `Statement.lean` defines Hwang's conjecture with Mathlib's matrix permanent. The formal proof counts the eight-by-eight boards by inclusion-exclusion. To extend them, it uses the polynomial $P_A(x)=\operatorname{per}(A+xJ)$, where $J$ is the all-ones matrix. Its coefficient of $x^{8-k}$ on the initial board is $(8-k)!r_k(A)$. Adding two outer indices acts on this polynomial by differentiation, addition, and multiplication by polynomials with nonnegative coefficients. The proof verifies every coefficient of the initial difference and its positive constant term at every later order. From the repository root, run
 
 ```sh
-lake build conjectures.HwangPermanent.Solution
-lake env leanchecker conjectures.HwangPermanent.Solution
+# Run at the merge commit for PR #44.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 An OpenAI Codex agent found the counterexample and wrote the proof. A direct enumeration of all $8!$ permutations confirmed the table. Searches for the paper, its title, Hwang's construction and prior counterexamples found no earlier disproof.
