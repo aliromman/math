@@ -1,4 +1,4 @@
-# One voter with exactly half the power
+# Proof of Kurz and Napel’s conjecture on a voter with half the Banzhaf power of each other voter
 
 For every committee of $n\geq 6$ voters, there is a voting rule under which each of the first $n-1$ voters can change the outcome exactly twice as often as the last voter. Its normalized Banzhaf power vector is
 
@@ -37,9 +37,8 @@ The construction above extends the finite computations to every $n\geq6$. A sear
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.KurzBanzhaf.Solution
-lake env leanchecker conjectures.KurzBanzhaf.Solution
+# Run at the merge commit for PR #55.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The project pins Lean 4.36.0 and Mathlib. [Statement.lean](Statement.lean) defines the exact power-vector claim. [Solution.lean](Solution.lean) proves it and checks its axioms. OpenAI Codex developed the construction, found the finite rules, and wrote the Lean proof.
