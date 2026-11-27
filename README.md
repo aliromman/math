@@ -73,7 +73,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Liu’s Conjecture 6.4 on weighted Erdős–Mordell bounds for an interior point][note-14] | An isosceles triangle and an interior point violate the proposed upper bound at $k=3999/1000$. | [Lean][proof-14] · [#14][pr-14] |
 | [Proof of Palsson and Yu’s Conjecture 10 on planar point sets with four triangle congruence classes][note-41] | Seven planar points with at most four triangle shapes form a regular heptagon. The maximum size for four shapes is seven. | [Lean][proof-41] · [#41][pr-41] (open draft) |
 | [Partial result on Erdős Problem 107 for 33-point extensions of specified 27- and 30-point order types][note-9] | **Partial.** Checked SAT certificates rule out heptagon-free 33-point extensions of one specified 27-point order type and all 496 two-point deletions from the classical 32-point example. The general question remains open. | [Search][proof-9] · [#9][pr-9] |
-| [The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture][note-48] | **Extension.** The sharp covering ratio for lattice squares is $3/2$. Counterexamples exist at unbounded lattice diameter. The source already contained a counterexample among convex polygons. | [Lean][proof-48] · [#48][pr-48] (open draft) |
+| [The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture][note-48] | **Extension.** The sharp covering ratio for lattice squares is $3/2$. Counterexamples exist at unbounded lattice diameter. The source already contained a counterexample among convex polygons. | [Lean][proof-48] · [#48][pr-48] |
 | [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
 
 ### Graphs and tournaments
@@ -310,9 +310,6 @@ and cites the original source.
 [note-50]: conjectures/SelectiveCompound/README.md
 [proof-50]: conjectures/SelectiveCompound/Solution.lean
 [pr-50]: https://github.com/aliromman/math/pull/50
-[note-48]: https://github.com/aliromman/math/blob/92b20bf1fb6ed39d1e8a6e022aadd070a4ad2d95/conjectures/BaranyFurediCover/README.md
-[proof-48]: https://github.com/aliromman/math/blob/92b20bf1fb6ed39d1e8a6e022aadd070a4ad2d95/conjectures/BaranyFurediCover/Solution.lean
-[pr-48]: https://github.com/aliromman/math/pull/48
 [note-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/README.md
 [proof-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/Solution.lean
 [pr-47]: https://github.com/aliromman/math/pull/47
@@ -494,3 +491,6 @@ and cites the original source.
 [note-100]: conjectures/ChipShadow/README.md
 [proof-100]: conjectures/ChipShadow/Solution.lean
 [pr-100]: https://github.com/aliromman/math/pull/100
+[note-48]: conjectures/BaranyFurediCover/README.md
+[proof-48]: conjectures/BaranyFurediCover/Solution.lean
+[pr-48]: https://github.com/aliromman/math/pull/48
