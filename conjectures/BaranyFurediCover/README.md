@@ -1,4 +1,4 @@
-# Three halves is the sharp covering ratio for lattice squares
+# The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture
 
 The square with vertices $(0,0),(2,1),(1,3),(-1,2)$ has area 5 and lattice covering radius $3/5$. Its longest line of lattice points contains three points, so its lattice diameter is 2. Thus
 
@@ -10,7 +10,7 @@ This is the largest possible ratio for a square with lattice vertices. There are
 
 ## The original comparison
 
-Bárány and Füredi define $\ell(P)$ as the greatest number of lattice points on a line in $P$, less one. The covering radius $\mu(P)$ is the least scale at which integer translates of the scaled polygon cover the plane. After equation (6), the authors compare $\operatorname{area}(P)\mu(P)$ with $\ell(P)$ and propose the factor $(1+\sqrt2)/2$. Their own example $Q^6(t)$ already yields $16/13>(1+\sqrt2)/2$ at $t=1$. Their paper gives both numbers. The results proved here determine the sharp constant for all lattice squares and show that the proposed factor still fails at unbounded lattice diameter. [Bárány and Füredi, *On the lattice diameter of a convex polygon*, Discrete Mathematics 241 (2001), pp. 41–50, §3](https://www.renyi.hu/~barany/cikkek/84.pdf)
+Bárány and Füredi define $\ell(P)$ as the greatest number of lattice points on a line in $P$, less one. The covering radius $\mu(P)$ is the least scale at which integer translates of the scaled polygon cover the plane. After equation (6), the authors compare $\operatorname{area}(P)\mu(P)$ with $\ell(P)$ and propose the factor $(1+\sqrt2)/2$. Their own example $Q^6(t)$ already yields $16/13>(1+\sqrt2)/2$ at $t=1$. Their paper gives both numbers. The results proved here determine the sharp constant for all lattice squares and show that the proposed factor still fails at unbounded lattice diameter. [Bárány and Füredi, *On the lattice diameter of a convex polygon*, Discrete Mathematics 241 (2001), pp. 41–50, §3](https://www.renyi.hu/~barany/cikkek/84.pdf#page=5)
 
 ## The three exact quantities
 
@@ -43,8 +43,8 @@ The strict inequality reduces to $2\sqrt2\,p>4q-1$. Squaring and using the Pell 
 `Statement.lean` defines Lebesgue area, the covering radius, and the lattice diameter using arbitrary collinear sets of lattice points. `Lines.lean` proves the equivalence with consecutive lattice strings in a convex region. The final theorems include `five`, `resolution`, `sharp_bound`, and `unbounded`.
 
 ```sh
-lake build conjectures.BaranyFurediCover.Solution
-lake env leanchecker conjectures.BaranyFurediCover.Solution
+# Run at the merge commit for PR #48.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 OpenAI Codex developed the square formulas and Pell construction and formalized the proofs. An independent agent audited the geometric definitions, the covering argument and the use of lattice-point counts. Searches for the authors, the proposed constant, square counterexamples and Pell constructions found no previous statement of the sharp square bound or of this unbounded family.
