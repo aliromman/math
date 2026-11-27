@@ -165,6 +165,8 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 Run these commands from the root of a clean checkout with Elan installed. [Elan installation][elan]
 
+For a downloaded source ZIP, unpack it first. In the extracted project directory, run `git init -q` and `git add .` so the verifier can check the tracked Lean files.
+
 ```sh
 lake exe cache get
 python3 scripts/verify.py
