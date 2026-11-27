@@ -30,7 +30,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Proof of Bagchi and Zhou-Zheng’s Conjecture 12 on sporadic shifts without triangular Diophantine pairs][note-23] | For every integer $k\ge0$, adding $2\cdot7^{6k+2}$ to a product of two positive triangular numbers gives a nonsquare. | [Lean][proof-23] · [#23][pr-23] |
-| [Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials][note-88] | At odd index $1{,}122{,}987$, the 63rd cyclotomic polynomial divides the Fekete polynomial, although the relevant residue counts differ by one. | [Lean][proof-88] · [#88][pr-88] (open draft) |
+| [Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials][note-88] | At odd index $1{,}122{,}987$, the 63rd cyclotomic polynomial divides the Fekete polynomial, although the relevant residue counts differ by one. | [Lean][proof-88] · [#88][pr-88] |
 | [Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials][note-85] | In every Markov numerator, every coefficient strictly inside the critical triangle is divisible by four. The proof establishes divisibility throughout the surrounding lower rectangle. | [Lean][proof-85] · [#85][pr-85] |
 | [Proof of the Evans–Veselov–Winn Location of 4 conjecture for Markov polynomials][note-86] | For every reduced slope $1<a<b$, the unique monomial on $bi+aj=ab+1$ has coefficient exactly $4$. | [Lean][proof-86] · [#86][pr-86] |
 | [Four-factor counterexamples to Gatzweiler and Krattenthaler’s Conjecture 4][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
@@ -219,9 +219,6 @@ and cites the original source.
 [note-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/README.md
 [proof-89]: https://github.com/aliromman/math/blob/39d96f60c908222878537a862a1aa9f3dbede582/conjectures/MaTangCarousel/Solution.lean
 [pr-89]: https://github.com/aliromman/math/pull/89
-[note-88]: https://github.com/aliromman/math/blob/18c3212f968ec5d4d38e480c5c9c50267ac60288/conjectures/FeketeEquidistribution/README.md
-[proof-88]: https://github.com/aliromman/math/blob/18c3212f968ec5d4d38e480c5c9c50267ac60288/conjectures/FeketeEquidistribution/Solution.lean
-[pr-88]: https://github.com/aliromman/math/pull/88
 [note-87]: https://github.com/aliromman/math/blob/0f355ebd2e25857548fed268390f4ed6703a8a51/conjectures/Hypertriangulations/README.md
 [proof-87]: https://github.com/aliromman/math/blob/0f355ebd2e25857548fed268390f4ed6703a8a51/conjectures/Hypertriangulations/Solution.lean
 [pr-87]: https://github.com/aliromman/math/pull/87
@@ -494,3 +491,6 @@ and cites the original source.
 [note-44]: conjectures/HwangPermanent/README.md
 [proof-44]: conjectures/HwangPermanent/Solution.lean
 [pr-44]: https://github.com/aliromman/math/pull/44
+[note-88]: conjectures/FeketeEquidistribution/README.md
+[proof-88]: conjectures/FeketeEquidistribution/Solution.lean
+[pr-88]: https://github.com/aliromman/math/pull/88
