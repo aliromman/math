@@ -11,7 +11,7 @@ $$
 
 ## The conjecture
 
-The distance-$k$ domination number $\gamma_k(T)$ is the fewest stationary guards needed to place every vertex of $T$ within $k$ edges of a guard. For eternal domination, vertices come under attack one at a time. All guards may move up to $k$ edges after each attack. A guard must reach the attacked vertex. The least number that can answer every attack sequence is $\gamma^{\infty}_{\mathrm{all},k}(T)$. The paper permits guards to share a vertex. Its definition on page 31 asks for a response sequence for each finite attack list. Both constructions here also give a single strategy that uses only the attacks seen so far.
+The distance-$`k`$ domination number $\gamma_k(T)$ is the fewest stationary guards needed to place every vertex of $T$ within $k$ edges of a guard. For eternal domination, vertices come under attack one at a time. All guards may move up to $k$ edges after each attack. A guard must reach the attacked vertex. The least number that can answer every attack sequence is $\gamma^{\infty}_{\mathrm{all},k}(T)$. The paper permits guards to share a vertex. Its definition on page 31 asks for a response sequence for each finite attack list. Both constructions here also give a single strategy that uses only the attacks seen so far.
 
 Clow and van Bommel proved a result for trees at range two. They conjectured that for every finite tree and every integer $k>2$,
 

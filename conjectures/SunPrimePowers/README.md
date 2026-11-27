@@ -2,7 +2,7 @@
 
 Take the first nine primes and raise each to the power $1/2000$. Even their geometric mean exceeds the upper bound that Sun proposed for their arithmetic mean.
 
-Let $p_n$ be the $n$th prime. Sun conjectured that for every real $\alpha>0$ and every $n\ge 2\lceil\alpha\rceil^2+\lceil\alpha\rceil+6$,
+Let $p_n$ be the $`n`$th prime. Sun conjectured that for every real $\alpha>0$ and every $n\ge 2\lceil\alpha\rceil^2+\lceil\alpha\rceil+6$,
 
 $$
 \frac1n\sum_{k=1}^n p_k^\alpha < \frac{p_n^\alpha}{1+\alpha}.

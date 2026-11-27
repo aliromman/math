@@ -22,7 +22,7 @@ Let $c(r)$ count the exponents in class $r$ modulo $63$. The entire frequency ve
 | $1,2,5,7,10,11$ | 16,972 |
 | Any other residue | 16,971 |
 
-For a primitive $63$rd root $z$, the factor $z^{21}$ is a nontrivial cube root of unity. Hence
+For a primitive $`63`$rd root $z$, the factor $z^{21}$ is a nontrivial cube root of unity. Hence
 
 $$
 F_n(z)=\left(1+z^{21}+z^{42}\right)\sum_{r=0}^{20}c(r)z^r=0.

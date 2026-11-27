@@ -2,7 +2,7 @@
 
 When exactly $k$ sums are missing, the limiting mean position of the first present sum is $k/2+O(1)$. This gives the slope in the accepted manuscript’s Conjecture 8.1. The first arXiv version calls it Conjecture 7.1 and counts positions starting at one. [Original version, p. 23](https://arxiv.org/pdf/1109.4700v1#page=23)
 
-Choose a uniformly random subset $A$ of $\{0,\ldots,n-1\}$. Its sumset consists of all $a+b$ with $a,b\in A$, including $a=b$. Let $K$ count the missing integers in $[0,2n-2]$. Let $X=\min(A+A)=2\min A$. The authors conjectured that $e(k)=\lim_{n\to\infty}\mathbb E[X\mid K=k]$ is asymptotically linear as $k\to\infty$. The limit exists for each $k$, and $|e(k)-k/2|$ is bounded independently of $k$. The limit in $n$ comes first. For fixed $k$, the conditioning event has positive probability for all sufficiently large $n$.
+Choose a uniformly random subset $A$ of $`\{0,\ldots,n-1\}`$. Its sumset consists of all $a+b$ with $a,b\in A$, including $a=b$. Let $K$ count the missing integers in $[0,2n-2]$. Let $X=\min(A+A)=2\min A$. The authors conjectured that $e(k)=\lim_{n\to\infty}\mathbb E[X\mid K=k]$ is asymptotically linear as $k\to\infty$. The limit exists for each $k$, and $|e(k)-k/2|$ is bounded independently of $k$. The limit in $n$ comes first. For fixed $k$, the conditioning event has positive probability for all sufficiently large $n$.
 
 Lazarev, Miller and O’Bryant, *Distribution of missing sums in sumsets*, §8, p. 34 of the accepted manuscript. [Authors’ manuscript](https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/DistrMissingSums95.pdf#page=34) · [Journal article](https://doi.org/10.1080/10586458.2013.743304)
 
@@ -12,11 +12,11 @@ Write $u$ and $v$ for the numbers of unused sites at the left and right ends of 
 
 Here is the estimate that controls the holes inside the core. In an infinite sequence of fair bits, let $p(m,t)$ be the probability that the first bit is occupied, that there are exactly $m$ missing sums, and that the last one is $t-1$. Use $t=0$ if there are no holes. A missing sum $x$ requires that no pair of distinct nonnegative integers summing to $x$ has both sites occupied. The disjoint pairs give a geometric tail in $x$. Thus fixed windows at opposite ends of a long core have independent limits. If $D_j$ is the limiting probability that the endpoints are occupied and the core has $j$ holes, it equals the convolution of the two copies of $p$, summed over their last-hole locations.
 
-The proof in Lean gives the following bound uniformly even for finite prefixes. For any $m,t$, the probability that a length-$t$ prefix starts occupied, misses $m$ sums below $t$, and ends at a missing sum is at most
+The proof in Lean gives the following bound uniformly even for finite prefixes. For any $m,t$, the probability that a length-$`t`$ prefix starts occupied, misses $m$ sums below $t$, and ends at a missing sum is at most
 
-$$
+```math
 C\,2^{-m/2-t/256}.
-$$
+```
 
 To see the two ingredients, first omit the condition at zero. Partition the possible hole locations into short bands of length about $t/q$, for large fixed $q$. If $m$ exceeds a band length, pigeonholing the holes above $m-t/q$ gives a band ending at $s$ with many forbidden sums $S$. In $[0,s)$, join sites whose sum lies in $S$. Keep choosing occupied sites that forbid more than $t/q^3$ new neighbors. At most $q^3$ choices suffice. The sites still available have at most $t/q^3$ new neighbors each. Counting the reflected pairs for each member of $S$ leaves a set of at most $t-m/2+O(t/q+q^2)$ available sites in the full prefix. The band, its subset $S$, and the chosen sites have at most $2^{t/q+O(q^2)}t^{O(q^3)}$ descriptions. When $m$ is smaller than one band the same size bound allows the whole prefix.
 

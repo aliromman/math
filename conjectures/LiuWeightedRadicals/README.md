@@ -6,7 +6,7 @@ Let $(R_1,R_2,R_3)=(PA,PB,PC)$ and $(a_1,a_2,a_3)=(BC,CA,AB)$. The quantities $r
 
 $$
 2\sum_i r_i \ \le\ \frac{2\sum_i(R_i+r_i)w_i}{\sum_i w_i}\ \le\ \sum_i R_i
-\qquad (0<k<4).
+\qquad (0\lt k<4).
 $$
 
 The last inequality fails. The point and triangle have rational distances because the two right triangles in the construction have leg and hypotenuse ratios $13:84:85$ and $11:60:61$. [Jian Liu, *Refinements of the Erdös–Mordell inequality, Barrow’s inequality, and Oppenheim’s inequality*, Conjecture 6.4, equation (6.6) (2016)](https://doi.org/10.1186/s13660-015-0947-2)

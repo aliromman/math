@@ -2,9 +2,9 @@
 
 A graph that can be labelled with only $s$ distinct edge sums can be recognized using at most
 
-$$
+```math
 s\,3^{s-1}
-$$
+```
 
 allowed sums. Thus the exclusive sum number stays bounded whenever the sum index stays bounded. This answers John Haslegrave’s Question 3 in the negative. [*Sum Index, Difference Index and Exclusive Sum Number of Graphs*, Graphs and Combinatorics 39 (2023), Proposition 1 and Question 3](https://doi.org/10.1007/s00373-023-02624-0)
 
@@ -16,7 +16,7 @@ Choose an optimal ordinary labelling and list its $s$ edge sums. Give each verte
 
 Translate the old labels until all are positive. Append the ternary digits on the right. When two new labels are added, their lower $s$ digits add without a carry. The remaining part therefore records the sum of the old labels.
 
-Suppose vertices $x,y$ have the $i$th old edge sum. Their new sum is allowed exactly when the $i$th ternary digit is two. Indeed, if the digit is two, $x$ has some neighbor $z$ making the same old sum. Cancelling the label of $x$ shows that $z$ and $y$ had the same old label. Injectivity gives $z=y$. Conversely, the two endpoints of every edge both have digit one in that edge’s coordinate.
+Suppose vertices $x,y$ have the $`i`$th old edge sum. Their new sum is allowed exactly when the $`i`$th ternary digit is two. Indeed, if the digit is two, $x$ has some neighbor $z$ making the same old sum. Cancelling the label of $x$ shows that $z$ and $y$ had the same old label. Injectivity gives $z=y$. Conversely, the two endpoints of every edge both have digit one in that edge’s coordinate.
 
 For a fixed old edge sum, one digit is fixed at two and each of the other $s-1$ digits has three possibilities. The $s$ possible old edge sums give the claimed bound. For an edgeless graph the allowed set is empty.
 

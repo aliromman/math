@@ -14,7 +14,7 @@ $$
 a^{|E|-|F|}(1-a)^{|F|}\prod_{C}(1+z^{|C|}),
 $$
 
-where $C$ runs through the components of $(V,F)$. Stanley's power-sum formula counts the edge sets with each list of component sizes, since on a tree $|F|=|V|-\#C$. [Stanley, Theorem 2.5](https://math.mit.edu/~rstan/pubs/pubfiles/100.pdf)
+where $C$ runs through the components of $(V,F)$. Stanley's power-sum formula counts the edge sets with each list of component sizes, since on a tree $`|F|=|V|-\#C`$. [Stanley, Theorem 2.5](https://math.mit.edu/~rstan/pubs/pubfiles/100.pdf)
 
 Only assignments with opposite spins at $u,v$ contribute to the difference. Both attachments then count the plus site one extra time before identification. This gives
 

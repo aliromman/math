@@ -8,7 +8,7 @@ $$
 D_T(S)=\frac{\mathbb E[|U|-|S|]}{|T|-|S|}.
 $$
 
-The six leaves are the three neighbors of each star center outside the joining path. If the path vertices are $0,1,\ldots,10$, the maximizers are the singleton $\{5\}$ and the two subtrees obtained by taking a star and all the joining path up to vertex 5. Thus leaf-containing and leafless maximizers coexist in this tree.
+The six leaves are the three neighbors of each star center outside the joining path. If the path vertices are $0,1,\ldots,10$, the maximizers are the singleton $`\{5\}`$ and the two subtrees obtained by taking a star and all the joining path up to vertex 5. Thus leaf-containing and leafless maximizers coexist in this tree.
 
 A weaker assertion holds for every finite tree. **Every proper subtree lies inside a proper subtree of at least the same density that contains a leaf.** In particular, every maximizer extends to a leaf-containing maximizer. [General theorem](LeafExtension.lean)
 
@@ -16,9 +16,9 @@ A weaker assertion holds for every finite tree. **Every proper subtree lies insi
 
 Deleting $S$ leaves branches $C_1,\ldots,C_r$. Root each at its attachment to $S$. The intersection of $U$ with a branch is either empty or a connected subtree containing its root. These choices are independent and uniform. Write $d(C)$ for the expected number of chosen vertices in $C$, divided by $|C|$. Then
 
-$$
+```math
 D_T(S)=\frac{\sum_i |C_i|\,d(C_i)}{\sum_i |C_i|}.
-$$
+```
 
 Each branch of an oriented edge can serve as the entire complement of $S$. The largest local density is therefore the largest oriented-edge score $d(C)$. A subtree attains it precisely when every branch outside it has that score.
 

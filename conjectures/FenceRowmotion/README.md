@@ -1,6 +1,6 @@
 # Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion
 
-Start with the order ideal $\{x_{10}, x_{11}, x_{12}, x_{13}\}$ in the 32-element fence $\breve F(3^{11})$. Its orbit under rowmotion contains 237 ideals. Their sizes add to 3774. The average is
+Start with the order ideal $`\{x_{10}, x_{11}, x_{12}, x_{13}\}`$ in the 32-element fence $\breve F(3^{11})$. Its orbit under rowmotion contains 237 ideals. Their sizes add to 3774. The average is
 
 $$\frac{3774}{237}=16-\frac{6}{79}.$$
 

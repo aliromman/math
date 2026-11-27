@@ -1,6 +1,6 @@
 # Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1
 
-In a word of length $n$ on any ordered alphabet with at least two letters, the largest possible number of occurrences of $12\!-\!1$ is
+In a word of length $n$ on any ordered alphabet with at least two letters, the largest possible number of occurrences of $`12\!-\!1`$ is
 
 $$
 \left\lfloor\frac{n(n-1)}6\right\rfloor.
