@@ -5,6 +5,53 @@ PRs at their draft verification cutoffs. The catalogue contains 99
 mathematical PRs through PR 102. The historical registers below give the
 revisions and checks for the original 90. [Result catalogue](../README.md#results)
 
+## Research after v1.0.0
+
+The next campaign began on 27 November 2026 at 05:44 UTC. Its first verified
+draft disproves Olarte, Santos, Spreer and Stump’s Conjecture 3.5 on dual
+pairs in flag complexes. The 12-vertex example has nine essential vertices.
+An independent reviewer checked the published statement and enumerated all
+4,096 subsets. CI rebuilt and replayed both Lean modules and checked both
+axiom contracts. [Draft PR 114](https://github.com/aliromman/math/pull/114) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45951794370)
+
+The second draft disproves Bajnok’s Conjecture 9 on restricted double
+sumsets. A set of 19 residues modulo 444 has 34 sums of distinct pairs.
+The conjecture predicts 35. An independent reviewer checked the published
+formula and the example. CI built and replayed four Lean modules and
+checked five axiom contracts. [Draft PR 115](https://github.com/aliromman/math/pull/115) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45959191164)
+
+The third draft proves both clauses of Borg’s Conjecture 1.4 on signed
+sets. Borg’s weighted reduction and the theorem of Chang, Liu and Liu already
+imply the maximum size. The new result identifies exactly when a nonstar
+family can attain that size. Independent review checked the equality cases
+and enumerated 33,021 small instances. CI built and replayed 13 Lean modules
+and checked both axiom contracts. [Draft PR 116](https://github.com/aliromman/math/pull/116) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45962046706)
+
+The fourth draft proves both bounds on the complex zeros of peak polynomials
+in Billey, Fahrbach and Talmage’s Conjecture 6.4. The disk bound follows
+from Alex Chengyu Li’s coefficient theorem. The real-part bound follows by
+induction on the gaps between peaks. An independent reviewer checked the
+formal statement and compared the estimates with exact permutation counts
+for 10,945 peak sets. CI built and replayed 18 modules, checked 847 local
+declarations and enforced four exact axiom expectations. [Draft PR 117](https://github.com/aliromman/math/pull/117) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45972506522)
+
+| Cutoff (UTC) | Verified resolutions | Numbered Erdős problems | Elapsed | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 27 November 2026, 06:28 | 1 | 0 | 44 min | 880,000 | 51,940,000 | 270,000 | 1,150,000 | 53,090,000 |
+| 27 November 2026, 07:34 | 2 | 0 | 1 h 50 min | 1,660,000 | 172,790,000 | 690,000 | 2,340,000 | 175,130,000 |
+| 27 November 2026, 07:59 | 3 | 0 | 2 h 15 min | 2,160,000 | 216,990,000 | 830,000 | 2,990,000 | 219,980,000 |
+| 27 November 2026, 09:19 | 4 | 0 | 3 h 36 min | 3,590,000 | 344,090,000 | 1,320,000 | 4,910,000 | 349,000,000 |
+
+The campaign has verified four of its five target resolutions. None has a
+numbered Erdős problem ID. Each row gives cumulative figures through the
+corresponding proof check, including concurrent investigations. Each total
+counts each participant once and is rounded independently. The 99 mathematical
+PRs catalogued at v1.0.0 predate these drafts.
+
 ## What the 99 mathematical PRs settled
 
 Counting one primary target per PR and listing the three catalogue extensions
