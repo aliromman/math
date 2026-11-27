@@ -1,10 +1,10 @@
-# Four consecutive vertices disprove fence homomesy
+# Disproof of Elizalde et al.’s Conjecture 5.4(b) on order-ideal sizes under fence rowmotion
 
 Start with the order ideal $\{x_{10}, x_{11}, x_{12}, x_{13}\}$ in the 32-element fence $\breve F(3^{11})$. Its orbit under rowmotion contains 237 ideals. Their sizes add to 3774. The average is
 
 $$\frac{3774}{237}=16-\frac{6}{79}.$$
 
-Elizalde, Plante, Roby and Sagan conjectured that on a constant fence with an odd number of segments, every rowmotion orbit has average ideal size equal to half the size of the fence. Here that prediction is 16. The authors verified the conjecture for $a+t\le12$. The example has $a+t=14$. [*Rowmotion on fences*, Algebraic Combinatorics 6 (2023), Conjecture 5.4(b), p. 35](https://www.numdam.org/item/10.5802/alco.256.pdf)
+Elizalde, Plante, Roby and Sagan conjectured that on a constant fence with an odd number of segments, every rowmotion orbit has average ideal size equal to half the size of the fence. Here that prediction is 16. The authors verified the conjecture for $a+t\le12$. The example has $a+t=14$. [*Rowmotion on fences*, Algebraic Combinatorics 6 (2023), Conjecture 5.4(b), p. 35](https://www.numdam.org/item/10.5802/alco.256.pdf#page=20)
 
 ## The fence and its orbit
 
@@ -38,9 +38,8 @@ The discrepancy also has a local description. Over this orbit the maximal elemen
 The Lean statement defines the order on every constant fence, the rowmotion map, and the conjectured identity for every cycle of distinct ideals. The proof checks that each of the 237 supplied sets is an ideal, that all sets are distinct, that each maps to the next (including the last to the first), and that their cardinalities sum to 3774.
 
 ```sh
-lake exe cache get
-lake build conjectures.FenceRowmotion.Solution
-lake env leanchecker conjectures.FenceRowmotion.Solution
+# Run at the merge commit for PR #51.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 OpenAI Codex found the orbit by exhaustive search, wrote the finite certificate, and formalized the argument in Lean.

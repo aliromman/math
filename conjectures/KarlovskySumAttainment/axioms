@@ -1,0 +1,2 @@
+KarlovskySumAttainment.equality_iff propext Classical.choice Quot.sound
+KarlovskySumAttainment.resolution propext Classical.choice Quot.sound
