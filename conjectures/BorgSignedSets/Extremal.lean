@@ -1,7 +1,10 @@
-import conjectures.BorgSignedSets.ActiveClass
-import conjectures.BorgSignedSets.Rigidity
-import conjectures.BorgSignedSets.WordCount
+module
 
+public import conjectures.BorgSignedSets.ActiveClass
+public import conjectures.BorgSignedSets.Rigidity
+public import conjectures.BorgSignedSets.WordCount
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι] {k : ℕ} [NeZero k]

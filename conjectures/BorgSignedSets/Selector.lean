@@ -1,6 +1,9 @@
-import conjectures.BorgSignedSets.OrbitSelector
-import conjectures.BorgSignedSets.CylinderBound
+module
 
+public import conjectures.BorgSignedSets.OrbitSelector
+public import conjectures.BorgSignedSets.CylinderBound
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι] {k : ℕ} [NeZero k]

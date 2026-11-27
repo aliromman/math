@@ -1,9 +1,12 @@
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+module
 
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 namespace BorgSignedSets
 
 noncomputable section
@@ -51,7 +54,8 @@ theorem energy_eq_zero {α : Type*} [Fintype α] [Nonempty α] (f : α → ℚ) 
   rw [Finset.sum_eq_zero_iff_of_nonneg (fun x _ => sq_nonneg (f x))]
   simp
 
-private def kernel (a b : κ) : ℚ :=
+/-- The centered equality kernel for one coordinate. -/
+def kernel (a b : κ) : ℚ :=
   (if a = b then (Fintype.card κ : ℚ) else 0) - 1
 
 def component (f : Cube ι κ → ℚ) (S : Finset ι) (x : Cube ι κ) : ℚ :=

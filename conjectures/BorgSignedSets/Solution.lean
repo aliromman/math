@@ -1,8 +1,11 @@
-import conjectures.BorgSignedSets.Exceptional
-import conjectures.BorgSignedSets.Extremal
-import conjectures.BorgSignedSets.Selector
-import conjectures.BorgSignedSets.Stars
+module
 
+public import conjectures.BorgSignedSets.Exceptional
+public import conjectures.BorgSignedSets.Extremal
+public import conjectures.BorgSignedSets.Selector
+public import conjectures.BorgSignedSets.Stars
+
+@[expose] public section
 namespace BorgSignedSets
 
 /-- The signed-set conjecture for every finite family and every alphabet of size at least two. -/

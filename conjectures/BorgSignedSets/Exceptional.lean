@@ -1,7 +1,10 @@
-import conjectures.BorgSignedSets.Statement
+module
+
+public import conjectures.BorgSignedSets.Statement
 
 /-! The binary majority construction in the exceptional case of Borg's conjecture. -/
 
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} [DecidableEq ι]

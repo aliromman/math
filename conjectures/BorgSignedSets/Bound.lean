@@ -1,7 +1,10 @@
-import conjectures.BorgSignedSets.Statement
-import conjectures.BorgSignedSets.Product
-import Mathlib.Tactic.Linarith
+module
 
+public import conjectures.BorgSignedSets.Statement
+public import conjectures.BorgSignedSets.Product
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι] {k : ℕ} [NeZero k]

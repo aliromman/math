@@ -1,9 +1,12 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Data.Fintype.Pi
-import Mathlib.Data.ZMod.Basic
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Data.Fintype.Pi
+public import Mathlib.Data.ZMod.Basic
 
 /-! Borg, *Intersecting Systems of Signed Sets*, Conjecture 1.4 (2007). -/
 
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι] {k : ℕ} [NeZero k]

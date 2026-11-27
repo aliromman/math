@@ -1,5 +1,8 @@
-import conjectures.BorgSignedSets.Bound
+module
 
+public import conjectures.BorgSignedSets.Bound
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι κ : Type*} [Fintype ι] [DecidableEq ι]

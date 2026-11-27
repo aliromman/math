@@ -1,8 +1,11 @@
-import conjectures.BorgSignedSets.Statement
-import conjectures.BorgSignedSets.Product
-import Mathlib.Logic.Equiv.Prod
-import Mathlib.Tactic.Ring
+module
 
+public import conjectures.BorgSignedSets.Statement
+public import conjectures.BorgSignedSets.Product
+public import Mathlib.Logic.Equiv.Prod
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι] {k : ℕ} [NeZero k]

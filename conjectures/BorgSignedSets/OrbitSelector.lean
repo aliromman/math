@@ -1,6 +1,9 @@
-import conjectures.BorgSignedSets.WordCount
-import Mathlib.Tactic.Abel
+module
 
+public import conjectures.BorgSignedSets.WordCount
+public import Mathlib.Tactic.Abel
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {ι : Type*} {k : ℕ}

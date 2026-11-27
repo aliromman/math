@@ -1,7 +1,10 @@
-import conjectures.BorgSignedSets.Statement
-import Mathlib.Data.Fintype.EquivFin
-import Mathlib.Logic.Equiv.Basic
+module
 
+public import conjectures.BorgSignedSets.Statement
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.Logic.Equiv.Basic
+
+@[expose] public section
 namespace BorgSignedSets
 
 variable {τ : Type*} [Fintype τ] [DecidableEq τ] [Nonempty τ] {k : ℕ} [NeZero k]
