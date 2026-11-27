@@ -1,4 +1,4 @@
-# Weighted voting cannot give one voter half the power of the others
+# Proof of Kurz’s Conjecture 8 on Banzhaf approximation in weighted voting games
 
 For every weighted voting rule on $n\geq2$ voters, its normalized Banzhaf vector $p$ satisfies
 
@@ -31,9 +31,8 @@ Kurz and Napel computed finite optima and constructed weighted voting rules with
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.KurzWeighted.Solution
-lake env leanchecker conjectures.KurzWeighted.Solution
+# Run at the merge commit for PR #58.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The project pins Lean 4.36.0 and Mathlib. [Statement.lean](Statement.lean) defines the weighted conjecture directly from the vote totals and decisive switches. [Solution.lean](Solution.lean) proves it through the stronger result for complete games and checks the axioms. OpenAI Codex developed the symmetrization argument and wrote the Lean proof.
