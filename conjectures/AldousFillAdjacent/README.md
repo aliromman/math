@@ -1,4 +1,4 @@
-# Undoing a card swap doubles the first correction to the mean hitting time
+# Correction to the Aldous–Fill hitting-time heuristic for random cyclic adjacent transpositions (Example 7.22)
 
 Place $m$ cards on a circle. At each step, choose uniformly among a hold and the $m$ swaps of neighboring cards. Start with a uniform random deck and choose an independent uniform target. The mean time $\tau_m$ to reach the target satisfies
 
@@ -8,7 +8,7 @@ $$
 
 Aldous and Fill predicted a coefficient of $1$ from their local transience heuristic. A hold returns the deck to its starting state in one step. Making the same choice twice returns it in two steps. For $m\ge3$, each return has probability exactly $1/(m+1)$. Both affect the coefficient. [Aldous and Fill, *Reversible Markov Chains and Random Walks on Graphs*, Example 7.22, pp. 255–256](https://www.stat.berkeley.edu/~aldous/RWG/Book_Ralph/Ch7.S2.html)
 
-## A finite disproof
+## A finite bound on the heuristic error
 
 Fix the identity deck as target by symmetry. Write $N=m!$, let $P$ be the transition operator, and put $L=I-P$. Let $\delta$ be the indicator of the identity and $p_j=(P^j\delta)(1)$ the probability of returning in $j$ steps. Use the inner product $\langle f,g\rangle=\sum_x f(x)g(x)$.
 
@@ -42,8 +42,8 @@ Choose $r=7$. Returns at steps $3$ through $13$ contribute $O(m^{-2})$, and $B p
 Run these commands from the repository root.
 
 ```sh
-lake build conjectures.AldousFillAdjacent.Solution
-lake env leanchecker conjectures.AldousFillAdjacent.Solution
+# Run at the merge commit for PR #102.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Aldous proved the leading asymptotic $\mathbb E T\sim m!$ for adjacent swaps on a line. Example 7.21 of the Aldous–Fill monograph treats swaps of arbitrary pairs and credits Flatto, Odlyzko, and Wales. Searches for stationary hitting times of cyclic adjacent-transposition shuffles, the modified bubble-sort graph and its Kirchhoff index found no earlier correction of Example 7.22. [Aldous, *Random walks on finite groups and rapidly mixing Markov chains* (1983), §§4.10 and 8](https://www.numdam.org/item/SPS_1983__17__243_0/)
