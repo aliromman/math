@@ -5,6 +5,88 @@ PRs at their draft verification cutoffs. The catalogue contains 99
 mathematical PRs through PR 102. The historical registers below give the
 revisions and checks for the original 90. [Result catalogue](../README.md#results)
 
+## Research after v1.0.0
+
+The next campaign began on 27 November 2026 at 05:44 UTC. Its first verified
+draft disproves Olarte, Santos, Spreer and Stump’s Conjecture 3.5 on dual
+pairs in flag complexes. The 12-vertex example has nine essential vertices.
+An independent reviewer checked the published statement and enumerated all
+4,096 subsets. CI rebuilt and replayed both Lean modules and checked both
+axiom contracts. [Draft PR 114](https://github.com/aliromman/math/pull/114) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45951794370)
+
+The second draft disproves Bajnok’s Conjecture 9 on restricted double
+sumsets. A set of 19 residues modulo 444 has 34 sums of distinct pairs.
+The conjecture predicts 35. An independent reviewer checked the published
+formula and the example. CI built and replayed four Lean modules and
+checked five axiom contracts. [Draft PR 115](https://github.com/aliromman/math/pull/115) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45959191164)
+
+The third draft proves both clauses of Borg’s Conjecture 1.4 on signed
+sets. Borg’s weighted reduction and the theorem of Chang, Liu and Liu already
+imply the maximum size. The new result identifies exactly when a nonstar
+family can attain that size. Independent review checked the equality cases
+and enumerated 33,021 small instances. CI built and replayed 13 Lean modules
+and checked both axiom contracts. [Draft PR 116](https://github.com/aliromman/math/pull/116) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45962046706)
+
+The fourth draft proves both bounds on the complex zeros of peak polynomials
+in Billey, Fahrbach and Talmage’s Conjecture 6.4. The disk bound follows
+from Alex Chengyu Li’s coefficient theorem. The real-part bound follows by
+induction on the gaps between peaks. An independent reviewer checked the
+formal statement and compared the estimates with exact permutation counts
+for 10,945 peak sets. CI built and replayed 18 modules, checked 847 local
+declarations and enforced four exact axiom expectations. [Draft PR 117](https://github.com/aliromman/math/pull/117) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45972506522)
+
+The final proof revision shares the evaluation and growth lemmas with the
+real-root classification. CI replayed all 19 modules and checked the same
+847 declarations and four axiom expectations. [Final proof verification](https://github.com/aliromman/math/actions/runs/45974220479)
+
+The fifth draft proves Billey, Fahrbach and Talmage’s Conjecture 6.5. The
+original authors proved that six families of peak sets give polynomials whose
+roots are all integers. The new proof shows that the polynomial of every
+other nonempty peak set has a nonreal root. Two independent reviews checked
+the argument and its translation from permutation counts. Exact Sturm chains
+confirmed the classification for all 10,945 nonempty peak sets with last peak
+at most 20. Of these, 3,573 had only real roots. A clean local build and
+GitHub CI each replayed all 47 affected modules, checked 1,400 local
+declarations and confirmed six exact axiom expectations for proof revision
+`83f199675d6173119316c8e303edc1d98f98046a`.
+[Original conjecture](https://arxiv.org/html/1410.8506v2#S6) · [Draft PR 118](https://github.com/aliromman/math/pull/118) · [Final campaign proof verification](https://github.com/aliromman/math/actions/runs/45976292032/job/140428729395)
+
+| Cutoff (UTC) | Verified resolutions | Numbered Erdős problems | Elapsed | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 27 November 2026, 06:28 | 1 | 0 | 44 min | 880,000 | 51,940,000 | 270,000 | 1,150,000 | 53,090,000 |
+| 27 November 2026, 07:34 | 2 | 0 | 1 h 50 min | 1,660,000 | 172,790,000 | 690,000 | 2,340,000 | 175,130,000 |
+| 27 November 2026, 07:59 | 3 | 0 | 2 h 15 min | 2,160,000 | 216,990,000 | 830,000 | 2,990,000 | 219,980,000 |
+| 27 November 2026, 09:19 | 4 | 0 | 3 h 36 min | 3,590,000 | 344,090,000 | 1,320,000 | 4,910,000 | 349,000,000 |
+| 27 November 2026, 09:48 | 5 | 0 | 4 h 05 min | 3,960,000 | 393,170,000 | 1,450,000 | 5,410,000 | 398,580,000 |
+
+The campaign has verified all five target resolutions. None has a numbered
+Erdős problem ID. The five drafts add 75 distinct Lean modules. Drafts 117
+and 118 share ten identical modules. Each row gives cumulative figures
+through the corresponding proof check, including concurrent investigations.
+Each total counts each participant once and is rounded independently. The 99
+mathematical PRs catalogued at v1.0.0 predate these drafts.
+
+The research total adds the unrounded records for the four campaigns with
+comparable usage counters. The second row also includes the recorded review
+and merging work through the v1.0.0 collection audit. Usage for PRs 1–9 is
+unavailable.
+
+| Recorded work through the final proof check | Working wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Four research campaigns | 14 h 54 min | 20,560,000 | 1,811,120,000 | 6,520,000 | 27,080,000 | 1,838,200,000 |
+| Research and recorded repository maintenance | 21 h 32 min | 23,380,000 | 2,134,440,000 | 7,390,000 | 30,770,000 | 2,165,210,000 |
+
+The investigation of Billey, Fahrbach and Talmage’s separate last-real-root
+conjecture recovered a previous proof. Work on the Erdős–Nešetřil question
+about monochromatic triangles reached a graph decomposition whose required
+structural theorem remains unformalized here. Both investigations are outside
+the five.
+[Separate last-real-root proof](https://github.com/Aurantium-47/peak-polynomial-last-real-root) · [Erdős, Problem 8](https://www.renyi.hu/~p_erdos/1984-11.pdf#page=7)
+
 ## What the 99 mathematical PRs settled
 
 Counting one primary target per PR and listing the three catalogue extensions

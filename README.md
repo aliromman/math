@@ -1,6 +1,6 @@
 # Mathematical conjectures
 
-This collection contains 99 research notes on published mathematical questions. Of these, 97 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 104 research notes on published mathematical questions. Of these, 102 give Lean-verified results and two report partial investigations. Five of the verified results are open drafts added after v1.0.0. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
@@ -10,7 +10,7 @@ Ali Romman (2026). *Mathematical conjectures* (v1.0.0). Zenodo. [DOI 10.5281/zen
 
 Each row links to the research note, its proof or search code, and the pull request. Open drafts are marked beside their PR links and link to fixed revisions. **Partial** marks an investigation whose main question remains open. **Extension** marks a result that builds on an earlier counterexample.
 
-[Additive combinatorics](#additive-combinatorics) · [Algebra and number theory](#algebra-and-number-theory) · [Dice and games](#dice-and-games) · [Euclidean and discrete geometry](#euclidean-and-discrete-geometry) · [Graphs and tournaments](#graphs-and-tournaments) · [Matroids, polytopes and posets](#matroids-polytopes-and-posets) · [Probability and stochastic processes](#probability-and-stochastic-processes) · [Trees](#trees) · [Voting and apportionment](#voting-and-apportionment) · [Words and permutations](#words-and-permutations)
+[Additive combinatorics](#additive-combinatorics) · [Algebra and number theory](#algebra-and-number-theory) · [Dice and games](#dice-and-games) · [Euclidean and discrete geometry](#euclidean-and-discrete-geometry) · [Extremal set theory](#extremal-set-theory) · [Graphs and tournaments](#graphs-and-tournaments) · [Matroids, polytopes and posets](#matroids-polytopes-and-posets) · [Probability and stochastic processes](#probability-and-stochastic-processes) · [Trees](#trees) · [Voting and apportionment](#voting-and-apportionment) · [Words and permutations](#words-and-permutations)
 
 ### Additive combinatorics
 
@@ -18,6 +18,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] |
 | [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
+| [Disproof of Bajnok’s Conjecture 9 on the minimum size of restricted double sumsets in cyclic groups][note-115] | Nineteen residues modulo 444 have 34 sums of two distinct elements. The formula predicts 35. | [Lean][proof-115] · [#115][pr-115] (open draft) |
 | [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] |
 | [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] |
@@ -78,6 +79,12 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture][note-48] | **Extension.** The sharp covering ratio for lattice squares is $3/2$. Counterexamples exist at unbounded lattice diameter. The source already contained a counterexample among convex polygons. | [Lean][proof-48] · [#48][pr-48] |
 | [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
 
+### Extremal set theory
+
+| Research note | Finding | Proof or search · PR |
+| --- | --- | --- |
+| [Proof of Borg’s Conjecture 1.4 on intersecting systems of signed sets][note-116] | A maximum family can fail to be a star exactly when there are two labels and three distinct coordinates that occur in precisely the same supports and have stars of maximum size. | [Lean][proof-116] · [#116][pr-116] (open draft) |
+
 ### Graphs and tournaments
 
 | Research note | Finding | Proof or search · PR |
@@ -107,6 +114,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\operatorname{Re}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Solution to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity of order polytopes of polygon face lattices][note-93] | For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] |
+| [Disproof of Olarte, Santos, Spreer and Stump’s Conjecture 3.5 on dual pairs in flag complexes][note-114] | A 12-vertex flag surface has a dual pair with nine essential vertices. The octahedron has six vertices. | [Lean][proof-114] · [#114][pr-114] (open draft) |
 
 ### Probability and stochastic processes
 
@@ -153,6 +161,8 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts][note-69] | The expected count of 51234 falls and then rises across the 7-, 8-, and 9-inversion layers in seven letters. | [Lean][proof-69] · [#69][pr-69] |
 | [Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
 | [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] |
+| [Proof of Billey, Fahrbach and Talmage’s Conjecture 6.4 on the complex zeros of peak polynomials][note-117] | For a nonempty peak set with last peak $m$, every zero has modulus at most $m$ and real part at least $-3$. Both bounds are sharp. | [Lean][proof-117] · [#117][pr-117] (open draft) |
+| [Proof of Billey, Fahrbach and Talmage’s Conjecture 6.5 on real-rooted peak polynomials][note-118] | The six listed families are exactly the nonempty peak sets whose polynomials have only real roots. All those roots are integers. | [Lean][proof-118] · [#118][pr-118] (open draft) |
 | [Proof of Černý’s Conjecture 34 on counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Disproof of Fang’s Conjecture 5.7 on the length of a most frequent subsequence][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
 | [Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] |
@@ -487,3 +497,19 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-102]: conjectures/AldousFillAdjacent/README.md
 [proof-102]: conjectures/AldousFillAdjacent/Solution.lean
 [pr-102]: https://github.com/aliromman/math/pull/102
+[note-114]: https://github.com/aliromman/math/blob/4d993a8d4478ffde4e6b38d4add159c79f58bade/conjectures/OlarteSantosSpreerStump/README.md
+[proof-114]: https://github.com/aliromman/math/blob/4d993a8d4478ffde4e6b38d4add159c79f58bade/conjectures/OlarteSantosSpreerStump/Solution.lean
+[pr-114]: https://github.com/aliromman/math/pull/114
+[note-115]: https://github.com/aliromman/math/blob/c9c53a1afb879fbd4c2759d11315ab57e3de5d40/conjectures/BajnokRestrictedMinimum/README.md
+[proof-115]: https://github.com/aliromman/math/blob/c9c53a1afb879fbd4c2759d11315ab57e3de5d40/conjectures/BajnokRestrictedMinimum/Solution.lean
+[pr-115]: https://github.com/aliromman/math/pull/115
+[note-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/README.md
+[proof-116]: https://github.com/aliromman/math/blob/ee21b9aaed39262586f75c32e088be1641545ce1/conjectures/BorgSignedSets/Solution.lean
+[pr-116]: https://github.com/aliromman/math/pull/116
+[note-117]: https://github.com/aliromman/math/blob/3118a60e0fa6a227c1e61bc2974c0afd6cc6cac9/conjectures/PeakRootBounds/README.md
+[proof-117]: https://github.com/aliromman/math/blob/3118a60e0fa6a227c1e61bc2974c0afd6cc6cac9/conjectures/PeakRootBounds/Solution.lean
+[pr-117]: https://github.com/aliromman/math/pull/117
+
+[note-118]: https://github.com/aliromman/math/blob/83f199675d6173119316c8e303edc1d98f98046a/conjectures/BilleyFahrbachTalmageClassification/README.md
+[proof-118]: https://github.com/aliromman/math/blob/83f199675d6173119316c8e303edc1d98f98046a/conjectures/BilleyFahrbachTalmageClassification/Solution.lean
+[pr-118]: https://github.com/aliromman/math/pull/118
