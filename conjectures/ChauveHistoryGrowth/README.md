@@ -1,4 +1,4 @@
-# Balanced trees minimize duplication–loss histories
+# Proof of Chauve, Ponty and Wallner’s Conjecture 4.5 on extremal duplication–loss histories
 
 For every terminal count $n\ge2$, the caterpillar has the most ordered duplication–loss histories among rooted binary trees with $k$ leaves. The balanced tree has the fewest. Both statements characterize the tree shape up to swaps of the two children. With four leaves and two terminals, these counts are 39 and 34. At $n=1$, every tree has exactly $k$ histories.
 
@@ -53,8 +53,10 @@ The statement defines each history as an element of the corresponding finite dis
 From the repository root, run
 
 ```sh
-lake build
-lake env leanchecker conjectures.ChauveHistoryGrowth.Solution
+# Run at the merge commit for PR #43.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The guarded axiom report permits only propositional extensionality, classical choice, and quotient soundness. Searches by conjecture number, exact growth terminology, author names, and citations found the source's analysis and computations. No earlier proof was located. OpenAI Codex developed the proof and Lean formalization.
+
+Cédric Chauve, Yann Ponty and Michael Wallner, Counting and sampling gene family evolutionary histories in the duplication-loss and duplication-loss-transfer models, §4.2, Conjecture 4.5. [Publication](https://link.springer.com/article/10.1007/s00285-019-01465-x)
