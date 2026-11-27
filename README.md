@@ -126,7 +126,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of the Brosch–Puges double-caterpillar conjecture on tree profiles (Conjecture 1)][note-34] | For every $k\ge7$, joining three caterpillars beats the proposed two-caterpillar boundary. The cases $k=4,5,6$ remain open. | [Lean][proof-34] · [#34][pr-34] |
 | [Proof of Brown and Cameron’s Conjecture 4.4 on the maximum modulus of independence roots of even-order trees][note-25] | For a tree on $2k$ vertices with $k\ge3$, every root of the independence polynomial has modulus at most $2^{k-2}+k+1$. | [Lean][proof-25] · [#25][pr-25] (open draft) |
 | [Proof of Chauve, Ponty and Wallner’s Conjecture 4.5 on extremal duplication–loss histories][note-43] | For every terminal count of at least two, caterpillars uniquely maximize and balanced trees uniquely minimize ordered, unranked histories at fixed leaf count, up to swaps of children. | [Lean][proof-43] · [#43][pr-43] (open draft) |
-| [Disproof of Clow and van Bommel’s Conjecture 8.2 on eternal distance domination in trees][note-83] | For every positive integer $t$, a tree needs $t$ guards at range three, even under repeated attacks. It needs $2t$ stationary guards at range one. | [Lean][proof-83] · [#83][pr-83] (open draft) |
+| [Disproof of Clow and van Bommel’s Conjecture 8.2 on eternal distance domination in trees][note-83] | For every positive integer $t$, a tree needs $t$ guards at range three, even under repeated attacks. It needs $2t$ stationary guards at range one. | [Lean][proof-83] · [#83][pr-83] |
 | [Disproof of Dossou-Olory and Wagner’s conjecture on four-branch extremizers for the inducibility of the five-leaf tree A₅][note-31] | A root rotation increases the limiting density of the five-leaf tree in every proposed four-branch sequence. Its exact inducibility remains open. | [Lean][proof-31] · [#31][pr-31] |
 | [Disproof of the Engbers–Erey conjecture on maximum average maximal-matching size in trees of fixed order and diameter][note-1] | Moving one leaf in a 15-vertex tree preserves diameter 11 and raises the mean size of a maximal matching from $6$ to $259/43$, disproving the proposed maximum. | [Lean][proof-1] · [#1][pr-1] |
 | [Proof of George’s Conjecture 1 on nonreal degree roots of trees in the unit disk][note-10] | Every nonreal root of a finite tree’s degree polynomial has modulus greater than one. | [Lean][proof-10] · [#10][pr-10] |
@@ -249,9 +249,6 @@ and cites the original source.
 [note-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/README.md
 [proof-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/Solution.lean
 [pr-84]: https://github.com/aliromman/math/pull/84
-[note-83]: https://github.com/aliromman/math/blob/6535acc2ce026ceca2da4646a5576e0d4be6884d/conjectures/EternalTreeDomination/README.md
-[proof-83]: https://github.com/aliromman/math/blob/6535acc2ce026ceca2da4646a5576e0d4be6884d/conjectures/EternalTreeDomination/Solution.lean
-[pr-83]: https://github.com/aliromman/math/pull/83
 [note-82]: https://github.com/aliromman/math/blob/343b309e91196185e049a454ee92a3c4b72105a0/conjectures/CampbellCoupons/README.md
 [proof-82]: https://github.com/aliromman/math/blob/343b309e91196185e049a454ee92a3c4b72105a0/conjectures/CampbellCoupons/Solution.lean
 [pr-82]: https://github.com/aliromman/math/pull/82
@@ -494,3 +491,6 @@ and cites the original source.
 [note-57]: conjectures/YangYergerZhouCube/README.md
 [proof-57]: conjectures/YangYergerZhouCube/Solution.lean
 [pr-57]: https://github.com/aliromman/math/pull/57
+[note-83]: conjectures/EternalTreeDomination/README.md
+[proof-83]: conjectures/EternalTreeDomination/Solution.lean
+[pr-83]: https://github.com/aliromman/math/pull/83
