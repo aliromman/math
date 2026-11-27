@@ -21,7 +21,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] (open draft) |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.2 on the start of the longest sumset interval][note-67] | With $k$ missing sums, every tie rule gives the same limiting mean left endpoint, $k/2+O(1)$. | [Lean][proof-67] · [#67][pr-67] (open draft) |
 | [Disproof of the pointwise bound in Sobolewski’s Conjecture 2 on monochromatic progressions in binary pattern sequences][note-27] | For every integer $j\ge5$, the binary pattern `1` followed by $j$ zeros gives a monochromatic arithmetic progression of at least $2^j$ terms where the predicted bound is below 17. | [Lean][proof-27] · [#27][pr-27] |
-| [Solution to Questions 4.1 and 4.2 of Eliahou, García-García, Marín-Aragón and Vigneron-Tenorio on Buchweitz sets][note-24] | A numerical semigroup has obstructions precisely at orders 2 and 4. Its excess counts at orders 2, 3, and 4 also disprove the proposed unimodality. | [Lean][proof-24] · [#24][pr-24] (open draft) |
+| [Solution to Questions 4.1 and 4.2 of Eliahou, García-García, Marín-Aragón and Vigneron-Tenorio on Buchweitz sets][note-24] | A numerical semigroup has obstructions precisely at orders 2 and 4. Its excess counts at orders 2, 3, and 4 also disprove the proposed unimodality. | [Lean][proof-24] · [#24][pr-24] |
 | [Disproof of Sun’s Conjecture 3.10(ii) on simultaneous distinct differences and products in a circular order][note-19] | Every circular order of four distinct positive numbers repeats a directed difference or adjacent product exactly when the middle two are the harmonic and arithmetic means of the extremes. | [Lean][proof-19] · [#19][pr-19] |
 | [Disproof of Sun’s Conjecture 3.3(ii) on distinct cyclic differences in finite abelian groups of odd order][note-18] | Remove any two elements from an abelian group of odd order $N\ge5$. Every circular ordering of the rest repeats a directed difference between neighbors. | [Lean][proof-18] · [#18][pr-18] |
 
@@ -386,9 +386,6 @@ and cites the original source.
 [note-23]: conjectures/TriangularSporadic/README.md
 [proof-23]: conjectures/TriangularSporadic/Solution.lean
 [pr-23]: https://github.com/aliromman/math/pull/23
-[note-24]: https://github.com/aliromman/math/blob/212750d415b40370dad8f0e2aa482fd071cf1bf6/conjectures/BuchweitzGapset/README.md
-[proof-24]: https://github.com/aliromman/math/blob/212750d415b40370dad8f0e2aa482fd071cf1bf6/conjectures/BuchweitzGapset/Solution.lean
-[pr-24]: https://github.com/aliromman/math/pull/24
 [note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
 [proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
 [pr-17]: https://github.com/aliromman/math/pull/17
@@ -494,3 +491,6 @@ and cites the original source.
 [note-86]: conjectures/MarkovNearestFour/README.md
 [proof-86]: conjectures/MarkovNearestFour/Solution.lean
 [pr-86]: https://github.com/aliromman/math/pull/86
+[note-24]: conjectures/BuchweitzGapset/README.md
+[proof-24]: conjectures/BuchweitzGapset/Solution.lean
+[pr-24]: https://github.com/aliromman/math/pull/24
