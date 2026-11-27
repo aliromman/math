@@ -38,3 +38,5 @@ python3 scripts/verify.py
 Fang proposed the length cutoff. Bukh and Saatashvili later studied the growth of the smallest possible maximum frequency. A search by conjecture number, title, witness and subsequence terminology found no earlier resolution of the length conjecture. AI researchers derived the construction, found the binary example, and wrote the Lean proof. [Bukh and Saatashvili, *Most frequent subsequences in a word*](https://arxiv.org/abs/2509.22619)
 
 Wenjie Fang, Maximal number of subword occurrences in a word, Conjecture 5.7, p. 236. [Publication](https://jexpmath.org/index.php/jem/article/view/Vol-1Issue-2Paper-2)
+
+Wenjie Fang, Maximal number of subword occurrences in a word, Conjecture 5.7, p. 236. [Publication](https://jexpmath.org/index.php/jem/article/download/Vol-1Issue-2Paper-2/Vol-1Issue-2Paper-2/64885#page=21)

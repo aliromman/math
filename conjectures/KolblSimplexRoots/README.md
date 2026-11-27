@@ -1,6 +1,6 @@
 # Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators
 
-Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest height of a root on the line $\operatorname{Re}z=-1/2$, in every positive dimension. Max Kölbl proved the bound through dimension nine and asked whether unimodality suffices in higher dimensions. [Kölbl, *Properties of Ehrhart Polynomials Whose Roots Lie on the Canonical Line*, Proposition 4 and Conjecture 3 (2025)](https://math.colgate.edu/~integers/z68/z68.pdf#page=10)
+Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest height of a root on the line $\operatorname{Re}z=-1/2$, in every positive dimension. Max Kölbl proved the bound through dimension nine and asked whether unimodality suffices in higher dimensions. [Kölbl, *Properties of Ehrhart Polynomials Whose Roots Lie on the Canonical Line*, Proposition 4 and Conjecture 3 (2025)](https://math.colgate.edu/~integers/z68/z68.pdf#page=12)
 
 A lattice polytope $P$ has vertices with integer coordinates. Its Ehrhart polynomial $E_P(n)$ counts the lattice points in the dilation $nP$. In dimension $d$, write its polynomial in the binomial basis as
 
