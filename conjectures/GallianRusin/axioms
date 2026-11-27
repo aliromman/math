@@ -1,1 +1,2 @@
 GallianRusin.polynomial_mul propext Classical.choice Quot.sound
+GallianRusin.solutionDie_iff_plays propext Classical.choice Quot.sound

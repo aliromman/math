@@ -17,4 +17,21 @@ def SolutionDie (m : ℕ) (P : ℤ[X]) : Prop :=
   Die m P ∧ ∃ others : List ℤ[X], others ≠ [] ∧ (∀ Q ∈ others, Die m Q) ∧
     P * others.prod = standard m ^ (others.length + 1)
 
+/-- The die `P` belongs to a game of exactly `k` dice with the standard sum frequencies. -/
+def Plays (m k : ℕ) (P : ℤ[X]) : Prop :=
+  Die m P ∧ ∃ others : List ℤ[X], others.length + 1 = k ∧ (∀ Q ∈ others, Die m Q) ∧
+    P * others.prod = standard m ^ k
+
+/-- A solution die occurs in a game with at least two dice. -/
+theorem solutionDie_iff_plays {m : ℕ} {P : ℤ[X]} :
+    SolutionDie m P ↔ ∃ k, 1 < k ∧ Plays m k P := by
+  constructor
+  · rintro ⟨h, others, nonempty, dice, product⟩
+    refine ⟨others.length + 1, ?_, h, others, rfl, dice, product⟩
+    exact Nat.succ_lt_succ (List.length_pos_iff.mpr nonempty)
+  · rintro ⟨_, size, h, others, rfl, dice, product⟩
+    refine ⟨h, others, ?_, dice, product⟩
+    rintro rfl
+    simp at size
+
 end GallianRusin
