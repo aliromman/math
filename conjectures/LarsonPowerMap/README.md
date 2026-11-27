@@ -1,8 +1,8 @@
-# An optimal power of a permutation changes just one cycle length
+# Solution to Larson’s Question 2 on optimal power maps of symmetric groups
 
 On eight letters, raising every permutation to the 421st power leaves all permutations fixed except the eight-cycles. It pairs each eight-cycle with its fifth power. This gives $40{,}320-5{,}040/2=37{,}800$ components. No other exponent from 2 through 839 gives as many.
 
-Matt Larson asked which exponent $2\le a<\exp(S_n)$ maximizes the number $N(a,S_n)$ of components in the graph that joins each permutation $g$ to $g^a$. The rule below gives **every maximizing exponent for every $n$**. It uses at most $n(n+1)/2$ trial pairs and requires no enumeration of permutations. [Larson, *Power maps in finite groups*, Integers 19 (2019), A58, Question 2](https://math.colgate.edu/~integers/t58/t58.pdf)
+Matt Larson asked which exponent $2\le a<\exp(S_n)$ maximizes the number $N(a,S_n)$ of components in the graph that joins each permutation $g$ to $g^a$. The rule below gives **every maximizing exponent for every $n$**. It uses at most $n(n+1)/2$ trial pairs and requires no enumeration of permutations. [Larson, *Power maps in finite groups*, Integers 19 (2019), A58, Question 2](https://math.colgate.edu/~integers/t58/t58.pdf#page=14)
 
 ## The rule
 
@@ -33,8 +33,8 @@ Exactly $n!/k$ permutations contain this long cycle. For an odd prime $k$, inver
 `Statement.lean` defines components of the actual power graph and the original maximum predicate. In `Solution.lean`, `exact_answer` proves that the arithmetic rule gives exactly all maximizers. The theorem `eight` checks both numbers in the example. From the repository root, run
 
 ```sh
-lake build conjectures.LarsonPowerMap.Solution
-lake env leanchecker conjectures.LarsonPowerMap.Solution
+# Run at the merge commit for PR #45.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 Larson's Lemma 1 counts components using periodic points. The new argument compares the losses from different cycle lengths and determines which exponents maximize the count. OpenAI Codex agents developed the argument, wrote the formal proof and performed an independent audit. A separate computation checked every exponent for $3\le n\le16$. Searches for Larson's question, extremal power maps and later papers citing his work found no previous solution to Question 2.
