@@ -156,7 +156,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] (open draft) |
 | [Disproof of Hwang’s conjecture on adding cells to a triangular permutation board][note-44] | Four added cells in an eight-by-eight board allow 589 permutations against the proposed 584. The construction extends to $d$ added cells in every even order $2d\ge8$. | [Lean][proof-44] · [#44][pr-44] (open draft) |
 | [Infinite four-letter counterexamples to Brauner et al.’s Conjecture 4.1 on balanced words][note-49] | **Extension.** Four letters give infinitely many periodic balanced words outside binary congruence expansion. Restivo and Rosone gave the earlier period-16 example. | [Lean][proof-49] · [#49][pr-49] |
-| [Solution to Larson’s Question 2 on optimal power maps of symmetric groups][note-45] | Every power map maximizing the number of weak components on $S_n$ acts nontrivially on cycles of just one length. A finite rule lists every maximizing exponent. | [Lean][proof-45] · [#45][pr-45] (open draft) |
+| [Solution to Larson’s Question 2 on optimal power maps of symmetric groups][note-45] | Every power map maximizing the number of weak components on $S_n$ acts nontrivially on cycles of just one length. A finite rule lists every maximizing exponent. | [Lean][proof-45] · [#45][pr-45] |
 | [Disproof of Presutti and Stromquist’s Conjecture 10.1 on the proposed packing-density optimizer for 2413][note-84] | A weighted permutation gives density at least $0.1047363701829$, above the proposed $0.1047360252660$. A corner argument rules out every choice of the two bubble sizes. | [Lean][proof-84] · [#84][pr-84] (open draft) |
 
 ## Verification
@@ -304,9 +304,6 @@ and cites the original source.
 [note-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/README.md
 [proof-47]: https://github.com/aliromman/math/blob/1f814897835080c1384c4e8f2eb1295fcd1b4c68/conjectures/BarequetRectangularPolyomino/Solution.lean
 [pr-47]: https://github.com/aliromman/math/pull/47
-[note-45]: https://github.com/aliromman/math/blob/36457744c38b567e557b4397f7e6b8f704383369/conjectures/LarsonPowerMap/README.md
-[proof-45]: https://github.com/aliromman/math/blob/36457744c38b567e557b4397f7e6b8f704383369/conjectures/LarsonPowerMap/Solution.lean
-[pr-45]: https://github.com/aliromman/math/pull/45
 [note-44]: https://github.com/aliromman/math/blob/04bf1ad39c9035057f282739773dc586e4a02ae7/conjectures/HwangPermanent/README.md
 [proof-44]: https://github.com/aliromman/math/blob/04bf1ad39c9035057f282739773dc586e4a02ae7/conjectures/HwangPermanent/Solution.lean
 [pr-44]: https://github.com/aliromman/math/pull/44
@@ -494,3 +491,6 @@ and cites the original source.
 [note-64]: conjectures/PolyominoPrimality/README.md
 [proof-64]: conjectures/PolyominoPrimality/Solution.lean
 [pr-64]: https://github.com/aliromman/math/pull/64
+[note-45]: conjectures/LarsonPowerMap/README.md
+[proof-45]: conjectures/LarsonPowerMap/Solution.lean
+[pr-45]: https://github.com/aliromman/math/pull/45
