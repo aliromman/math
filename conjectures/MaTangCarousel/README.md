@@ -1,4 +1,4 @@
-# Three transitive groups beat the proposed six-cycle bound
+# Disproof of Ma and Tang’s Conjecture 5.2 on even-cycle homomorphism densities in tournaments
 
 Split a tournament into three equal groups. Order the players from first to last within each group, with the earlier player beating the later one. Every player in the first group beats every player in the second, the second beats the third, and the third beats the first.
 
@@ -8,7 +8,7 @@ $$
 \frac{5}{486}=0.0102880658\ldots
 $$
 
-Ma and Tang’s Conjecture 5.2 predicts at least $20215/1889568=0.0106982125\ldots$ at this triangle density. The gap $775/1889568$ persists as the order tends to infinity. [Original paper, Conjecture 5.2](https://arxiv.org/pdf/2011.14142)
+Ma and Tang’s Conjecture 5.2 predicts at least $20215/1889568=0.0106982125\ldots$ at this triangle density. The gap $775/1889568$ persists as the order tends to infinity. [Original paper, Conjecture 5.2](https://arxiv.org/pdf/2011.14142#page=15)
 
 ## Counting the cycles
 
@@ -50,7 +50,6 @@ This gives a counterexample already at the smallest cycle length in Conjecture 5
 Jie Ma and Tianyun Tang published the conjecture in *Combinatorial Theory* 2(3), article 6 (2022). They had already shown that their proposed bound is attained by their carousel construction. Searches for Conjecture 5.2, the six-cycle minimization problem, the three-part construction and its exact density found no prior counterexample. OpenAI Codex found the example and formalized the proof. [Journal article](https://escholarship.org/uc/item/2rm2x1nm) · [Conjecture](Statement.lean) · [Finite counts](Orders.lean) · [Carousel constant](Constant.lean) · [Disproof and limit](Solution.lean)
 
 ~~~sh
-lake exe cache get
-lake build conjectures.MaTangCarousel.Solution
-lake env leanchecker conjectures.MaTangCarousel.Solution
+# Run at the merge commit for PR #89.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ~~~

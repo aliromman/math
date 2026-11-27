@@ -1,0 +1,5 @@
+MissingSumFringes.admissible_exists propext Classical.choice Quot.sound
+MissingSumFringes.first_location propext Classical.choice Quot.sound
+MissingSumFringes.first_resolution propext Classical.choice Quot.sound
+MissingSumFringes.longest_location propext Classical.choice Quot.sound
+MissingSumFringes.longest_resolution propext Classical.choice Quot.sound
