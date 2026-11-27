@@ -1,4 +1,4 @@
-# The probability that a parking spot is lucky
+# Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions
 
 For $n$ cars and $n$ spots, let $G(n,j)$ count the parking functions for which the car in spot $j$ asked for that spot. Put $r=n+1-j$. For every $1\le j\le n$,
 
@@ -21,7 +21,7 @@ $$
 \frac{j+1}{2j}-\frac{e^{-j}}{2j}\sum_{h=0}^{j-2}\frac{j^h}{h!}.
 $$
 
-The first spot is always lucky. The formula also answers the authors' Question 15 about the next-to-last spot. Completing the binomial sum leaves just its last three terms and gives $4G(n,n-1)=(n+1)^{n-1}+(5n-1)(n-1)^{n-2}$ for $n\ge2$. The first four counts are $3,11,74,708$. [Original paper, pp. 10–11](https://cs.uwaterloo.ca/journals/JIS/VOL29/Hadaway/had3.pdf) · [OEIS A374533](https://oeis.org/A374533)
+The first spot is always lucky. The formula also answers the authors' Question 15 about the next-to-last spot. Completing the binomial sum leaves just its last three terms and gives $4G(n,n-1)=(n+1)^{n-1}+(5n-1)(n-1)^{n-2}$ for $n\ge2$. The first four counts are $3,11,74,708$. [Original paper, pp. 10–11](https://cs.uwaterloo.ca/journals/JIS/VOL29/Hadaway/had3.pdf#page=10) · [OEIS A374533](https://oeis.org/A374533)
 
 ## Proof
 
@@ -42,12 +42,11 @@ Extend this sum to $0\le l\le n$. Each fixed $i$ term cancels. After the $i$ lef
 
 ## Sources and verification
 
-Steve Butler, Kimberly Hadaway, Victoria Lenius, Preston Martens and Marshall Moats, “Lucky Cars and Lucky Spots in Parking Functions,” *Journal of Integer Sequences* **29** (2026), Article 26.1.1. The preprint labels this claim Conjecture 3.1. The authors use Pollak's rotation argument for lucky cars. Searches by title, conjecture, authors, statistic, and OEIS entries found no prior formula for every lucky spot. OpenAI Codex derived the count and formalized the proof. [Published article](https://cs.uwaterloo.ca/journals/JIS/VOL29/Hadaway/had3.pdf) · [Preprint](https://arxiv.org/abs/2412.07873) · [Lucky-spot count table](https://oeis.org/A374756)
+Steve Butler, Kimberly Hadaway, Victoria Lenius, Preston Martens and Marshall Moats, “Lucky Cars and Lucky Spots in Parking Functions,” *Journal of Integer Sequences* **29** (2026), Article 26.1.1. The preprint labels this claim Conjecture 3.1. The authors use Pollak's rotation argument for lucky cars. Searches by title, conjecture, authors, statistic, and OEIS entries found no prior formula for every lucky spot. OpenAI Codex derived the count and formalized the proof. [Published article](https://cs.uwaterloo.ca/journals/JIS/VOL29/Hadaway/had3.pdf#page=10) · [Preprint](https://arxiv.org/abs/2412.07873) · [Lucky-spot count table](https://oeis.org/A374756)
 
 Lean checks the original parking process, the finite count, the polynomial degree, and the probability limit. [Statement](Statement.lean) · [Final theorems](Solution.lean)
 
 ```sh
-lake exe cache get
-lake build conjectures.LuckySpots.Solution
-lake env leanchecker conjectures.LuckySpots.Solution
+# Run at the merge commit for PR #80.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
