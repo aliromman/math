@@ -43,14 +43,14 @@ periodicity threshold in Problem 1. [Erdős, Purdy and Straus, p. 52](https://us
 | PR | Status | What the work establishes |
 | --- | --- | --- |
 | [6](../conjectures/StanleyTreeCSF/README.md) | Partial | A two-site branch-exchange argument and a search of 111,144 trees in a three-site family. Stanley’s question for all trees remains open. |
-| [9](../conjectures/ErdosSzekeres/README.md) | Partial | No 33-point set without a convex heptagon can contain the order type of one specified 27-point set or of any of the 496 two-point deletions of the classical 32-point construction. The general 33-point question remains open. |
+| [9](../conjectures/ErdosSzekeres/README.md) | Partial | No 33-point set in general position without a convex heptagon can contain the order type of one specified 27-point set or of any of the 496 two-point deletions of the classical 32-point construction. The general 33-point question remains open. |
 | [36](../conjectures/GatzweilerKrattenthalerShift/README.md) | Extension | CoPEER had already disproved Gatzweiler–Krattenthaler Conjecture 4. This PR gives an infinite family using four factors. [Earlier counterexample](https://github.com/qqliu/CoPEER/blob/105523fdaf018b62eaf2883347724dfe79935611/mathematics/discoveries/entries/number-theory/fake-gaussian-positivity-counterexample.md) |
 | [48](../conjectures/BaranyFurediCover/README.md) | Extension | Bárány and Füredi’s own polygon already exceeds their proposed covering bound. This PR proves the sharp ratio of 3/2 for lattice squares and constructs counterexamples of arbitrarily large lattice diameter. [Original paper, §3](https://www.renyi.hu/~barany/cikkek/84.pdf#page=5) |
 | [49](../conjectures/BraunerBalancedWords/README.md) | Extension and disproof of a finiteness prediction | Restivo and Rosone printed a period-16 word. This PR shows that it lies outside the permitted expansions, so it already violates the later four-letter bound of 15. The PR also gives an infinite family with unbounded least periods. [Restivo and Rosone, p. 144](https://www.numdam.org/item/10.1051/ita/2011116.pdf#page=14) · [Brauner et al., abstract and Conjecture 4.1](https://orbi.uliege.be/bitstream/2268/230109/1/Balanced%20words%20Dec%202018.pdf) |
 
 PR 49 explains the difference between **80 and 81**. One earlier word suffices
-to violate the numerical bound. It leaves open whether any fixed alphabet has
-only finitely many exceptions. Counting the PR for its disproof of that
+to violate the numerical bound. It leaves open whether there are only
+finitely many four-letter exceptions. Counting the PR for its disproof of that
 published prediction gives **81 primary conjectural resolutions**. It still
 contributes only one PR to the 99. Including every conjecture in the three
 extension rows gives 83 distinct primary conjectures with a proof or
@@ -74,8 +74,7 @@ part (b) of the fence-rowmotion conjecture. The count credits that part
 once, including its later equivalent formulations. [Fence rowmotion](../conjectures/FenceRowmotion/README.md)
 
 PR 22 answers the generalized-permutohedron part of Defant’s Question 6.1.
-Its nestohedron
-question remains separate. PR 24 answers two numbered questions with one
+The nestohedron question remains separate. PR 24 answers two numbered questions with one
 gapset. PR 75 refutes Straus’s Conjecture 1 and the one-shared-side case of
 Conjecture 2 with one quadrilateral. PR 80 proves Conjecture 13 and also
 answers Question 15. Each contributes one primary entry. Conversely, Liu’s
