@@ -1,4 +1,4 @@
-# Counting cycles that avoid 3412 in one-line form and 213 in cycle form
+# Proof of Archer et al.’s conjecture on cycles avoiding 3412 in one-line form and 213 in cycle form
 
 Let $a_n$ count the permutations of $1,\ldots,n$ that consist of a single cycle, avoid 3412 in one-line notation, and avoid 213 when the cycle is written starting with 1. Their first seven counts are $1,1,2,5,13,36,104$. Their generating function is
 
@@ -7,7 +7,7 @@ F(x)=\sum_{n\ge2}a_n x^{n-1}
 =\frac{2x}{1-2x+\sqrt{1-4x+4x^3}}.
 $$
 
-Archer, Borsh, Bridges, Graves and Jeske conjectured this radical and associated it with OEIS A087626. They did not specify the index shift. With the usual exponent $n$, the full series is $\sum_{n\ge1}a_nx^n=x(1+F(x))$. [Original conjecture, §7, p. 91](https://ajc.maths.uq.edu.au/pdf/94/ajc_v94_p050.pdf) · [OEIS A087626](https://oeis.org/A087626)
+Archer, Borsh, Bridges, Graves and Jeske conjectured this radical and associated it with OEIS A087626. They did not specify the index shift. With the usual exponent $n$, the full series is $\sum_{n\ge1}a_nx^n=x(1+F(x))$. [Original conjecture, §7, p. 91](https://ajc.maths.uq.edu.au/pdf/94/ajc_v94_p050.pdf#page=42) · [OEIS A087626](https://oeis.org/A087626)
 
 ## Proof
 
@@ -40,9 +40,8 @@ Pan proved the other two conjectures in the same paragraph of the original paper
 The formal statement starts from all permutations of the cycle suffix. It reads the successors directly from the cycle. The proof checks the split in both directions, counts its disjoint products, and solves the resulting formal power series equations over the rationals. The theorem `ArcherCycles.ordinary_series` records the index shift.
 
 ```sh
-lake exe cache get
-lake build conjectures.ArcherCycles.Solution
-lake env leanchecker conjectures.ArcherCycles.Solution
+# Run at the merge commit for PR #46.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The axiom check for `ArcherCycles.resolved` permits `propext`, `Classical.choice`, and `Quot.sound`. OpenAI Codex derived the proof and wrote the Lean formalization.
