@@ -14,7 +14,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] (open draft) |
+| [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] |
 | [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
 | [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] |
 | [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
@@ -220,9 +220,6 @@ and cites the original source.
 [note-53]: conjectures/HaslegraveBipartite/README.md
 [proof-53]: conjectures/HaslegraveBipartite/Solution.lean
 [pr-53]: https://github.com/aliromman/math/pull/53
-[note-52]: https://github.com/aliromman/math/blob/53cf96dac7d827d3500752546741f5bdf732afd5/conjectures/AscoliDihedralDominance/README.md
-[proof-52]: https://github.com/aliromman/math/blob/53cf96dac7d827d3500752546741f5bdf732afd5/conjectures/AscoliDihedralDominance/Solution.lean
-[pr-52]: https://github.com/aliromman/math/pull/52
 [note-50]: conjectures/SelectiveCompound/README.md
 [proof-50]: conjectures/SelectiveCompound/Solution.lean
 [pr-50]: https://github.com/aliromman/math/pull/50
@@ -494,3 +491,6 @@ and cites the original source.
 [note-84]: conjectures/PresuttiStromquist/README.md
 [proof-84]: conjectures/PresuttiStromquist/Solution.lean
 [pr-84]: https://github.com/aliromman/math/pull/84
+[note-52]: conjectures/AscoliDihedralDominance/README.md
+[proof-52]: conjectures/AscoliDihedralDominance/Solution.lean
+[pr-52]: https://github.com/aliromman/math/pull/52
