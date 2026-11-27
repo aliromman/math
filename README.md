@@ -64,7 +64,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Disproof of Aichholzer et al.’s wheel-set conjecture for perfect matchings with prescribed crossings][note-68] | At ten crossings, twelve convex points admit 252 perfect matchings, a set with one interior point admits 248, and the regular wheel admits 176. | [Lean][proof-68] · [#68][pr-68] |
 | [Solution to the Barequet–Madras–Peters problem on nonsquare minimum-area totally concave polyominoes][note-47] | Minimum-area $t$-fold totally concave polyominoes can have nonsquare bounding boxes for every $t\ge4$. | [Lean][proof-47] · [#47][pr-47] (open draft) |
-| [Proof of Edelsbrunner, Garber and Saghafian’s Conjecture C on maximal planar hypertriangulations][note-87] | At every level, every maximal hypertriangulation has the same maximum number of triangles. Any smaller one admits a single insertion that splits a triangle into three. | [Lean][proof-87] · [#87][pr-87] (open draft) |
+| [Proof of Edelsbrunner, Garber and Saghafian’s Conjecture C on maximal planar hypertriangulations][note-87] | At every level, every maximal hypertriangulation has the same maximum number of triangles. Any smaller one admits a single insertion that splits a triangle into three. | [Lean][proof-87] · [#87][pr-87] |
 | [Solution to Erdős–Purdy–Straus Problem 3.4 on the sharp area ratio for a largest inscribed triangle with a boundary side.][note-81] | The sharp ratio of the area of a convex body to that of its triangle is $\pi-4\arctan(t)-t^2=2.3075689464\ldots$, where $(1+t)^4=2(1+t^2)$ and $0<t<1/4$. | [Lean][proof-81] · [#81][pr-81] |
 | [Disproof of Liu’s Conjecture 1 on the median refinement of the Erdős–Mordell inequality][note-15] | At an interior point of a thin obtuse triangle, the sum of vertex distances divided by the sum of side distances is below $45.84$. The proposed lower bound exceeds $45.89$. | [Lean][proof-15] · [#15][pr-15] |
 | [Proof of Liu’s Conjecture 1 on Walker’s inequality with side-power weights][note-2] | The cyclic inequality with side weight $a^k$ holds on every nonobtuse triangle for all real $k\le4$. | [Lean][proof-2] · [#2][pr-2] |
@@ -204,9 +204,6 @@ and cites the original source.
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
-[note-87]: https://github.com/aliromman/math/blob/0f355ebd2e25857548fed268390f4ed6703a8a51/conjectures/Hypertriangulations/README.md
-[proof-87]: https://github.com/aliromman/math/blob/0f355ebd2e25857548fed268390f4ed6703a8a51/conjectures/Hypertriangulations/Solution.lean
-[pr-87]: https://github.com/aliromman/math/pull/87
 [note-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/README.md
 [proof-84]: https://github.com/aliromman/math/blob/005529e656d15bee60f2b20db39b6da8adddf8fd/conjectures/PresuttiStromquist/Solution.lean
 [pr-84]: https://github.com/aliromman/math/pull/84
@@ -494,3 +491,6 @@ and cites the original source.
 [note-76]: conjectures/WangLocalDensity/README.md
 [proof-76]: conjectures/WangLocalDensity/Solution.lean
 [pr-76]: https://github.com/aliromman/math/pull/76
+[note-87]: conjectures/Hypertriangulations/README.md
+[proof-87]: conjectures/Hypertriangulations/Solution.lean
+[pr-87]: https://github.com/aliromman/math/pull/87
