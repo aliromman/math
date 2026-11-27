@@ -1,4 +1,4 @@
-# A cyclotomic factor can occur with unequal residue counts
+# Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials
 
 The cyclotomic factor predicted by Chidambaram, Mináč, Nguyen and Tân can occur even when the exponents have unequal residue counts. An odd-index example is
 
@@ -39,7 +39,8 @@ The authors already give the full factorization of $F_{2p}$ in Example 2.5. In p
 Run these commands from the repository root with the pinned toolchain.
 
 ```sh
-lake exe cache get
-lake build conjectures.FeketeEquidistribution.Solution
-lake env leanchecker conjectures.FeketeEquidistribution.Solution
+# Run at the merge commit for PR #88.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Chidambaram, Mináč, Nguyen and Tân, “Fekete polynomials of principal Dirichlet characters,” Journal of Experimental Mathematics 1 (2025), 51–93, Conjecture 2.11. Proposition 2.9 proves sufficiency. Their Example 2.5 implies an even counterexample. This proof includes an odd squarefree counterexample. [Publication](https://arxiv.org/pdf/2307.14896)
