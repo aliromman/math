@@ -1,0 +1,5 @@
+McCuneSeatJumps.exact_probability propext Classical.choice Quot.sound
+McCuneSeatJumps.maximum_jump propext Classical.choice Quot.sound
+McCuneSeatJumps.positive_iff propext Classical.choice Quot.sound
+McCuneSeatJumps.positive_reversals propext Classical.choice Quot.sound
+McCuneSeatJumps.resolution propext Classical.choice Quot.sound

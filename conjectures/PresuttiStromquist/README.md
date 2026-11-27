@@ -1,4 +1,4 @@
-# A higher packing density for the permutation pattern 2413
+# Disproof of Presutti and Stromquist’s Conjecture 10.1 on the proposed packing-density optimizer for 2413
 
 Four entries form 2413 when their ranks from left to right are $2,4,1,3$. A weighted permutation of 544 points gives the lower bound
 
@@ -50,7 +50,6 @@ Cathleen Battiste Presutti and Walter Stromquist published the conjecture in *Pe
 The proof uses the Borel probability experiment directly. [Statement and recursive construction](Statement.lean) · [First variation](Density.lean) · [Constancy on the support](Variation.lean) · [Corner obstruction](Block.lean) · [Final theorem](Solution.lean)
 
 ~~~sh
-lake exe cache get
-lake build conjectures.PresuttiStromquist.Solution
-lake env leanchecker conjectures.PresuttiStromquist.Solution
+# Run at the merge commit for PR #84.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ~~~
