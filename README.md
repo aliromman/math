@@ -124,7 +124,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Disproof of the Aliste-Prieto–de Mier–Zamora conjecture on the smallest trees with the same restricted U-polynomial][note-7] | Two 32-vertex trees agree through five cuts. The predicted minimum fails at every depth $m\ge5$, and the minimum is at most $3(m+1)^2$ for $m\ge1$. | [Bound][bound-7] · [Threshold][proof-7] · [#7][pr-7] |
 | [Disproof of the Brosch–Puges double-caterpillar conjecture on tree profiles (Conjecture 1)][note-34] | For every $k\ge7$, joining three caterpillars beats the proposed two-caterpillar boundary. The cases $k=4,5,6$ remain open. | [Lean][proof-34] · [#34][pr-34] |
-| [Proof of Brown and Cameron’s Conjecture 4.4 on the maximum modulus of independence roots of even-order trees][note-25] | For a tree on $2k$ vertices with $k\ge3$, every root of the independence polynomial has modulus at most $2^{k-2}+k+1$. | [Lean][proof-25] · [#25][pr-25] (open draft) |
+| [Proof of Brown and Cameron’s Conjecture 4.4 on the maximum modulus of independence roots of even-order trees][note-25] | For a tree on $2k$ vertices with $k\ge3$, every root of the independence polynomial has modulus at most $2^{k-2}+k+1$. | [Lean][proof-25] · [#25][pr-25] |
 | [Proof of Chauve, Ponty and Wallner’s Conjecture 4.5 on extremal duplication–loss histories][note-43] | For every terminal count of at least two, caterpillars uniquely maximize and balanced trees uniquely minimize ordered, unranked histories at fixed leaf count, up to swaps of children. | [Lean][proof-43] · [#43][pr-43] (open draft) |
 | [Disproof of Clow and van Bommel’s Conjecture 8.2 on eternal distance domination in trees][note-83] | For every positive integer $t$, a tree needs $t$ guards at range three, even under repeated attacks. It needs $2t$ stationary guards at range one. | [Lean][proof-83] · [#83][pr-83] |
 | [Disproof of Dossou-Olory and Wagner’s conjecture on four-branch extremizers for the inducibility of the five-leaf tree A₅][note-31] | A root rotation increases the limiting density of the five-leaf tree in every proposed four-branch sequence. Its exact inducibility remains open. | [Lean][proof-31] · [#31][pr-31] |
@@ -383,9 +383,6 @@ and cites the original source.
 [note-20]: conjectures/EdgeCoverRootCount/README.md
 [proof-20]: conjectures/EdgeCoverRootCount/Solution.lean
 [pr-20]: https://github.com/aliromman/math/pull/20
-[note-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/README.md
-[proof-25]: https://github.com/aliromman/math/blob/62a8ea73c9cbff20832ea52cfa1556c63a2ad028/conjectures/BrownCameronEvenTrees/Solution.lean
-[pr-25]: https://github.com/aliromman/math/pull/25
 [note-13]: conjectures/WordPacking121/README.md
 [proof-13]: conjectures/WordPacking121/Proof.lean
 [pr-13]: https://github.com/aliromman/math/pull/13
@@ -494,3 +491,6 @@ and cites the original source.
 [note-55]: conjectures/KurzBanzhaf/README.md
 [proof-55]: conjectures/KurzBanzhaf/Solution.lean
 [pr-55]: https://github.com/aliromman/math/pull/55
+[note-25]: conjectures/BrownCameronEvenTrees/README.md
+[proof-25]: conjectures/BrownCameronEvenTrees/Solution.lean
+[pr-25]: https://github.com/aliromman/math/pull/25
