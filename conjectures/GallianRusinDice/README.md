@@ -1,4 +1,4 @@
-# Exactly 40 dice can replace a standard 105-sided die
+# Proof of Gallian and Rusin’s conjecture on the number of 105-sided solution dice
 
 Gallian and Rusin asked how many different 105-sided dice can occur in a game that has the same sum distribution as ordinary dice. There are exactly **40**. Every one can occur in a game of three dice. Allowing more dice introduces no other labeling.
 
@@ -29,11 +29,12 @@ For example, $(a,b,c)=(1,3,15)$ gives the ordinary die by mixed-radix notation. 
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.GallianRusinDice.Solution
-lake env leanchecker conjectures.GallianRusinDice.Solution
+# Run at the merge commit for PR #62.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-`Statement.lean` defines a solution die and the exact count. The other modules prove the multiplicity bound, extract the cyclotomic factors, check the finite list, and construct each three-dice game. The final theorems include the exact classification and the count. The kernel checks all finite certificates.
+`Statement.lean` states the exact count. The shared dice model and polynomial arithmetic are in [GallianRusin](../GallianRusin/). The other modules prove the multiplicity bound, extract the cyclotomic factors, check the finite list, and construct each three-dice game. The final theorems include the exact classification and the count. The kernel checks all finite certificates.
 
 Targeted searches for the 105-sided count, the original article, later work on dice relabeling, and public mathematical proof catalogues found the published two-dice classification and no earlier proof of the unrestricted count. AI developed the argument and Lean proofs. Gallian and Rusin introduced the cyclotomic method and the lower bound of 40.
+
+Joseph A. Gallian and David J. Rusin, Cyclotomic polynomials and nonstandard dice, unnumbered conjecture on exactly 40 solution dice of size 105, p. 259. [Publication](https://www.cs.umd.edu/users/gasarch/BLOGPAPERS/nonstandarddice.pdf#page=15)

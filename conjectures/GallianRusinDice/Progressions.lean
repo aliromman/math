@@ -4,7 +4,7 @@ public import conjectures.GallianRusinDice.Enumeration
 
 @[expose] public section
 namespace GallianRusinDice
-open Polynomial Finset
+open GallianRusin Polynomial Finset
 
 /-- A die on an arithmetic progression after subtracting one from its labels. -/
 noncomputable def progression (p step : ℕ) : ℤ[X] := ∑ j ∈ range p,X^(j*step)
