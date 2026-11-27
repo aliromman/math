@@ -13,7 +13,7 @@ merge status. Early work on PRs 1–9 has no comparable team usage total.
 | First | 10 | 35 min | 1,070,000 | 65,540,000 | 220,000 | 1,280,000 | 66,830,000 |
 | Second | 50 | 6 h 42 min | 9,970,000 | 887,170,000 | 3,220,000 | 13,190,000 | 900,360,000 |
 | Third | 30 | 3 h 32 min | 5,560,000 | 465,250,000 | 1,630,000 | 7,190,000 | 472,440,000 |
-| **Cumulative** | **90** | **10 h 49 min** | **16,600,000** | **1,417,960,000** | **5,070,000** | **21,670,000** | **1,439,620,000** |
+| **Research subtotal** | **90** | **10 h 49 min** | **16,600,000** | **1,417,960,000** | **5,070,000** | **21,670,000** | **1,439,620,000** |
 
 Each campaign counts the primary researcher and contributing agents once.
 Concurrent agents share the wall clock. The second campaign spanned 12 h
@@ -30,11 +30,24 @@ measure research. They exclude later maintenance and merging.
 
 ## Repository maintenance
 
-The review of the 100 original pull requests started on 26 November 2026 at 21:33 UTC. The snapshot below ends on 27 November 2026 at 03:13 UTC, during preparation of the final merge candidate. It includes the primary session and three independent reviewers. Each session contributes its own cumulative counters once. Wall time includes the waits for protected CI. The research totals above cover the three earlier campaigns. [PR #102 records the final full audit and the maintenance totals through its completion.](https://github.com/aliromman/math/pull/102)
+The review of the 100 original pull requests started on 26 November 2026 at
+21:33 UTC. The accounting cutoff is 27 November 2026 at 04:11 UTC, when the
+final GitHub audit passed on `48a7ea3031586a4d86e6190c38c4907b3e6df96a`.
+GitHub and a separate clean local checkout each built and replayed all 609 Lean
+modules. Each audit checked 13,468 declarations and confirmed 266 exact axiom
+expectations. [Final verification on GitHub](https://github.com/aliromman/math/actions/runs/45933034353/job/140289803494)
 
-| Wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 5 h 40 min | 2,800,000 | 312,200,000 | 860,000 | 3,660,000 | 315,860,000 |
+| Recorded work | Wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Review and merging | 6 h 38 min | 2,820,000 | 323,320,000 | 870,000 | 3,690,000 | 327,010,000 |
+| **Combined recorded work** | **17 h 27 min** | **19,420,000** | **1,741,270,000** | **5,940,000** | **25,360,000** | **1,766,630,000** |
+
+The combined row adds the review to the three research campaigns above. The
+review counts the primary session and each of the three reviewers once. Wall
+time includes waits for protected CI. The total excluding cache adds uncached
+input and output. The total including cache also adds cached input once.
+Totals use unrounded values, with time shown to the nearest minute and tokens
+to the nearest 10,000. [Accounting record in PR #102](https://github.com/aliromman/math/pull/102)
 
 ## Earlier work
 
