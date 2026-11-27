@@ -1,4 +1,4 @@
-# Three layered patterns have no layered maximizer
+# Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8
 
 The nine-letter word `111342222` contains **61** subsequences of type `11123`, `13222`, or `11322`. Every layered nine-letter word on the same four-letter alphabet contains at most **60**. The layered word `113322222` attains 60.
 
@@ -28,9 +28,8 @@ To check the layered bound by hand or by a short enumeration, choose which of th
 `Statement.lean` defines layering by cuts at strict rises. It states both published formulations. `Proof.lean` uses a separate enumeration. It prepends one letter at a time, proves that the list includes every layered word, and checks the counts in the Lean kernel. Run from the repository root.
 
 ```sh
-lake exe cache get
-lake build conjectures.LayeredWordPacking.Proof
-lake env leanchecker conjectures.LayeredWordPacking.Proof
+# Run at the merge commit for PR #17.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 OpenAI Codex found the pattern set and witness by a search over words with consecutive repeated letters. Codex wrote the proof and its Lean formalization.
