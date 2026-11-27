@@ -1,4 +1,4 @@
-# A second extremal set for restricted triple sums
+# Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups
 
 The eight nonzero squares modulo 17 form the set
 
@@ -35,9 +35,10 @@ Cavalcante's Theorem 1.1 addresses Bajnok's adjacent Conjecture 8. It assumes $m
 From the repository root, run the following commands.
 
 ```sh
-lake exe cache get
-lake build conjectures.BajnokRestrictedInverse.Solution
-lake env leanchecker conjectures.BajnokRestrictedInverse.Solution
+# Run at the merge commit for PR #28.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` gives the original conjecture for all finite abelian groups. `Solution.lean` proves its negation, classifies the extremizers at $(p,m,h)=(17,8,3)$ and checks their orbit sizes. The axiom guards on the disproof and classification permit propositional extensionality, classical choice and quotient soundness. OpenAI Codex found the connection, derived the classification and wrote the Lean proofs.
+
+Béla Bajnok, “Open Problems About Sumsets in Finite Abelian Groups: Minimum Sizes and Critical Numbers,” in Combinatorial and Additive Number Theory II (2017), 9–23, DOI 10.1007/978-3-319-68032-3_2. The author’s version arXiv:1512.03038v2 gives Conjecture 7 on p. 6. [Publication](https://arxiv.org/pdf/1512.03038v2#page=6)
