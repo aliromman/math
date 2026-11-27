@@ -29,7 +29,7 @@ def allTypes (A : Set ℂ) : Set (Multiset ℝ) := {m | ∃ a ∈ A, ∃ b ∈ A
 def RegularHeptagon (S : Finset ℂ) : Prop := ∃ c z ω : ℂ, z≠0 ∧ IsPrimitiveRoot ω 7 ∧
   S = univ.image fun k : Fin 7 => c + z*ω^k.val
 
-/-- Pálsson and Yu, Conjecture 10. -/
+/-- Palsson and Yu, Conjecture 10. -/
 def Conjecture : Prop := (∃ S : Finset ℂ, S.card=7 ∧ (triangleTypes S).card=4) ∧
   (∀ A : Set ℂ, (allTypes A).encard=4 → A.encard≤7) ∧
   ∀ S : Finset ℂ, (S.card=7 ∧ (triangleTypes S).card=4) ↔ RegularHeptagon S

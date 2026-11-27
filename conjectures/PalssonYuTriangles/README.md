@@ -1,8 +1,8 @@
-# Four triangle shapes force a regular heptagon
+# Proof of Palsson and Yu’s Conjecture 10 on planar point sets with four triangle congruence classes
 
 Seven is the largest number of points in the plane that determine exactly four triangle shapes. A set of seven attains this bound precisely when it is the vertex set of a regular heptagon.
 
-Eyvindur A. Pálsson and Edward Yu proved the corresponding result for three shapes and the regular hexagon. Their Conjecture 10 asks for the next case. A shape here means a congruence class. Reflections are allowed, scale matters, and three distinct collinear points also count. [Original paper, Conjecture 10](https://doi.org/10.37236/12360).
+Eyvindur A. Palsson and Edward Yu proved the corresponding result for three shapes and the regular hexagon. Their published Conjecture 10, numbered 4.1 in the preprint, asks for the next case. A shape here means a congruence class. Reflections are allowed, scale matters, and three distinct collinear points also count. [Original paper, Conjecture 10](https://doi.org/10.37236/12360).
 
 ## Proof
 
@@ -31,10 +31,12 @@ Finally, suppose there were eight points with at most four shapes. Deleting any 
 The Lean bound covers arbitrary subsets of the Euclidean plane, represented by complex numbers. An infinite set contains an eight-point subset. The search verifies each discarded pattern or relabeling inside the kernel, one predecessor row at a time. It requires no numerical coordinates. Reproduce the proof with the pinned Lean and Mathlib versions from the repository root.
 
 ```sh
-lake build conjectures.PalssonYuTriangles.Solution
-lake env leanchecker conjectures.PalssonYuTriangles.Solution
+# Run at the merge commit for PR #41.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` gives the original conjecture. `Solution.lean` proves `PalssonYu.resolution` and checks its axioms. An independent enumeration of labeled edge patterns and an independent audit of the geometry checked the classification.
 
-Erdős and Fishburn studied the analogous extremal question for distinct distances. Lan and Wei classified the seven-point sets that determine exactly four distances. Here the bound is on the number of congruence classes of triangles, with no assumption on the number of distances. Searches of the triangle paper, subsequent citations, and related distance classifications found no earlier proof of this conjecture. AI agents derived the argument, performed the enumerations, and wrote and audited the Lean proof. [Pálsson and Yu](https://arxiv.org/abs/2308.13107) · [Lan and Wei](https://doi.org/10.1134/S000143461303019X).
+Erdős and Fishburn studied the analogous extremal question for distinct distances. Lan and Wei classified the seven-point sets that determine exactly four distances. Here the bound is on the number of congruence classes of triangles, with no assumption on the number of distances. Searches of the triangle paper, subsequent citations, and related distance classifications found no earlier proof of this conjecture. AI agents derived the argument, performed the enumerations, and wrote and audited the Lean proof. [Palsson and Yu](https://arxiv.org/abs/2308.13107) · [Lan and Wei](https://doi.org/10.1134/S000143461303019X).
+
+Eyvindur A. Palsson and Edward Yu, On Optimal Point Sets Determining Distinct Triangles, Conjecture 10 in the journal article, Conjecture 4.1 in arXiv:2308.13107. [Publication](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v31i2p24/pdf/#page=17)
