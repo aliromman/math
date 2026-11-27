@@ -35,11 +35,8 @@ The statement uses positive side lengths and the three strict squared-side inequ
 Run these commands at the repository root.
 
 ```sh
-lake exe cache get Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Tactic.Linarith Mathlib.Tactic.Ring
-lake build
+lake exe cache get
 python3 scripts/verify.py
-lake env leanchecker conjectures.LiuWalkerTwo.Statement
-lake env leanchecker conjectures.LiuWalkerTwo.Solution
 ```
 
 Lean verifies the two scalar inequalities by expansion in $x-y\ge0$ and $y>0$. The axiom check for `LiuWalkerTwo.result` accepts `propext`, `Classical.choice`, and `Quot.sound`.

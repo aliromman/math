@@ -28,6 +28,14 @@ catalogue PR 26 and the two extensions in PRs 36 and 48. The third covered
 PRs 73–102. Revisions of a result within the same PR count once. These figures
 measure research. They exclude later maintenance and merging.
 
+## Repository maintenance
+
+The review of the 100 original pull requests started on 26 November 2026 at 21:33 UTC. The snapshot below ends on 27 November 2026 at 03:13 UTC, during preparation of the final merge candidate. It includes the primary session and three independent reviewers. Each session contributes its own cumulative counters once. Wall time includes the waits for protected CI. The research totals above cover the three earlier campaigns. [PR #102 records the final full audit and the maintenance totals through its completion.](https://github.com/aliromman/math/pull/102)
+
+| Wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 5 h 40 min | 2,800,000 | 312,200,000 | 860,000 | 3,660,000 | 315,860,000 |
+
 ## Earlier work
 
 PRs 1–4 and 7 document a tree-matching counterexample, three Walker

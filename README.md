@@ -1,12 +1,12 @@
 # Mathematical conjectures
 
-Proofs, counterexamples, and partial results on published mathematical conjectures. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 99 research notes on published mathematical questions. Of these, 97 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
-[Research ledger and cumulative statistics](research/ledger.md) · [Verification](#verification)
+[Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
 ## Results
 
-Each row links to the research note, its proof or search code, and the pull request. Open drafts link to a fixed revision. **Partial** marks an investigation with an open main question. **Extension** marks work that extends an earlier counterexample.
+Each row links to the research note, its proof or search code, and the pull request. Open drafts are marked beside their PR links and link to fixed revisions. **Partial** marks an investigation whose main question remains open. **Extension** marks a result that builds on an earlier counterexample.
 
 [Additive combinatorics](#additive-combinatorics) · [Algebra and number theory](#algebra-and-number-theory) · [Dice and games](#dice-and-games) · [Euclidean and discrete geometry](#euclidean-and-discrete-geometry) · [Graphs and tournaments](#graphs-and-tournaments) · [Matroids, polytopes and posets](#matroids-polytopes-and-posets) · [Probability and stochastic processes](#probability-and-stochastic-processes) · [Trees](#trees) · [Voting and apportionment](#voting-and-apportionment) · [Words and permutations](#words-and-permutations)
 
@@ -112,7 +112,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Disproof of Berend, Ernst, Kontorovich and Kumar’s Conjecture 5.2 as stated and proof of the corrected interior interval tiling][note-96] | A deterministic endpoint disproves the literal ordering. The closures of the nondegenerate interior intervals tile in lexicographic order for every even order of independence. | [Lean][proof-96] · [#96][pr-96] |
 | [Disproof of Campbell’s coupon-collection conjecture in “Games of chance with multiple objectives”][note-82] | In four draws the two probabilities are $3/8<4/9$. The reversal factor grows like $\sqrt{e k/(2\pi)}$ at the earliest square deadline. For fixed goals the proposed order eventually holds. | [Lean][proof-82] · [#82][pr-82] |
-| [Correction to the Aldous–Fill hitting-time heuristic for random cyclic adjacent transpositions (Example 7.22)][note-102] | The mean divided by $m!$ is $1+2/m+O(m^{-2})$, correcting the predicted coefficient of one. | [Lean][proof-102] · [#102][pr-102] (open draft) |
+| [Correction to the Aldous–Fill hitting-time heuristic for random cyclic adjacent transpositions (Example 7.22)][note-102] | For the cyclic lazy shuffle on $m$ cards, the mean time $\tau_m$ from a uniform deck to an independent uniform target satisfies $\tau_m/m! = 1+2/m+O(m^{-2})$. Aldous and Fill’s heuristic predicts $1$ as the coefficient of $1/m$. | [Lean][proof-102] · [#102][pr-102] |
 | [Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1][note-99] | The width is positive recurrent and its stationary tail has exact exponent $d(k-1)/(k-d)$. | [Lean][proof-99] · [#99][pr-99] |
 | [Proof of Khovanova and Wang’s Conjecture 7.1 on uniform final shadows in two-sided chip dispersion][note-100] | All $N-1$ positions of the final double gap have equal probability. | [Lean][proof-100] · [#100][pr-100] |
 | [Proof of the Nagaev–Chebotarev conjecture on the exact binomial–Poisson distance at mean one][note-79] | At every mean $0\le\lambda\le1$ and every positive sample size, the largest difference between the two cumulative distributions occurs at zero. | [Lean][proof-79] · [#79][pr-79] |
@@ -163,8 +163,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 ### Full verification
 
-Install Elan, then run the following commands from a clean checkout. The first
-command gets the build files for the pinned Mathlib release.
+Run these commands from the root of a clean checkout with Elan installed. [Elan installation][elan]
 
 ```sh
 lake exe cache get
@@ -173,31 +172,18 @@ python3 scripts/test_verify.py
 python3 scripts/test_selection.py
 ```
 
-Lake builds the research library with warnings as errors. The verifier calls the pinned
-`leanchecker` routine in a separate process for each module in the source tree. It checks
-that all required object files exist, replays private proof bodies, and
-traces the dependencies of every local declaration. Research proofs need
-theorem names so the compiler retains them for replay. The permitted axioms are `propext`, `Classical.choice`, and
-`Quot.sound`.
+The first command downloads cached build files for the pinned Mathlib release. The verifier builds the Lean library with warnings as errors and runs the pinned `leanchecker` routine in a separate process for each research module. It checks the required object files, replays private proof bodies, and traces the axiom dependencies of every local declaration. The last two commands test proof rejection and change selection.
 
 ### Scoped pull request checks
 
 On pull requests, CI compares the tested merge commit with its first parent. It rebuilds changed research modules and their transitive importers, replays their proofs, and checks the full axiom contract in each affected directory. Edits to documentation alone pass after the verifier checks whether research sources use the changed files. Changes to the toolchain, dependencies, or verifier require a full check. Select **Run workflow** in the Lean workflow to audit the entire revision. To reproduce a pull request check locally, run `python3 scripts/verify.py --base BASE --fetch-cache`, where `BASE` is the tested base commit.
 
-Each research directory with Lean sources has an `axioms` file. Each line
-gives a result's qualified theorem name followed by its exact transitive
-axioms, separated by spaces. A theorem with no axioms has only its name on
-the line. A line that starts with `statement` can register the definition
-of an open question. The research note identifies what the proof establishes
-and cites the original source.
+Each research directory with Lean sources has an `axioms` file. Each result entry gives the qualified theorem name and its exact transitive axioms. The permitted axioms are `propext`, `Classical.choice`, and `Quot.sound`. The marker `statement` registers the Lean definition of an open question. The research notes give the commands for their individual proofs and searches.
 
 © 2026 Ali Romman · [Apache License 2.0](LICENSE) · [Cite this project](CITATION.cff) · [All pull requests][pulls]
 
 [elan]: https://github.com/leanprover/elan
 [pulls]: https://github.com/aliromman/math/pulls?q=is%3Apr+sort%3Acreated-desc
-[note-102]: https://github.com/aliromman/math/blob/902ad98160373a53b2c2368e8a5fa85d62514625/conjectures/AldousFillAdjacent/README.md
-[proof-102]: https://github.com/aliromman/math/blob/902ad98160373a53b2c2368e8a5fa85d62514625/conjectures/AldousFillAdjacent/Solution.lean
-[pr-102]: https://github.com/aliromman/math/pull/102
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
@@ -494,3 +480,6 @@ and cites the original source.
 [note-52]: conjectures/AscoliDihedralDominance/README.md
 [proof-52]: conjectures/AscoliDihedralDominance/Solution.lean
 [pr-52]: https://github.com/aliromman/math/pull/52
+[note-102]: conjectures/AldousFillAdjacent/README.md
+[proof-102]: conjectures/AldousFillAdjacent/Solution.lean
+[pr-102]: https://github.com/aliromman/math/pull/102

@@ -41,10 +41,8 @@ The formal statement follows equation (7.3) and uses three positive real side le
 Run these commands from the repository root with the pinned Lean and Mathlib versions.
 
 ```sh
-lake exe cache get Mathlib.Analysis.SpecialFunctions.Pow.Real Mathlib.Tactic.Linarith Mathlib.Tactic.Ring
-lake build
+lake exe cache get
 python3 scripts/verify.py
-lake env leanchecker -v conjectures.LiuWalkerOne
 ```
 
 The build checks the axiom report for `LiuWalkerOne.result`. Its transitive axioms are `propext`, `Classical.choice`, and `Quot.sound`. The final command replays both project modules in the Lean kernel.
