@@ -140,7 +140,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Janson and Linusson’s conjecture on the probability of the Alabama paradox under Hamilton’s method][note-33] | With fixed rationally independent population shares, the limiting frequency of house sizes at which any state loses a seat is at most $1-2/e$. The source gives examples approaching the bound. | [Lean][proof-33] · [#33][pr-33] |
 | [Proof of Kurz and Napel’s conjecture on a voter with half the Banzhaf power of each other voter][note-55] | Every committee of at least six voters admits a voting rule that gives one voter half the normalized Banzhaf power of each other voter. | [Lean][proof-55] · [#55][pr-55] |
 | [Proof of Kurz’s Conjecture 8 on Banzhaf approximation in weighted voting games][note-58] | Every weighted rule on $n\ge2$ voters has normalized Banzhaf vector at $\ell_1$ distance at least $1/(18n)$ from $(2,\ldots,2,1)/(2n-1)$. | [Lean][proof-58] · [#58][pr-58] |
-| [Disproof of McCune’s Conjecture 1 on Alabama-paradox probabilities][note-37] | Exact probabilities for every positive house size and seat increase under the uniform three-state model refute both conjectured monotonicity rules. | [Lean][proof-37] · [#37][pr-37] (open draft) |
+| [Disproof of McCune’s Conjecture 1 on Alabama-paradox probabilities][note-37] | Exact probabilities for every positive house size and seat increase under the uniform three-state model refute both conjectured monotonicity rules. | [Lean][proof-37] · [#37][pr-37] |
 
 ### Words and permutations
 
@@ -307,9 +307,6 @@ and cites the original source.
 [note-40]: https://github.com/aliromman/math/blob/8c27e3ac6e8e418b3e09101b8958f3e113876acc/conjectures/SplitMatroidFlags/README.md
 [proof-40]: https://github.com/aliromman/math/blob/8c27e3ac6e8e418b3e09101b8958f3e113876acc/conjectures/SplitMatroidFlags/Solution.lean
 [pr-40]: https://github.com/aliromman/math/pull/40
-[note-37]: https://github.com/aliromman/math/blob/ecf6ea58b957a303058b44ab974fe2b297e8ea34/conjectures/McCuneSeatJumps/README.md
-[proof-37]: https://github.com/aliromman/math/blob/ecf6ea58b957a303058b44ab974fe2b297e8ea34/conjectures/McCuneSeatJumps/Solution.lean
-[pr-37]: https://github.com/aliromman/math/pull/37
 [note-36]: conjectures/GatzweilerKrattenthalerShift/README.md
 [proof-36]: conjectures/GatzweilerKrattenthalerShift/Solution.lean
 [pr-36]: https://github.com/aliromman/math/pull/36
@@ -494,3 +491,6 @@ and cites the original source.
 [note-33]: conjectures/AlabamaParadox/README.md
 [proof-33]: conjectures/AlabamaParadox/Solution.lean
 [pr-33]: https://github.com/aliromman/math/pull/33
+[note-37]: conjectures/McCuneSeatJumps/README.md
+[proof-37]: conjectures/McCuneSeatJumps/Solution.lean
+[pr-37]: https://github.com/aliromman/math/pull/37
