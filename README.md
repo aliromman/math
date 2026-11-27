@@ -153,7 +153,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] |
 | [Proof of Černý’s Conjecture 34 on counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Disproof of Fang’s Conjecture 5.7 on the length of a most frequent subsequence][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
-| [Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] (open draft) |
+| [Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] |
 | [Disproof of Hwang’s conjecture on adding cells to a triangular permutation board][note-44] | Four added cells in an eight-by-eight board allow 589 permutations against the proposed 584. The construction extends to $d$ added cells in every even order $2d\ge8$. | [Lean][proof-44] · [#44][pr-44] |
 | [Infinite four-letter counterexamples to Brauner et al.’s Conjecture 4.1 on balanced words][note-49] | **Extension.** Four letters give infinitely many periodic balanced words outside binary congruence expansion. Restivo and Rosone gave the earlier period-16 example. | [Lean][proof-49] · [#49][pr-49] |
 | [Solution to Larson’s Question 2 on optimal power maps of symmetric groups][note-45] | Every power map maximizing the number of weak components on $S_n$ acts nontrivially on cycles of just one length. A finite rule lists every maximizing exponent. | [Lean][proof-45] · [#45][pr-45] |
@@ -323,9 +323,6 @@ and cites the original source.
 [note-23]: conjectures/TriangularSporadic/README.md
 [proof-23]: conjectures/TriangularSporadic/Solution.lean
 [pr-23]: https://github.com/aliromman/math/pull/23
-[note-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/README.md
-[proof-17]: https://github.com/aliromman/math/blob/d6b5369d85db40748279807719772d11f2786792/conjectures/LayeredWordPacking/Proof.lean
-[pr-17]: https://github.com/aliromman/math/pull/17
 [note-10]: conjectures/GeorgeTreeDegreeRoots/README.md
 [proof-10]: conjectures/GeorgeTreeDegreeRoots/Solution.lean
 [pr-10]: https://github.com/aliromman/math/pull/10
@@ -494,3 +491,6 @@ and cites the original source.
 [note-28]: conjectures/BajnokRestrictedInverse/README.md
 [proof-28]: conjectures/BajnokRestrictedInverse/Solution.lean
 [pr-28]: https://github.com/aliromman/math/pull/28
+[note-17]: conjectures/LayeredWordPacking/README.md
+[proof-17]: conjectures/LayeredWordPacking/Proof.lean
+[pr-17]: https://github.com/aliromman/math/pull/17
