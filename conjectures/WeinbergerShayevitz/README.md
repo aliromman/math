@@ -1,4 +1,4 @@
-# Twelve bits beat the first surviving bit
+# Disproof of Weinberger and Shayevitz’s Conjecture 1 on greedy dictatorship for the binary erasure channel
 
 A helper sees a uniformly random binary message with each bit independently erased with probability $3/4$. The helper can send one bit to someone who must guess the entire message.
 
@@ -47,8 +47,10 @@ The formal proof computes the same fraction by tracking the difference between t
 Run these commands from the repository root.
 
 ```sh
-lake build conjectures.WeinbergerShayevitz.Solution
-lake env leanchecker conjectures.WeinbergerShayevitz.Solution
+# Run at the merge commit for PR #98.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 A search of papers citing or discussing the proposed greedy dictator, including work on guessing with side information, found the source analysis and no prior disproof. OpenAI Codex found the finite comparison and wrote the Lean proof.
+
+Weinberger and Shayevitz, “Guessing with a Bit of Help,” Entropy 22 (2020), 39, §6.1, Conjecture 1, DOI 10.3390/e22010039. A counterexample for the first guesswork moment at erasure probability three quarters disproves the universal claim. [Publication](https://www.mdpi.com/1099-4300/22/1/39)
