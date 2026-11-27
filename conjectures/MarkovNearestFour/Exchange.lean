@@ -6,6 +6,7 @@ public import Mathlib.Tactic.Ring
 
 @[expose] public section
 namespace MarkovNearestFour
+open MarkovFactorFour
 
 noncomputable def det (p : Vertex) : Poly := u^p.a*v^p.b
 

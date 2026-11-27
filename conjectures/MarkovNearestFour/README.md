@@ -1,4 +1,4 @@
-# The first lattice point above the Markov edge has coefficient four
+# Proof of the Evans–Veselov–Winn Location of 4 conjecture for Markov polynomials
 
 For every reduced slope $1<a<b$, the Markov numerator has coefficient exactly $4$ at the unique lattice point $(i,j)$ with $bi+aj=ab+1$. This proves the Location of 4 conjecture of Evans, Veselov and Winn. For example, at slope $13/18$ the point is $(8,7)$, since $18\cdot8+13\cdot7=235=13\cdot18+1$. [Original paper, Conjecture 8.4 and Example 8.5](https://amj.math.stonybrook.edu/Articles/250708-Winn/index.html)
 
@@ -28,10 +28,9 @@ At the target $h=0$ and the removed factor is $z^{ab}$. The coefficient of $z^{a
 
 Evans, Veselov and Winn proved the result at every Pell slope $n/(n+1)$ in Theorem 9.1. A later saturation theorem of Evans proves that every lattice point in the Newton polygon occurs with positive coefficient. Searches for the location conjecture, Markov sails, and formulas for their coefficients found no previous proof of this exact value for every reduced slope. OpenAI Codex developed the proof and Lean formalization. [Pell family, §9](https://amj.math.stonybrook.edu/Articles/250708-Winn/index.html) · [Saturation theorem](https://arxiv.org/abs/2604.18333)
 
-[Statement](Statement.lean) · [Euclidean induction](Walk.lean) · [Coefficient extraction](Coefficient.lean) · [Final theorem and axiom check](Solution.lean)
+[Statement](Statement.lean) · [Farey tree and numerator polynomials](../MarkovFactorFour/Farey.lean) · [Euclidean induction](Walk.lean) · [Coefficient extraction](Coefficient.lean) · [Final theorem and axiom check](Solution.lean)
 
 ~~~sh
-lake exe cache get
-lake build conjectures.MarkovNearestFour.Solution
-lake env leanchecker conjectures.MarkovNearestFour.Solution
+# Run at the merge commit for PR #86.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ~~~

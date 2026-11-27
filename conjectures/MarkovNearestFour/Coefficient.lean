@@ -7,6 +7,7 @@ public import Mathlib.Tactic.Linarith
 
 @[expose] public section
 namespace MarkovNearestFour
+open MarkovFactorFour
 open Finset PowerSeries
 
 private theorem first_coordinate_lt {a b x y : ℕ} (ha : 1<a) (hb : 1<b)

@@ -1,13 +1,13 @@
 module
 
 public import conjectures.MarkovNearestFour.Exchange
-public import conjectures.MarkovNearestFour.Farey
 public import conjectures.MarkovNearestFour.Leading
 public import Mathlib.Algebra.MvPolynomial.Eval
 public import Mathlib.Data.Fin.VecNotation
 
 @[expose] public section
 namespace MarkovNearestFour
+open MarkovFactorFour
 open PowerSeries
 
 noncomputable def specialize (a b : ℕ) : Poly →+* Series :=
