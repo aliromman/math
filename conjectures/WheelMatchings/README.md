@@ -1,4 +1,4 @@
-# Twelve points disprove the wheel maximum for perfect matchings
+# Disproof of Aichholzer et al.’s wheel-set conjecture for perfect matchings with prescribed crossings
 
 Twelve points on a parabola have **252** perfect matchings with exactly ten crossings. A regular 11-gon and its center have **176**. Moving a single parabola point into the convex hull gives **248**, still above the proposed maximum.
 
@@ -27,8 +27,8 @@ The convex matching counts follow from the classical Touchard–Riordan formula.
 From the repository root, run the following commands.
 
 ```sh
-lake exe cache get
-lake build conjectures.WheelMatchings.Solution
+# Run at the merge commit for PR #68.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 lake env leanexport conjectures.WheelMatchings.Solution -- WheelMatchings.resolution WheelMatchings.no_proposed_bound WheelMatchings.counterexample WheelMatchings.oneInterior_count WheelMatchings.exposed WheelMatchings.interior_coordinates WheelMatchings.mem_matchings WheelMatchings.matchings_nodup > wheel-proof.ndjson
 lake env leanchecker --from-export wheel-proof.ndjson
 ```
@@ -36,3 +36,5 @@ lake env leanchecker --from-export wheel-proof.ndjson
 The statement uses real planar coordinates and the determinant test for a proper intersection. The proof establishes the sign rules from those coordinates, then checks all counts in the kernel. The final theorems use only `propext`, `Classical.choice`, and `Quot.sound`.
 
 An independent AI reviewer checked the geometry against the paper and reproduced the three counts by a chord-opening recurrence, fixed-spoke enumeration, and direct integer determinants.
+
+Oswin Aichholzer, Ruy Fabila-Monroy, Philipp Kindermann, Irene Parada, Rosna Paul, Daniel Perz, Patrick Schnider and Birgit Vogtenhuber, Perfect Matchings with Crossings, unnumbered wheel-set conjecture after Theorem 7 at k = (n − 2)(n − 4)/8. [Publication](https://link.springer.com/article/10.1007/s00453-023-01147-7)
