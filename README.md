@@ -38,7 +38,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Karlovsky’s Conjecture 3 on attainment of the distinct-factor sum bound][note-78] | For $k=n-2\ge2$, equality occurs precisely at $F=k!y-1$ with $y>k$. The maximizing tuple is then unique up to order. | [Lean][proof-78] · [#78][pr-78] |
 | [Disproof of the Lucas-sequence assertion in Sun’s Conjecture 3.1 on successive root ratios][note-11] | For the Lucas sequence with parameters $(A,B)=(3,-26)$, the ratio $u_{n+1}^{1/(n+1)}/u_n^{1/n}$ increases from $n=5$ to $n=6$. | [Lean][proof-11] · [#11][pr-11] |
 | [Proof of Mabilat’s conjecture on irreducible golden-ratio quiddities][note-38] | The irreducible quiddities over $\mathbb Z\lambda$ are classified for $\lambda=2\cos(\pi/q)$ and every integer $q\ge4$, including the conjectured golden-ratio case. | [Lean][proof-38] · [#38][pr-38] |
-| [Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on zig-zag walks and prime polyomino ideals][note-64] | A thirteen-cell polyomino has no zigzag walk in the source’s sense, and its coordinate ring has zero divisors over every field. | [Lean][proof-64] · [#64][pr-64] (open draft) |
+| [Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on zig-zag walks and prime polyomino ideals][note-64] | A thirteen-cell polyomino has no zigzag walk in the source’s sense, and its coordinate ring has zero divisors over every field. | [Lean][proof-64] · [#64][pr-64] |
 | [Proof of Somu and Tran’s Conjecture 14 on sums of a practical number and two polygonal numbers][note-73] | For each order 4, 5, 6, 7, 8, and 10, every positive integer is a practical number plus two polygonal numbers of that order. | [Lean][proof-73] · [#73][pr-73] (open draft) |
 | [Disproof of Sun’s Conjecture 2.1 on a real-power extension of Mandl’s inequality using Panaitopol’s nine-prime example][note-16] | The first nine primes at exponent $1/2000$ violate the proposed real-power extension of Mandl’s inequality. | [Lean][proof-16] · [#16][pr-16] |
 | [Solution to Tan, Wu and Hon’s Problem 1 on the periodicity threshold for partitions avoiding a prescribed sum][note-71] | The period begins by $2(f-1)L$, where $L$ is the least nondivisor of the forbidden sum $f$. For every odd $f\ge3$, the last failure is exactly $2f-2$. | [Lean][proof-71] · [#71][pr-71] (open draft) |
@@ -271,9 +271,6 @@ and cites the original source.
 [note-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/README.md
 [proof-65]: https://github.com/aliromman/math/blob/f53bc59a80ac5378dfc30907749277920d12a41f/conjectures/GallianRusinPrimeSquare/Solution.lean
 [pr-65]: https://github.com/aliromman/math/pull/65
-[note-64]: https://github.com/aliromman/math/blob/9514cdb7177bb8d780fef92be74d27455afad07a/conjectures/PolyominoPrimality/README.md
-[proof-64]: https://github.com/aliromman/math/blob/9514cdb7177bb8d780fef92be74d27455afad07a/conjectures/PolyominoPrimality/Solution.lean
-[pr-64]: https://github.com/aliromman/math/pull/64
 [note-63]: https://github.com/aliromman/math/blob/6792709c95e3525758cb4c8cba06635ec3fc9705/conjectures/GallianRusinGame/README.md
 [proof-63]: https://github.com/aliromman/math/blob/6792709c95e3525758cb4c8cba06635ec3fc9705/conjectures/GallianRusinGame/Solution.lean
 [pr-63]: https://github.com/aliromman/math/pull/63
@@ -494,3 +491,6 @@ and cites the original source.
 [note-91]: conjectures/SavchenkoDiameter/README.md
 [proof-91]: conjectures/SavchenkoDiameter/Solution.lean
 [pr-91]: https://github.com/aliromman/math/pull/91
+[note-64]: conjectures/PolyominoPrimality/README.md
+[proof-64]: conjectures/PolyominoPrimality/Solution.lean
+[pr-64]: https://github.com/aliromman/math/pull/64
