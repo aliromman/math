@@ -1,4 +1,4 @@
-# A numerical semigroup with Buchweitz set $\{2,4\}$
+# Solution to Questions 4.1 and 4.2 of Eliahou, García-García, Marín-Aragón and Vigneron-Tenorio on Buchweitz sets
 
 Let $G$ consist of the integers from 1 through 35 and the six gaps $42,46,65,66,70,71$. Its complement in the nonnegative integers is a numerical semigroup. Its least positive element is 36, so the sum of two positive elements exceeds the largest gap, 71.
 
@@ -21,7 +21,8 @@ A 2024 presentation by Marín-Aragón restated the interval question for gapsets
 A UFMT project register also lists a November 2025 presentation on computational tests of the Buchweitz condition. The register gives its title. We could not inspect its proceedings contribution. [UFMT project register](https://sistemas.ufmt.br/sgpp/Publico/Detalhe/15300)
 
 ```sh
-lake exe cache get
-lake build conjectures.BuchweitzGapset.Solution
-lake env leanchecker conjectures.BuchweitzGapset.Solution
+# Run at the merge commit for PR #24.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
+
+Shalom Eliahou, Juan Ignacio García-García, Daniel Marín-Aragón and Alberto Vigneron-Tenorio, “The Buchweitz Set of a Numerical Semigroup,” Bulletin of the Brazilian Mathematical Society, New Series 54 (2023), article 4, Questions 4.1 and 4.2, DOI 10.1007/s00574-022-00322-8. [Publication](https://link.springer.com/article/10.1007/s00574-022-00322-8)
