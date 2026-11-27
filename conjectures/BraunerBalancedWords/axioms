@@ -1,0 +1,4 @@
+BraunerBalancedWords.infinitely_many_exceptions propext Classical.choice Quot.sound
+BraunerBalancedWords.least_period propext Classical.choice Quot.sound
+BraunerBalancedWords.resolution propext Classical.choice Quot.sound
+BraunerBalancedWords.unbounded propext Classical.choice Quot.sound

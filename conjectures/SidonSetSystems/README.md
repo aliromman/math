@@ -1,4 +1,4 @@
-# Almost all shapes fit in one Sidon set system
+# Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems
 
 For every fixed $k\ge 3$, the largest Sidon system of $k$-element subsets of $\{1,\ldots,n\}$ has size
 
@@ -29,8 +29,8 @@ Wötzel announced a stronger result concerning arbitrary choices of translations
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.SidonSetSystems.Solution
+# Run at the merge commit for PR #61.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 `Statement.lean` defines the extremal function and the conjecture. `Solution.lean` proves the limit, and `ErrorTerm.lean` gives the quantitative error. Both theorems check their transitive axioms. AI agents developed the construction, the mathematical proof and its Lean formalization.
