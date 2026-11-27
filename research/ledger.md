@@ -1,20 +1,97 @@
 # Research ledger
 
-Three research campaigns on 25–26 November 2026 recorded 90 distinct
-conjectures as resolved at their draft verification cutoffs. The registers
-below link to the revisions and checks used for that count. The project
-catalogue and individual pull requests give the current mathematical and
-merge status. Early work on PRs 1–9 has no comparable team usage total.
+Three research campaigns on 25–26 November 2026 registered 90 mathematical
+PRs at their draft verification cutoffs. The catalogue contains 99
+mathematical PRs through PR 102. The historical registers below give the
+revisions and checks for the original 90. [Result catalogue](../README.md#results)
+
+## What the 99 mathematical PRs settled
+
+Counting one primary target per PR and listing the three catalogue extensions
+separately gives **80 distinct conjectures settled, 44 proved and 36
+disproved**. Another 13 PRs answer published questions or problems. One
+corrects a heuristic. The 97 Lean-verified result notes include the three
+extensions. The other two notes report partial investigations.
+
+| Primary contribution | Before the campaigns | First | Second | Third | All PRs |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Conjecture proved | 3 | 2 | 26 | 13 | 44 |
+| Conjecture disproved | 2 | 7 | 14 | 13 | 36 |
+| Other published question or problem answered | 0 | 1 | 9 | 3 | 13 |
+| Published heuristic corrected | 0 | 0 | 0 | 1 | 1 |
+| Extension of an earlier counterexample | 0 | 0 | 3 | 0 | 3 |
+| Partial investigation | 2 | 0 | 0 | 0 | 2 |
+| **Mathematical PRs** | **7** | **10** | **52** | **30** | **99** |
+| **Of these, in the historical registers** | **0** | **10** | **50** | **30** | **90** |
+
+The nine outside the registers are five earlier resolutions (PRs 1–4 and 7),
+two partial investigations (6 and 9), and two extensions (36 and 48).
+The 90 registered entries comprise 75 primary conjectures, 13 other question
+or problem entries, the balanced-word extension (49), and the correction to
+the Aldous–Fill hitting-time heuristic in Example 7.22 (102).
+[Aldous and Fill, Example 7.22](https://www.stat.berkeley.edu/~aldous/RWG/Book_Ralph/Ch7.S2.html)
+
+The 13 question or problem entries are PRs 12, 22, 24, 30, 40, 45, 47, 50,
+53, 56, 81, 90, and 93. For example, PR 81 determines the sharp area ratio
+asked for in Erdős–Purdy–Straus Problem 3.4. PR 71 counts among the 44
+proofs because Tan, Wu and Hon explicitly conjectured the order of the
+periodicity threshold in Problem 1. [Erdős, Purdy and Straus, p. 52](https://users.renyi.hu/~p_erdos/1982-09.pdf#page=8)
+· [Tan, Wu and Hon, §5, p. 1403](https://doi.org/10.1016/j.disc.2016.09.034)
+
+### Partial results and extensions
+
+| PR | Status | What the work establishes |
+| --- | --- | --- |
+| [6](../conjectures/StanleyTreeCSF/README.md) | Partial | A two-site branch-exchange argument and a search of 111,144 trees in a three-site family. Stanley’s question for all trees remains open. |
+| [9](../conjectures/ErdosSzekeres/README.md) | Partial | No 33-point set without a convex heptagon can contain the order type of one specified 27-point set or of any of the 496 two-point deletions of the classical 32-point construction. The general 33-point question remains open. |
+| [36](../conjectures/GatzweilerKrattenthalerShift/README.md) | Extension | CoPEER had already disproved Gatzweiler–Krattenthaler Conjecture 4. This PR gives an infinite family using four factors. [Earlier counterexample](https://github.com/qqliu/CoPEER/blob/105523fdaf018b62eaf2883347724dfe79935611/mathematics/discoveries/entries/number-theory/fake-gaussian-positivity-counterexample.md) |
+| [48](../conjectures/BaranyFurediCover/README.md) | Extension | Bárány and Füredi’s own polygon already exceeds their proposed covering bound. This PR proves the sharp ratio of 3/2 for lattice squares and constructs counterexamples of arbitrarily large lattice diameter. [Original paper, §3](https://www.renyi.hu/~barany/cikkek/84.pdf#page=5) |
+| [49](../conjectures/BraunerBalancedWords/README.md) | Extension and disproof of a finiteness prediction | Restivo and Rosone printed a period-16 word. This PR shows that it lies outside the permitted expansions, so it already violates the later four-letter bound of 15. The PR also gives an infinite family with unbounded least periods. [Restivo and Rosone, p. 144](https://www.numdam.org/item/10.1051/ita/2011116.pdf#page=14) · [Brauner et al., abstract and Conjecture 4.1](https://orbi.uliege.be/bitstream/2268/230109/1/Balanced%20words%20Dec%202018.pdf) |
+
+PR 49 explains the difference between **80 and 81**. One earlier word suffices
+to violate the numerical bound. It leaves open whether any fixed alphabet has
+only finitely many exceptions. Counting the PR for its disproof of that
+published prediction gives **81 primary conjectural resolutions**. It still
+contributes only one PR to the 99. Including every conjecture in the three
+extension rows gives 83 distinct primary conjectures with a proof or
+counterexample in the collection.
+
+### Credit and counting conventions
+
+The review found **no PR devoted solely to formalizing an earlier complete
+proof of its primary target**. The records establish which statements the
+repository proves. The number of worldwide first proofs or disproofs remains
+unverified. Several entries use earlier work directly.
+
+- In PR 16, Panaitopol’s nine-prime example already implies that Sun’s conjecture fails for small positive exponents. The PR gives an explicit exponent of 1/2000 and an exact certificate. [Panaitopol, p. 54](https://nntdm.net/papers/nntdm-05/NNTDM-05-2-52-54.pdf#page=3) · [Result](../conjectures/SunPrimePowers/README.md)
+- Published examples or counts also supply part of the obstruction in PRs 7, 22, 28, and 68. The respective contributions include a quadratic tree-size bound, a transfer of Fano-plane counts to Narayana sums, a classification of the extremal sets modulo 17, and an exact comparison with the wheel. [Restricted trees](../conjectures/RestrictedUMinimum/README.md) · [Narayana sums](../conjectures/DefantNarayana/README.md) · [Restricted sumsets](../conjectures/BajnokRestrictedInverse/README.md) · [Wheel matchings](../conjectures/WheelMatchings/README.md)
+- In PR 76, Wang’s path example already contradicts the universal reading. The PR adds a nonpath example and proves that every maximizer extends to one containing a leaf. In PR 83, path formulas of Cox, Meger and Messinger already give a counterexample. The PR constructs trees with an arbitrarily large gap. In PR 88, the authors’ own factorization gives an even-index counterexample. The PR supplies an odd squarefree one. [Wang](../conjectures/WangLocalDensity/README.md) · [Tree domination](../conjectures/EternalTreeDomination/README.md) · [Fekete polynomials](../conjectures/FeketeEquidistribution/README.md)
+- An earlier assertion can lack a proof. In PR 13, Burstein and Mansour asserted the packing value. The journal paper with Hästö left the upper bound open for larger alphabets. PR 13 proves it. In PR 61, Wötzel withdrew an attempted Sidon-system proof. The PR proves the extremal asymptotic. [Packing density](../conjectures/WordPacking121/README.md) · [Wötzel’s withdrawal](https://arxiv.org/abs/2211.14011) · [Sidon systems](../conjectures/SidonSetSystems/README.md)
+- Some proofs use a known identity, special case, or construction. PR 70 uses Ulas’s quadratic identity to prove positivity. In PR 79, Adell, Anoz and Lekuona had established the small-mean formula and implied the mean-one limit. The PR proves the exact mean-one formula for every sample size. PR 90 credits Bellec and Fritz and Will Sawin for the digit construction and proves that no atomless die attains the upper bound. [Stern polynomials](../conjectures/UlasStern/README.md) · [Poisson approximation](../conjectures/PoissonApproximation/README.md) · [Dice](../conjectures/BellecFritzDice/README.md)
+
+One counterexample settles a universal assertion. Thus PR 51 disproves
+part (b) of the fence-rowmotion conjecture. The count credits that part
+once, including its later equivalent formulations. [Fence rowmotion](../conjectures/FenceRowmotion/README.md)
+
+PR 22 answers the generalized-permutohedron part of Defant’s Question 6.1.
+Its nestohedron
+question remains separate. PR 24 answers two numbered questions with one
+gapset. PR 75 refutes Straus’s Conjecture 1 and the one-shared-side case of
+Conjecture 2 with one quadrilateral. PR 80 proves Conjecture 13 and also
+answers Question 15. Each contributes one primary entry. Conversely, Liu’s
+three Walker inequalities in PRs 2–4 are separately stated conjectures and
+count three times. [Defant](../conjectures/DefantNarayana/README.md) · [Buchweitz sets](../conjectures/BuchweitzGapset/README.md) · [Straus](../conjectures/StrausBoundaryPolygon/README.md) · [Lucky spots](../conjectures/LuckySpots/README.md) · [Liu, equations 7.3–7.5](https://www.aimspress.com/fileOther/PDF/Math/math-05-06-428.pdf#page=15)
 
 ## Time and token consumption
 
-| Campaign | Recorded results | Working wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| Campaign | Registered PRs | Working wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | First | 10 | 35 min | 1,070,000 | 65,540,000 | 220,000 | 1,280,000 | 66,830,000 |
 | Second | 50 | 6 h 42 min | 9,970,000 | 887,170,000 | 3,220,000 | 13,190,000 | 900,360,000 |
 | Third | 30 | 3 h 32 min | 5,560,000 | 465,250,000 | 1,630,000 | 7,190,000 | 472,440,000 |
 | **Research subtotal** | **90** | **10 h 49 min** | **16,600,000** | **1,417,960,000** | **5,070,000** | **21,670,000** | **1,439,620,000** |
 
+Early work on PRs 1–9 has no comparable team usage total.
 Each campaign counts the primary researcher and contributing agents once.
 Concurrent agents share the wall clock. The second campaign spanned 12 h
 15 min including a service pause of 5 h 32 min. The working clock ends at
