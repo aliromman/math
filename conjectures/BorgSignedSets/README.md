@@ -82,10 +82,20 @@ three coordinates in one class. The binary construction above attains it.
 Borg proved the conjecture for support families compressed toward one
 coordinate and for uniform support families that already have the
 Erdős–Ko–Rado property. His later work covers sufficiently large alphabets.
-A search by the conjecture, citing publications, signed sets and equivalent
-word formulations found these special cases. [2007 paper](https://www.combinatorics.org/ojs/index.php/eljc/article/view/v14i1r41) ·
+[2007 paper](https://www.combinatorics.org/ojs/index.php/eljc/article/view/v14i1r41) ·
 [2009 restatement](https://doi.org/10.1016/j.disc.2008.09.039) ·
 [2013 paper, Theorem 2.4](https://www.sciencedirect.com/science/article/pii/S0012365X13002033)
+
+The bound on the size of an intersecting family also follows from two
+earlier results. Borg reduced it to a weighted star bound on a hereditary
+family. The weights in his reduction are nonnegative and decrease under
+inclusion. Proposition 5.3 of Chang, Liu and Liu gives the required bound
+for these weights. The orbit argument above proves the bound directly and
+determines exactly when a maximum family can fail to be a star. A search
+of papers citing Borg and of the equivalent signed-word formulations found
+no earlier proof of this general equality criterion.
+[Borg, Theorem 4.2 and Lemma 4.3](https://staff.um.edu.mt/peter.borg/publications/conjectures%20gen.pdf#page=6) ·
+[Chang, Liu and Liu, Proposition 5.3](https://arxiv.org/html/2609.19123v1#S5)
 
 [Statement.lean](Statement.lean) states both clauses.
 [Solution.lean](Solution.lean) proves them in Lean, including an actual maximizing
