@@ -1,6 +1,6 @@
-# A leafless subtree maximizes local density
+# Disproof of the universal reading of Wang’s Conjecture 20 on leaves in local-density maximizers
 
-Join two three-leaf stars by a path with nine internal vertices. In this 17-vertex tree, the middle vertex alone has the greatest possible local subtree density, **31/52**. It has degree two. Wang’s Example 18 already implies a leafless maximizer in a path, where every proper subtree ties. The double broom disproves Conjecture 20 in the nonpath setting of the paper’s computational evidence through 15 vertices. [Original conjecture and Example 18](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i1p60/pdf/)
+Join two three-leaf stars by a path with nine internal vertices. In this 17-vertex tree, the middle vertex alone has the greatest possible local subtree density, **31/52**. It has degree two. Wang’s Example 18 already implies a leafless maximizer in a path, where every proper subtree ties. The double broom disproves the universal reading of Conjecture 20 in the nonpath setting of the paper’s computational evidence through 15 vertices. [Original conjecture and Example 18](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v33i1p60/pdf/#page=19)
 
 For a proper nonempty subtree $S$, choose a subtree $U$ that contains $S$ uniformly from all such subtrees. Wang’s local density is
 
@@ -46,7 +46,6 @@ Ruoyu Wang, *Extrema of Local Mean and Local Density in a Tree*, Electronic Jour
 The Lean statement uses finite simple trees and connected induced vertex sets. The proof generates all 275 nonempty subtrees of the example. It verifies that the family contains all singletons and is closed under adding any neighbor. Checking these two properties certifies that the enumeration is exhaustive. The proof computes the exact maxima by ordinary kernel reduction. OpenAI Codex developed the argument and the Lean formalization. [Statement](Statement.lean) · [Classification and disproof](Solution.lean)
 
 ```sh
-lake exe cache get
-lake build conjectures.WangLocalDensity.Solution
-lake env leanchecker conjectures.WangLocalDensity.Solution
+# Run at the merge commit for PR #76.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
