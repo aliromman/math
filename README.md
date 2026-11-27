@@ -137,7 +137,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Proof of Janson and Linusson’s conjecture on the probability of the Alabama paradox under Hamilton’s method][note-33] | With fixed rationally independent population shares, the limiting frequency of house sizes at which any state loses a seat is at most $1-2/e$. The source gives examples approaching the bound. | [Lean][proof-33] · [#33][pr-33] (open draft) |
+| [Proof of Janson and Linusson’s conjecture on the probability of the Alabama paradox under Hamilton’s method][note-33] | With fixed rationally independent population shares, the limiting frequency of house sizes at which any state loses a seat is at most $1-2/e$. The source gives examples approaching the bound. | [Lean][proof-33] · [#33][pr-33] |
 | [Proof of Kurz and Napel’s conjecture on a voter with half the Banzhaf power of each other voter][note-55] | Every committee of at least six voters admits a voting rule that gives one voter half the normalized Banzhaf power of each other voter. | [Lean][proof-55] · [#55][pr-55] |
 | [Proof of Kurz’s Conjecture 8 on Banzhaf approximation in weighted voting games][note-58] | Every weighted rule on $n\ge2$ voters has normalized Banzhaf vector at $\ell_1$ distance at least $1/(18n)$ from $(2,\ldots,2,1)/(2n-1)$. | [Lean][proof-58] · [#58][pr-58] |
 | [Disproof of McCune’s Conjecture 1 on Alabama-paradox probabilities][note-37] | Exact probabilities for every positive house size and seat increase under the uniform three-state model refute both conjectured monotonicity rules. | [Lean][proof-37] · [#37][pr-37] (open draft) |
@@ -319,9 +319,6 @@ and cites the original source.
 [note-34]: conjectures/BroschPugesTreeProfile/README.md
 [proof-34]: conjectures/BroschPugesTreeProfile/Solution.lean
 [pr-34]: https://github.com/aliromman/math/pull/34
-[note-33]: https://github.com/aliromman/math/blob/0c3c2604835ad02ba6bee87646d0fb5204bad3ef/conjectures/AlabamaParadox/README.md
-[proof-33]: https://github.com/aliromman/math/blob/0c3c2604835ad02ba6bee87646d0fb5204bad3ef/conjectures/AlabamaParadox/Solution.lean
-[pr-33]: https://github.com/aliromman/math/pull/33
 [note-32]: conjectures/HurKimFairDice/README.md
 [proof-32]: conjectures/HurKimFairDice/Solution.lean
 [pr-32]: https://github.com/aliromman/math/pull/32
@@ -494,3 +491,6 @@ and cites the original source.
 [note-88]: conjectures/FeketeEquidistribution/README.md
 [proof-88]: conjectures/FeketeEquidistribution/Solution.lean
 [pr-88]: https://github.com/aliromman/math/pull/88
+[note-33]: conjectures/AlabamaParadox/README.md
+[proof-33]: conjectures/AlabamaParadox/Solution.lean
+[pr-33]: https://github.com/aliromman/math/pull/33
