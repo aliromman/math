@@ -125,6 +125,16 @@ input and output. The total including cache also adds cached input once.
 Totals use unrounded values, with time shown to the nearest minute and tokens
 to the nearest 10,000. [Accounting record in PR #102](https://github.com/aliromman/math/pull/102)
 
+## Numbered Erdős problem, 27 November 2026
+
+The proof of the asymptotic question in Problem 708 adds one conjecture to the 99-note catalogue through PR 102. A lower sieve for randomly retained prime divisors gives the sharp leading coefficient 2 for all shifts. The separate pointwise bound remains open. Attempts on Problems 273 and 881 produced partial constructions and are excluded from the result count. [Proof and prior work](../conjectures/ErdosSuranyi708/README.md) · [Draft PR #120](https://github.com/aliromman/math/pull/120)
+
+| Investigation | Wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Erdős–Surányi #708 | 3 h 43 min | 3,860,000 | 303,210,000 | 1,720,000 | 5,580,000 | 308,780,000 |
+
+This measurement runs from 16:55 UTC through independent verification of the publication revision at 20:38 UTC. It includes the primary researcher and four contributing agents. Cached input is counted once, and output includes reasoning. The PR records the later cutoff at the hosted check. Across this investigation and the three research campaigns in the earlier table, the recorded PR count is 91.
+
 ## Earlier work
 
 PRs 1–4 and 7 document a tree-matching counterexample, three Walker
