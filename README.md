@@ -15,7 +15,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] (open draft) |
-| [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] (open draft) |
+| [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
 | [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] (open draft) |
 | [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] (open draft) |
@@ -311,9 +311,6 @@ and cites the original source.
 [note-27]: conjectures/SobolewskiPatternBound/README.md
 [proof-27]: conjectures/SobolewskiPatternBound/Solution.lean
 [pr-27]: https://github.com/aliromman/math/pull/27
-[note-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/README.md
-[proof-28]: https://github.com/aliromman/math/blob/1978df3cbab28d706239fd31351e15c0d03657c3/conjectures/BajnokRestrictedInverse/Solution.lean
-[pr-28]: https://github.com/aliromman/math/pull/28
 [note-20]: conjectures/EdgeCoverRootCount/README.md
 [proof-20]: conjectures/EdgeCoverRootCount/Solution.lean
 [pr-20]: https://github.com/aliromman/math/pull/20
@@ -494,3 +491,6 @@ and cites the original source.
 [note-59]: conjectures/CFPLogDensity/README.md
 [proof-59]: conjectures/CFPLogDensity/Solution.lean
 [pr-59]: https://github.com/aliromman/math/pull/59
+[note-28]: conjectures/BajnokRestrictedInverse/README.md
+[proof-28]: conjectures/BajnokRestrictedInverse/Solution.lean
+[pr-28]: https://github.com/aliromman/math/pull/28
