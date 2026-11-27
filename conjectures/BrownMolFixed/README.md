@@ -1,6 +1,6 @@
-# Node reliability can cross the diagonal arbitrarily many times
+# Disproof of Brown and Mol’s conjecture on uniqueness of node-reliability fixed points in graphs with two or more cut vertices
 
-Keep each vertex of a graph independently with probability $p$. Write $R_G(p)$ for the probability that the surviving vertices form a nonempty connected graph. Brown and Mol proved that if a connected graph has at least two cut vertices, then $R_G(p)=p$ at least once in $(0,1)$. They conjectured uniqueness for every graph with at least two cut vertices. For every integer $t$, we construct such a graph with at least $t$ distinct interior fixed points. [*The shape of node reliability*, §4, immediately after Corollary 4.2](https://arxiv.org/pdf/1703.10573)
+Keep each vertex of a graph independently with probability $p$. Write $R_G(p)$ for the probability that the surviving vertices form a nonempty connected graph. Brown and Mol proved that if a connected graph has at least two cut vertices, then $R_G(p)=p$ at least once in $(0,1)$. They conjectured uniqueness for every graph with at least two cut vertices. For every integer $t$, we construct such a graph with at least $t$ distinct interior fixed points. [*The shape of node reliability*, §4, immediately after Corollary 4.2](https://arxiv.org/pdf/1703.10573#page=16)
 
 ## A counterexample on 36 vertices
 
@@ -41,9 +41,8 @@ Brown and Mol also found graphs without cut vertices that have two interior fixe
 Run these commands from the repository root. The theorem `three` gives the three intervals. Theorem `resolution` refutes uniqueness, and `unbounded_fixed_points` gives the family.
 
 ```sh
-lake exe cache get
-lake build conjectures.BrownMolFixed.Solution
-lake env leanchecker conjectures.BrownMolFixed.Solution
+# Run at the merge commit for PR #101.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 OpenAI Codex found the example and the family and wrote the mathematical and Lean proofs.
