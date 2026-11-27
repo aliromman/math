@@ -91,7 +91,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of Ma and Tang’s Conjecture 5.2 on even-cycle homomorphism densities in tournaments][note-89] | Three equal transitive groups oriented in a cycle have triangle density $1/9$ and limiting six-cycle density $5/486$, below the proposed minimum by $775/1889568$. | [Lean][proof-89] · [#89][pr-89] |
 | [Proof of Pirzada, Naikoo and Chishti’s Conjecture 2.1 on bipartite score sets][note-60] | Every nonempty finite set of positive integers is the full set of scores of an oriented bipartite graph. | [Lean][proof-60] · [#60][pr-60] |
 | [Disproof of Savchenko’s conjecture on minimum cycle counts in tournaments of bounded diameter][note-91] | Moving one vertex within a 22-vertex tournament of diameter eight lowers the proposed minimum of 68 directed four-cycles to 67. At diameter ten a move lowers 44 five-cycles to 42. | [Lean][proof-91] · [#91][pr-91] |
-| [Proof of Savchenko’s conjecture on the minimum number of directed six-cycles in a regular tournament][note-95] | Among all regular tournaments of every odd order, the circular tournament minimizes simple directed six-cycles. A seven-vertex determinant inequality gives a quantitative gap. | [Lean][proof-95] · [#95][pr-95] (open draft) |
+| [Proof of Savchenko’s conjecture on the minimum number of directed six-cycles in a regular tournament][note-95] | Among all regular tournaments of every odd order, the circular tournament minimizes simple directed six-cycles. A seven-vertex determinant inequality gives a quantitative gap. | [Lean][proof-95] · [#95][pr-95] |
 | [Proof of Yang, Yerger and Zhou’s Conjecture 2 on pebbling weights for pendant hypercubes][note-57] | Reciprocal distance gives a valid pebbling weight at a pendant root attached to a hypercube of every dimension $m\ge2$. | [Lean][proof-57] · [#57][pr-57] |
 
 ### Matroids, polytopes and posets
@@ -204,9 +204,6 @@ and cites the original source.
 [note-97]: conjectures/TengelyPartition/README.md
 [proof-97]: conjectures/TengelyPartition/Solution.lean
 [pr-97]: https://github.com/aliromman/math/pull/97
-[note-95]: https://github.com/aliromman/math/blob/b43e4073bf4efbcd8ebb4dd5b5cad14aedeb1719/conjectures/SavchenkoSix/README.md
-[proof-95]: https://github.com/aliromman/math/blob/b43e4073bf4efbcd8ebb4dd5b5cad14aedeb1719/conjectures/SavchenkoSix/Solution.lean
-[pr-95]: https://github.com/aliromman/math/pull/95
 [note-87]: https://github.com/aliromman/math/blob/0f355ebd2e25857548fed268390f4ed6703a8a51/conjectures/Hypertriangulations/README.md
 [proof-87]: https://github.com/aliromman/math/blob/0f355ebd2e25857548fed268390f4ed6703a8a51/conjectures/Hypertriangulations/Solution.lean
 [pr-87]: https://github.com/aliromman/math/pull/87
@@ -494,3 +491,6 @@ and cites the original source.
 [note-89]: conjectures/MaTangCarousel/README.md
 [proof-89]: conjectures/MaTangCarousel/Solution.lean
 [pr-89]: https://github.com/aliromman/math/pull/89
+[note-95]: conjectures/SavchenkoSix/README.md
+[proof-95]: conjectures/SavchenkoSix/Solution.lean
+[pr-95]: https://github.com/aliromman/math/pull/95
