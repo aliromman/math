@@ -115,7 +115,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Correction to the Aldous–Fill hitting-time heuristic for random cyclic adjacent transpositions (Example 7.22)][note-102] | The mean divided by $m!$ is $1+2/m+O(m^{-2})$, correcting the predicted coefficient of one. | [Lean][proof-102] · [#102][pr-102] (open draft) |
 | [Proof of the Jacob–Beer–Henze–Hartenstein positive-recurrence conjecture for Matrix event graph width when k > d > 1][note-99] | The width is positive recurrent and its stationary tail has exact exponent $d(k-1)/(k-d)$. | [Lean][proof-99] · [#99][pr-99] (open draft) |
 | [Proof of Khovanova and Wang’s Conjecture 7.1 on uniform final shadows in two-sided chip dispersion][note-100] | All $N-1$ positions of the final double gap have equal probability. | [Lean][proof-100] · [#100][pr-100] |
-| [Proof of the Nagaev–Chebotarev conjecture on the exact binomial–Poisson distance at mean one][note-79] | At every mean $0\le\lambda\le1$ and every positive sample size, the largest difference between the two cumulative distributions occurs at zero. | [Lean][proof-79] · [#79][pr-79] (open draft) |
+| [Proof of the Nagaev–Chebotarev conjecture on the exact binomial–Poisson distance at mean one][note-79] | At every mean $0\le\lambda\le1$ and every positive sample size, the largest difference between the two cumulative distributions occurs at zero. | [Lean][proof-79] · [#79][pr-79] |
 | [Disproof of Weinberger and Shayevitz’s Conjecture 1 on greedy dictatorship for the binary erasure channel][note-98] | A twelve-bit majority beats the first surviving bit for every message length at least twelve. | [Lean][proof-98] · [#98][pr-98] (open draft) |
 
 ### Trees
@@ -237,9 +237,6 @@ and cites the original source.
 [note-80]: https://github.com/aliromman/math/blob/630f442eaca158f78541a2850870e88e55f34a10/conjectures/LuckySpots/README.md
 [proof-80]: https://github.com/aliromman/math/blob/630f442eaca158f78541a2850870e88e55f34a10/conjectures/LuckySpots/Solution.lean
 [pr-80]: https://github.com/aliromman/math/pull/80
-[note-79]: https://github.com/aliromman/math/blob/7604d09312a90028829bbcafb062320540354ae6/conjectures/PoissonApproximation/README.md
-[proof-79]: https://github.com/aliromman/math/blob/7604d09312a90028829bbcafb062320540354ae6/conjectures/PoissonApproximation/Solution.lean
-[pr-79]: https://github.com/aliromman/math/pull/79
 [note-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/README.md
 [proof-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/Solution.lean
 [pr-76]: https://github.com/aliromman/math/pull/76
@@ -494,3 +491,6 @@ and cites the original source.
 [note-45]: conjectures/LarsonPowerMap/README.md
 [proof-45]: conjectures/LarsonPowerMap/Solution.lean
 [pr-45]: https://github.com/aliromman/math/pull/45
+[note-79]: conjectures/PoissonApproximation/README.md
+[proof-79]: conjectures/PoissonApproximation/Solution.lean
+[pr-79]: https://github.com/aliromman/math/pull/79
