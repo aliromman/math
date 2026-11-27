@@ -71,7 +71,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Liu’s Conjecture 2 on Walker’s inequality with side-sum weights][note-3] | The cyclic inequality with side-sum weight $(b+c)^k$ holds on every nonobtuse triangle for all real $k\ge-10$. | [Lean][proof-3] · [#3][pr-3] |
 | [Proof of Liu’s Conjecture 3 on Walker’s inequality with triangle-excess weights][note-4] | The cyclic inequality with weight $(b+c-a)^k$ holds on every nonobtuse triangle for all real $k\ge-3$. | [Lean][proof-4] · [#4][pr-4] |
 | [Disproof of Liu’s Conjecture 6.4 on weighted Erdős–Mordell bounds for an interior point][note-14] | An isosceles triangle and an interior point violate the proposed upper bound at $k=3999/1000$. | [Lean][proof-14] · [#14][pr-14] |
-| [Proof of Palsson and Yu’s Conjecture 10 on planar point sets with four triangle congruence classes][note-41] | Seven planar points with at most four triangle shapes form a regular heptagon. The maximum size for four shapes is seven. | [Lean][proof-41] · [#41][pr-41] (open draft) |
+| [Proof of Palsson and Yu’s Conjecture 10 on planar point sets with four triangle congruence classes][note-41] | Seven planar points with at most four triangle shapes form a regular heptagon. The maximum size for four shapes is seven. | [Lean][proof-41] · [#41][pr-41] |
 | [Partial result on Erdős Problem 107 for 33-point extensions of specified 27- and 30-point order types][note-9] | **Partial.** Checked SAT certificates rule out heptagon-free 33-point extensions of one specified 27-point order type and all 496 two-point deletions from the classical 32-point example. The general question remains open. | [Search][proof-9] · [#9][pr-9] |
 | [The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture][note-48] | **Extension.** The sharp covering ratio for lattice squares is $3/2$. Counterexamples exist at unbounded lattice diameter. The source already contained a counterexample among convex polygons. | [Lean][proof-48] · [#48][pr-48] |
 | [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
@@ -232,9 +232,6 @@ and cites the original source.
 [note-42]: conjectures/FangSubwordLength/README.md
 [proof-42]: conjectures/FangSubwordLength/Solution.lean
 [pr-42]: https://github.com/aliromman/math/pull/42
-[note-41]: https://github.com/aliromman/math/blob/09b4aa8dac511bc84a44ef0f2b2aee8b9546e6d1/conjectures/PalssonYuTriangles/README.md
-[proof-41]: https://github.com/aliromman/math/blob/09b4aa8dac511bc84a44ef0f2b2aee8b9546e6d1/conjectures/PalssonYuTriangles/Solution.lean
-[pr-41]: https://github.com/aliromman/math/pull/41
 [note-40]: https://github.com/aliromman/math/blob/8c27e3ac6e8e418b3e09101b8958f3e113876acc/conjectures/SplitMatroidFlags/README.md
 [proof-40]: https://github.com/aliromman/math/blob/8c27e3ac6e8e418b3e09101b8958f3e113876acc/conjectures/SplitMatroidFlags/Solution.lean
 [pr-40]: https://github.com/aliromman/math/pull/40
@@ -494,3 +491,6 @@ and cites the original source.
 [note-47]: conjectures/BarequetRectangularPolyomino/README.md
 [proof-47]: conjectures/BarequetRectangularPolyomino/Solution.lean
 [pr-47]: https://github.com/aliromman/math/pull/47
+[note-41]: conjectures/PalssonYuTriangles/README.md
+[proof-41]: conjectures/PalssonYuTriangles/Solution.lean
+[pr-41]: https://github.com/aliromman/math/pull/41
