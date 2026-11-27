@@ -148,7 +148,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Archer et al.’s conjecture on cycles avoiding 3412 in one-line form and 213 in cycle form][note-46] | A two-class decomposition gives the conjectured generating function for cycles avoiding 3412 in one-line notation and 213 in cycle notation starting at 1. | [Lean][proof-46] · [#46][pr-46] (open draft) |
 | [Proof of Bevan and Threlfall’s Conjecture 21 on consecutive patterns between inversion thresholds][note-72] | Every fixed consecutive pattern occurs with probability tending to one throughout the interval between its two inversion thresholds. | [Lean][proof-72] · [#72][pr-72] (open draft) |
-| [Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts][note-69] | The expected count of 51234 falls and then rises across the 7-, 8-, and 9-inversion layers in seven letters. | [Lean][proof-69] · [#69][pr-69] (open draft) |
+| [Disproof of Bevan and Threlfall’s Conjecture 22 on unimodality of consecutive pattern counts][note-69] | The expected count of 51234 falls and then rises across the 7-, 8-, and 9-inversion layers in seven letters. | [Lean][proof-69] · [#69][pr-69] |
 | [Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
 | [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] (open draft) |
 | [Proof of Černý’s Conjecture 34 on counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
@@ -280,9 +280,6 @@ and cites the original source.
 [proof-70]: conjectures/UlasStern/Solution.lean
 [arith-70]: conjectures/UlasStern/Arithmetic.lean
 [pr-70]: https://github.com/aliromman/math/pull/70
-[note-69]: https://github.com/aliromman/math/blob/da590ef1ce5cb2ac0a23a3fafd5253063998e593/conjectures/ConsecutivePatternValley/README.md
-[proof-69]: https://github.com/aliromman/math/blob/da590ef1ce5cb2ac0a23a3fafd5253063998e593/conjectures/ConsecutivePatternValley/Solution.lean
-[pr-69]: https://github.com/aliromman/math/pull/69
 [note-68]: https://github.com/aliromman/math/blob/d0990c5fd782937c436940ae31f81bdc14fd55af/conjectures/WheelMatchings/README.md
 [proof-68]: https://github.com/aliromman/math/blob/d0990c5fd782937c436940ae31f81bdc14fd55af/conjectures/WheelMatchings/Solution.lean
 [pr-68]: https://github.com/aliromman/math/pull/68
@@ -494,3 +491,6 @@ and cites the original source.
 [note-58]: conjectures/KurzWeighted/README.md
 [proof-58]: conjectures/KurzWeighted/Solution.lean
 [pr-58]: https://github.com/aliromman/math/pull/58
+[note-69]: conjectures/ConsecutivePatternValley/README.md
+[proof-69]: conjectures/ConsecutivePatternValley/Solution.lean
+[pr-69]: https://github.com/aliromman/math/pull/69
