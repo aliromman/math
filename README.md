@@ -138,7 +138,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Proof of Janson and Linusson’s conjecture on the probability of the Alabama paradox under Hamilton’s method][note-33] | With fixed rationally independent population shares, the limiting frequency of house sizes at which any state loses a seat is at most $1-2/e$. The source gives examples approaching the bound. | [Lean][proof-33] · [#33][pr-33] (open draft) |
-| [Proof of Kurz and Napel’s conjecture on a voter with half the Banzhaf power of each other voter][note-55] | Every committee of at least six voters admits a voting rule that gives one voter half the normalized Banzhaf power of each other voter. | [Lean][proof-55] · [#55][pr-55] (open draft) |
+| [Proof of Kurz and Napel’s conjecture on a voter with half the Banzhaf power of each other voter][note-55] | Every committee of at least six voters admits a voting rule that gives one voter half the normalized Banzhaf power of each other voter. | [Lean][proof-55] · [#55][pr-55] |
 | [Proof of Kurz’s Conjecture 8 on Banzhaf approximation in weighted voting games][note-58] | Every weighted rule on $n\ge2$ voters has normalized Banzhaf vector at $\ell_1$ distance at least $1/(18n)$ from $(2,\ldots,2,1)/(2n-1)$. | [Lean][proof-58] · [#58][pr-58] |
 | [Disproof of McCune’s Conjecture 1 on Alabama-paradox probabilities][note-37] | Exact probabilities for every positive house size and seat increase under the uniform three-state model refute both conjectured monotonicity rules. | [Lean][proof-37] · [#37][pr-37] (open draft) |
 
@@ -304,9 +304,6 @@ and cites the original source.
 [note-56]: conjectures/ExclusiveSumBound/README.md
 [proof-56]: conjectures/ExclusiveSumBound/Solution.lean
 [pr-56]: https://github.com/aliromman/math/pull/56
-[note-55]: https://github.com/aliromman/math/blob/9dce57f64add0c736a61d36a11859165357b55d2/conjectures/KurzBanzhaf/README.md
-[proof-55]: https://github.com/aliromman/math/blob/9dce57f64add0c736a61d36a11859165357b55d2/conjectures/KurzBanzhaf/Solution.lean
-[pr-55]: https://github.com/aliromman/math/pull/55
 [note-53]: conjectures/HaslegraveBipartite/README.md
 [proof-53]: conjectures/HaslegraveBipartite/Solution.lean
 [pr-53]: https://github.com/aliromman/math/pull/53
@@ -494,3 +491,6 @@ and cites the original source.
 [note-82]: conjectures/CampbellCoupons/README.md
 [proof-82]: conjectures/CampbellCoupons/Solution.lean
 [pr-82]: https://github.com/aliromman/math/pull/82
+[note-55]: conjectures/KurzBanzhaf/README.md
+[proof-55]: conjectures/KurzBanzhaf/Solution.lean
+[pr-55]: https://github.com/aliromman/math/pull/55
