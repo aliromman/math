@@ -131,7 +131,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Disproof of the Engbers–Erey conjecture on maximum average maximal-matching size in trees of fixed order and diameter][note-1] | Moving one leaf in a 15-vertex tree preserves diameter 11 and raises the mean size of a maximal matching from $6$ to $259/43$, disproving the proposed maximum. | [Lean][proof-1] · [#1][pr-1] |
 | [Proof of George’s Conjecture 1 on nonreal degree roots of trees in the unit disk][note-10] | Every nonreal root of a finite tree’s degree polynomial has modulus greater than one. | [Lean][proof-10] · [#10][pr-10] |
 | [Two-site branch exchanges and a finite three-site search in Stanley’s tree isomorphism question][note-6] | **Partial.** An informal proof shows that a two-site branch exchange cannot produce nonisomorphic trees with the same chromatic symmetric function. A separate search distinguished 111,144 trees in a three-site family. | [Search][proof-6] · [#6][pr-6] |
-| [Disproof of the universal reading of Wang’s Conjecture 20 on leaves in local-density maximizers][note-76] | A leafless singleton in a 17-vertex tree maximizes local density at $31/52$. In every finite tree, each maximizer extends to one containing a leaf. | [Lean][proof-76] · [#76][pr-76] (open draft) |
+| [Disproof of the universal reading of Wang’s Conjecture 20 on leaves in local-density maximizers][note-76] | A leafless singleton in a 17-vertex tree maximizes local density at $31/52$. In every finite tree, each maximizer extends to one containing a leaf. | [Lean][proof-76] · [#76][pr-76] |
 
 ### Voting and apportionment
 
@@ -213,9 +213,6 @@ and cites the original source.
 [note-81]: conjectures/ErdosPurdyStraus/README.md
 [proof-81]: conjectures/ErdosPurdyStraus/Solution.lean
 [pr-81]: https://github.com/aliromman/math/pull/81
-[note-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/README.md
-[proof-76]: https://github.com/aliromman/math/blob/12e8219fc7821d3b33ad6e637eb983559e528dda/conjectures/WangLocalDensity/Solution.lean
-[pr-76]: https://github.com/aliromman/math/pull/76
 [note-75]: conjectures/StrausBoundaryPolygon/README.md
 [proof-75]: conjectures/StrausBoundaryPolygon/Solution.lean
 [pr-75]: https://github.com/aliromman/math/pull/75
@@ -494,3 +491,6 @@ and cites the original source.
 [note-95]: conjectures/SavchenkoSix/README.md
 [proof-95]: conjectures/SavchenkoSix/Solution.lean
 [pr-95]: https://github.com/aliromman/math/pull/95
+[note-76]: conjectures/WangLocalDensity/README.md
+[proof-76]: conjectures/WangLocalDensity/Solution.lean
+[pr-76]: https://github.com/aliromman/math/pull/76
