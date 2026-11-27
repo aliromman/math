@@ -1,4 +1,4 @@
-# When a partition can gain one more part
+# Solution to Tan, Wu and Hon’s Problem 1 on the periodicity threshold for partitions avoiding a prescribed sum
 
 Let $\rho(f,n)$ be the maximum number of parts in a partition of $n$ into positive integers in which no selection of parts sums to $f$. Let $L$ be the smallest positive integer that does not divide $f$. For every $1\le f\le r$, the recurrence
 
@@ -47,12 +47,8 @@ For general $L$, the proof locates a failure at $r\ge (f-L-2L^2)L$ whenever $f\g
 From the repository root, run
 
 ```sh
-lake exe cache get
-lake build conjectures.TanWuHon.Solution
-for module in Statement Partitions Bounds Certificate Cases Lower Odd Solution
-do
-  lake env leanchecker "conjectures.TanWuHon.$module" || exit 1
-done
+# Run at the merge commit for PR #71.
+python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
 The statement is in [Statement.lean](Statement.lean). The upper bound is in [Solution.lean](Solution.lean), with the lower bounds in [Lower.lean](Lower.lean) and the exact odd case in [Odd.lean](Odd.lean). The proofs depend only on propositional extensionality, classical choice and quotient soundness.
