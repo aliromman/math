@@ -1,0 +1,2 @@
+statement BorgSignedSets.Conjecture propext Classical.choice Quot.sound
+BorgSignedSets.signed_sets propext Classical.choice Quot.sound
