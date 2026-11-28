@@ -14,13 +14,13 @@ open Finset Nat
 
 private theorem window_geometry (a R M p q : ℕ) (ha : 8 ≤ a) (hR : R=a^2-2*a)
     (hM : 64*M ≤ 81*a^2) (hp : a≤p) (hu : 8*p≤9*a) (hq : a≤q) :
-    M≤2*R ∧ R+p < p^2 ∧ R < p*q ∧ R ≤ p+p^2 := by
+    M≤2*R ∧ R+p < p^2 ∧ R < p*q := by
   have he : R+2*a=a^2 := hR ▸ Nat.sub_add_cancel (by nlinarith [Nat.mul_le_mul_left a ha])
   have hpp := Nat.mul_le_mul hp hp
   have hpq := Nat.mul_le_mul hp hq
   constructor
   · nlinarith [Nat.mul_le_mul_left a ha]
-  · exact ⟨by nlinarith [hpp], by nlinarith [hpq],by nlinarith [hpp]⟩
+  · exact ⟨by nlinarith [hpp], by nlinarith [hpq]⟩
 
 private theorem same_of_modEq {a b m : ℕ} (h : a ≡ b [MOD m]) (hab : a < b+m)
     (hba : b < a+m) : a=b := Nat.le_antisymm (h.le_of_lt_add hab) (h.symm.le_of_lt_add hba)
@@ -29,31 +29,34 @@ private theorem same_of_modEq {a b m : ℕ} (h : a ≡ b [MOD m]) (hab : a < b+m
 one prime label the unique possible repeated factor lies one prime below the center. -/
 private theorem centered_window (P : Finset ℕ) (a M : ℕ) (ha : 8≤a)
     (hP : ∀p∈P, p.Prime ∧ a≤p ∧ 8*p≤9*a) (hM : 64*M ≤ 81*a^2) :
-    ∃ x c : ℕ, ∀ b ∈ window x M,
+    ∃ x c : ℕ, 0 < x ∧ ∀ b ∈ window x M,
       (∀p∈P, b.factorization p ≤ (if p∣b then 1 else 0) + (if b+p=c then 1 else 0)) ∧
       (b≠c → (P.filter (· ∣ b)).card ≤ 1) := by
   let R := a^2-2*a
   let m (p : ℕ) := p^3
-  let u (p : ℕ) := p+p^2-R
+  let u (p : ℕ) := p+p^2-(R+1)
   have hm (p : ℕ) (hp:p∈P) : m p ≠ 0 := pow_ne_zero _ (hP p hp).1.ne_zero
   have hco : Set.Pairwise (P:Set ℕ) (Function.onFun Nat.Coprime m) := by
     intro p hp q hq hpq
     exact ((Nat.coprime_primes (hP p hp).1 (hP q hq).1).mpr hpq).pow _ _
-  obtain ⟨x,hx⟩ := Nat.chineseRemainderOfFinset u m P hm hco
+  obtain ⟨y,hy⟩ := Nat.chineseRemainderOfFinset u m P hm hco
+  let x := y+1
   let c := x+R
   have hc (p : ℕ) (hp:p∈P) : c ≡ p+p^2 [MOD p^3] := by
     have hg := window_geometry a R M p p ha rfl hM (hP p hp).2.1 (hP p hp).2.2 (hP p hp).2.1
-    simpa [c,u,m,Nat.sub_add_cancel hg.2.2.2] using (hx p hp).add_right R
+    have hle : R+1 ≤ p+p^2 := by have := hg.2.1; omega
+    simpa [c,x,u,m, Nat.add_assoc, Nat.add_comm 1 R, Nat.sub_add_cancel hle] using
+      (hy p hp).add_right (R+1)
   have hpc (p : ℕ) (hp:p∈P) : p∣c :=
     ((hc p hp).dvd_iff (dvd_pow_self p (by decide : 3≠0))).mpr (dvd_add (dvd_refl _) (dvd_pow_self _ (by decide : 2≠0)))
-  refine ⟨x,c,?_⟩
+  refine ⟨x,c,Nat.succ_pos _,?_⟩
   intro b hb
   obtain ⟨hxl,hxr⟩ := mem_Ioc.mp hb
   have hb0 : b≠0 := by omega
   constructor
   · intro p hp
     obtain ⟨hpP,hpl,hpu⟩ := hP p hp
-    obtain ⟨hrM,hrp,_,_⟩ := window_geometry a R M p p ha rfl hM hpl hpu hpl
+    obtain ⟨hrM,hrp,_⟩ := window_geometry a R M p p ha rfl hM hpl hpu hpl
     have hsq (hs : p^2∣b) : b+p=c := by
       have hb' : b+p ≡ p [MOD p^2] := by simpa using (Nat.modEq_zero_iff_dvd.mpr hs).add_right p
       have hc' : c ≡ p [MOD p^2] := (hc p hp).of_dvd (pow_dvd_pow p (by decide : 2≤3)) |>.trans (by simp)
@@ -85,20 +88,22 @@ private theorem centered_window (P : Finset ℕ) (a M : ℕ) (ha : 8≤a)
     have hcop := (Nat.coprime_primes (hP p hpP).1 (hP q hqP).1).mpr hpq
     have hb' := Nat.modEq_zero_iff_dvd.mpr (hcop.mul_dvd_of_dvd_of_dvd hpb hqb)
     have hc' := Nat.modEq_zero_iff_dvd.mpr (hcop.mul_dvd_of_dvd_of_dvd (hpc p hpP) (hpc q hqP))
-    obtain ⟨hrM,_,hrpq,_⟩ := window_geometry a R M p q ha rfl hM (hP p hpP).2.1 (hP p hpP).2.2 (hP q hqP).2.1
+    obtain ⟨hrM,_,hrpq⟩ := window_geometry a R M p q ha rfl hM (hP p hpP).2.1 (hP p hpP).2.2 (hP q hqP).2.1
     apply hbc
     apply same_of_modEq (hb'.trans hc'.symm) <;> dsimp [c] <;> omega
 
-/-- At most two extra prime factors per prime can supplement one factor per selection. -/
-theorem lower_window (P : Finset ℕ) (a M : ℕ) (ha : 8≤a)
+/-- The center supplies at most one extra factor for each prime after the first.
+Each prime has at most one other position where its square divides the entry. -/
+theorem lower_window_sharp (P : Finset ℕ) (a M : ℕ) (ha : 8≤a)
     (hP : ∀p∈P, p.Prime ∧ a≤p ∧ 8*p≤9*a) (hM : 64*M ≤ 81*a^2) :
-    ∃ x : ℕ, ∀ B ⊆ window x M, (∑ b ∈ B, ∑ p ∈ P, b.factorization p) ≤ B.card+2*P.card := by
+    ∃ x > 0, ∀ B ⊆ window x M, (∑ b ∈ B, ∑ p ∈ P, b.factorization p) ≤
+      B.card+(P.card-1)+P.card := by
   classical
-  obtain ⟨x,c,hc⟩ := centered_window P a M ha hP hM
-  refine ⟨x,?_⟩
+  obtain ⟨x,c,hx,hc⟩ := centered_window P a M ha hP hM
+  refine ⟨x,hx,?_⟩
   intro B hB
   have hpoint (b : ℕ) (hb:b∈B) : (∑p∈P, b.factorization p) ≤
-      (1+(if b=c then P.card else 0)) + ∑p∈P, (if b=c-p ∧ b+p=c then 1 else 0) := by
+      (1+(if b=c then P.card-1 else 0)) + ∑p∈P, (if b=c-p ∧ b+p=c then 1 else 0) := by
     have H := hc b (hB hb)
     refine (sum_le_sum H.1).trans ?_
     rw [sum_add_distrib, sum_boole]
@@ -126,9 +131,16 @@ theorem lower_window (P : Finset ℕ) (a M : ℕ) (ha : 8≤a)
             apply sum_le_sum; intro b _; split_ifs <;> omega
           _ ≤ 1 := by simp; split <;> simp
       _ = _ := by simp
-  have hcen : (∑b∈B, if b=c then P.card else 0) ≤ P.card := by simp; split <;> simp
+  have hcen : (∑b∈B, if b=c then P.card-1 else 0) ≤ P.card-1 := by simp; split <;> simp
   have he := sum_le_sum hpoint
   simp only [sum_add_distrib, sum_const, nsmul_eq_mul,mul_one,Nat.cast_id] at he
   omega
+
+/-- At most two extra prime factors per prime can supplement one factor per selection. -/
+theorem lower_window (P : Finset ℕ) (a M : ℕ) (ha : 8≤a)
+    (hP : ∀p∈P, p.Prime ∧ a≤p ∧ 8*p≤9*a) (hM : 64*M ≤ 81*a^2) :
+    ∃ x : ℕ, ∀ B ⊆ window x M, (∑ b ∈ B, ∑ p ∈ P, b.factorization p) ≤ B.card+2*P.card := by
+  obtain ⟨x,_,hx⟩ := lower_window_sharp P a M ha hP hM
+  exact ⟨x,fun B hB ↦ (hx B hB).trans (by omega)⟩
 
 end ErdosSuranyi708

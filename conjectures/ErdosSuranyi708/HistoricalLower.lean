@@ -3,13 +3,14 @@ module
 public import conjectures.ErdosSuranyi708.HistoricalPrimes
 public import conjectures.ErdosSuranyi708.HistoricalWindow
 public import Mathlib.Data.Nat.Sqrt
+public import Mathlib.Data.Finset.Sym
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
 /-! # The asymptotic lower bound of Erdős and Surányi
 
-The inputs are products of two primes in a short interval. We take products across
-two disjoint sets of primes so that each product has exactly one representation. -/
+The original inputs are all unordered products of two primes in a short interval.
+Products across two disjoint prime sets yield examples of every input size. -/
 
 @[expose] public section
 namespace ErdosSuranyi708
@@ -26,6 +27,70 @@ private theorem demand_le {A B : Finset ℕ} (S : Finset ℕ) (hA : ∀ a∈A, a
       rw [← factorization_prod_apply hA, ← factorization_prod_apply hB]
       exact (factorization_le_iff_dvd (prod_ne_zero_iff.mpr hA) (prod_ne_zero_iff.mpr hB)).mpr hc p
     _ = _ := sum_comm
+
+private theorem prime_product_bounds {a p q : ℕ} {S : Finset ℕ}
+    (hS : ∀ r∈S, r.Prime ∧ a≤r ∧ 8*r≤9*a) (hp : p∈S) (hq : q∈S) :
+    2≤p*q ∧ 64*(p*q)≤81*a^2 ∧ (∑i∈S,(p*q).factorization i)=2 := by
+  obtain ⟨hp',_,hup⟩ := hS p hp
+  obtain ⟨hq',_,huq⟩ := hS q hq
+  refine ⟨by nlinarith [Nat.mul_le_mul hp'.two_le hq'.two_le], by nlinarith [Nat.mul_le_mul hup huq], ?_⟩
+  simp [factorization_mul hp'.ne_zero hq'.ne_zero, hp'.factorization, hq'.factorization,
+    Finsupp.single_apply, sum_add_distrib, hp, hq]
+
+private theorem total_pair_factors {A S : Finset ℕ}
+    (h : ∀z∈A, (∑p∈S,z.factorization p)=2) :
+    (∑z∈A, ∑p∈S,z.factorization p) = 2*A.card := by
+  rw [sum_congr rfl h]
+  simp [mul_comm]
+
+private theorem prime_pair_card (P : Finset ℕ) (hP : ∀p∈P, p.Prime) :
+    (P.sym2.image Sym2.mul).card = P.card*(P.card+1)/2 := by
+  have hinj : Set.InjOn (Sym2.mul : Sym2 ℕ → ℕ) (P.sym2 : Set (Sym2 ℕ)) := by
+    intro u hu v hv he
+    obtain ⟨⟨p,q⟩,rfl⟩ := Sym2.mk_surjective u
+    obtain ⟨⟨r,s⟩,rfl⟩ := Sym2.mk_surjective v
+    obtain ⟨hp,_⟩ := Finset.mk_mem_sym2_iff.mp hu
+    obtain ⟨hr,hs⟩ := Finset.mk_mem_sym2_iff.mp hv
+    change p*q = r*s at he
+    apply Sym2.eq_iff.mpr
+    rcases (hP p hp).dvd_mul.mp (he ▸ dvd_mul_right p q) with hd | hd
+    · obtain rfl := (prime_dvd_prime_iff_eq (hP p hp) (hP r hr)).mp hd
+      exact Or.inl ⟨rfl,Nat.eq_of_mul_eq_mul_left (hP p hp).pos he⟩
+    · obtain rfl := (prime_dvd_prime_iff_eq (hP p hp) (hP s hs)).mp hd
+      rw [mul_comm r p] at he
+      exact Or.inr ⟨rfl,Nat.eq_of_mul_eq_mul_left (hP p hp).pos he⟩
+  rw [Finset.card_image_of_injOn hinj,card_sym2,Nat.choose_two_right,Nat.add_sub_cancel,mul_comm]
+
+/-- Erdős and Surányi, §9. All unordered products of two of the chosen primes,
+including the squares, give the triangular input size and the finite lower bound. -/
+theorem historical_triangular (l : ℕ) (hl : 0<l) :
+    ∃ (a : ℕ) (P : Finset ℕ), 8≤a ∧ P.card=l ∧
+      (∀ p∈P, p.Prime ∧ a≤p ∧ 8*p≤9*a) ∧
+      ∃ (A : Finset ℕ) (hA : A.Nonempty), A=P.sym2.image Sym2.mul ∧
+        A.card=l*(l+1)/2 ∧ (∀ z∈A, 2≤z) ∧
+        ∃ x>0, ∀ B ⊆ window x (A.max' hA), Covers A B → l*(l-1)+1 ≤ B.card := by
+  obtain ⟨a,P,ha,hc,hP⟩ := prime_cluster l
+  let A := P.sym2.image Sym2.mul
+  have hne : P.Nonempty := card_pos.mp (hc ▸ hl)
+  have hA : A.Nonempty := hne.sym2.image Sym2.mul
+  have hcard : A.card = l*(l+1)/2 :=
+    (prime_pair_card P (fun p hp => (hP p hp).1)).trans (by rw [hc])
+  have hentry (z : ℕ) (hz : z∈A) :
+      2≤z ∧ 64*z≤81*a^2 ∧ (∑p∈P,z.factorization p)=2 := by
+    obtain ⟨u,hu,rfl⟩ := mem_image.mp hz
+    obtain ⟨⟨p,q⟩,rfl⟩ := Sym2.mk_surjective u
+    obtain ⟨hp,hq⟩ := Finset.mk_mem_sym2_iff.mp hu
+    exact prime_product_bounds hP hp hq
+  obtain ⟨x,hx,hbound⟩ := lower_window_sharp P a (A.max' hA) ha hP (hentry _ (A.max'_mem hA)).2.1
+  refine ⟨a,P,ha,hc,hP,A,hA,rfl,hcard,fun z hz => (hentry z hz).1,x,hx,?_⟩
+  intro B hB hcov
+  have H := (demand_le P (fun z hz => by have := (hentry z hz).1; omega)
+    (fun z hz => by have := (mem_Ioc.mp (hB hz)).1; omega) hcov).trans (hbound B hB)
+  rw [total_pair_factors (fun z hz => (hentry z hz).2.2), hcard, hc,
+    mul_comm 2, Nat.div_mul_cancel (Nat.two_dvd_mul_add_one l)] at H
+  have he : l*(l+1) = l*(l-1)+2*l := by
+    conv_lhs => rw [show l+1=(l-1)+2 by omega, mul_add, mul_comm l 2]
+  omega
 
 /-- For every positive input size, some interval requires at least
 `2n - 4(⌊√n⌋ + 1)` selections. -/
@@ -64,24 +129,13 @@ theorem historical_finite (n : ℕ) (hn : 0<n) :
   have hentry (z : ℕ) (hz : z∈A) : 2≤z ∧ 64*z≤81*a^2 ∧ (∑p∈S,z.factorization p)=2 := by
     obtain ⟨⟨p,q⟩,hu,rfl⟩ := mem_image.mp (hsub hz)
     obtain ⟨hp,hq⟩ := mem_product.mp hu
-    have hpS := hP hp
-    have hqS := (mem_sdiff.mp hq).1
-    obtain ⟨hp',_,hup⟩ := hS p hpS
-    obtain ⟨hq',_,huq⟩ := hS q hqS
-    change 2≤p*q ∧ 64*(p*q)≤81*a^2 ∧ (∑i∈S,(p*q).factorization i)=2
-    refine ⟨by nlinarith [Nat.mul_le_mul hp'.two_le hq'.two_le],by nlinarith [Nat.mul_le_mul hup huq],?_⟩
-    simp [factorization_mul hp'.ne_zero hq'.ne_zero, hp'.factorization, hq'.factorization,
-      Finsupp.single_apply,sum_add_distrib,hpS,hqS]
+    exact prime_product_bounds hS (hP hp) (mem_sdiff.mp hq).1
   obtain ⟨x,hx⟩ := lower_window S a (A.max' hA) ha hS (hentry _ (A.max'_mem hA)).2.1
   refine ⟨A,hA,hAc,fun z hz => (hentry z hz).1,x,?_⟩
   intro B hB hc
   have H := (demand_le S (fun z hz => by have := (hentry z hz).1; omega)
     (fun z hz => by have := (mem_Ioc.mp (hB hz)).1; omega) hc).trans (hx B hB)
-  have hd : (∑z∈A,∑p∈S,z.factorization p)=2*n := by
-    calc
-      _ = ∑ _z∈A,(2:ℕ) := sum_congr rfl (fun z hz => (hentry z hz).2.2)
-      _ = _ := by simp [hAc,mul_comm]
-  rw [hd,hs] at H
+  rw [total_pair_factors (fun z hz => (hentry z hz).2.2), hAc, hs] at H
   dsimp only [m] at H
   omega
 
