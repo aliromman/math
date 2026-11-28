@@ -1,6 +1,6 @@
 # Mathematical conjectures
 
-This collection contains 103 research notes on published mathematical questions. Of these, 101 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 104 research notes on published mathematical questions. Of these, 102 give Lean-verified results and two report partial investigations. Five verified results were added after v1.0.0. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
@@ -83,7 +83,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
-| [Proof of Borg’s Conjecture 1.4 on intersecting systems of signed sets][note-116] | A maximum family can fail to be a star exactly when there are two labels and three coordinates with largest stars occur in precisely the same supports. | [Lean][proof-116] · [#116][pr-116] |
+| [Proof of Borg’s Conjecture 1.4 on intersecting systems of signed sets][note-116] | A maximum family can fail to be a star exactly when there are two labels and three distinct coordinates that occur in precisely the same supports and have stars of maximum size. | [Lean][proof-116] · [#116][pr-116] |
 
 ### Graphs and tournaments
 
@@ -162,6 +162,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of the Burstein–Hästö–Mansour conjecture on the packing density of the vincular pattern 12-1][note-13] | Two letters attain the exact maximum of $\lfloor n(n-1)/6\rfloor$ occurrences at every word length $n$. The packing density is $1/3$. | [Lean][proof-13] · [#13][pr-13] |
 | [Proof of Butler, Hadaway, Lenius, Martens and Moats’s Conjecture 13 on lucky spots in parking functions][note-80] | An exact finite binomial sum counts parking functions in which any prescribed spot receives the car that preferred it. The same formula gives the limiting probability. | [Lean][proof-80] · [#80][pr-80] |
 | [Proof of Billey, Fahrbach and Talmage’s Conjecture 6.4 on the complex zeros of peak polynomials][note-117] | For a nonempty peak set with last peak $m$, every zero has modulus at most $m$ and real part at least $-3$. Both bounds are sharp. | [Lean][proof-117] · [#117][pr-117] |
+| [Proof of Billey, Fahrbach and Talmage’s Conjecture 6.5 on real-rooted peak polynomials][note-118] | The six listed families are exactly the nonempty peak sets whose polynomials have only real roots. All those roots are integers. | [Lean][proof-118] · [#118][pr-118] |
 | [Proof of Černý’s Conjecture 34 on counting fair words][note-35] | At each positive length $n$, the fair-word count is a monic integer polynomial of degree $\lceil n/2\rceil$ in the alphabet size. | [Lean][proof-35] · [#35][pr-35] |
 | [Disproof of Fang’s Conjecture 5.7 on the length of a most frequent subsequence][note-42] | A word of length ten has a unique most frequent subsequence of length six. A binary example also violates the proposed length bound. | [Lean][proof-42] · [#42][pr-42] |
 | [Disproof of the finite layered-maximizer assertion in Burstein, Hästö and Mansour’s Conjecture 2.8][note-17] | The word `111342222` contains 61 occurrences of `11123`, `13222`, and `11322` in total. Every layered word of the same length on the same four-letter alphabet has at most 60. | [Lean][proof-17] · [#17][pr-17] |
@@ -508,3 +509,7 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-117]: conjectures/PeakRootBounds/README.md
 [proof-117]: conjectures/PeakRootBounds/Solution.lean
 [pr-117]: https://github.com/aliromman/math/pull/117
+
+[note-118]: conjectures/BilleyFahrbachTalmageClassification/README.md
+[proof-118]: conjectures/BilleyFahrbachTalmageClassification/Solution.lean
+[pr-118]: https://github.com/aliromman/math/pull/118
