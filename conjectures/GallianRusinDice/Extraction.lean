@@ -66,7 +66,7 @@ theorem extraction {P : ℤ[X]} (game : SolutionDie 105 P) :
       (cyclotomic j ℤ).eval 1=if j∈([3,5,7] : List ℕ) then (j:ℤ) else 1 := by
     simp only [List.mem_cons,List.not_mem_nil,or_false] at hj
     rcases hj with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      norm_num [←table3,←table5,←table7,←table15,←table21,←table35,←table105,table,polynomial]
+      norm_num [←table3,←table5,←table7,←table15,←table21,←table35,←table105,table,commonFactor,polynomial]
   rw [values 3 (by decide),values 5 (by decide),values 7 (by decide),values 15 (by decide),
     values 21 (by decide),values 35 (by decide),values 105 (by decide)] at eval
   norm_num at eval

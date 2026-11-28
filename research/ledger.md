@@ -1,9 +1,54 @@
 # Research ledger
 
-Three research campaigns on 25–26 November 2026 registered 90 mathematical
-PRs at their draft verification cutoffs. The catalogue contains 99
-mathematical PRs through PR 102. The historical registers below give the
-revisions and checks for the original 90. [Result catalogue](../README.md#results)
+The catalogue contains **104 merged mathematical notes**. Counting one primary
+source target per note gives **47 conjectures proved and 41 disproved**. Another
+13 notes answer other published questions or problems, one corrects a heuristic,
+and two report partial investigations. In total, 102 notes contain a Lean proof
+of the reported result. These are counts of mathematical coverage. The number
+of worldwide first resolutions remains undetermined. [Result catalogue](../README.md#results) · [Source audit for all 104 notes](audit.md)
+
+## Publication audit
+
+| Primary source target | In the four research registers | Outside the registers | All merged notes |
+| --- | ---: | ---: | ---: |
+| Conjecture proved | 44 | 3 | 47 |
+| Conjecture disproved | 37 | 4 | 41 |
+| Other question or problem answered | 13 | 0 | 13 |
+| Heuristic corrected | 1 | 0 | 1 |
+| Partial investigation | 0 | 2 | 2 |
+| **Total** | **95** | **9** | **104** |
+
+The 13 other answers are PRs 12, 22, 24, 30, 40, 45, 47, 50, 53, 56, 81, 90 and 93. PR 102 corrects the Aldous–Fill hitting-time heuristic. PRs 6 and 9 are the two partial investigations. The [source audit](audit.md) identifies the primary target and finding for each PR.
+
+The first three campaign registers contain 90 entries. The fourth adds five.
+PRs 1–4, 6, 7, 9, 36 and 48 account for the other nine. The two partials
+concern Stanley’s tree question and the convex-heptagon threshold. PRs 36,
+48 and 49 are included among the 41 disproofs because their statements
+contradict distinct source conjectures. The earlier ledger listed those three
+extensions separately. Its original 80-conjecture subtotal becomes **85** after
+the five merges, or **86** if it includes the separate finiteness prediction in
+PR 49. Counting all three extension targets gives **88**. Each convention
+counts a primary source target once. [Original classification](#what-the-99-mathematical-prs-settled) · [Partial results and extensions](#partial-results-and-extensions)
+
+The Open Problems Catalog and Mantra Patel had already given the 13-gon answer
+formalized in PR 93. The hexagon of Fleischer and coauthors already refuted
+the triangle case behind PR 75 in 1992. The new nonagon handles the quadrilateral
+case. In PR 99 the authors’ drift estimate and Foster’s criterion give positive
+recurrence, while the exact stationary tail exponent is an additional result.
+The audit records which parts of each note use known proofs, constructions or
+counts. [13-gon](../conjectures/PolygonEhrhart/README.md) · [Quadrilateral](../conjectures/StrausBoundaryPolygon/README.md) · [Matrix event graph](../conjectures/MatrixWidth/README.md)
+
+The five later drafts merged after separate reviews and protected checks on
+successive merge candidates. Their sources, provenance and distinct theorem
+statements remain in their historical PRs. [#114 verification](https://github.com/aliromman/math/actions/runs/46180155240/job/141087669559) · [#115](https://github.com/aliromman/math/actions/runs/46180383128/job/141088369677) · [#116](https://github.com/aliromman/math/actions/runs/46180529531/job/141088826340) · [#117](https://github.com/aliromman/math/actions/runs/46180774365/job/141089573234) · [#118](https://github.com/aliromman/math/actions/runs/46181001092/job/141090279079)
+
+PR 120 is an open draft independent of these 104 entries. It proves the sharp
+asymptotic upper bound for Erdős Problem 708. A separate review branch formalizes
+the matching historical lower bound and the limit for the least universal budget.
+The pointwise bound remains open. Its original recorded session ran for
+3 h 48 min, with 3,900,000 uncached input tokens, 305,730,000 cached input
+tokens and 1,720,000 output tokens including reasoning. The present review of
+the lower bound belongs to publication maintenance. [Original PR and accounting](https://github.com/aliromman/math/pull/120) · [Historical construction and limit](https://github.com/aliromman/math/blob/24ab10088d0166c28e6729969e383c4e52dd61fb/conjectures/ErdosSuranyi708/README.md)
 
 ## Research after v1.0.0
 
@@ -89,7 +134,7 @@ the five.
 
 ## What the 99 mathematical PRs settled
 
-Counting one primary target per PR and listing the three catalogue extensions
+At the v1.0.0 cutoff, counting one primary target per PR and listing the three catalogue extensions
 separately gives **80 distinct conjectures settled, 44 proved and 36
 disproved**. Another 13 PRs answer published questions or problems. One
 corrects a heuristic. The 97 Lean-verified result notes include the three
@@ -140,10 +185,10 @@ counterexample in the collection.
 
 ### Credit and counting conventions
 
-The review found **no PR devoted solely to formalizing an earlier complete
-proof of its primary target**. The records establish which statements the
-repository proves. The number of worldwide first proofs or disproofs remains
-unverified. Several entries use earlier work directly.
+The later publication audit identified an earlier complete answer to the
+primary question in PR 93, including the same witness and coefficient.
+The records establish which statements the repository proves. Several
+other entries use earlier work directly. [Earlier 13-gon solutions](../conjectures/PolygonEhrhart/README.md)
 
 - In PR 16, Panaitopol’s nine-prime example already implies that Sun’s conjecture fails for small positive exponents. The PR gives an explicit exponent of 1/2000 and an exact certificate. [Panaitopol, p. 54](https://nntdm.net/papers/nntdm-05/NNTDM-05-2-52-54.pdf#page=3) · [Result](../conjectures/SunPrimePowers/README.md)
 - Published examples or counts also supply part of the obstruction in PRs 7, 22, 28, and 68. The respective contributions include a quadratic tree-size bound, a transfer of Fano-plane counts to Narayana sums, a classification of the extremal sets modulo 17, and an exact comparison with the wheel. [Restricted trees](../conjectures/RestrictedUMinimum/README.md) · [Narayana sums](../conjectures/DefantNarayana/README.md) · [Restricted sumsets](../conjectures/BajnokRestrictedInverse/README.md) · [Wheel matchings](../conjectures/WheelMatchings/README.md)

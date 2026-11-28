@@ -1,6 +1,6 @@
-# Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on zig-zag walks and prime polyomino ideals
+# Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on prime polyomino ideals under the printed zig-zag condition (Z3)
 
-The polyomino below has no zig-zag walk. Over every field, the quotient by its polyomino ideal contains two nonzero elements whose product is zero. This disproves Conjecture 1.2 of Mascia, Rinaldo and Romeo, and their reported equivalence for polyominoes with at most 14 cells. [Original paper, Illinois Journal of Mathematics 64 (2020), 291–304](https://doi.org/10.1215/00192082-8591560) · [Author manuscript](https://arxiv.org/abs/1907.08438)
+The polyomino below has no zig-zag walk under the printed common-rectangle condition (Z3). Over every field, the quotient by its polyomino ideal contains two nonzero elements whose product is zero. This disproves the implication from absence of a walk to primality in Conjectures 1.2 and 4.6 of Mascia, Rinaldo and Romeo. It also contradicts the finite assertion through 14 cells in Theorems 1.1 and 3.9. [Original paper, Illinois Journal of Mathematics 64 (2020), 291–304](https://doi.org/10.1215/00192082-8591560) · [Author manuscript](https://arxiv.org/abs/1907.08438)
 
 ```text
     x = 0 1 2 3
@@ -52,6 +52,8 @@ No surviving path closes. These counts allow a rectangle to occur more than once
 The authors’ reference code tests (Z3) by asking whether an occupied rectangle contains the bounding box of each pair of marks. This includes collinear pairs. Its closed-walk search can also accept a sequence of odd length whose first rectangle has opposite incoming and outgoing corners. For example, the rectangles with opposite corners $(21,33)$, $(33,44)$, $(14,35)$, $(01,14)$ and $(10,21)$ pass that closure test. The first rectangle meets its neighbors at $21$ and $33$. Those points fail the shared-side condition (Z2). The mark extraction omits that rectangle and checks only the remaining four marks. [Authors’ implementation and description](https://www.giancarlorinaldo.it/polyominoes-primality.html)
 
 A search of the original paper, the authors’ implementation, later work on special classes, and publications citing the conjecture found no earlier general disproof. The six rectangles above do satisfy the alternative rule that forbids only opposite-corner pairs among the marks. That rule changes (Z3). [2026 result on dilated closed paths](https://arxiv.org/abs/2609.30086)
+
+Giancarlo Rinaldo and his coauthors are investigating the counterexample and the reported implementation issue. Their investigation is ongoing. Navarra and Qureshi also state the common-rectangle test in Definition 3.7 of their survey. [Survey, Theorem 3.10 and Conjecture 3.11](https://arxiv.org/pdf/2511.22778#page=8)
 
 ## Verification
 

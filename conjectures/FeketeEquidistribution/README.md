@@ -1,4 +1,4 @@
-# Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials
+# Disproof of the odd-index case of Chidambaram, Mináč, Nguyen and Tân’s Conjecture 2.11 on Fekete polynomials
 
 The cyclotomic factor predicted by Chidambaram, Mináč, Nguyen and Tân can occur even when the exponents have unequal residue counts. An odd-index example is
 
@@ -34,7 +34,7 @@ The table can be checked by inclusion–exclusion with sixteen divisors of $n$. 
 
 ## Prior work and verification
 
-The authors already give the full factorization of $F_{2p}$ in Example 2.5. In particular, $F_6=x+x^5=x\Phi_8$ occupies only two of the four odd classes modulo eight. The odd example gives an independent obstruction. A 2026 follow-up studies sufficient conditions for cyclotomic factors of rational necklace functions, including the Fekete polynomials. Searches using the conjecture number, the authors, equidistribution, counterexamples, and the two indices found no prior disproof of Conjecture 2.11. OpenAI Codex found the odd example by a character calculation and wrote the proof and Lean formalization. [Original paper](https://arxiv.org/abs/2307.14896) · [Follow-up](https://arxiv.org/abs/2606.02324)
+The authors already give the full factorization of $F_{2p}$ in Example 2.5. In particular, $F_6=x+x^5=x\Phi_8$ occupies only two of the four odd classes modulo eight. The factorization is already a counterexample to the unrestricted necessity claim. The odd, squarefree index 1,122,987 supplies the further case proved here. A 2026 follow-up studies sufficient conditions for cyclotomic factors of rational necklace functions, including the Fekete polynomials. We located no earlier odd-index counterexample in the sources checked. OpenAI Codex found the odd example by a character calculation and wrote the proof and Lean formalization. [Original paper](https://arxiv.org/abs/2307.14896) · [Follow-up](https://arxiv.org/abs/2606.02324)
 
 Run these commands from the repository root with the pinned toolchain.
 

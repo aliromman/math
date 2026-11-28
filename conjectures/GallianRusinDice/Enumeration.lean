@@ -16,10 +16,7 @@ theorem key_eq (c : Code) : key c=(assemble c).eval 256 := by
   rw [assemble_eq,←table3,←table5,←table7,←table15,←table21,←table35,←table105]
   simp [key,eval_pow]
 
-/-- Each of the three prime-sided dice can have either of the other primes in its increment. -/
-def shape (mask : ℕ) : Code :=
-  let bit (j : ℕ) := mask/2^j%2
-  ⟨bit 0+bit 2,bit 1+bit 4,bit 3+bit 5,bit 0*bit 1+bit 2*bit 3+bit 4*bit 5⟩
+export GallianRusin (shape)
 
 def choices : Finset Code := (range 64).image shape
 

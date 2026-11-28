@@ -27,7 +27,7 @@ Testing stationarity against $\min(V,M)$ and increasing $M$ gives $\mathbb E V\l
 
 ## Prior work and verification
 
-The authors derived the one-step mean, variance and complete transition probabilities. They posed positive recurrence as an open problem. Bramas previously proved stability for a related process with a Poisson number of new arrivals each round. Searches by paper title, author, urn model and stationary width found no previous proof for this fixed-batch model or of its tail exponent. OpenAI Codex developed the argument and its Lean proof. [Bramas, §3](https://doi.org/10.4230/OASIcs.Tokenomics.2019.8)
+Jacob, Beer, Henze and Hartenstein derived the one-step mean, variance and complete transition probabilities. For a fixed batch, their Theorem 4(a) gives drift tending to a negative constant. With irreducibility and bounded jumps, Foster’s criterion then proves their proposed positive recurrence. The additional quantitative result here is the exact exponential rate of the stationary tail. Bramas previously proved stability for a related process with a Poisson number of new arrivals each round. Searches by paper title, author, urn model and stationary width found no previous proof for this fixed-batch model or of its tail exponent. OpenAI Codex developed the argument and its Lean proof. [Bramas, §3](https://doi.org/10.4230/OASIcs.Tokenomics.2019.8)
 
 The computation uses the original uniform subset space. A state with index $x$ represents physical width $k+x$. The theorem `resolution` proves the conjecture and `width_tail_rate` gives the limit in physical width.
 

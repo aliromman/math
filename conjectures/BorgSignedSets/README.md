@@ -1,7 +1,7 @@
 # Proof of Borg’s Conjecture 1.4 on intersecting systems of signed sets
 
-Let each member of a finite family of nonempty sets carry one of $k\ge2$
-labels at each of its elements. Two signed sets intersect if they agree on
+Let $\mathcal F$ be a finite, nonempty family of nonempty finite sets. Give
+each element of a member of $\mathcal F$ one of $k\ge2$ labels. Two signed sets intersect if they agree on
 the label of a common element. Among all pairwise intersecting families,
 one of maximum size consists of all signed sets with a fixed label at a fixed
 element. Borg’s conjecture also specifies when a family of maximum size can

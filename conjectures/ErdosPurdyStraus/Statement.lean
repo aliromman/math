@@ -9,10 +9,13 @@ noncomputable section
 namespace ErdosPurdyStraus
 open Set MeasureTheory
 
+/-- The real plane with its product coordinates and Lebesgue area. -/
 abbrev Plane := ℝ × ℝ
 
+/-- The signed double area of the oriented triangle with vertices `a`, `b`, and `c`. -/
 def cross (a b c : Plane) : ℝ := (b.1-a.1)*(c.2-a.2)-(b.2-a.2)*(c.1-a.1)
 
+/-- The ordinary nonnegative area of the triangle. -/
 def triangleArea (a b c : Plane) : ℝ := |cross a b c|/2
 
 /-- A largest triangle in a compact convex body, with the side from a to b on its boundary. -/
@@ -30,8 +33,10 @@ structure Admissible (K : Set Plane) (a b c : Plane) : Prop where
 noncomputable def ratios : Set ℝ := {r | ∃ (K : Set Plane) (a b c : Plane),
   Admissible K a b c ∧ r = volume.real K / triangleArea a b c}
 
+/-- The proposed area ratio is attained and bounds every admissible ratio from above. -/
 def IsAnswer (r : ℝ) : Prop := IsGreatest ratios r
 
+/-- The root of the quartic that lies strictly between zero and one quarter. -/
 def Parameter (t : ℝ) : Prop := 0<t ∧ t<1/4 ∧ (1+t)^4=2*(1+t^2)
 
 end ErdosPurdyStraus

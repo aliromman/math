@@ -66,7 +66,7 @@ theorem extraction {P : ℤ[X]} (game : SolutionDie 30 P) :
       (cyclotomic j ℤ).eval 1=if j∈([2,3,5] : List ℕ) then (j:ℤ) else 1 := by
     simp only [List.mem_cons,List.not_mem_nil,or_false] at hj
     rcases hj with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      norm_num [←table2,←table3,←table5,←table6,←table10,←table15,←table30,table,polynomial]
+      norm_num [←table2,←table3,←table5,←table6,←table10,←table15,←table30,table,commonFactor,polynomial]
   rw [values 2 (by decide),values 3 (by decide),values 5 (by decide),values 6 (by decide),
     values 10 (by decide),values 15 (by decide),values 30 (by decide)] at eval
   norm_num at eval

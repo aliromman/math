@@ -22,15 +22,20 @@ def ConnectedSplit (U : Finset E) (B : Finset (Finset E)) : Prop :=
     ∀ b, b ∈ B ↔ b ⊆ U ∧ b.card = r ∧ ∀ h ∈ H, (b ∩ h.1).card ≤ h.2) ∧
   U.Nonempty ∧ ∀ i ∈ U, ∀ j ∈ U, i = j ∨ ∃ s : Finset E, i ∉ s ∧ j ∉ s ∧ insert i s ∈ B ∧ insert j s ∈ B
 
+/-- A nonempty set of bases that maximizes one real linear functional on the base polytope. -/
 def IsFace (B F : Finset (Finset E)) : Prop := F.Nonempty ∧
   ∃ w : E → ℝ, ∀ b, b ∈ F ↔ b ∈ B ∧ ∀ t ∈ B, ∑ i ∈ t, w i ≤ ∑ i ∈ b, w i
 
+/-- The coordinate vector at element `i`, evaluated at `j`. -/
 def unit (i j : E) : ℝ := if i = j then 1 else 0
+/-- The zero–one indicator vector of a basis. -/
 noncomputable def vertex (b : Finset E) : E → ℝ := ∑ i ∈ b, unit i
 
+/-- The affine dimension of the convex hull of the face vertices, via their direction space. -/
 noncomputable def dimension (F : Finset (Finset E)) : ℕ :=
   Module.finrank ℝ (vectorSpan ℝ (vertex '' (F : Set (Finset E))))
 
+/-- All exposed nonempty faces of a prescribed dimension. -/
 noncomputable def faces (B : Finset (Finset E)) (i : ℕ) : Finset (Finset (Finset E)) := by
   classical exact B.powerset.filter fun F => IsFace B F ∧ dimension F = i
 

@@ -95,6 +95,18 @@ public theorem gapset_resolution : ¬ GapsetConjecture := by
 public theorem resolution : ¬ Conjecture :=
   fun h => gapset_resolution (fun A _ => h A)
 
+/-- The excess of this numerical semigroup gapset has a strict valley at order three. -/
+public theorem nonunimodal_gapset : ∃ A : Finset ℤ, IsGapset A ∧ ¬ UnimodalExcess A := by
+  refine ⟨gaps, gapset, ?_⟩
+  intro h
+  have valley := h 2 3 4 (by decide) (by decide) (by decide)
+  rw [counts.1, counts.2.1, counts.2.2] at valley
+  exact (by decide : ¬ min (1 : ℤ) 1 ≤ 0) valley
+
+public theorem unimodality_resolution : ¬ UnimodalityQuestion := by
+  obtain ⟨A, _, hA⟩ := nonunimodal_gapset
+  exact fun h => hA (h A)
+
 /-- info: 'BuchweitzGapset.resolution' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms resolution

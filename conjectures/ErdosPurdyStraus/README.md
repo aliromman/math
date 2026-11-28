@@ -10,6 +10,8 @@ This answers Problem 3.4 of Erdős, Purdy and Straus (1982). A convex body bound
 
 ![An extremizing body with two largest triangles. On the left the triangle shares the base. On the right its upper vertices lie at paired heights.](diagram.svg)
 
+The manuscript gives the complete argument and its historical context. [Manuscript (PDF)](manuscript.pdf) · [LaTeX source](manuscript.tex)
+
 ## The upper bound
 
 An affine change of coordinates preserves area ratios. Give the common side length one, put it at height zero, and send the third vertex to height one. The triangle has area $1/2$. Write $f(y)$ for the horizontal width of the body at height $y$. Every point lies between heights zero and one. The common side spans the entire section at height zero, since extending it would enlarge the triangle.
@@ -50,7 +52,9 @@ Finally, $`\int_t^1 2s(y)/R\,dy=\pi/2-2\arctan t`$ and $`\int_t^1|1-y/m|\,dy=2m-
 
 ## Source, earlier claim and verification
 
-Straus stated a bound of $\sqrt5$ in Lemma 2 (1978). Jerónimo-Castro and Roldán-Pensado restated it as Lemma S. The sharp value above strictly exceeds $\sqrt5$. Searches of the original papers, their citations and the literature on largest inscribed triangles found no earlier derivation of this maximum. [Straus, pp. 308–309](https://doi.org/10.1007/BFb0062546) · [Jerónimo-Castro and Roldán-Pensado, p. 337](https://doi.org/10.1007/s00454-010-9293-9)
+Straus’s Lemma 2 (1978) claims $\sqrt5$ for all convex bodies under this boundary-side condition. Fleischer, Mehlhorn, Rote, Welzl and Yap (1992) identified the sharp $\sqrt5$ bound for pentagons. Their hexagon has ratio $9/4>\sqrt5$ and a largest triangle with exactly one boundary side. Their Theorem A.6 proves that $9/4$ is sharp among all polygons with at most six vertices. This earlier example already contradicts the general bound. The result here determines the exact maximum for arbitrary convex bodies and constructs an attaining body. [Straus, Lemma 2, p. 309](https://doi.org/10.1007/BFb0062546) · [Fleischer et al., Lemma A.4, its remark and Theorem A.6](https://people.mpi-inf.mpg.de/~mehlhorn/ftp/SimultaneousApproximation.pdf#page=21)
+
+Jerónimo-Castro and Roldán-Pensado restated Straus’s general assertion as Lemma S. Their proof of Theorem 3 uses it only to bound the area of the pentagon in Figure 9 relative to its largest triangle. The valid pentagon inequality supplies this step, so their conclusion $\lambda(K,4)\le(1+\sqrt5)/2$ holds. Edgardo Roldán-Pensado reviewed the argument presented here and believes the sharp bound is correct. He also confirmed that Lemma S fails as stated and that the pentagon bound suffices for Theorem 3. [Jerónimo-Castro and Roldán-Pensado, pp. 337–338](https://doi.org/10.1007/s00454-010-9293-9)
 
 The Lean statement uses compact convex subsets of the real plane, ordinary area, and all competing triangles. It also proves that allowing interior vertices gives the same bound: along each vertical section, the absolute determinant is largest at a boundary endpoint. The proof constructs an extremizer, proves the bound for arbitrary bodies, and checks the integral and the comparison with $\sqrt5$. OpenAI Codex developed the proof and formalization. [Statement](Statement.lean) · [Boundary equivalence](Boundary.lean) · [Area bound](Dual.lean) · [Extremizing body](Extremizer.lean) · [Final proof](Solution.lean)
 

@@ -1,4 +1,4 @@
-# Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side
+# Disproof of the quadrilateral case of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side
 
 The largest quadrilateral in the convex nonagon below occupies exactly two-thirds of its area. In a regular heptagon, an inscribed quadrilateral occupies more than two-thirds. This disproves Conjecture 1 of E. G. Straus (1978), already for four vertices. [Original paper, p. 309](https://page-one.springer.com/pdf/preview/10.1007/BFb0062546#page=2)
 
@@ -36,7 +36,7 @@ Indeed, $c=\cos(2\pi/7)>1/2$ solves $8c^3+4c^2-4c-1=0$. The polynomial is increa
 
 ## Source and verification
 
-Straus posed the conjecture in *Some extremal problems in combinatorial geometry*, Lecture Notes in Mathematics 686 (1978), pp. 308–312. Erdős, Purdy and Straus later asked for the sharp ratios with prescribed boundary sides in Problem 3.5. Searches by conjecture wording, regular-polygon size, title and subsequent citations found no prior disproof of Conjecture 1. [1978 paper](https://doi.org/10.1007/BFb0062546) · [1982 paper, p. 52](https://users.renyi.hu/~p_erdos/1982-09.pdf)
+Straus’s Conjecture 1 includes triangles. The 1992 hexagon of Fleischer, Mehlhorn, Rote, Welzl and Yap has body-to-triangle area ratio $9/4$, exceeding the regular pentagon’s $\sqrt5$. One of its largest triangles shares exactly one boundary side. Thus their example already refutes Conjecture 1 and the one-side case of Conjecture 2 at $n=3$. The nonagon here refutes the prediction at $n=4$. We located no earlier example for that case. Erdős, Purdy and Straus later asked for sharp ratios with prescribed boundary sides in Problem 3.5. [Straus, p. 309](https://doi.org/10.1007/BFb0062546) · [Fleischer et al., Lemma A.4 and Figure 13](https://people.mpi-inf.mpg.de/~mehlhorn/ftp/SimultaneousApproximation.pdf#page=21) · [Erdős–Purdy–Straus, p. 52](https://users.renyi.hu/~p_erdos/1982-09.pdf#page=8)
 
 Lean represents compact convex bodies with interior and inscribed polygons in boundary order. It checks maximality of the trapezoid, the nonagon area, the number of shared sides and the strict area comparison. The theorem `quadrilateral_counterexample` refutes the prediction at $n=4$. Its corollary `conjecture1_false` refutes the published conjecture. For the heptagon comparison, it certifies rational enclosures using the displayed cubic and integrates three enclosing trapezoids. [Statement](Statement.lean) · [Proof](Solution.lean)
 
@@ -45,4 +45,4 @@ Lean represents compact convex bodies with interior and inscribed polygons in bo
 python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-OpenAI Codex found the counterexample by optimizing symmetric polygonal sections and produced the proof and Lean formalization.
+OpenAI Codex found the four-vertex counterexample by optimizing symmetric polygonal sections and produced the proof and Lean formalization.

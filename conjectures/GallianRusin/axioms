@@ -1,2 +1,5 @@
+GallianRusin.commonFactor_15 propext Classical.choice Quot.sound
+GallianRusin.die_bound propext Classical.choice Quot.sound
+GallianRusin.one_le_normProduct propext Classical.choice Quot.sound
 GallianRusin.polynomial_mul propext Classical.choice Quot.sound
 GallianRusin.solutionDie_iff_plays propext Classical.choice Quot.sound

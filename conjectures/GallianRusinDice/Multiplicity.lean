@@ -2,8 +2,7 @@ module
 
 public import conjectures.GallianRusinDice.Statement
 public import Mathlib.RingTheory.Polynomial.Cyclotomic.Roots
-import Mathlib.RingTheory.Polynomial.Resultant.Basic
-import Mathlib.Analysis.Complex.Polynomial.Basic
+public import conjectures.GallianRusin.RootProducts
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -11,22 +10,8 @@ import Mathlib.Tactic.Ring
 
 public section
 namespace GallianRusinDice
-open Polynomial Finset
+open GallianRusin Polynomial Finset
 open scoped BigOperators
-
-private abbrev evalC (P : ℤ[X]) (z : ℂ) := P.eval₂ (Int.castRingHom ℂ) z
-
-private theorem die_bound {P : ℤ[X]} {m} (h : Die m P) {z : ℂ} (unit : ‖z‖=1) :
-    ‖evalC P z‖≤m := by
-  have total : (m:ℝ)=((P.eval 1:ℤ):ℝ) := by exact_mod_cast h.2.symm
-  rw [total,eval_eq_sum_range]
-  change ‖P.eval₂ _ z‖≤_
-  rw [eval₂_eq_sum_range]
-  apply (norm_sum_le ..).trans
-  push_cast
-  apply sum_le_sum
-  intro i _
-  simp [norm_pow,unit,Complex.norm_intCast,abs_of_nonneg (show (0:ℝ)≤P.coeff i by exact_mod_cast h.1 i)]
 
 private theorem sign_parity (f : ℤ[X]) : ∃ H : ℤ[X], f.comp (-X)=f+2*H := by
   induction f using Polynomial.induction_on' with
@@ -39,29 +24,6 @@ private theorem sign_parity (f : ℤ[X]) : ∃ H : ℤ[X], f.comp (-X)=f+2*H := 
     rcases Nat.even_or_odd n with h|h
     · exact ⟨0,by simp [h.neg_pow]⟩
     · exact ⟨-(C a*X^n),by simp [h.neg_pow]; ring⟩
-
-private theorem positive_resultant (f B : ℤ[X]) (mf : f.Monic)
-    (nonzero : ∀ z ∈ (f.map (Int.castRingHom ℂ)).roots,evalC B z≠0) :
-    1≤(((f.map (Int.castRingHom ℂ)).roots.map (fun z ↦ ‖evalC B z‖)).prod) := by
-  let φ := Int.castRingHom ℂ
-  let R : ℤ := f.resultant B
-  have mf' := mf.map φ
-  have eq : (R:ℂ) = ((f.map φ).roots.map (evalC B)).prod := by
-    change φ (f.resultant B) = _
-    rw [←resultant_map_map f B _ _ φ,←mf.natDegree_map φ,
-      resultant_eq_prod_eval _ _ _ (natDegree_map_le ..) (IsAlgClosed.splits _),mf'.leadingCoeff]
-    simp [eval_map,φ,evalC]
-  have nz : (R:ℂ)≠0 := by
-    rw [eq]
-    apply Multiset.prod_ne_zero
-    intro bad
-    obtain ⟨z,hz,e⟩ := Multiset.mem_map.mp bad
-    exact nonzero z hz e
-  have low : (1:ℝ)≤ ‖(R:ℂ)‖ := by
-    rw [Complex.norm_intCast]
-    exact_mod_cast Int.one_le_abs (fun h ↦ nz (by rw [h]; simp))
-  rw [eq] at low
-  simpa [←Multiset.map_map] using low
 
 /-- Every cyclotomic multiplicity in a die with an odd number of faces is at most log₂(m). -/
 theorem odd_multiplicity_bound {m d e : ℕ} {P : ℤ[X]} (odd : Odd m) (dpos : 0<d)
@@ -110,7 +72,7 @@ theorem odd_multiplicity_bound {m d e : ℕ} {P : ℤ[X]} (odd : Odd m) (dpos : 
   have live (z : ℂ) (hz : z∈roots) : evalC B z≠0 := by
     intro z0
     exact away z hz (by rw [value z hz,z0,mul_zero])
-  have low := positive_resultant f B (cyclotomic.monic d ℤ) live
+  have low := one_le_normProduct (cyclotomic.monic d ℤ) live
   by_contra! small
   have point (z : ℂ) (hz : z∈roots) : ‖evalC B z‖≤(m:ℝ)/2^e := by
     have bound := die_bound game.1 (z := -z) (by rw [norm_neg,(rootspec z hz).norm'_eq_one dpos.ne'])

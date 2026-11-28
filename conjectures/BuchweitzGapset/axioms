@@ -1,3 +1,6 @@
 BuchweitzGapset.exact_example propext Classical.choice Quot.sound
 BuchweitzGapset.gapset_resolution propext Classical.choice Quot.sound
 BuchweitzGapset.resolution propext Classical.choice Quot.sound
+BuchweitzGapset.nonunimodal_gapset propext Classical.choice Quot.sound
+BuchweitzGapset.unimodality_resolution propext Classical.choice Quot.sound
+statement BuchweitzGapset.UnimodalityQuestion propext Classical.choice Quot.sound

@@ -31,4 +31,12 @@ def Conjecture : Prop := ∀ A : Finset ℤ, (obstruction A).OrdConnected
 /-- The same question restricted to gapsets of numerical semigroups. -/
 def GapsetConjecture : Prop := ∀ A : Finset ℤ, IsGapset A → (obstruction A).OrdConnected
 
+/-- Weak unimodality on the positive orders. No middle value can be strictly
+less than both outer values. This also permits monotone sequences. -/
+def UnimodalExcess (A : Finset ℤ) : Prop :=
+  ∀ i j k : ℕ, 0 < i → i ≤ j → j ≤ k → min (beta A i) (beta A k) ≤ beta A j
+
+/-- Eliahou, García-García, Marín-Aragón and Vigneron-Tenorio, Question 4.2. -/
+def UnimodalityQuestion : Prop := ∀ A : Finset ℤ, UnimodalExcess A
+
 end BuchweitzGapset
