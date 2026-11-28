@@ -1,6 +1,6 @@
 # Mathematical conjectures
 
-This collection contains 100 research notes on published mathematical questions. Of these, 98 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 101 research notes on published mathematical questions. Of these, 99 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
@@ -18,6 +18,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | --- | --- | --- |
 | [Proof of Ascoli et al.’s Conjecture 1.6 on product-dominant subsets of generalized dihedral groups][note-52] | Subsets with more products than quotients outnumber those with more quotients than products in every finite nonabelian generalized dihedral group. | [Lean][proof-52] · [#52][pr-52] |
 | [Disproof of Bajnok’s Conjecture 7 on extremizers for restricted sumsets in finite abelian groups][note-28] | Up to affine equivalence, exactly two eight-element sets modulo 17 have only 16 sums of three distinct elements. One is an interval. The other consists of the nonzero squares. | [Lean][proof-28] · [#28][pr-28] |
+| [Disproof of Bajnok’s Conjecture 9 on the minimum size of restricted double sumsets in cyclic groups][note-115] | Nineteen residues modulo 444 have 34 sums of two distinct elements. The formula predicts 35. | [Lean][proof-115] · [#115][pr-115] |
 | [Proof of Cilleruelo, Serra and Wötzel’s conjecture on the maximum size of Sidon set systems][note-61] | For every fixed set size $k\ge2$, the largest Sidon system attains the known upper bound asymptotically. The previously open sizes were $k\ge4$. | [Lean][proof-61] · [#61][pr-61] |
 | [Proof of Conlon, Fox and Pham’s Conjecture 10 on the logarithmic density of monochromatic subset sums][note-59] | For every $r\ge3$, an explicit sharp upper logarithmic density of monochromatic subset sums is guaranteed and attained. The source settled the two-color case. | [Lean][proof-59] · [#59][pr-59] |
 | [Proof of Lazarev, Miller and O’Bryant’s Conjecture 8.1 on the first present sum][note-66] | Given $k$ missing sums, the limiting mean position of the first present sum is $k/2+O(1)$. | [Lean][proof-66] · [#66][pr-66] |
@@ -491,3 +492,6 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-114]: conjectures/OlarteSantosSpreerStump/README.md
 [proof-114]: conjectures/OlarteSantosSpreerStump/Solution.lean
 [pr-114]: https://github.com/aliromman/math/pull/114
+[note-115]: conjectures/BajnokRestrictedMinimum/README.md
+[proof-115]: conjectures/BajnokRestrictedMinimum/Solution.lean
+[pr-115]: https://github.com/aliromman/math/pull/115
