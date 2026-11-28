@@ -5,7 +5,6 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import json
-import os
 import re
 import subprocess
 import sys
@@ -120,25 +119,16 @@ def affected(groups, changed, imports):
             owners.add(group)
     return {g: sources for g, sources in groups.items() if g in owners}, replay
 
-def replay_group(job):
-    group, sources, selected = job
-    expected = {module_name(source) for source in sources if module_name(source) in selected}
-    if not expected:
-        return
-    for module in sorted(expected):
-        artifact = Path(".lake/build/lib/lean", *module.split(".")).with_suffix(".olean")
-        if not artifact.is_file():
-            raise SystemExit(f"Incomplete replay: missing {artifact}")
-    # The release CLI accepts module prefixes. A full group needs only one object-file scan.
-    targets = [".".join(group.parts)] if len(expected) == len(sources) else sorted(expected)
-    result = subprocess.run(["leanchecker", "--verbose", *targets], stdout=subprocess.PIPE,
-                            text=True, env={**os.environ, "LEAN_NUM_THREADS": "1"})
+def replay_source(source):
+    artifact = Path(".lake/build/lib/lean") / source.with_suffix(".olean")
+    if not artifact.is_file():
+        raise SystemExit(f"Incomplete replay: missing {artifact}")
+    module = module_name(source)
+    result = subprocess.run(["leanchecker", "--verbose", module], text=True, stdout=subprocess.PIPE)
     if result.returncode:
-        raise SystemExit(f"Kernel replay failed for {', '.join(targets)} (exit {result.returncode})")
-    checked = {line.removeprefix("replaying ") for line in result.stdout.splitlines() if line.startswith("replaying ")}
-    if missing := expected - checked:
-        raise SystemExit(f"Incomplete replay: {', '.join(sorted(missing))}")
-
+        raise SystemExit(f"Kernel replay failed for {module} (exit {result.returncode})")
+    if f"replaying {module}" not in result.stdout.splitlines():
+        raise SystemExit(f"Incomplete replay: {module}")
 
 
 def main():
@@ -182,7 +172,7 @@ def main():
 
     sources = [p for files in groups.values() for p in files if module_name(p) in selected]
     with ThreadPoolExecutor(max_workers=2) as workers:
-        list(workers.map(replay_group, ((g, paths, selected) for g, paths in groups.items())))
+        list(workers.map(replay_source, sources))
     for group, files in groups.items():
         subprocess.run(["lean", "--run", str(AUDIT), str(group / "axioms"), *map(str, files)], check=True)
         count = sum(module_name(p) in selected for p in files)
