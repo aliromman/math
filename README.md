@@ -489,6 +489,6 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [proof-102]: conjectures/AldousFillAdjacent/Solution.lean
 [pr-102]: https://github.com/aliromman/math/pull/102
 
-[note-120]: https://github.com/aliromman/math/blob/4c92799a61a16e3906517db3d756adec19de2dfc/conjectures/ErdosSuranyi708/README.md
+[note-120]: conjectures/ErdosSuranyi708/README.md
 [proof-120]: conjectures/ErdosSuranyi708/Limit.lean
 [pr-120]: https://github.com/aliromman/math/pull/120

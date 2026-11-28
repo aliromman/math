@@ -127,13 +127,14 @@ to the nearest 10,000. [Accounting record in PR #102](https://github.com/aliromm
 
 ## Numbered Erdős problem, 27 November 2026
 
-The new contribution to Erdős Problem 708 is the sharp asymptotic upper bound in arbitrary signed integer intervals. Erdős and Surányi proved the matching asymptotic lower bound in 1959, §9. The maintainer formalization adapts their construction to each exact input size and proves that the least sufficient budget satisfies $g(n)/n\to2$. The pointwise question $g(n)\le2n$ remains open. The lower bound and the limit belong to this same research entry. The table records the original research session. This formalization uses the same research entry. [Original paper](https://users.renyi.hu/~p_erdos/1959-07.pdf#page=6) · [Historical lower bound](../conjectures/ErdosSuranyi708/HistoricalLower.lean) · [Limit](../conjectures/ErdosSuranyi708/Limit.lean) Work on Problems 273 and 881 produced partial constructions. [Draft PR 120](https://github.com/aliromman/math/pull/120)
+The new upper bound for Erdős Problem 708 is uniform over signed intervals. The formalization also proves Erdős and Surányi’s exact 1959 lower bound on triangular input sizes, an arbitrary-cardinality variant and the sharp limit for the least sufficient budget. The pointwise bound remains open. Problems 273 and 881 produced partial constructions. [Original lower bound, §9](https://users.renyi.hu/~p_erdos/1959-07.pdf#page=6) · [Lower-bound proofs](../conjectures/ErdosSuranyi708/HistoricalLower.lean) · [Limit](../conjectures/ErdosSuranyi708/Limit.lean) · [Draft PR 120](https://github.com/aliromman/math/pull/120)
 
 | Investigation | Wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Erdős–Surányi #708 | 3 h 43 min | 3,860,000 | 303,210,000 | 1,720,000 | 5,580,000 | 308,780,000 |
+| Erdős–Surányi #708, local proof check | 3 h 43 min | 3,860,000 | 303,210,000 | 1,720,000 | 5,580,000 | 308,780,000 |
+| Same session, hosted proof check | 3 h 48 min | 3,900,000 | 305,730,000 | 1,720,000 | 5,630,000 | 311,360,000 |
 
-This measurement runs from 16:55 UTC through independent verification of the publication revision at 20:38 UTC. It includes the primary researcher and four contributing agents. Cached input is counted once, and output includes reasoning. The PR records the later cutoff at the hosted check. Across this investigation and the three research campaigns in the earlier table, the recorded PR count is 91.
+Both rows measure the same research session from 16:55 UTC on 27 November 2026. The local check finished at 20:38 UTC and the hosted check finished at 20:44 UTC. Use the second row for cumulative accounting. It includes the primary researcher and four contributing agents. Cached input is counted once. Output includes reasoning. [Original hosted verification](https://github.com/aliromman/math/actions/runs/46065363469/job/140729250564) Across this investigation and the three research campaigns in the earlier table, the recorded PR count is 91.
 
 ## Earlier work
 
