@@ -68,9 +68,9 @@ def main():
               + "run_cmd liftCoreM <| addDecl <| .thmDecl { name := `controlResult, "
               + "levelParams := [], type := mkConst ``False, value := mkConst ``True.intro }\n",
               "controlResult\n", "(kernel) declaration type mismatch")
-        if "Build completed successfully" not in kernel_log or "Replay.lean:" not in kernel_log:
+        if "Build completed successfully" not in kernel_log or "leanchecker found a problem in conjectures.Control.Result" not in kernel_log:
             raise SystemExit("The kernel control must build before independent replay rejects it")
-        if "Kernel replay failed for conjectures.Control.Result" not in kernel_log:
+        if "Kernel replay failed for conjectures.Control" not in kernel_log:
             raise SystemExit("The failure in the second replay task was lost")
         first.unlink()
         check("unused private axiom", valid + "private axiom unexplained : False\n",

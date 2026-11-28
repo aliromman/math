@@ -15,7 +15,7 @@ AUDIT = Path(__file__).with_name("Audit.lean").resolve()
 
 def research_groups():
     tracked = subprocess.check_output(["git", "ls-files", "-z", "--", "*.lean"]).decode().split("\0")
-    tools = {"scripts/Audit.lean", "scripts/Replay.lean", "scripts/ResearchLint.lean"}
+    tools = {"scripts/Audit.lean", "scripts/ResearchLint.lean"}
     for path in filter(None, tracked):
         if not path.startswith("conjectures/") and path not in tools:
             raise SystemExit(f"Lean source outside the verified library: {path}")
@@ -120,15 +120,24 @@ def affected(groups, changed, imports):
             owners.add(group)
     return {g: sources for g, sources in groups.items() if g in owners}, replay
 
-def replay_source(source):
-    artifact = Path(".lake/build/lib/lean") / source.with_suffix(".olean")
-    if not artifact.is_file():
-        raise SystemExit(f"Incomplete replay: missing {artifact}")
-    module = ".".join(source.with_suffix("").parts)
-    result = subprocess.run(["lean", str(AUDIT.with_name("Replay.lean"))],
-                            env={**os.environ, "RESEARCH_REPLAY_MODULE": module})
+def replay_group(job):
+    group, sources, selected = job
+    expected = {module_name(source) for source in sources if module_name(source) in selected}
+    if not expected:
+        return
+    for module in sorted(expected):
+        artifact = Path(".lake/build/lib/lean", *module.split(".")).with_suffix(".olean")
+        if not artifact.is_file():
+            raise SystemExit(f"Incomplete replay: missing {artifact}")
+    # The release CLI accepts module prefixes. A full group needs only one object-file scan.
+    targets = [".".join(group.parts)] if len(expected) == len(sources) else sorted(expected)
+    result = subprocess.run(["leanchecker", "--verbose", *targets], stdout=subprocess.PIPE,
+                            text=True, env={**os.environ, "LEAN_NUM_THREADS": "1"})
     if result.returncode:
-        raise SystemExit(f"Kernel replay failed for {module} (exit {result.returncode})")
+        raise SystemExit(f"Kernel replay failed for {', '.join(targets)} (exit {result.returncode})")
+    checked = {line.removeprefix("replaying ") for line in result.stdout.splitlines() if line.startswith("replaying ")}
+    if missing := expected - checked:
+        raise SystemExit(f"Incomplete replay: {', '.join(sorted(missing))}")
 
 
 
@@ -173,7 +182,7 @@ def main():
 
     sources = [p for files in groups.values() for p in files if module_name(p) in selected]
     with ThreadPoolExecutor(max_workers=2) as workers:
-        list(workers.map(replay_source, sources))
+        list(workers.map(replay_group, ((g, paths, selected) for g, paths in groups.items())))
     for group, files in groups.items():
         subprocess.run(["lean", "--run", str(AUDIT), str(group / "axioms"), *map(str, files)], check=True)
         count = sum(module_name(p) in selected for p in files)
