@@ -30,13 +30,27 @@ and enumerated 33,021 small instances. CI built and replayed 13 Lean modules
 and checked both axiom contracts. [Draft PR 116](https://github.com/aliromman/math/pull/116) ·
 [Proof verification](https://github.com/aliromman/math/actions/runs/45962046706)
 
+The fourth draft proves both bounds on the complex zeros of peak polynomials
+in Billey, Fahrbach and Talmage’s Conjecture 6.4. The disk bound follows
+from Alex Chengyu Li’s coefficient theorem. The real-part bound follows by
+induction on the gaps between peaks. An independent reviewer checked the
+formal statement and compared the estimates with exact permutation counts
+for 10,945 peak sets. CI built and replayed 18 modules, checked 847 local
+declarations and enforced four exact axiom expectations. [Draft PR 117](https://github.com/aliromman/math/pull/117) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45972506522)
+
+The final proof revision shares the evaluation and growth lemmas with the
+real-root classification. CI replayed all 19 modules and checked the same
+847 declarations and four axiom expectations. [Final proof verification](https://github.com/aliromman/math/actions/runs/45974220479)
+
 | Cutoff (UTC) | Verified resolutions | Numbered Erdős problems | Elapsed | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 27 November 2026, 06:28 | 1 | 0 | 44 min | 880,000 | 51,940,000 | 270,000 | 1,150,000 | 53,090,000 |
 | 27 November 2026, 07:34 | 2 | 0 | 1 h 50 min | 1,660,000 | 172,790,000 | 690,000 | 2,340,000 | 175,130,000 |
 | 27 November 2026, 07:59 | 3 | 0 | 2 h 15 min | 2,160,000 | 216,990,000 | 830,000 | 2,990,000 | 219,980,000 |
+| 27 November 2026, 09:19 | 4 | 0 | 3 h 36 min | 3,590,000 | 344,090,000 | 1,320,000 | 4,910,000 | 349,000,000 |
 
-The campaign has verified three of its five target resolutions. None has a
+The campaign has verified four of its five target resolutions. None has a
 numbered Erdős problem ID. Each row gives cumulative figures through the
 corresponding proof check, including concurrent investigations. Each total
 counts each participant once and is rounded independently. The 99 mathematical
