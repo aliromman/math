@@ -1,6 +1,6 @@
 # Mathematical conjectures
 
-This collection contains 99 research notes on published mathematical questions. Of these, 97 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 100 research notes on published mathematical questions. Of these, 98 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
@@ -107,6 +107,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\mathop{\mathrm{Re}}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
 | [Solution to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity of order polytopes of polygon face lattices][note-93] | For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] |
+| [Disproof of Olarte, Santos, Spreer and Stump’s Conjecture 3.5 on dual pairs in flag complexes][note-114] | A 12-vertex flag surface has a dual pair with nine essential vertices. The octahedron has six vertices. | [Lean][proof-114] · [#114][pr-114] |
 
 ### Probability and stochastic processes
 
@@ -487,3 +488,6 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-102]: conjectures/AldousFillAdjacent/README.md
 [proof-102]: conjectures/AldousFillAdjacent/Solution.lean
 [pr-102]: https://github.com/aliromman/math/pull/102
+[note-114]: conjectures/OlarteSantosSpreerStump/README.md
+[proof-114]: conjectures/OlarteSantosSpreerStump/Solution.lean
+[pr-114]: https://github.com/aliromman/math/pull/114
