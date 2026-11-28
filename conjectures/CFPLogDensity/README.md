@@ -11,6 +11,8 @@ $$
 
 Conlon, Fox and Pham found the extremal coloring and proved the two-color case, answering a question of Erdős. Their Conjecture 10 asks whether their upper bound is sharp for every larger number of colors. The proof below establishes the matching lower bound for arbitrary colorings. [Conlon, Fox and Pham, *The upper logarithmic density of monochromatic subset sums*, Mathematika 68 (2022), 1292–1301, pp. 2 and 9 of the preprint](https://arxiv.org/pdf/2105.15195#page=9) · [Erdős Problem 1211, the earlier two-color question](https://www.erdosproblems.com/1211)
 
+The manuscript gives the complete argument and its historical context. [Manuscript (PDF)](manuscript.pdf) · [LaTeX source](manuscript.tex)
+
 ## The statement
 
 For a set $A$ of positive integers, write $\Sigma(A)$ for its finite subset sums. Its upper logarithmic density is

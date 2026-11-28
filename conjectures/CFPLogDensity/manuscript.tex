@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1.08in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\overline d_{\log}}
+\newcommand{\card}[1]{\lvert#1\rvert}
+\newcommand{\eps}{\varepsilon}
+\title{The sharp logarithmic density of monochromatic subset sums}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every partition of the positive integers into $r\ge3$ colour classes, one
+class has a set of finite subset sums of upper logarithmic density at least
+$(1-1/(2b))/(1-b^{-r})$, where $b>1$ satisfies
+$b^r-2rb+r-1=0$. Conlon, Fox and Pham gave a colouring attaining the
+corresponding upper bound and proved sharpness for two colours.
+We prove sharpness for every $r\ge3$, as predicted by their Conjecture~10.
+The proof counts complete dyadic intervals of subset sums.
+Delaying each count until the next gap makes the product of the $r$
+normalized counts increase whenever all the densities fall below the
+claimed value.
+\end{abstract}
+
+\section{The extremal constant}
+
+For $A\subseteq\N=\{1,2,\ldots\}$, let $\Sigma(A)$ consist of the sums of
+finite subsets of $A$. Including the empty sum has no effect on the
+upper logarithmic density
+\[
+ \dd(S)=\limsup_{x\to\infty}
+  \frac1{\log x}\sum_{\substack{1\le n\le x\\n\in S}}\frac1n .
+\]
+Given $r$ colours, let $c_r$ be the infimum of
+$\max_{1\le i\le r}\dd(\Sigma(A_i))$ over partitions
+$\N=A_1\sqcup\cdots\sqcup A_r$ into nonempty parts. We will see that
+the infimum is attained. Erd\H{o}s asked for $c_2$
+\cite{erdos-mysore,erdos-misc}. Conlon, Fox and Pham proved
+$c_2=(2+\sqrt3)/4$ and gave a cyclic colouring for every number of colours
+\cite[Theorem~1]{cfp}.
+
+\begin{theorem}\label{thm:main}
+Let $r\ge3$ be an integer. The polynomial $x^r-2rx+r-1$ has a unique
+root $b>1$. Then
+\[
+ c_r=\frac{1-1/(2b)}{1-b^{-r}}
+     =\left(1-\frac1{2b}\right)\left(1+\frac1{2rb-r}\right).
+\]
+The cyclic colouring of Conlon, Fox and Pham attains this value.
+\end{theorem}
+
+For three colours this gives $c_3=0.8526248994\ldots$.
+The upper bound and the numerical expression in
+Theorem~\ref{thm:main} are due to Conlon, Fox and Pham. The lower bound
+for $r\ge3$ is the assertion of their Conjecture~10.
+We use their interval lemma to reduce the lower bound to a counting
+argument on the dyadic scale.
+
+\section{Intervals on the logarithmic scale}
+
+Write $S_i=\Sigma(A_i)$ and let $F_i$ be the set of nonnegative integers
+$j$ for which every integer in $[2^j,2^{j+1})$ lies in $S_i$.
+Two properties of $F_i$ will be used. First, each full interval
+contributes at least $\log 2$, since
+$\sum_{n=2^j}^{2^{j+1}-1}1/n\ge\int_{2^j}^{2^{j+1}}dx/x$.
+Consequently,
+\begin{equation}\label{eq:cap}
+ \max_i\dd(S_i)<C
+ \quad\Longrightarrow\quad
+ 1+\card{F_i\cap[0,n)}\le Cn
+ \quad\text{for every $i$ and all sufficiently large $n$.}
+\end{equation}
+Indeed, choose $C'$ strictly between the maximum density and $C$.
+At all sufficiently large cutoffs $2^n$ the harmonic mass of each
+$S_i$ is at most $C'n\log 2$, and $1\le (C-C')n$.
+
+Second, a long block of consecutive indices is full for one colour.
+The input from additive combinatorics is Lemma~2 of \cite{cfp}.
+For fixed $r$ it gives constants $a_r,b_r>0$ with the following
+property. If the integers in $[N,eN)$ have $r$ colours, then for some
+colour the subset sums of its elements in this interval include every
+integer between $a_r N$ and $b_r N^2$.
+
+\begin{lemma}\label{lem:interval}
+Fix an integer $K\ge2$, and put $p=K+1$, $q=2K-1$.
+For every sufficiently large integer $t$ there is a colour $i$ with
+\begin{equation}\label{eq:block}
+ [pt,q(t+1))\cap\mathbb Z\ \subseteq\ F_i .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Apply the interval lemma at $N=2^{Kt}$ with the restricted colouring.
+For all large $t$ we have $a_r2^{Kt}\le2^{pt}$ and
+$2^{q(t+1)}\le b_r2^{2Kt}$. The ratios giving these two inequalities
+are $2^t$ and $2^{q-t}$, respectively.
+Every dyadic interval indexed in \eqref{eq:block} therefore lies
+inside the interval of subset sums for the same colour.
+\end{proof}
+
+\section{Counting complete intervals after their next gap}
+
+Let $b$ be the root in Theorem~\ref{thm:main}. To see that it exists
+and is unique, put $f(x)=x^r-2rx+r-1$. The derivative
+$r(x^{r-1}-2)$ changes sign once on $(1,\infty)$, from negative to
+positive. Also $f(1)=-r$ and $f(x)\to\infty$.
+Set $c=(1-1/(2b))/(1-b^{-r})$. The root equation gives
+\[
+ 2rb c=b^r,\qquad 2rb(1-c)=r-1.
+\]
+Thus $0<c<1$, and $b^r-1=2rb-r$ gives the other expression in the
+theorem. Since $u^r\ge1+r(u-1)$ for $u\ge0$, substitution of $u=bz$
+gives
+\begin{equation}\label{eq:tangent}
+ 1-c+cz^r\ \ge\ z/2\qquad(z\ge0).
+\end{equation}
+Equality holds at $z=1/b$.
+
+Suppose for contradiction that every $\dd(S_i)$ is below $c$. Choose
+$C$ strictly between their maximum and $c$. Then
+$1-C+Cz^r-z/2>0$ on $[0,1]$. For $z<1$ this follows from
+\eqref{eq:tangent} after adding $(c-C)(1-z^r)$, and at $z=1$ the
+difference is $1/2$. The continuous difference has a positive minimum.
+Since $(K+1)/(2K-1)\to1/2$, we may fix a sufficiently large $K$ and
+then a number $g>1$ sufficiently close to $1$ so that, uniformly in
+$0\le z\le1$,
+\begin{equation}\label{eq:strict}
+ (p/q)z < 1-C+Cz^r/g.
+\end{equation}
+
+For each colour and integer $t\ge1$ define
+\begin{align*}
+ B_i(t)=\{j\in F_i:\ &0\le j<qt,\text{ and there is an }h\notin F_i
+                         \text{ with }j<h<q(t+1)\},\\
+ A_i(t)&=1+\card{B_i(t)}.
+\end{align*}
+Here $h$ is a nonnegative integer. The sets $B_i(t)$ increase with $t$.
+Their defining condition postpones the count of a full interval until a
+later missing interval has been seen. By \eqref{eq:cap},
+$1\le A_i(t)\le Cqt$ for all large $t$. Thus the positive function
+\[
+ P(t)=\frac{\prod_{i=1}^r A_i(t)}{(qt)^r}
+\]
+is bounded above by $C^r$ for all large $t$.
+
+For each sufficiently large $t$ we now find $u>t$ with
+$P(u)>gP(t)$. Choose $i$ as in Lemma~\ref{lem:interval}, and take the
+least integer $h\ge pt$ outside $F_i$.
+Such a missing index exists: a full tail would violate
+\eqref{eq:cap} since $C<1$. We have $h\ge q(t+1)$. With
+$u=\lfloor h/q\rfloor$, we get $u>t$ and $qu\le h<q(u+1)$.
+Each integer $j\in[pt,qu)$ belongs to $B_i(u)$, with $h$ as its
+witness. None belongs to $B_i(t)$, since \eqref{eq:block} leaves no
+missing index between such a $j$ and $q(t+1)$. Monotonicity gives
+\begin{equation}\label{eq:inc}
+ A_i(u)-A_i(t)\ge qu-pt.
+\end{equation}
+
+If $P(u)\le gP(t)$, the other factors are positive and nondecreasing, so $A_i(t)\ge A_i(u)(t/u)^r/g$.
+Writing $z=t/u$ and $a=A_i(u)/(qu)\le C$, inequality \eqref{eq:inc}
+would imply
+\[
+ (p/q)z\ \ge\ 1-a+az^r/g\ \ge\ 1-C+Cz^r/g .
+\]
+The last inequality uses $z^r/g\le1$. This contradicts
+\eqref{eq:strict}. Iterating from any sufficiently large $t_0$ now
+produces $t_m$ with $P(t_m)>g^mP(t_0)$ for every $m\ge1$, contrary
+to boundedness. This proves $\max_i\dd(S_i)\ge c$ for every colouring.
+
+\section{Attainment}
+
+We recall the cyclic construction of \cite[Theorem~1]{cfp}. Give
+$n$ colour $k\bmod r$ when $b^k\le\log n<b^{k+1}$ with $k\ge0$.
+Assign the finitely many smaller integers any colour. Each colour occurs
+infinitely often since $\exp(b^{k+1})-\exp(b^k)\to\infty$.
+If the largest summand of a positive sum is $n$, the sum lies between
+$n$ and $n(n+1)/2\le n^2$. Hence, up to a bounded initial segment,
+the logarithms of the elements of $S_i$ lie in
+\[
+ \bigcup_{j\ge0}[a_j,da_j],\qquad a_j=b^{i+rj},\quad d=2b,
+ \quad a_{j+1}=Qa_j,\quad Q=b^r
+\]
+for the representative $i\in\{0,\ldots,r-1\}$. The intervals are
+disjoint because $Q-d=(r-1)(2b-1)>0$.
+
+Let $L(Y)$ be the length of this union in $[0,Y]$. The ratio $L(Y)/Y$
+increases within each interval and decreases in the intervening gap,
+since there $L$ has slope one and zero, respectively, and $L(Y)\le Y$.
+At the right endpoint of the $m$th interval (starting at $m=0$),
+\[
+ \frac{L(da_m)}{da_m}=\left(1-\frac1d\right)
+          \sum_{j=0}^{m}Q^{-j}
+ \le\frac{1-1/d}{1-Q^{-1}}=c .
+\]
+On a logarithmic interval $[u,v]$, $0\le u\le v$, comparison with
+$\int dx/x$ shows that the mass of the integers $n$ with
+$e^u\le n\le e^v$ is at most $v-u+1$. Only $O(1+\log(1+Y))$
+of these geometric intervals meet $[0,Y]$. Summing over the
+intersections gives
+\[
+ \sum_{\substack{1\le n\le e^Y\\ n\in S_i}}\frac1n
+ \le L(Y)+O(1+\log(1+Y)).
+\]
+After division by $Y$ and passage to the limsup, $\dd(S_i)\le c$ for
+every $i$. The lower bound already proved shows that their maximum is
+exactly $c$, as required.
+
+\section*{Formal verification and AI contribution}
+The Lean~4 theorem \texttt{CFPLogDensity.\allowbreak resolution}
+proves Theorem~\ref{thm:main} \cite{formal}. The formal proof also derives a sufficient monochromatic
+interval estimate directly and relates integer cutoffs to the limsup at
+real cutoffs. OpenAI Codex agents developed the multicolour lower-bound
+argument, wrote the formalization, checked the translation against the
+source, and prepared this manuscript. The cited authors supplied the
+original problem, interval lemma, extremal colouring, and two-colour
+theorem.
+
+\begin{thebibliography}{9}
+\bibitem{cfp}
+D. Conlon, J. Fox and H. T. Pham, The upper logarithmic density of
+monochromatic subset sums, \emph{Mathematika} \textbf{68} (2022),
+1292--1301. \href{https://doi.org/10.1112/mtk.12167}{doi:10.1112/mtk.12167}.
+
+\bibitem{erdos-mysore}
+P. Erd\H{o}s, Some new problems and results in number theory,
+in \emph{Number Theory} (Mysore, 1981), Lecture Notes in Mathematics
+\textbf{938}, Springer, Berlin, 1982, 50--74.
+\href{https://www.renyi.hu/~p_erdos/1982-32.pdf}{Author's collected papers}.
+
+\bibitem{erdos-misc}
+P. Erd\H{o}s, Miscellaneous problems in number theory, \emph{Congr. Numer.}
+\textbf{34} (1982), 25--45.
+\href{https://renyi.hu/~p_erdos/1982-08.pdf}{Author's collected papers}.
+
+\bibitem{formal}
+\emph{Lean formalization of Conlon, Fox and Pham's Conjecture 10},
+version \texttt{c77c7b27} (26 November 2026).
+\href{https://github.com/aliromman/math/tree/c77c7b27b242d8542ccc79c6454553536347dd9a/conjectures/CFPLogDensity}{Source, proof and reproduction instructions}.
+\end{thebibliography}
+\end{document}

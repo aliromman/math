@@ -1,0 +1,89 @@
+[[entry]]
+pr = 40
+group = "SplitMatroidFlags"
+theorem = "resolution"
+type = "¬ Conjecture"
+title = "Equal face vectors and different flag vectors for two connected split matroids"
+description = "Two connected rank-three split matroids on eleven elements have identical face vectors and distinct flag vectors."
+scope = "A counterexample to the implication from equality of ordinary face vectors to equality of flag vectors for base polytopes of connected split matroids."
+fidelity = "The statement counts exposed faces by affine dimension and flags by strictly decreasing dimension lists. The counterexample distinguishes vertex–four-face incidences."
+review = "Repository reviewers checked both witnesses and the face counts. Alejandro Vargas independently reproduced the counterexample with the authors’ code. This confirms the computation."
+locator = "Faustini and Vargas, Problem 6.7 (v2), Problem 6.5 (v1)"
+arxiv = ["math.CO"]
+msc = ["05B35", "52B05"]
+sources = [{title="Almost-valuative invariants of connected split matroids: The cd-index", authors=["Tommaso Faustini", "Alejandro Vargas"], type="preprint", location="https://arxiv.org/abs/2512.05250v2"}]
+
+[[entry]]
+pr = 81
+group = "ErdosPurdyStraus"
+theorem = "resolution"
+type = "∃! t : ℝ, Parameter t ∧ IsAnswer (Real.pi - 4 * Real.arctan t - t^2)"
+title = "The sharp area ratio for a largest inscribed triangle with a boundary side"
+description = "For compact planar convex bodies with a largest triangle that shares a boundary side, the greatest body-to-triangle area ratio is approximately 2.3075689464."
+scope = "The exact maximum and attainment, with the algebraic parameter in the interval (0,1/4). The claim ranges over all admissible bodies."
+fidelity = "Positive triangle area excludes degenerate bodies. The common segment lies on the frontier. Maximality compares every triple in the body, which gives the same maximum as boundary triples."
+review = "The repository audit checked the normalization, section-width bound, equality construction and extremal integral. Edgardo Roldán-Pensado reviewed the argument and considers the bound correct."
+locator = "Erdős, Purdy and Straus (1982), Problem 3.4"
+arxiv = ["math.MG"]
+msc = ["52A40", "52A10"]
+sources = [{title="On a problem in combinatorial geometry", authors=["Paul Erdős", "George Purdy", "Ernst G. Straus"], type="article", location="https://users.renyi.hu/~p_erdos/1982-09.pdf"}, {title="Simultaneous inner and outer approximation of shapes", authors=["Rudolf Fleischer", "Kurt Mehlhorn", "Günter Rote", "Emo Welzl", "Chee Yap"], type="article", location="https://doi.org/10.1007/BF01758852", note="The appendix establishes the polygon bounds, including the hexagon attaining 9/4."}]
+
+[[entry]]
+pr = 59
+group = "CFPLogDensity"
+theorem = "resolution"
+type = "Conjecture"
+title = "The sharp upper logarithmic density of monochromatic subset sums"
+description = "For every number of colours at least three, the lower bound for the largest upper logarithmic density of a monochromatic subset-sum set matches the colouring of Conlon, Fox and Pham."
+scope = "The sharp constant, uniqueness of its algebraic parameter, and attainment for partitions of the positive integers into at least three nonempty parts."
+fidelity = "Finite subset sums use distinct positive summands. Upper logarithmic density uses real cutoffs. The authors previously proved the two-colour case and gave the upper construction."
+review = "A repository audit compared the exact root, density convention, interval lemma, product estimate and extremal colouring with the article and checked the Lean endpoint."
+locator = "Conlon, Fox and Pham, Conjecture 10"
+arxiv = ["math.CO", "math.NT"]
+msc = ["11B75", "05D10"]
+sources = [{title="The upper logarithmic density of monochromatic subset sums", authors=["David Conlon", "Jacob Fox", "Huy Tuan Pham"], type="article", location="https://arxiv.org/abs/2105.15195v3", note="The authors gave the upper colouring, proved the two-colour case and proposed the general equality."}]
+
+[[entry]]
+pr = 114
+group = "OlarteSantosSpreerStump"
+theorem = "not_conjecture"
+type = "¬ Conjecture"
+title = "A dual pair in a flag complex that does not occur on the cross-polytope"
+description = "A twelve-vertex pure two-dimensional flag complex without boundary ridges contains a dual pair with nine essential vertices. No such pair occurs on the octahedron."
+scope = "A counterexample to the proposed classification of dual pairs. The general Erdős–Ko–Rado question for facets remains open."
+fidelity = "Isomorphism allows exchange of the two families and a bijection on essential vertices. Every edge of the witness lies in two facets."
+review = "The independent repository audit enumerated all faces of the witness, checked the dual pair and counted its essential vertices."
+locator = "Olarte, Santos, Spreer and Stump, Conjecture 3.5 in the journal, 3.8 in the preprint"
+arxiv = ["math.CO"]
+msc = ["05E45", "05D05"]
+sources = [{title="The EKR property for flag pure simplicial complexes without boundary", authors=["Jorge Olarte", "Francisco Santos", "Jonathan Spreer", "Christian Stump"], type="article", location="https://doi.org/10.1016/j.jcta.2019.105205"}]
+
+[[entry]]
+pr = 64
+group = "PolyominoPrimality"
+theorem = "resolution"
+type = "∀ (K : Type*) [Field K], ¬ Conjecture K"
+title = "A nonprime polyomino with no zig-zag walk under the published common-rectangle condition"
+description = "A thirteen-cell polyomino has no zig-zag walk under the published definition, yet its inner-minor quotient has zero divisors over every coefficient field."
+scope = "The counterexample concerns Conjectures 1.2 and 4.6 under the printed condition (Z3), including collinear marks."
+fidelity = "Any inner rectangle containing two marks rules out the walk under (Z3). The six rectangles in the construction form a walk under the alternative opposite-corner test."
+review = "Two repository calculations checked the 33 inner rectangles and the zero divisors. The original authors are investigating the example and their reference implementation."
+locator = "Mascia, Rinaldo and Romeo (2020), Definition 3.2 and Conjectures 1.2 and 4.6"
+arxiv = ["math.AC", "math.CO"]
+msc = ["13F65", "05B50"]
+sources = [{title="Primality of multiply connected polyominoes", authors=["Carla Mascia", "Giancarlo Rinaldo", "Francesco Romeo"], type="article", location="https://doi.org/10.1215/00192082-8591560"}]
+
+[[entry]]
+pr = 116
+group = "BorgSignedSets"
+theorem = "signed_sets"
+type = "Conjecture"
+title = "Extremal intersecting systems of signed sets and their equality cases"
+description = "For every finite support family and at least two signs, some largest intersecting family is a star. The theorem characterizes exactly when a largest family can have no common signed element."
+scope = "Both parts of Borg's signed-set conjecture. The new part is the criterion for maximum nonstars."
+fidelity = "The formal statement uses labelled supports and families of signed words. The exceptional condition requires two signs and three equivalent maximum-star coordinates."
+review = "A repository audit compared both clauses to Borg's statement, checked the equality argument and enumerated 33,021 small support-family instances."
+locator = "Borg, Intersecting systems of signed sets (2007), Conjecture 1.4"
+arxiv = ["math.CO"]
+msc = ["05D05"]
+sources = [{title="Intersecting systems of signed sets", authors=["Peter Borg"], type="article", location="https://www.um.edu.mt/library/oar/handle/123456789/75618"}, {title="A proof of Chvátal's conjecture via a sharp correlation inequality", authors=["Fan Chang", "Hong Liu", "Miao Liu"], type="preprint", location="https://arxiv.org/abs/2609.19123v1", note="Proposition 5.3 and Borg's weighted reduction imply the size bound."}]

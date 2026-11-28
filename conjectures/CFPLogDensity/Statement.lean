@@ -14,6 +14,7 @@ open Finset Filter
 def subsetSums {r : ℕ} (color : ℕ → Fin r) (i : Fin r) : Set ℕ :=
   {m | ∃ A : Finset ℕ, (∀ a ∈ A, 0 < a ∧ color a = i) ∧ ∑ a ∈ A, a = m}
 
+/-- The sum of reciprocals of the members of `S` from 1 through `N`. -/
 noncomputable def logMass (S : Set ℕ) (N : ℕ) : ℝ := by
   classical
   exact ∑ k ∈ (Icc 1 N).filter (· ∈ S), (k : ℝ)⁻¹
@@ -33,9 +34,11 @@ def UsesAll {r : ℕ} (color : ℕ → Fin r) : Prop := ∀ i, ∃ n, 0 < n ∧ 
 noncomputable def densityConstant (r : ℕ) : ℝ :=
   ⨅ color : {f : ℕ → Fin r // UsesAll f}, ⨆ i : Fin r, upperLogDensity (subsetSums color.val i)
 
+/-- The density of the cyclic colouring at growth factor `b`. -/
 noncomputable def value (r : ℕ) (b : ℝ) : ℝ :=
   (1 - 1 / (2*b)) / (1 - 1/b^r)
 
+/-- The real root above one in the equation of Conlon, Fox and Pham. -/
 def Root (r : ℕ) (b : ℝ) : Prop :=
   1 < b ∧ b^r + (r : ℝ) - 1 = 2*(r : ℝ)*b
 

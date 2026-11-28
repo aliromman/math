@@ -10,7 +10,7 @@ For $n\ge2$, the Buchweitz obstruction occurs when the sumset $nG$ of $n$ gaps h
 | 3 | 200 | 200 | 0 |
 | 4 | 281 | 280 | 1 |
 
-The strict inequality fails exactly between two orders where it holds. For $n\ge5$, all sums lie between $n$ and $71n$, so $|nG|\le70n+1\le 40(2n-1)$. Thus the full Buchweitz set is $`\{2,4\}`$. The excesses $1,0,1$ also contradict the proposed unimodality in the authors’ Question 4.2.
+The strict inequality fails exactly between two orders where it holds. For $n\ge5$, all sums lie between $n$ and $71n$, so $|nG|\le70n+1\le 40(2n-1)$. Thus the full Buchweitz set is $`\{2,4\}`$. The excesses $1,0,1$ also disprove Question 4.2. On the positive orders of Definition 1.1, the excess drops from 1 to 0 and then rises to 1. The formal theorem checks this strict valley for the same gapset. [Unimodality statement](Statement.lean) · [Proof](Solution.lean)
 
 ## Checking the counts
 

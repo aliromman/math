@@ -1,4 +1,4 @@
-# Solution to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity of order polytopes of polygon face lattices
+# Lean formalization of the Open Problems Catalog and Mantra Patel’s 13-gon counterexample to Lundström and Saud Maia Leite’s Question 6.4
 
 Let $L(t)$ count the lattice points in the $t$-th dilate of the order polytope of the face lattice of a 13-gon. Its linear coefficient is
 
@@ -6,7 +6,7 @@ $$
 [t]L(t)=-\frac{298495711}{35302608}.
 $$
 
-This gives a negative answer to Lundström and Saud Maia Leite’s question about polygons. Their paper proves coefficient positivity for the crown poset of vertices and edges. The full face lattice adds the empty face and the polygon itself. The authors also found a negative coefficient in the **order polynomial** of the 7-gon face lattice. The Ehrhart polynomial counts maps to $`\{0,\ldots,t\}`$ and equals the order polynomial evaluated at $t+1$. The paper explicitly asks whether the coefficients after that translation remain nonnegative. [Published paper, Question 6.4](https://www.sciencedirect.com/science/article/pii/S0195669825001969) · [Authors’ revised preprint, Question 6.5, p. 33](https://arxiv.org/pdf/2504.05123#page=33)
+The October 2026 counterexample gives a negative answer to Lundström and Saud Maia Leite’s question about polygons. Their paper proves coefficient positivity for the crown poset of vertices and edges. The full face lattice adds the empty face and the polygon itself. The authors also found a negative coefficient in the **order polynomial** of the 7-gon face lattice. The Ehrhart polynomial counts maps to $`\{0,\ldots,t\}`$ and equals the order polynomial evaluated at $t+1$. The paper explicitly asks whether the coefficients after that translation remain nonnegative. [Published paper, Question 6.4](https://www.sciencedirect.com/science/article/pii/S0195669825001969) · [Authors’ revised preprint, Question 6.5, p. 33](https://arxiv.org/pdf/2504.05123#page=33)
 
 ## Counting the lattice points
 
@@ -36,4 +36,4 @@ The Lean proof starts from the face-incidence inequalities. It proves the transf
 python3 scripts/verify.py --base HEAD^ --fetch-cache
 ```
 
-Searches for the published question, polygon face lattices, Ehrhart positivity and the 13-gon coefficient located no prior counterexample. Recent work proving real-rootedness for the $h^*$-polynomial of the crown addresses a different polynomial. OpenAI Codex found the counterexample, derived the transfer calculation and formalized the proof. [Real-rootedness paper](https://arxiv.org/abs/2610.40496)
+The Open Problems Catalog published this 13-gon counterexample and the same exact coefficient on 9 October 2026. Mantra Patel recorded the coefficient and a finite minimality check on 10 October. Bowen Zuo later gave a classification for all polygons and degrees. OpenAI Codex produced the Lean formalization here. It proves the lattice-count identity from face incidences and certifies the known coefficient in Lean’s kernel. [Open Problems Catalog, Q3499](https://github.com/10m-u/open-problems-catalog/blob/ca8d4d44ba3db527f19f28928c240168f545ecfe/solutions/seven-more-2026-10-09/discrete/Q3499-proof.md) · [Patel’s manuscript](https://github.com/mantrakp04/research-papers/blob/c0505c4261045f1ab5760a024f1dfc4fb8f725a8/polygon_ehrhart.md) · [Zuo’s paper, code and certificates](https://doi.org/10.5281/zenodo.24554683)
