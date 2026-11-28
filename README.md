@@ -1,6 +1,6 @@
 # Mathematical conjectures
 
-This collection contains 101 research notes on published mathematical questions. Of these, 99 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 102 research notes on published mathematical questions. Of these, 100 give Lean-verified results and two report partial investigations. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
 [Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
 
@@ -10,7 +10,7 @@ Ali Romman (2026). *Mathematical conjectures* (v1.0.0). Zenodo. [DOI 10.5281/zen
 
 Each row links to the research note, its proof or search code, and the pull request. Open drafts are marked beside their PR links and link to fixed revisions. **Partial** marks an investigation whose main question remains open. **Extension** marks a result that builds on an earlier counterexample.
 
-[Additive combinatorics](#additive-combinatorics) · [Algebra and number theory](#algebra-and-number-theory) · [Dice and games](#dice-and-games) · [Euclidean and discrete geometry](#euclidean-and-discrete-geometry) · [Graphs and tournaments](#graphs-and-tournaments) · [Matroids, polytopes and posets](#matroids-polytopes-and-posets) · [Probability and stochastic processes](#probability-and-stochastic-processes) · [Trees](#trees) · [Voting and apportionment](#voting-and-apportionment) · [Words and permutations](#words-and-permutations)
+[Additive combinatorics](#additive-combinatorics) · [Algebra and number theory](#algebra-and-number-theory) · [Dice and games](#dice-and-games) · [Euclidean and discrete geometry](#euclidean-and-discrete-geometry) · [Extremal set theory](#extremal-set-theory) · [Graphs and tournaments](#graphs-and-tournaments) · [Matroids, polytopes and posets](#matroids-polytopes-and-posets) · [Probability and stochastic processes](#probability-and-stochastic-processes) · [Trees](#trees) · [Voting and apportionment](#voting-and-apportionment) · [Words and permutations](#words-and-permutations)
 
 ### Additive combinatorics
 
@@ -78,6 +78,12 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Partial result on Erdős Problem 107 for 33-point extensions of specified 27- and 30-point order types][note-9] | **Partial.** Checked SAT certificates rule out heptagon-free 33-point extensions of one specified 27-point order type and all 496 two-point deletions from the classical 32-point example. The general question remains open. | [Search][proof-9] · [#9][pr-9] |
 | [The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture][note-48] | **Extension.** The sharp covering ratio for lattice squares is $3/2$. Counterexamples exist at unbounded lattice diameter. The source already contained a counterexample among convex polygons. | [Lean][proof-48] · [#48][pr-48] |
 | [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
+
+### Extremal set theory
+
+| Research note | Finding | Proof or search · PR |
+| --- | --- | --- |
+| [Proof of Borg’s Conjecture 1.4 on intersecting systems of signed sets][note-116] | A maximum family can fail to be a star exactly when there are two labels and three coordinates with largest stars occur in precisely the same supports. | [Lean][proof-116] · [#116][pr-116] |
 
 ### Graphs and tournaments
 
@@ -495,3 +501,6 @@ Each research directory with Lean sources has an `axioms` file. Each result entr
 [note-115]: conjectures/BajnokRestrictedMinimum/README.md
 [proof-115]: conjectures/BajnokRestrictedMinimum/Solution.lean
 [pr-115]: https://github.com/aliromman/math/pull/115
+[note-116]: conjectures/BorgSignedSets/README.md
+[proof-116]: conjectures/BorgSignedSets/Solution.lean
+[pr-116]: https://github.com/aliromman/math/pull/116

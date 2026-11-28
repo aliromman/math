@@ -22,12 +22,21 @@ formula and the example. CI built and replayed four Lean modules and
 checked five axiom contracts. [Draft PR 115](https://github.com/aliromman/math/pull/115) ·
 [Proof verification](https://github.com/aliromman/math/actions/runs/45959191164)
 
+The third draft proves both clauses of Borg’s Conjecture 1.4 on signed
+sets. Borg’s weighted reduction and the theorem of Chang, Liu and Liu already
+imply the maximum size. The new result identifies exactly when a nonstar
+family can attain that size. Independent review checked the equality cases
+and enumerated 33,021 small instances. CI built and replayed 13 Lean modules
+and checked both axiom contracts. [Draft PR 116](https://github.com/aliromman/math/pull/116) ·
+[Proof verification](https://github.com/aliromman/math/actions/runs/45962046706)
+
 | Cutoff (UTC) | Verified resolutions | Numbered Erdős problems | Elapsed | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 27 November 2026, 06:28 | 1 | 0 | 44 min | 880,000 | 51,940,000 | 270,000 | 1,150,000 | 53,090,000 |
 | 27 November 2026, 07:34 | 2 | 0 | 1 h 50 min | 1,660,000 | 172,790,000 | 690,000 | 2,340,000 | 175,130,000 |
+| 27 November 2026, 07:59 | 3 | 0 | 2 h 15 min | 2,160,000 | 216,990,000 | 830,000 | 2,990,000 | 219,980,000 |
 
-The campaign has verified two of its five target resolutions. Neither has a
+The campaign has verified three of its five target resolutions. None has a
 numbered Erdős problem ID. Each row gives cumulative figures through the
 corresponding proof check, including concurrent investigations. Each total
 counts each participant once and is rounded independently. The 99 mathematical
