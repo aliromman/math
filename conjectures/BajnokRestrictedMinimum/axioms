@@ -1,0 +1,5 @@
+statement BajnokRestrictedMinimum.Conjecture propext Classical.choice Quot.sound
+BajnokRestrictedMinimum.witness_card propext Quot.sound
+BajnokRestrictedMinimum.restricted_card propext Classical.choice Quot.sound
+BajnokRestrictedMinimum.ordinary_lower propext Classical.choice Quot.sound
+BajnokRestrictedMinimum.conjecture_false propext Classical.choice Quot.sound
