@@ -5,7 +5,6 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import json
-import os
 import re
 import subprocess
 import sys
@@ -15,7 +14,7 @@ AUDIT = Path(__file__).with_name("Audit.lean").resolve()
 
 def research_groups():
     tracked = subprocess.check_output(["git", "ls-files", "-z", "--", "*.lean"]).decode().split("\0")
-    tools = {"scripts/Audit.lean", "scripts/Replay.lean", "scripts/ResearchLint.lean"}
+    tools = {"scripts/Audit.lean", "scripts/ResearchLint.lean"}
     for path in filter(None, tracked):
         if not path.startswith("conjectures/") and path not in tools:
             raise SystemExit(f"Lean source outside the verified library: {path}")
@@ -124,12 +123,12 @@ def replay_source(source):
     artifact = Path(".lake/build/lib/lean") / source.with_suffix(".olean")
     if not artifact.is_file():
         raise SystemExit(f"Incomplete replay: missing {artifact}")
-    module = ".".join(source.with_suffix("").parts)
-    result = subprocess.run(["lean", str(AUDIT.with_name("Replay.lean"))],
-                            env={**os.environ, "RESEARCH_REPLAY_MODULE": module})
+    module = module_name(source)
+    result = subprocess.run(["leanchecker", "--verbose", module], text=True, stdout=subprocess.PIPE)
     if result.returncode:
         raise SystemExit(f"Kernel replay failed for {module} (exit {result.returncode})")
-
+    if f"replaying {module}" not in result.stdout.splitlines():
+        raise SystemExit(f"Incomplete replay: {module}")
 
 
 def main():

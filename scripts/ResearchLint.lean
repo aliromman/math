@@ -1,3 +1,5 @@
+module
+
 import Lean.Elab.GuardMsgs
 
 open Lean Elab Command

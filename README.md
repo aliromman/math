@@ -186,7 +186,7 @@ python3 scripts/test_verify.py
 python3 scripts/test_selection.py
 ```
 
-The first command downloads cached build files for the pinned Mathlib release. The verifier builds the Lean library with warnings as errors and runs the pinned `leanchecker` routine in a separate process for each research module. It checks the required object files, replays private proof bodies, and traces the axiom dependencies of every local declaration. The last two commands test proof rejection and change selection.
+The first command downloads cached build files for the pinned Mathlib release. The verifier builds the Lean library with warnings as errors and runs the pinned `leanchecker` executable on the selected modules, including their private proof bodies. The verifier checks that every expected object file exists and that the checker reports each selected module. It also traces the axiom dependencies of every local declaration. The last two commands test proof rejection and change selection.
 
 ### Scoped pull request checks
 
