@@ -1,14 +1,14 @@
 # Mathematical conjectures
 
-This collection contains 104 research notes on published mathematical questions. Of these, 102 give Lean-verified results and two report partial investigations. Five verified results were added after v1.0.0. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
+This collection contains 104 research notes on questions from the mathematical literature. Of these, 102 give Lean-verified results and two report partial investigations. Five verified results were added after v1.0.0. Each note cites its mathematical sources. Ali Romman created and maintains the collection. OpenAI Codex assisted with the research and Lean 4 formalizations.
 
-[Research ledger and cumulative statistics](research/ledger.md) · [Reproduce the results](#verification)
+[Result-by-result source audit](research/audit.md) · [Research ledger and cumulative statistics](research/ledger.md) · [Manuscripts and publication candidates](research/publication.md) · [Reproduce the results](#verification) · [Palomar packages](research/palomar/README.md)
 
 Ali Romman (2026). *Mathematical conjectures* (v1.0.0). Zenodo. [DOI 10.5281/zenodo.24577194](https://doi.org/10.5281/zenodo.24577194)
 
 ## Results
 
-Each row links to the research note, its proof or search code, and the pull request. Open drafts are marked beside their PR links and link to fixed revisions. **Partial** marks an investigation whose main question remains open. **Extension** marks a result that builds on an earlier counterexample.
+Each row links to the research note, its proof or search code, and the pull request. Open drafts are marked beside their PR links and link to fixed revisions. **Partial** marks an investigation whose main question remains open. **Extension** marks a result that builds on an earlier counterexample. Notes that formalize a known answer identify the earlier proof.
 
 [Additive combinatorics](#additive-combinatorics) · [Algebra and number theory](#algebra-and-number-theory) · [Dice and games](#dice-and-games) · [Euclidean and discrete geometry](#euclidean-and-discrete-geometry) · [Extremal set theory](#extremal-set-theory) · [Graphs and tournaments](#graphs-and-tournaments) · [Matroids, polytopes and posets](#matroids-polytopes-and-posets) · [Probability and stochastic processes](#probability-and-stochastic-processes) · [Trees](#trees) · [Voting and apportionment](#voting-and-apportionment) · [Words and permutations](#words-and-permutations)
 
@@ -33,7 +33,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | Research note | Finding | Proof or search · PR |
 | --- | --- | --- |
 | [Proof of Bagchi and Zhou-Zheng’s Conjecture 12 on sporadic shifts without triangular Diophantine pairs][note-23] | For every integer $k\ge0$, adding $2\cdot7^{6k+2}$ to a product of two positive triangular numbers gives a nonsquare. | [Lean][proof-23] · [#23][pr-23] |
-| [Disproof of the Chidambaram–Mináč–Nguyen–Tân equidistribution conjecture for cyclotomic factors of Fekete polynomials][note-88] | At odd index $1{,}122{,}987$, the 63rd cyclotomic polynomial divides the Fekete polynomial, although the relevant residue counts differ by one. | [Lean][proof-88] · [#88][pr-88] |
+| [Disproof of the odd-index case of Chidambaram, Mináč, Nguyen and Tân’s Conjecture 2.11 on Fekete polynomials][note-88] | At odd index $1{,}122{,}987$, the 63rd cyclotomic polynomial divides the Fekete polynomial, although the relevant residue counts differ by one. | [Lean][proof-88] · [#88][pr-88] |
 | [Proof of the Evans–Veselov–Winn Factor 4 Conjecture for Markov polynomials][note-85] | In every Markov numerator, every coefficient strictly inside the critical triangle is divisible by four. The proof establishes divisibility throughout the surrounding lower rectangle. | [Lean][proof-85] · [#85][pr-85] |
 | [Proof of the Evans–Veselov–Winn Location of 4 conjecture for Markov polynomials][note-86] | For every reduced slope $1<a<b$, the unique monomial on $bi+aj=ab+1$ has coefficient exactly $4$. | [Lean][proof-86] · [#86][pr-86] |
 | [Four-factor counterexamples to Gatzweiler and Krattenthaler’s Conjecture 4][note-36] | **Extension.** A four-factor family gives a negative coefficient. Earlier counterexamples had already disproved the conjecture. | [Lean][proof-36] · [#36][pr-36] |
@@ -77,7 +77,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Proof of Palsson and Yu’s Conjecture 10 on planar point sets with four triangle congruence classes][note-41] | Seven planar points with at most four triangle shapes form a regular heptagon. The maximum size for four shapes is seven. | [Lean][proof-41] · [#41][pr-41] |
 | [Partial result on Erdős Problem 107 for 33-point extensions of specified 27- and 30-point order types][note-9] | **Partial.** Checked SAT certificates rule out heptagon-free 33-point extensions of one specified 27-point order type and all 496 two-point deletions from the classical 32-point example. The general question remains open. | [Search][proof-9] · [#9][pr-9] |
 | [The sharp lattice-square bound in Bárány and Füredi’s covering-radius conjecture][note-48] | **Extension.** The sharp covering ratio for lattice squares is $3/2$. Counterexamples exist at unbounded lattice diameter. The source already contained a counterexample among convex polygons. | [Lean][proof-48] · [#48][pr-48] |
-| [Disproof of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
+| [Disproof of the quadrilateral case of Straus’s Conjecture 1 on largest inscribed polygons with a boundary side][note-75] | **Extension.** A nine-vertex polygon has a largest quadrilateral with exactly one shared side and area fraction $2/3$. A quadrilateral in the regular heptagon occupies more. | [Lean][proof-75] · [#75][pr-75] |
 
 ### Extremal set theory
 
@@ -113,7 +113,7 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Solution to Ferroni and Schröter’s Problem 3.5 on the initial entries of matroid base polytope f-vectors][note-30] | For every prefix length, two connected rank-two matroid base polytopes on equally many elements have the same initial face counts and differ by one facet. | [Lean][proof-30] · [#30][pr-30] |
 | [Solution to the generalized-permutohedron part of Defant’s Question 6.1 on real-rooted Narayana sums][note-22] | A translated Fano matroid base polytope has 28 lattice points and a Narayana sum with four nonreal roots. | [Lean][proof-22] · [#22][pr-22] |
 | [Proof of Kölbl’s Conjecture 3 on canonical-line Ehrhart roots of reflexive polytopes with unimodal numerators][note-21] | Among reflexive lattice polytopes with unimodal Ehrhart numerator, the standard reflexive simplex attains the greatest root height on $\mathop{\mathrm{Re}}z=-1/2$ in every positive dimension. | [Lean][proof-21] · [#21][pr-21] |
-| [Solution to Lundström and Saud Maia Leite’s Question 6.4 on Ehrhart nonnegativity of order polytopes of polygon face lattices][note-93] | For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] |
+| [Lean formalization of the Open Problems Catalog and Mantra Patel’s 13-gon counterexample to Lundström and Saud Maia Leite’s Question 6.4][note-93] | **Known result formalized.** For a 13-gon the order polytope of its full face lattice has linear Ehrhart coefficient $-298495711/35302608$. | [Lean][proof-93] · [#93][pr-93] |
 | [Disproof of Olarte, Santos, Spreer and Stump’s Conjecture 3.5 on dual pairs in flag complexes][note-114] | A 12-vertex flag surface has a dual pair with nine essential vertices. The octahedron has six vertices. | [Lean][proof-114] · [#114][pr-114] |
 
 ### Probability and stochastic processes
@@ -170,6 +170,8 @@ Each row links to the research note, its proof or search code, and the pull requ
 | [Infinite four-letter counterexamples to Brauner et al.’s Conjecture 4.1 on balanced words][note-49] | **Extension.** Four letters give infinitely many periodic balanced words outside binary congruence expansion. Restivo and Rosone gave the earlier period-16 example. | [Lean][proof-49] · [#49][pr-49] |
 | [Solution to Larson’s Question 2 on optimal power maps of symmetric groups][note-45] | Every power map maximizing the number of weak components on $S_n$ acts nontrivially on cycles of just one length. A finite rule lists every maximizing exponent. | [Lean][proof-45] · [#45][pr-45] |
 | [Disproof of Presutti and Stromquist’s Conjecture 10.1 on the proposed packing-density optimizer for 2413][note-84] | A weighted permutation gives density at least $0.1047363701829$, above the proposed $0.1047360252660$. A corner argument rules out every choice of the two bubble sizes. | [Lean][proof-84] · [#84][pr-84] |
+
+The separate [PR #120 (open draft)](https://github.com/aliromman/math/pull/120) gives the sharp asymptotic upper bound for Erdős Problem 708. The pointwise question remains open. [Reviewed upper bound, historical lower bound and limit](https://github.com/aliromman/math/blob/133dd5c8d0cc62faaf7bb1758bfeec4cda07be93/conjectures/ErdosSuranyi708/README.md)
 
 ## Verification
 
