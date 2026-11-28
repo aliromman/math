@@ -6,7 +6,8 @@ public import conjectures.ErdosSuranyi708.Envelope
 namespace ErdosSuranyi708
 open Finset
 
-private theorem lift_signed {A : Finset ℕ} {x : ℤ} {M : ℕ} {C : ℝ}
+/-- Extend a positive-window bound to every signed integer interval. -/
+theorem lift_signed {A : Finset ℕ} {x : ℤ} {M : ℕ} {C : ℝ}
     (hc : 1 ≤ C)
     (h : ∀ y : ℕ, ∃ S ⊆ window y M, Covers A S ∧ (S.card : ℝ) ≤ C) :
     ∃ B ⊆ Ioc x (x + (M : ℤ)),

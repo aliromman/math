@@ -127,7 +127,7 @@ to the nearest 10,000. [Accounting record in PR #102](https://github.com/aliromm
 
 ## Numbered Erdős problem, 27 November 2026
 
-The proof of the asymptotic question in Problem 708 adds one conjecture to the 99-note catalogue through PR 102. A lower sieve for randomly retained prime divisors gives the sharp leading coefficient 2 for all shifts. The separate pointwise bound remains open. Attempts on Problems 273 and 881 produced partial constructions and are excluded from the result count. [Proof and prior work](../conjectures/ErdosSuranyi708/README.md) · [Draft PR #120](https://github.com/aliromman/math/pull/120)
+The new contribution to Erdős Problem 708 is the sharp asymptotic upper bound in arbitrary signed integer intervals. Erdős and Surányi proved the matching asymptotic lower bound in 1959, §9. The maintainer formalization adapts their construction to each exact input size and proves that the least sufficient budget satisfies $g(n)/n\to2$. The pointwise question $g(n)\le2n$ remains open. The lower bound and the limit belong to this same research entry. The table records the original research session. This formalization uses the same research entry. [Original paper](https://users.renyi.hu/~p_erdos/1959-07.pdf#page=6) · [Historical lower bound](../conjectures/ErdosSuranyi708/HistoricalLower.lean) · [Limit](../conjectures/ErdosSuranyi708/Limit.lean) Work on Problems 273 and 881 produced partial constructions. [Draft PR 120](https://github.com/aliromman/math/pull/120)
 
 | Investigation | Wall time | Uncached input | Cached input | Output | Total excluding cache | Total including cache |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
