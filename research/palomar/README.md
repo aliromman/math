@@ -10,6 +10,7 @@ Use Python 3.11 or later. Choose a commit that contains the selected proofs. The
 bwrap --unshare-net --ro-bind / / true
 python3 research/palomar/prepare.py HEAD /tmp/palomar-math
 cd /tmp/palomar-math
+export PATH="$(lean --print-prefix)/bin:$PATH"
 lake exe cache get
 lake build @math/ResearchLint:shared
 for config in Palomar/*/comparator.json; do

@@ -48,7 +48,7 @@ the matching historical lower bound and the limit for the least universal budget
 The pointwise bound remains open. Its original recorded session ran for
 3 h 48 min, with 3,900,000 uncached input tokens, 305,730,000 cached input
 tokens and 1,720,000 output tokens including reasoning. The present review of
-the lower bound belongs to publication maintenance. [Original PR and accounting](https://github.com/aliromman/math/pull/120) · [Historical construction and limit](https://github.com/aliromman/math/blob/133dd5c8d0cc62faaf7bb1758bfeec4cda07be93/conjectures/ErdosSuranyi708/README.md)
+the lower bound belongs to publication maintenance. [Original PR and accounting](https://github.com/aliromman/math/pull/120) · [Historical construction and limit](https://github.com/aliromman/math/blob/24ab10088d0166c28e6729969e383c4e52dd61fb/conjectures/ErdosSuranyi708/README.md)
 
 ## Research after v1.0.0
 

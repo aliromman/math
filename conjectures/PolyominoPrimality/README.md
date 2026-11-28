@@ -1,6 +1,6 @@
-# Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on zig-zag walks and prime polyomino ideals
+# Disproof of Mascia, Rinaldo and Romeo’s Conjecture 1.2 on prime polyomino ideals under the printed zig-zag condition (Z3)
 
-The polyomino below has no zig-zag walk. Over every field, the quotient by its polyomino ideal contains two nonzero elements whose product is zero. Under the printed common-rectangle condition (Z3), this disproves the implication from absence of a walk to primality in Conjectures 1.2 and 4.6 of Mascia, Rinaldo and Romeo. It also contradicts the finite assertion through 14 cells in Theorems 1.1 and 3.9. [Original paper, Illinois Journal of Mathematics 64 (2020), 291–304](https://doi.org/10.1215/00192082-8591560) · [Author manuscript](https://arxiv.org/abs/1907.08438)
+The polyomino below has no zig-zag walk under the printed common-rectangle condition (Z3). Over every field, the quotient by its polyomino ideal contains two nonzero elements whose product is zero. This disproves the implication from absence of a walk to primality in Conjectures 1.2 and 4.6 of Mascia, Rinaldo and Romeo. It also contradicts the finite assertion through 14 cells in Theorems 1.1 and 3.9. [Original paper, Illinois Journal of Mathematics 64 (2020), 291–304](https://doi.org/10.1215/00192082-8591560) · [Author manuscript](https://arxiv.org/abs/1907.08438)
 
 ```text
     x = 0 1 2 3
